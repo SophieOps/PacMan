@@ -14,18 +14,25 @@
 \usepackage{fancyhdr}
 \usepackage[fs]{umons-coverpage}
 
+
 %%###### START CHANGE HERE ######
-\author{Simon Olbregts}
-\title{Plus courts chemins dans un graphe pondéré}
-\umonsAuthor{Simon Olbregts}
+\author{S. Opsommer \& R. Cambier}
+\title{Rapport du projet Pac-Man}
+\umonsAuthor{\begin{tabular}{lll}
+\textsc{Cambier} & Robin & ROBIN.CAMBIERR@student.umons.ac.be\\
+\textsc{Opsommer} & Sophie & SOPHIE.OPSOMMER@student.umons.ac.be\\
+\end{tabular} }
 %% The main title of your thesis
-\umonsTitle{Plus courts chemins\\ dans un graphe pondéré}
+\umonsTitle{Rapport du projet Pac-Man}
 %% The sub-title of your thesis
-\umonsSubtitle{Projet réalisé dans le cadre \\de la 1er Master en Sciences informatique}
+\umonsSubtitle{Projet réalisé dans le cadre \\de la 1ère Master en Sciences Informatiques \\pour le cours de \og Software Evolution \fg}
 %% Your supervisor(s)
-\umonsSupervisor{\\Véronique Bruyère}
+\umonsSupervisor{\begin{tabular}{ll}
+\textit{Titulaire} : & T. \textsc{Mens} \\
+\textit{Assistant} : & M. \textsc{Claes} \\
+\end{tabular}}
 %% The date (or academic year)
-\umonsDate {novembre 2014}
+\umonsDate {\hfill Ann\'ee Acad\'emique 2014-2015}
 %%###### END CHANGEMENT ######
 
 \newcommand{\smalltitle}[1]{\bigskip\large\textbf{#1}\par\normalsize\medskip}
@@ -57,12 +64,116 @@
 \newpage
 
 %%###### LE RAPPORT COMMENCE ICI ######
-\smalltitle{Note préliminaire}
-\addcontentsline{toc}{section}{Note préliminaire}
-La rédaction de ce document est basé sur le livre \textit{Introduction to algorithme}~\cite{intro_to_algo}
+\thispagestyle{empty}
+%\smalltitle{......}
+\vspace*{\stretch{1}}
+\begin{abstract}
+\addcontentsline{toc}{section}{Résumé}
+Ce \emph{rapport} est rendu dans le cadre du cursus de première année de \og Master en Sciences Informatiques\fg  pour le cours de \emph{Software Evolution} (dont le titulaire est Mr. \emph{T. Mens} et l'assistant est Mr. \emph{M. Claes} en année académique 2014-2015) . Le but de ce rapport est de présenter les résultats de la réalisation du projet Pac-Man.
+\end{abstract}
+\vspace*{\stretch{1}}
 
-\section{Introduction}
+\newpage
+\section{Introduction}\label{sec:intro}
 \subsection{Problème posé}
+A partir d'un code existant, ce projet consiste à : 
+\begin{itemize}
+\item analyser la qualité du logiciel, en utilisant des techniques d'analyse statique du code (par exemple, la détection du code dupliqué et des bad smells, les diverses métriques de qualité) et les outils d'analyse dynamique du code (par exemple, le profilage, la couverture du code et des tests);
+\item améliorer la qualité et la structure du code (en utilisant des refactorings, en introduisant des design patterns, et en modularisant le code) ;
+\item étendre le logiciel avec de nouvelles fonctionnalités (évolution), et étudier l'effet de cela sur la qualité du code;
+\item tester le logiciel avant et après chaque modification. Ceci implique que vous devez ajouter des tests unitaires (unit tests) pour au moins les fragments du code modifiés ou ajoutés, et d'appliquer des tests de régression à chaque modification.
+\end{itemize}
+
+\subsection{Etapes clés}
+Les étapes clés du projet sont les suivantes : (chronologiquement)
+\begin{enumerate}
+\item Analyse de la qualité de la premiére version du code (section \ref{etape1})
+\item Ajout de tests unitaires à la première version du code (section ...), et vérification de la couverture des tests
+\item Refactoring du code pour en améliorer la qualité et la structure (section ...)
+\item Analyse des améliorations de qualité et tests de régression (section ...)
+\item Extension du logiciel et ajout des tests unitaires pour cette extension (section ...)
+\item Analyse de la qualité de cette extension et tests de régression (section ...)
+\item Etude de l'historique de la qualité logicielle entre toutes les versions du code (section ...)
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Etape 1 : Première analyse de la qualité du logiciel }\label{sec:etape1}
+\subsection{Enoncé}
+Le but de la première étape clé est d'analyser la qualité du logiciel pour avoir une première idée de ce qu'il faudra corriger si l'on désire améliorer la qualité. Cette première analyse est également l'occasion de comprendre l'architecture et la dynamique du système.
+Pour cette étape clé il est demandons de :
+\begin{enumerate}
+\item Calculer la valeur de plusieurs métriques logicielles permettant d'estimer la qualité du logiciel, d'interpréter les résultats des métriques, et de mettre en évidence les modules (packages, classes ou méthodes) qui devraient être traités prioritairement afin d'améliorer leur qualité ainsi que la raison pour laquelle ils sont prioritaires.
+\item Déterminer les classes et les méthodes qui sont couvertes par des tests unitaires, et mettre en évidence les méthodes pour lesquelles de nouveaux tests unitaires devraient être créés prioritairement.
+\item Répertorier les portions de code qui ne sont pas utilisées et qui pourraient donc être supprimées sans altérer le comportement du système.
+\item Répertorier les portions de code qui sont redondantes (code dupliqué) et qui pourraient donc être éliminées par une restructuration du système sans altérer son comportement.
+\item Détecter la présence de bad smells. En trouvez-vous une plus forte concentration dans certains modules ?
+\item Analyser les performances du système en terme d'utilisation CPU et de consommation de mémoire. Repérez les parties du code créant un goulot d'étranglement et précisez les modules qui devraient être retravaillés afin de procéder à un déoulottage du système.
+\end{enumerate}
+Décrivez la qualité globale du système. Quel serait, selon vous, le coût nécessaire à sa maintenance et à son évolution ?
+\subsection{Résultat}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Etape 2 : Ajout de tests unitaires}\label{sec:etape2}
+\subsection{Enoncé}
+Votre première analyse a révélé la présence de certains problèmes de qualité du code de l'application.
+Avant d'envisager la correction de ces problèmes, il faut s'assurer que les modifications que vous apporterez au code source ne modifieront pas le comportement du logiciel.
+Etendez et complétez le jeu de tests unitaires fourni avec le code source afin de vous prémunir d'une telle modification. Effectuez également une analyse de couverture de tests.
+Quelle garantie avez-vous que vos futures modifications ne pourront pas casser le système ?
+
+\subsection{Résultat}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Etape 3 : Refactoring en vue d'améliorer la qualité}\label{sec:etape3}
+\subsection{Enoncé}
+Avec les tests unitaires ajoutés dans l'étape précédente, vous pouvez vérifier automatiquement (jusqu'à un certain point) la préservation du comportement du logiciel. Réalisez les modifications nécessaires à l'amélioration de la qualité et la structure du logiciel. 
+Vos ressources et votre temps étant limités, commencez par établir les modifications devant être réalisées en priorité. Sur base de quels critères réalisez-vous cette priorisation ?
+Refactorisez progressivement votre code, en vous assurant systématiquement que tous les tests déjà présents s'exécutent avec succès. Souvenez-vous que vos modifications doivent améliorer la qualité du code, et non étendre ou modifier le comportement du logiciel.
+
+\subsection{Résultat}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Etape 4 : Analyse de la qualité du logiciel}\label{sec:etape4}
+\subsection{Enoncé}
+Réalisez une étude similaire à celle décrite en Section ... La qualité du logiciel s'est-elle améliorée ? Les problèmes les plus critiques ont-ils été résolus ? Au vu de cette seconde analyse, quels sont les points qui devraient à présent être améliorés ?
+\subsection{Résultat}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Etape 5 : Extensions}\label{sec:etape5}
+\subsection{Enoncé} 
+Il vous est demandé d'étendre le logiciel afin d'y ajouter certaines fonctionnalités ou d'en améliorer la qualité. Chaque équipe doit réaliser au moins deux extensions diférentes, décrites dans la section ... .
+Utilisez un processus de développement dirigé par les tests (test-driven development) : lors du développement des extensions, ajoutez de nouveaux tests unitaires pour tester le comportement prévu de l'extension. Effectuez également des tests de régression avec les tests unitaires déjà présents, afin de vous assurer que le comportement initial n'a pas été modifié.
+\subsection{Résultat}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Etape 6 : Analyse de la qualité du logiciel}\label{sec:etape6}
+\subsection{Enoncé} 
+Pour chaque extension ajoutée, réalisez une analyse de qualité similaire à celle décrite en Section ... Au vu de cette analyse, quels sont les points qui devraient à présent être améliorés ?
+\subsection{Résultat}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Etape 7 : Analyse de l'évolution de la qualité logicielle}\label{sec:etape7}
+\subsection{Enoncé} 
+Analysez l'évolution de la qualité du logiciel entre les diférentes versions, en utilisant les résultats d'analyse de qualité des sections ..., ... et ... . Montrez cette évolution graphiquement et interprètez-la.
+\subsection{Résultat}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Quelque exemple d'utilisation. \textit{"Un peu d'italique"} \textbf{Du Gras}. Pour séparer deux paragraphe il suffit de mettre deux enter (une ligne blanche en gros)
 
 Et voila un nouveau paragraphe :)\\
@@ -86,6 +197,7 @@ Un graphe orienté est défini par un couple: $G=(V,E)$.
 La figure~\ref{graphExample} illustre un graphe.
 
 \begin{figure}
+	\centering
 	\includegraphics[width=\textwidth]{images/Graph.jpg}
 	\caption{\label{graphExample}Exemple de graphe contenant 5 noeuds et 8 arcs}
 \end{figure}
@@ -101,49 +213,49 @@ blablabla
 
 Un algorithme ? ouille ouille ouille :p mais on si habitue. Le caption sera le titre visible et le label sera ce que tu devra utiliser pour le referencer comme ca Alogo~\ref{extractMin}
 
-\begin{algorithm}[H]
-\caption{extractMin($A$)}\label{extractMin}
-\begin{algorithmic}[1]
-\STATE $min\gets A[1]$
-\STATE $A[1]\gets A[A.heapsize]$
-\STATE $A.heapsize\gets A.heapsize - 1$
-\STATE heapify($A, 1$)
-\end{algorithmic}
-\end{algorithm}
+%\begin{algorithm}[H]
+%\caption{extractMin($A$)}\label{extractMin}
+%\begin{algorithmic}[1]
+%\STATE $min\gets A[1]$
+%\STATE $A[1]\gets A[A.heapsize]$
+%\STATE $A.heapsize\gets A.heapsize - 1$
+%\STATE heapify($A, 1$)
+%\end{algorithmic}
+%\end{algorithm}
 
-\begin{algorithm}[H]
-\caption{heapify($A,i$)}\label{heapify}
-\begin{algorithmic}[1]
-\STATE $l\gets $left($i$)
-\STATE $r\gets $right($i$)
-\IF{$l \leq A.heapsize$ \AND $A[l] < A[i]$ }
-\STATE $smallest\gets l$
-\ELSE
-\STATE $smallest\gets i$
-\ENDIF
-\IF{$r <leq A.heapsize$ \AND $A[r] < A[smallest]$}
-\STATE $smallest\gets r$
-\ENDIF
-\IF{$i \neq smallest$}
-\STATE switch($A[i], A[smallest]$)
-\STATE heapify($A, smallest$)
-\ENDIF
-\end{algorithmic}
-\end{algorithm}
+%\begin{algorithm}[H]
+%\caption{heapify($A,i$)}\label{heapify}
+%\begin{algorithmic}[1]
+%\STATE $l\gets $left($i$)
+%\STATE $r\gets $right($i$)
+%\IF{$l \leq A.heapsize$ \AND $A[l] < A[i]$ }
+%\STATE $smallest\gets l$
+%\ELSE
+%\STATE $smallest\gets i$
+%\ENDIF
+%\IF{$r <leq A.heapsize$ \AND $A[r] < A[smallest]$}
+%\STATE $smallest\gets r$
+%\ENDIF
+%\IF{$i \neq smallest$}
+%\STATE switch($A[i], A[smallest]$)
+%\STATE heapify($A, smallest$)
+%\ENDIF
+%\end{algorithmic}
+%\end{algorithm}
 
-\begin{algorithm}[H]
-\caption{decreaseKey($A,i,key$)}\label{heapify}
-\begin{algorithmic}[1]
-\IF{$key > A[i]$}
-\STATE \textbf{error} "la nouvelle clé doit être inférieur à la valeur actuel"
-\ENDIF
-\STATE $A[i]\gets key$
-\WHILE{$i>1$ \AND $A[$parent($i$)$] > A[i]$}
-\STATE switch($A[i],A[$parent($i$)$]$)
-\STATE $i\gets $parent($i$)
-\ENDWHILE
-\end{algorithmic}
-\end{algorithm}
+%\begin{algorithm}[H]
+%\caption{decreaseKey($A,i,key$)}\label{heapify}
+%\begin{algorithmic}[1]
+%\IF{$key > A[i]$}
+%\STATE \textbf{error} "la nouvelle clé doit être inférieur à la valeur actuel"
+%\ENDIF
+%\STATE $A[i]\gets key$
+%\WHILE{$i>1$ \AND $A[$parent($i$)$] > A[i]$}
+%\STATE switch($A[i],A[$parent($i$)$]$)
+%\STATE $i\gets $parent($i$)
+%\ENDWHILE
+%\end{algorithmic}
+%\end{algorithm}
 
 Des theorme, lemme, propriete ? sa marche aussi :). De nouveaux tu peux reference le label :) Lemme~\ref{upper-bound_prop}
 
@@ -167,9 +279,13 @@ des symbole grec, mathematique $\delta(a), \sigma(a), \neq, \leq, \geq, ...$\\
 Ca doit etre entre dollard. Pareil pour toutes les variables, formule, ...\\
 on n'ecrit pas l'index i mais l'index $i$
 
-N'oublions pas la bibliographie :)
+\newpage
+\section{Annexes} \label{sec:annexe}
+\appendix %permet de changer la numérotation en lettre
+\section{Annexe : }
 
 \bibliographystyle{plain}
 \bibliography{reference}
 
 \end{document} 
+

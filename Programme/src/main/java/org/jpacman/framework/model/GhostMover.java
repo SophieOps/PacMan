@@ -1,4 +1,4 @@
-package org.jpacman.framework.model;
+package main.java.org.jpacman.framework.model;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

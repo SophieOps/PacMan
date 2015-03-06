@@ -1,9 +1,9 @@
-package org.jpacman.test.framework.ui;
+package test.java.org.jpacman.test.framework.ui;
 
-import org.jpacman.framework.model.GhostMover;
-import org.jpacman.framework.factory.FactoryException;
-import org.jpacman.framework.ui.IPacmanInteraction;
-import org.jpacman.framework.ui.MainUI;
+import main.java.org.jpacman.framework.model.GhostMover;
+import main.java.org.jpacman.framework.factory.FactoryException;
+import main.java.org.jpacman.framework.ui.IPacmanInteraction;
+import main.java.org.jpacman.framework.ui.MainUI;
 import org.junit.Test;
 
 /**

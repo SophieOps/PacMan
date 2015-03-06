@@ -1,4 +1,4 @@
-package org.jpacman.framework.ui;
+package main.java.org.jpacman.framework.ui;
 
 /**
  * The high level events that can occur in Pacman,

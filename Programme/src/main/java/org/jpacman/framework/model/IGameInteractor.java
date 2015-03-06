@@ -1,4 +1,4 @@
-package org.jpacman.framework.model;
+package main.java.org.jpacman.framework.model;
 
 import java.util.List;
 import java.util.Observer;

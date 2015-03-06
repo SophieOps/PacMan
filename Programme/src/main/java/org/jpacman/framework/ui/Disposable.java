@@ -1,4 +1,4 @@
-package org.jpacman.framework.ui;
+package main.java.org.jpacman.framework.ui;
 
 /**
  * (Swing) windows that can be disposed.

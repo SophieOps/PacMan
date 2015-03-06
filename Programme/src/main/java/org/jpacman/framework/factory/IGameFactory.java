@@ -1,11 +1,11 @@
-package org.jpacman.framework.factory;
+package main.java.org.jpacman.framework.factory;
 
-import org.jpacman.framework.model.Game;
-import org.jpacman.framework.model.Board;
-import org.jpacman.framework.model.Food;
-import org.jpacman.framework.model.Ghost;
-import org.jpacman.framework.model.Player;
-import org.jpacman.framework.model.Wall;
+import main.java.org.jpacman.framework.model.Game;
+import main.java.org.jpacman.framework.model.Board;
+import main.java.org.jpacman.framework.model.Food;
+import main.java.org.jpacman.framework.model.Ghost;
+import main.java.org.jpacman.framework.model.Player;
+import main.java.org.jpacman.framework.model.Wall;
 
 /**
  * Interface to create objects for the various

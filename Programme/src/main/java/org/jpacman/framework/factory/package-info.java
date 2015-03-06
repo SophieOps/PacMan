@@ -8,4 +8,4 @@
   * 
   * @author Arie van Deursen, January 2012.
   */
-package org.jpacman.framework.factory;
+package main.java.org.jpacman.framework.factory;

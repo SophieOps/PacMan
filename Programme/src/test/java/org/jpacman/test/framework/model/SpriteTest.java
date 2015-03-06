@@ -1,4 +1,4 @@
-package org.jpacman.test.framework.model;
+package test.java.org.jpacman.test.framework.model;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.not;
@@ -9,8 +9,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.hamcrest.FeatureMatcher;
 import org.hamcrest.Matcher;
-import org.jpacman.framework.model.Sprite;
-import org.jpacman.framework.model.Tile;
+import main.java.org.jpacman.framework.model.Sprite;
+import main.java.org.jpacman.framework.model.Tile;
 import org.junit.Before;
 import org.junit.Test;
 

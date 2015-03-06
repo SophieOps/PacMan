@@ -1,13 +1,13 @@
-package org.jpacman.test.framework.model;
+package test.java.org.jpacman.test.framework.model;
 
 import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.Collection;
 
-import org.jpacman.framework.model.Board;
-import org.jpacman.framework.model.Direction;
-import org.jpacman.framework.model.Tile;
+import main.java.org.jpacman.framework.model.Board;
+import main.java.org.jpacman.framework.model.Direction;
+import main.java.org.jpacman.framework.model.Tile;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;

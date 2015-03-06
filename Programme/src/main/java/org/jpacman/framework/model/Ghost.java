@@ -1,6 +1,6 @@
-package org.jpacman.framework.model;
+package main.java.org.jpacman.framework.model;
 
-import org.jpacman.framework.model.IBoardInspector.SpriteType;
+import main.java.org.jpacman.framework.model.IBoardInspector.SpriteType;
 
 /**
  * A ghost element on the board.

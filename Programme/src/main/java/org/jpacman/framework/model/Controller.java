@@ -1,4 +1,4 @@
-package org.jpacman.framework.model;
+package main.java.org.jpacman.framework.model;
 
 /**
  * Interface for a controller which can be started

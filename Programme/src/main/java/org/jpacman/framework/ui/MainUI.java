@@ -1,4 +1,4 @@
-package org.jpacman.framework.ui;
+package main.java.org.jpacman.framework.ui;
 
 import java.awt.BorderLayout;
 import java.util.Observable;
@@ -8,14 +8,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import org.jpacman.framework.model.Controller;
-import org.jpacman.framework.model.GhostMover;
-import org.jpacman.framework.factory.FactoryException;
-import org.jpacman.framework.factory.IGameFactory;
-import org.jpacman.framework.model.IGameInteractor;
-import org.jpacman.framework.model.Level;
-import org.jpacman.framework.view.Animator;
-import org.jpacman.framework.view.BoardView;
+import main.java.org.jpacman.framework.model.Controller;
+import main.java.org.jpacman.framework.model.GhostMover;
+import main.java.org.jpacman.framework.factory.FactoryException;
+import main.java.org.jpacman.framework.factory.IGameFactory;
+import main.java.org.jpacman.framework.model.IGameInteractor;
+import main.java.org.jpacman.framework.model.Level;
+import main.java.org.jpacman.framework.view.Animator;
+import main.java.org.jpacman.framework.view.BoardView;
 
 /**
  * The main user interface for jpacman.

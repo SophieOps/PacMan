@@ -1,12 +1,12 @@
-package org.jpacman.test.framework.accept;
+package test.java.org.jpacman.test.framework.accept;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
-import org.jpacman.framework.factory.FactoryException;
-import org.jpacman.framework.model.Direction;
-import org.jpacman.framework.model.IBoardInspector;
-import org.jpacman.framework.model.Tile;
+import main.java.org.jpacman.framework.factory.FactoryException;
+import main.java.org.jpacman.framework.model.Direction;
+import main.java.org.jpacman.framework.model.IBoardInspector;
+import main.java.org.jpacman.framework.model.Tile;
 import org.junit.Before;
 import org.junit.Test;
 

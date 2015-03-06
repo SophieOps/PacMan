@@ -1,4 +1,4 @@
-package org.jpacman.test.framework.model;
+package test.java.org.jpacman.test.framework.model;
 
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -15,17 +15,17 @@ import static org.mockito.Mockito.mock;
 import java.util.Observable;
 import java.util.Observer;
 
-import org.jpacman.framework.factory.DefaultGameFactory;
-import org.jpacman.framework.factory.FactoryException;
-import org.jpacman.framework.factory.IGameFactory;
-import org.jpacman.framework.factory.MapParser;
-import org.jpacman.framework.model.Direction;
-import org.jpacman.framework.model.Food;
-import org.jpacman.framework.model.Game;
-import org.jpacman.framework.model.Ghost;
-import org.jpacman.framework.model.IBoardInspector.SpriteType;
-import org.jpacman.framework.model.Player;
-import org.jpacman.framework.model.Tile;
+import main.java.org.jpacman.framework.factory.DefaultGameFactory;
+import main.java.org.jpacman.framework.factory.FactoryException;
+import main.java.org.jpacman.framework.factory.IGameFactory;
+import main.java.org.jpacman.framework.factory.MapParser;
+import main.java.org.jpacman.framework.model.Direction;
+import main.java.org.jpacman.framework.model.Food;
+import main.java.org.jpacman.framework.model.Game;
+import main.java.org.jpacman.framework.model.Ghost;
+import main.java.org.jpacman.framework.model.IBoardInspector.SpriteType;
+import main.java.org.jpacman.framework.model.Player;
+import main.java.org.jpacman.framework.model.Tile;
 
 import org.junit.Ignore;
 import org.junit.Test;
