@@ -1,11 +1,11 @@
-package main.java.org.jpacman.framework.model;
+package org.jpacman.framework.model;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-import main.java.org.jpacman.framework.model.IBoardInspector.SpriteType;
+import org.jpacman.framework.model.IBoardInspector.SpriteType;
 
 
 public class Game extends Observable 

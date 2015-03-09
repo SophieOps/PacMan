@@ -1,4 +1,4 @@
-package main.java.org.jpacman.framework.view;
+package org.jpacman.framework.view;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -13,11 +13,11 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
-import main.java.org.jpacman.framework.factory.FactoryException;
-import main.java.org.jpacman.framework.model.IBoardInspector;
-import main.java.org.jpacman.framework.model.IBoardInspector.SpriteType;
-import main.java.org.jpacman.framework.model.Player;
-import main.java.org.jpacman.framework.model.Sprite;
+import org.jpacman.framework.factory.FactoryException;
+import org.jpacman.framework.model.IBoardInspector;
+import org.jpacman.framework.model.IBoardInspector.SpriteType;
+import org.jpacman.framework.model.Player;
+import org.jpacman.framework.model.Sprite;
 
 /**
  * Draw a full board.

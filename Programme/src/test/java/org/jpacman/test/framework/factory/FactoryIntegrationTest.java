@@ -1,15 +1,15 @@
-package test.java.org.jpacman.test.framework.factory;
+package org.jpacman.test.framework.factory;
 
 import static org.junit.Assert.assertEquals;
 
-import main.java.org.jpacman.framework.factory.DefaultGameFactory;
-import main.java.org.jpacman.framework.factory.FactoryException;
-import main.java.org.jpacman.framework.factory.IGameFactory;
-import main.java.org.jpacman.framework.factory.MapParser;
-import main.java.org.jpacman.framework.model.Board;
-import main.java.org.jpacman.framework.model.Game;
-import main.java.org.jpacman.framework.model.Food;
-import main.java.org.jpacman.framework.model.IBoardInspector.SpriteType;
+import org.jpacman.framework.factory.DefaultGameFactory;
+import org.jpacman.framework.factory.FactoryException;
+import org.jpacman.framework.factory.IGameFactory;
+import org.jpacman.framework.factory.MapParser;
+import org.jpacman.framework.model.Board;
+import org.jpacman.framework.model.Game;
+import org.jpacman.framework.model.Food;
+import org.jpacman.framework.model.IBoardInspector.SpriteType;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;

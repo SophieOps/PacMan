@@ -1,17 +1,17 @@
-package test.java.org.jpacman.test.framework.accept;
+package org.jpacman.test.framework.accept;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
-import main.java.org.jpacman.framework.model.Controller;
-import main.java.org.jpacman.framework.factory.FactoryException;
-import main.java.org.jpacman.framework.model.Ghost;
-import main.java.org.jpacman.framework.model.Player;
-import main.java.org.jpacman.framework.model.Tile;
-import main.java.org.jpacman.framework.ui.IPacmanInteraction;
-import main.java.org.jpacman.framework.ui.MainUI;
+import org.jpacman.framework.model.Controller;
+import org.jpacman.framework.factory.FactoryException;
+import org.jpacman.framework.model.Ghost;
+import org.jpacman.framework.model.Player;
+import org.jpacman.framework.model.Tile;
+import org.jpacman.framework.ui.IPacmanInteraction;
+import org.jpacman.framework.ui.MainUI;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package main.java.org.jpacman.framework.model;
+package org.jpacman.framework.model;
 
 /**
  * Directions in which sprites can move.

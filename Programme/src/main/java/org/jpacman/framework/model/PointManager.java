@@ -1,4 +1,4 @@
-package main.java.org.jpacman.framework.model;
+package org.jpacman.framework.model;
 
 /**
  * Keep track of points (still) in the game.

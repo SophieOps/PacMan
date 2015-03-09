@@ -1,11 +1,11 @@
-package test.java.org.jpacman.test.framework.model;
+package org.jpacman.test.framework.model;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
-import main.java.org.jpacman.framework.model.Player;
-import main.java.org.jpacman.framework.model.PointManager;
+import org.jpacman.framework.model.Player;
+import org.jpacman.framework.model.PointManager;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

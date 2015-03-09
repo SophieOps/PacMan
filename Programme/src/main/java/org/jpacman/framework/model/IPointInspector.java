@@ -1,4 +1,4 @@
-package main.java.org.jpacman.framework.model;
+package org.jpacman.framework.model;
 
 /**
  * Get informed about the number of points

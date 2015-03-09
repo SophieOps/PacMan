@@ -1,4 +1,4 @@
-package main.java.org.jpacman.framework.factory;
+package org.jpacman.framework.factory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,9 +7,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.org.jpacman.framework.model.Board;
-import main.java.org.jpacman.framework.model.Game;
-import main.java.org.jpacman.framework.model.Sprite;
+import org.jpacman.framework.model.Board;
+import org.jpacman.framework.model.Game;
+import org.jpacman.framework.model.Sprite;
 
 /**
  * Turn a textual ASCII board representation into an

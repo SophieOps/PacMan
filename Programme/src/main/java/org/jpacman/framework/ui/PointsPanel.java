@@ -1,4 +1,4 @@
-package main.java.org.jpacman.framework.ui;
+package org.jpacman.framework.ui;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import main.java.org.jpacman.framework.model.IPointInspector;
+import org.jpacman.framework.model.IPointInspector;
 
 /**
  * A panel for displaying the points earned so far in the game.

@@ -1,11 +1,11 @@
-package main.java.org.jpacman.framework.view;
+package org.jpacman.framework.view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.Timer;
 
-import main.java.org.jpacman.framework.model.Controller;
+import org.jpacman.framework.model.Controller;
 
 /**
  * The primary responsibility of this class is

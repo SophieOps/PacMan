@@ -1,6 +1,6 @@
-package main.java.org.jpacman.framework.model;
+package org.jpacman.framework.model;
 
-import main.java.org.jpacman.framework.model.IBoardInspector.SpriteType;
+import org.jpacman.framework.model.IBoardInspector.SpriteType;
 
 /**
  * A food element on the board.

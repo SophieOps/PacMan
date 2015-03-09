@@ -1,4 +1,4 @@
-package main.java.org.jpacman.framework.view;
+package org.jpacman.framework.view;
 
 import java.awt.Image;
 import java.io.IOException;
@@ -6,8 +6,8 @@ import java.net.URL;
 
 import javax.swing.ImageIcon;
 
-import main.java.org.jpacman.framework.factory.FactoryException;
-import main.java.org.jpacman.framework.model.Direction;
+import org.jpacman.framework.factory.FactoryException;
+import org.jpacman.framework.model.Direction;
 
 /**
  * The responsibilities of this class include obtaining images from file,

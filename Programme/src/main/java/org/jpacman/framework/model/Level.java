@@ -1,9 +1,9 @@
-package main.java.org.jpacman.framework.model;
+package org.jpacman.framework.model;
 
-import main.java.org.jpacman.framework.factory.DefaultGameFactory;
-import main.java.org.jpacman.framework.factory.FactoryException;
-import main.java.org.jpacman.framework.factory.IGameFactory;
-import main.java.org.jpacman.framework.factory.MapParser;
+import org.jpacman.framework.factory.DefaultGameFactory;
+import org.jpacman.framework.factory.FactoryException;
+import org.jpacman.framework.factory.IGameFactory;
+import org.jpacman.framework.factory.MapParser;
 
 /**
  * A level in JPacman, which is stored in a file.

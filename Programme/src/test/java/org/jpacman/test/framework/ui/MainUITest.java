@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test.java.org.jpacman.test.framework.ui;
+package org.jpacman.test.framework.ui;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -11,10 +11,10 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeTrue;
 
-import main.java.org.jpacman.framework.model.Controller;
-import main.java.org.jpacman.framework.model.GhostMover;
-import main.java.org.jpacman.framework.factory.FactoryException;
-import main.java.org.jpacman.framework.ui.MainUI;
+import org.jpacman.framework.model.Controller;
+import org.jpacman.framework.model.GhostMover;
+import org.jpacman.framework.factory.FactoryException;
+import org.jpacman.framework.ui.MainUI;
 import org.junit.Before;
 import org.junit.Test;
 
