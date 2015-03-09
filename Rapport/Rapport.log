@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.1)  6 MAR 2015 18:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.1)  9 MAR 2015 22:16
 entering extended mode
 **Rapport.tex
 (C:\Users\Sophie\Documents\PacMan\Rapport\Rapport.tex
@@ -490,21 +490,21 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 \c@rem=\count118
 \c@thm=\count119
  (C:\Users\Sophie\Documents\PacMan\Rapport\Rapport.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Info: Redefining \degres on input line 54.
-LaTeX Info: Redefining \dots on input line 54.
-LaTeX Info: Redefining \up on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Info: Redefining \degres on input line 55.
+LaTeX Info: Redefining \dots on input line 55.
+LaTeX Info: Redefining \up on input line 55.
 
 (C:\Users\Sophie\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -521,46 +521,46 @@ LaTeX Info: Redefining \up on input line 54.
 \everyMPtoPDFconversion=\toks33
 ) ABD: EveryShipout initializing macros
 TextBlockOrigin set to 0cm x 0cm
-LaTeX Font Info:    Try loading font information for T1+phv on input line 57.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 58.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 <umonsCharte/UMONS-Logo.jpg, id=1, 346.1733pt x 124.3044pt>
 File: umonsCharte/UMONS-Logo.jpg Graphic file (type jpg)
  <use umonsCharte/UMONS-Logo.jpg>
-Package pdftex.def Info: umonsCharte/UMONS-Logo.jpg used on input line 57.
+Package pdftex.def Info: umonsCharte/UMONS-Logo.jpg used on input line 58.
 (pdftex.def)             Requested size: 176.40707pt x 63.34317pt.
-LaTeX Font Info:    Calculating math sizes for size <20> on input line 57.
+LaTeX Font Info:    Calculating math sizes for size <20> on input line 58.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 57.
+(Font)              size <20.74> substituted on input line 58.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13.99994> not available
-(Font)              size <14.4> substituted on input line 57.
+(Font)              size <14.4> substituted on input line 58.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <20> not available
-(Font)              size <20.74> substituted on input line 57.
+(Font)              size <20.74> substituted on input line 58.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13.99994> not available
-(Font)              size <14.4> substituted on input line 57.
+(Font)              size <14.4> substituted on input line 58.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 57.
+(Font)              size <20.74> substituted on input line 58.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13.99994> not available
-(Font)              size <14.4> substituted on input line 57.
+(Font)              size <14.4> substituted on input line 58.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 57.
+LaTeX Font Info:    Try loading font information for U+msa on input line 58.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 57.
+LaTeX Font Info:    Try loading font information for U+msb on input line 58.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -569,29 +569,29 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Warning: No \umonsDocumentType given.
 
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 57.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 58.
 <umonsCharte/FS-Logo.jpg, id=2, 517.935pt x 265.2309pt>
 File: umonsCharte/FS-Logo.jpg Graphic file (type jpg)
  <use umonsCharte/FS-Logo.jpg>
-Package pdftex.def Info: umonsCharte/FS-Logo.jpg used on input line 57.
+Package pdftex.def Info: umonsCharte/FS-Logo.jpg used on input line 58.
 (pdftex.def)             Requested size: 167.8685pt x 85.35721pt.
 
 <umonsCharte/symboleinfo.jpg, id=3, 171.64125pt x 111.41624pt>
 File: umonsCharte/symboleinfo.jpg Graphic file (type jpg)
  <use umonsCharte/symboleinfo.jpg>
-Package pdftex.def Info: umonsCharte/symboleinfo.jpg used on input line 57.
+Package pdftex.def Info: umonsCharte/symboleinfo.jpg used on input line 58.
 (pdftex.def)             Requested size: 82.51299pt x 53.56079pt.
 
 <umonsCharte/AUWB-Logo.jpg, id=4, 141.82988pt x 58.71938pt>
 File: umonsCharte/AUWB-Logo.jpg Graphic file (type jpg)
  <use umonsCharte/AUWB-Logo.jpg>
-Package pdftex.def Info: umonsCharte/AUWB-Logo.jpg used on input line 57.
+Package pdftex.def Info: umonsCharte/AUWB-Logo.jpg used on input line 58.
 (pdftex.def)             Requested size: 82.51299pt x 34.16118pt.
 
 <umonsCharte/UMons-Photo.jpg, id=5, 48.6618pt x 84.315pt>
 File: umonsCharte/UMons-Photo.jpg Graphic file (type jpg)
  <use umonsCharte/UMons-Photo.jpg>
-Package pdftex.def Info: umonsCharte/UMons-Photo.jpg used on input line 57.
+Package pdftex.def Info: umonsCharte/UMons-Photo.jpg used on input line 58.
 (pdftex.def)             Requested size: 199.19087pt x 369.89478pt.
  [1{C:/Users/Sophie/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
@@ -604,7 +604,7 @@ Sophie\Documents\PacMan\Rapport\Rapport.toc)
 
 ] [2]
 
-LaTeX Warning: Reference `etape1' on page 3 undefined on input line 90.
+LaTeX Warning: Reference `etape1' on page 3 undefined on input line 91.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -613,6 +613,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
+Overfull \hbox (29.774pt too wide) in paragraph at lines 115--164
+[] 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.61858pt.
@@ -620,6 +624,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
+
+LaTeX Warning: Command \' invalid in math mode on input line 169.
+
+Missing character: There is no é in font cmr12!
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.61858pt.
@@ -634,26 +642,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 179--181
-
- []
-
-
-LaTeX Warning: Reference `heapExample' on page 7 undefined on input line 190.
-
-<images/Graph.jpg, id=38, 440.39531pt x 242.40562pt>
-File: images/Graph.jpg Graphic file (type jpg)
- <use images/Graph.jpg>
-Package pdftex.def Info: images/Graph.jpg used on input line 201.
-(pdftex.def)             Requested size: 390.0pt x 214.67505pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
-
- []
-
-
-LaTeX Warning: Reference `extractMin' on page 7 undefined on input line 214.
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 29.11858pt.
@@ -661,13 +649,110 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7]
+Underfull \hbox (badness 10000) in paragraph at lines 235--237
+
+ []
+
+
+LaTeX Warning: Reference `heapExample' on page 8 undefined on input line 246.
+
+
+LaTeX Warning: Reference `graphExample' on page 8 undefined on input line 253.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
+
+ []
+
+
+LaTeX Warning: Reference `extractMin' on page 8 undefined on input line 263.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 29.11858pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8 <C:/Users/Sophie/Documents/PacMan/Rapport/images/Graph.jpg>] (C:\Users\Sophie\Documents\PacMan\Rapport\Rapport.bbl
+[8]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 29.11858pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9] <images/SimilarCode_00.png, id=53, 1231.60126pt x 548.80031pt>
+File: images/SimilarCode_00.png Graphic file (type png)
+ <use images/SimilarCode_00.png>
+Package pdftex.def Info: images/SimilarCode_00.png used on input line 338.
+(pdftex.def)             Requested size: 390.0pt x 173.77739pt.
+
+<images/SimilarCode_1.png, id=54, 838.63312pt x 511.15968pt>
+File: images/SimilarCode_1.png Graphic file (type png)
+ <use images/SimilarCode_1.png>
+Package pdftex.def Info: images/SimilarCode_1.png used on input line 343.
+(pdftex.def)             Requested size: 390.0pt x 237.71019pt.
+
+<images/SimilarCode_2.png, id=55, 836.3747pt x 508.90125pt>
+File: images/SimilarCode_2.png Graphic file (type png)
+ <use images/SimilarCode_2.png>
+Package pdftex.def Info: images/SimilarCode_2.png used on input line 349.
+(pdftex.def)             Requested size: 390.0pt x 237.30444pt.
+
+<images/SimilarCode_3.png, id=56, 837.1275pt x 510.40688pt>
+File: images/SimilarCode_3.png Graphic file (type png)
+ <use images/SimilarCode_3.png>
+Package pdftex.def Info: images/SimilarCode_3.png used on input line 355.
+(pdftex.def)             Requested size: 390.0pt x 237.78067pt.
+
+<images/SimilarCode_4.png, id=57, 837.88031pt x 509.65407pt>
+File: images/SimilarCode_4.png Graphic file (type png)
+ <use images/SimilarCode_4.png>
+Package pdftex.def Info: images/SimilarCode_4.png used on input line 361.
+(pdftex.def)             Requested size: 390.0pt x 237.21999pt.
+
+<images/SimilarCode_5.png, id=58, 1248.16313pt x 949.29657pt>
+File: images/SimilarCode_5.png Graphic file (type png)
+ <use images/SimilarCode_5.png>
+Package pdftex.def Info: images/SimilarCode_5.png used on input line 367.
+(pdftex.def)             Requested size: 390.0pt x 296.611pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10 <C:/Users/Sophie/Documents/PacMan/Rapport/images/SimilarCode_00.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11 <C:/Users/Sophie/Documents/PacMan/Rapport/images/SimilarCode_1.png> <C:/Users/Sophie/Documents/PacMan/Rapport/images
+/SimilarCode_2.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12 <C:/Users/Sophie/Documents/PacMan/Rapport/images/SimilarCode_3.png> <C:/Users/Sophie/Documents/PacMan/Rapport/images
+/SimilarCode_4.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13 <C:/Users/Sophie/Documents/PacMan/Rapport/images/SimilarCode_5.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14] (C:\Users\Sophie\Documents\PacMan\Rapport\Rapport.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
@@ -678,7 +763,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9] (C:\Users\Sophie\Documents\PacMan\Rapport\Rapport.aux)
+[15] (C:\Users\Sophie\Documents\PacMan\Rapport\Rapport.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
@@ -686,15 +771,18 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 4006 strings out of 493921
- 50509 string characters out of 3144873
- 110405 words of memory out of 3000000
- 7183 multiletter control sequences out of 15000+200000
+ 4039 strings out of 493921
+ 51317 string characters out of 3144873
+ 114487 words of memory out of 3000000
+ 7211 multiletter control sequences out of 15000+200000
  41047 words of font info for 75 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 28i,11n,43p,408b,327s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,12n,43p,410b,366s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Sophie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200.pk> <C:\Users\Sophie\AppData\Lo
 cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Sophie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
 \jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Sophie\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.p
@@ -707,9 +795,9 @@ Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Prog
 ublic/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/hel
 vetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Rapport.pdf (10 pages, 683784 bytes).
+Output written on Rapport.pdf (16 pages, 994517 bytes).
 PDF statistics:
- 402 PDF objects out of 1000 (max. 8388607)
+ 437 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

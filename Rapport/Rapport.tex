@@ -37,6 +37,7 @@
 
 \newcommand{\smalltitle}[1]{\bigskip\large\textbf{#1}\par\normalsize\medskip}
 \newcommand{\partitle}[1]{\bigskip\textit{\underline{#1}}\par\medskip}
+\newcommand{\annexe}[1]{figure~\ref{#1} (page~\pageref{#1})}
 
 \newtheorem{defi}{Définition}
 \newtheorem{note}{Note}
@@ -111,7 +112,62 @@ Pour cette étape clé il est demandons de :
 Décrivez la qualité globale du système. Quel serait, selon vous, le coût nécessaire à sa maintenance et à son évolution ?
 \subsection{Résultat}
 
+Voici le tableau des résultats de l'analyse des différentes métriques : 
+\begin{tabular}{|l|l|}
+\hline
+Métrique & Outil utilisé + Résultat \\ & Interprétation des résultats \\ & Modules à traiter prioritairement + justification\\
+\hline
+\multicolumn{2}{|c|}{Techniques d'analyse statique du code} \\
+\hline
+Code dupliqué & CodePro Tools -> Find Similar Code : 10 blocs de \\
+& code (visible sur la \annexe{SimilarCode} et les suivantes)\\
+& sont semblable. \\
+& Ce résultat n'est pas alarmant mais mérite d'être\\
+& refactoré. \\
+& Les classes Tile.java, GameTest.java,  \\
+& ButtonPanel.java, MainUITest.java, MapParser.java, \\
+&  PacmanKeyListener.java,PacmanKeyListener.java, \\
+&  PacmanKeyListener.java, GameTest.java,Board \\
+& sont à traiter puique c'est elle qui contiennent du \\
+& code dupliqué. \\
+\hline
+Respect des & \\
+conventions de codage & \\
+\hline
+Dépendences cycliques & \\
+\hline
+Performances & \\
+\hline
+Structure du code & \\
+\hline
+Style du code & \\
+\hline
+Design flaws  & \\
+\hline
+Antipattern  & \\
+\hline
+Test & \\
+\hline
+Dataflow  & \\
+\hline
+Documentation & \\
+\hline
+\multicolumn{2}{|c|}{Outils d'analyse dynamique du code} \\
+\hline
+Profilage & \\
+\hline
+Couverture du code & \\
+\hline
+Tests & \\
+\hline
+\end{tabular}
 
+NB : 
+- slide 4 : outils
+
+Images : 
+- $Métrique_0.png$
+- 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Etape 2 : Ajout de tests unitaires}\label{sec:etape2}
@@ -196,13 +252,6 @@ Une image ? Avec une reference dans un texte ? no probleme :p
 Un graphe orienté est défini par un couple: $G=(V,E)$.
 La figure~\ref{graphExample} illustre un graphe.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{images/Graph.jpg}
-	\caption{\label{graphExample}Exemple de graphe contenant 5 noeuds et 8 arcs}
-\end{figure}
-
-
 La complexité c'est pas un simple O(lg n) mais $\mathcal{O}(\log_2 n)$.\\
 
 \smalltitle{un petit titre qui n'apparait pas dans la table des matiere}
@@ -282,8 +331,48 @@ on n'ecrit pas l'index i mais l'index $i$
 \newpage
 \section{Annexes} \label{sec:annexe}
 \appendix %permet de changer la numérotation en lettre
-\section{Annexe : }
+\section{Annexe : 1}\label{SimilarCode}
+Dans cette section se trouve les différentes annexes qui permettent d'identifier les blocs de dode dupliqués détecté par CodePro. La première image répertorie les 10 blocs. De la seconde à l'avant dernière, les images illustres les blocs de code. La dernière image illustres les 6 derniers blocs de code et est issue du rapport généré par CodePro parce que Eclipse les masque.
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/SimilarCode_00.png}
+	\caption{\label{SimilarCode0}Résultat de l'analyse de code redondant par CodePro}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/SimilarCode_1.png}
+	\caption{\label{SimilarCode1}Détail de l'analyse de code redondant par CodePro}
+\end{figure}
 
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/SimilarCode_2.png}
+	\caption{\label{SimilarCode2}Détail de l'analyse de code redondant par CodePro}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/SimilarCode_3.png}
+	\caption{\label{SimilarCode3}Détail de l'analyse de code redondant par CodePro}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/SimilarCode_4.png}
+	\caption{\label{SimilarCode4}Détail de l'analyse de code redondant par CodePro}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/SimilarCode_5.png}
+	\caption{\label{SimilarCode5}Détail de l'analyse de code redondant par CodePro (élément dont la visualisation n'est pas possible dans Eclipse)}
+\end{figure}
+
+\newpage
+\section{Annexe : 2}
+
+
+\newpage
 \bibliographystyle{plain}
 \bibliography{reference}
 
