@@ -1,29 +1,32 @@
 \select@language {french}
-\contentsline {section}{R\IeC {\'e}sum\IeC {\'e}}{2}
-\contentsline {section}{\numberline {1}Introduction}{3}
-\contentsline {subsection}{\numberline {1.1}Probl\IeC {\`e}me pos\IeC {\'e}}{3}
-\contentsline {subsection}{\numberline {1.2}Etapes cl\IeC {\'e}s}{3}
-\contentsline {section}{\numberline {2}Etape 1 : Premi\IeC {\`e}re analyse de la qualit\IeC {\'e} du logiciel }{4}
-\contentsline {subsection}{\numberline {2.1}Enonc\IeC {\'e}}{4}
-\contentsline {subsection}{\numberline {2.2}R\IeC {\'e}sultat}{5}
-\contentsline {section}{\numberline {3}Etape 2 : Ajout de tests unitaires}{6}
-\contentsline {subsection}{\numberline {3.1}Enonc\IeC {\'e}}{6}
-\contentsline {subsection}{\numberline {3.2}R\IeC {\'e}sultat}{6}
-\contentsline {section}{\numberline {4}Etape 3 : Refactoring en vue d'am\IeC {\'e}liorer la qualit\IeC {\'e}}{6}
-\contentsline {subsection}{\numberline {4.1}Enonc\IeC {\'e}}{6}
-\contentsline {subsection}{\numberline {4.2}R\IeC {\'e}sultat}{6}
-\contentsline {section}{\numberline {5}Etape 4 : Analyse de la qualit\IeC {\'e} du logiciel}{6}
-\contentsline {subsection}{\numberline {5.1}Enonc\IeC {\'e}}{6}
-\contentsline {subsection}{\numberline {5.2}R\IeC {\'e}sultat}{7}
-\contentsline {section}{\numberline {6}Etape 5 : Extensions}{7}
-\contentsline {subsection}{\numberline {6.1}Enonc\IeC {\'e}}{7}
-\contentsline {subsection}{\numberline {6.2}R\IeC {\'e}sultat}{7}
-\contentsline {section}{\numberline {7}Etape 6 : Analyse de la qualit\IeC {\'e} du logiciel}{7}
-\contentsline {subsection}{\numberline {7.1}Enonc\IeC {\'e}}{7}
-\contentsline {subsection}{\numberline {7.2}R\IeC {\'e}sultat}{7}
-\contentsline {section}{\numberline {8}Etape 7 : Analyse de l'\IeC {\'e}volution de la qualit\IeC {\'e} logicielle}{7}
-\contentsline {subsection}{\numberline {8.1}Enonc\IeC {\'e}}{7}
-\contentsline {subsection}{\numberline {8.2}R\IeC {\'e}sultat}{8}
-\contentsline {section}{\numberline {9}Annexes}{10}
-\contentsline {section}{\numberline {10}Annexe : 1}{10}
-\contentsline {section}{\numberline {11}Annexe : 2}{14}
+\contentsline {section}{R\IeC {\'e}sum\IeC {\'e}}{3}
+\contentsline {section}{\numberline {1}Introduction}{4}
+\contentsline {subsection}{\numberline {1.1}Probl\IeC {\`e}me pos\IeC {\'e}}{4}
+\contentsline {subsection}{\numberline {1.2}Etapes cl\IeC {\'e}s}{4}
+\contentsline {section}{\numberline {2}Etape 1 : Premi\IeC {\`e}re analyse de la qualit\IeC {\'e} du logiciel }{5}
+\contentsline {subsection}{\numberline {2.1}Enonc\IeC {\'e}}{5}
+\contentsline {subsection}{\numberline {2.2}R\IeC {\'e}sultat}{6}
+\contentsline {section}{\numberline {3}Etape 2 : Ajout de tests unitaires}{7}
+\contentsline {subsection}{\numberline {3.1}Enonc\IeC {\'e}}{7}
+\contentsline {subsection}{\numberline {3.2}R\IeC {\'e}sultat}{8}
+\contentsline {section}{\numberline {4}Etape 3 : Refactoring en vue d'am\IeC {\'e}liorer la qualit\IeC {\'e}}{8}
+\contentsline {subsection}{\numberline {4.1}Enonc\IeC {\'e}}{8}
+\contentsline {subsection}{\numberline {4.2}R\IeC {\'e}sultat}{8}
+\contentsline {section}{\numberline {5}Etape 4 : Analyse de la qualit\IeC {\'e} du logiciel}{8}
+\contentsline {subsection}{\numberline {5.1}Enonc\IeC {\'e}}{8}
+\contentsline {subsection}{\numberline {5.2}R\IeC {\'e}sultat}{8}
+\contentsline {section}{\numberline {6}Etape 5 : Extensions}{8}
+\contentsline {subsection}{\numberline {6.1}Enonc\IeC {\'e}}{8}
+\contentsline {subsection}{\numberline {6.2}R\IeC {\'e}sultat}{9}
+\contentsline {section}{\numberline {7}Etape 6 : Analyse de la qualit\IeC {\'e} du logiciel}{9}
+\contentsline {subsection}{\numberline {7.1}Enonc\IeC {\'e}}{9}
+\contentsline {subsection}{\numberline {7.2}R\IeC {\'e}sultat}{9}
+\contentsline {section}{\numberline {8}Etape 7 : Analyse de l'\IeC {\'e}volution de la qualit\IeC {\'e} logicielle}{9}
+\contentsline {subsection}{\numberline {8.1}Enonc\IeC {\'e}}{9}
+\contentsline {subsection}{\numberline {8.2}R\IeC {\'e}sultat}{9}
+\contentsline {section}{\numberline {9}Annexes}{11}
+\contentsline {section}{\numberline {A}Annexe : 1}{11}
+\contentsline {section}{\numberline {B}Annexe : ......}{15}
+\contentsline {section}{\numberline {C}Annexe : ......}{17}
+\contentsline {section}{\numberline {D}Annexe : ......}{22}
+\contentsline {section}{\numberline {E}Annexe : ......}{24}

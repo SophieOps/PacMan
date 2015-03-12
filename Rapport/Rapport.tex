@@ -119,7 +119,7 @@ Métrique & Outil utilisé + Résultat \\ & Interprétation des résultats \\ & 
 \hline
 \multicolumn{2}{|c|}{Techniques d'analyse statique du code} \\
 \hline
-Code dupliqué & CodePro Tools -> Find Similar Code : 10 blocs de \\
+Code dupliqué & Eclipse -> CodePro Tools -> Find Similar Code : 10 blocs de \\
 & code (visible sur la \annexe{SimilarCode} et les suivantes)\\
 & sont semblable. \\
 & Ce résultat n'est pas alarmant mais mérite d'être\\
@@ -134,7 +134,7 @@ Code dupliqué & CodePro Tools -> Find Similar Code : 10 blocs de \\
 Respect des & \\
 conventions de codage & \\
 \hline
-Dépendences cycliques & \\
+Dépendences cycliques & Eclipse -> CodePro Tools -> Analyse Dependencies : il y a des dépendences cycliques entre le package Model et le package Factory ainsi que entre les classes Sprite et Tile du package Model.\\
 \hline
 Performances & \\
 \hline
@@ -156,11 +156,54 @@ Documentation & \\
 \hline
 Profilage & \\
 \hline
-Couverture du code & \\
+Couverture du code & Eclipse -> CodePro Tools -> Find dead code : Le résultat (visible à l'\annexe{DeadCode} ) montre que seuls quelques changement sont à envisagé dans l'interface \\
 \hline
-Tests & \\
+Tests & Eclipse -> Coverage As -> JUnit Test : La figure \annexe{coverage} montre que le projet est couvert à $68.3 \%$ avec en particulier, $63.5\%$ pour la package \emph{main} et $83.7\%$ pour le package \emph{test}. \\
+& Il est donc important d'ajouter des tests sur les classes : FactoryException, Board, Sprite et PacmanKeyListener qui sont sous le seuil des $50 \%$ de couverture.\\
 \hline
 \end{tabular}
+
+%Outil utilisé + Résultat \\ & Interprétation des résultats \\ & Modules à traiter prioritairement + justification
+
+Il est important de remarquer aussi, que sur base des warnings détectés par Eclipse, tout warning confondu : 
+
+\begin{itemize}
+\item Empty block should be documented x2
+\item Javadoc: Missing comment for public declaration x 51
+\item Redundant specification of type arguments <...> x6
+\item The import ... is never used x4
+\item The method ... of type ... should be tagged with @Override since it actually overrides a superinterface method x13
+\item The parameter ... is hiding a field from type ... x 7
+\end {itemize}
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+Package & \# warning & Classe & \# warnings \\
+\hline
+/main/java/.../model & 60 & Game.java & 15 \\
+&& IBoardInspector.java & 13 \\
+&& Direction.java & 8 \\
+&& Player.java & 7 \\
+&& Board.java & 4 \\
+&& IPointInspector.java & 3 \\
+&& PointManager.java & 3 \\
+&& Tile.java & 3 \\
+&& GhostMover.java & 2 \\
+&& Sprite.java & 1 \\
+&& Food.java & 1 \\
+\hline
+/main/java/.../ui & 15 & ButtonPanel.java & 8 \\
+&& PacmanKeyListener.java & 5 \\
+&& MainUI.java & 2 \\
+\hline
+/test/java/.../model & 5 & SpriteTest.java & 5 \\
+\hline
+main/java/.../factory & 2 & MapParser.java & 2 \\
+\hline
+/test/java/.../ui & MainUIFocusTest.java & 1 \\
+\hline
+\end{tabular}
+
 
 NB : 
 - slide 4 : outils
@@ -368,8 +411,160 @@ Dans cette section se trouve les différentes annexes qui permettent d'identifie
 	\caption{\label{SimilarCode5}Détail de l'analyse de code redondant par CodePro (élément dont la visualisation n'est pas possible dans Eclipse)}
 \end{figure}
 
+
 \newpage
-\section{Annexe : 2}
+\section{Annexe : ......}\label{Dependencies}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/DependenciesProject.png}
+	\caption{\label{deadcode}Détail de l'analyse des dépendences cycliques du projet.}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/DependenciesPackages.png}
+	\caption{\label{deadcode}Détail de l'analyse des dépendences cycliques des packages du projet.}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/DependenciesFactory.png}
+	\caption{\label{deadcode}Détail de l'analyse des dépendences cycliques du package Factory.}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/DependenciesModel.png}
+	\caption{\label{deadcode}Détail de l'analyse des dépendences cycliques du package Model.}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/DependenciesUI.png}
+	\caption{\label{deadcode}Détail de l'analyse des dépendences cycliques du package UI.}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/DependenciesVieuw.png}
+	\caption{\label{deadcode}Détail de l'analyse des dépendences cycliques du package Vieuw.}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/DependenciesFactoryTest.png}
+	\caption{\label{deadcode}Détail de l'analyse des dépendences cycliques du package Factory (Test).}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/DependenciesModelTest.png}
+	\caption{\label{deadcode}Détail de l'analyse des dépendences cycliques du package Model (Test).}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/DependenciesUITest.png}
+	\caption{\label{deadcode}Détail de l'analyse des dépendences cycliques du package UI (Test).}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/DependenciesAcceptTest.png}
+	\caption{\label{deadcode}Détail de l'analyse des dépendences cycliques du package Accept (Test).}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/DependenciesModel_Factory.png} %images/DependenciesModel_Factory1.png
+	\caption{\label{deadcode}Détail de l'analyse des dépendences cycliques entre le package Model et la package Factory.} %avec en gras les classes du package Factory
+\end{figure}
+
+
+
+\newpage
+\section{Annexe : ......}\label{InCode}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/InCodeDesignFlaws.png}
+	\caption{\label{incodeDF}Détail de l'analyse .........}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/InCodeDesignFlawsLegende.png}
+	\caption{\label{incodeDFLeg}Légende de l'analyse .........}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/InCodeComplexity.png}
+	\caption{\label{incodeCompl}Détail de l'analyse .........}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/InCodeComplexityLegende.png}
+	\caption{\label{incodeComplLeg}Légende de l'analyse .........}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/InCodeEncapsulation.png}
+	\caption{\label{incodeEnc}Détail de l'analyse .........}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/InCodeEncapsulationLegende.png}
+	\caption{\label{incodeEncLeg}Légende de l'analyse .........}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/InCodeCoupling.png}
+	\caption{\label{incodeCoupl}Détail de l'analyse .........}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/InCodeCouplingLegende.png}
+	\caption{\label{incodeCouplLeg}Légende de l'analyse .........}
+\end{figure}
+
+
+
+
+
+
+
+
+\newpage
+\section{Annexe : ......}\label{DeadCode}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/DeadCode.png}
+	\caption{\label{deadcode}Détail de l'analyse des parties de code non utilisé lors de l'éxécution du programme.}
+\end{figure}
+
+\newpage
+\section{Annexe : ......}\label{coverage}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/CoverageTest.png}
+	\caption{\label{CoverageTest}Détail de l'analyse de couverture du code par les tests unitaires.}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/Audit.png}
+	\caption{\label{Audit}Détail de l'analyse d'audit faite par Eclipse.}
+\end{figure}
 
 
 \newpage
