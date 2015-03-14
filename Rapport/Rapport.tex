@@ -178,43 +178,29 @@ Pour ce qui est des fichiers "`package-info.java"', il sont a nouveau inutule lo
 Les modifications à éffectuées ici sont donc mineures.
 
 
+\subsubsection{Javadoc}
+La javadoc est une documentation standard au format HTML pour les programmes developpé en JAVA. Elle est créée de façon automatique par la plupart des outils de développement en se basant sur les tags placés dans le code au dessus de la déclaration de chaque classe et de chaque méthode (pour la documentation des packages, elle se trouve dans les fichiers "`paquage-info.java"').
+L'utiliser est un plus mais ne consiste en rien en une obligation (mais alors il sera tout de même fortement conseillé d'utiliser les commentaires classique pour constituer un code suffisemment documenter à la compréhension).
 
+Grace à l'outil CodePro d'Eclipse, il a été observé (non illustré parce que toutes les classes sont a revoir) que en règle générale, les classes sont documentée. L'outil détecte bien quelques manquement, mais ce sont généralement l'un ou l'autre tag qu'il détecte manquant mais qui ne perturbe pas la compréhension ainsi que les classes DefaultGameFactory, Game, IBoardInspector, IPointInspector, Player et PointManager dont les méthodes ne sont pas commentée et les méthodes issues d'une interface (sous l'annotation "`@Overhide"').
 
-
+\subsubsection{}
 
 
 \subsubsection{Test unitaire}
 Cet analyse sera détaillée dans la section suivante \ref{etape2}.
 
 
-\begin{tabular}{|l|l|}
-\hline
-\multicolumn{2}{|c|}{Techniques d'analyse statique du code} \\
-\hline
-Respect des conventions de codage & \\
-\hline
-Performances & \\
-\hline
-Structure du code & \\
-\hline
-Style du code & \\
-\hline
-Design flaws  & \\
-\hline
-Antipattern  & \\
-\hline
-Test & \\
-\hline
-Dataflow  & \\
-\hline
-Documentation & \\
-\hline
-\multicolumn{2}{|c|}{Outils d'analyse dynamique du code} \\
-\hline
-Profilage & \\
-\hline
-\end{tabular}
-
+%Respect des conventions de codage
+%Performances
+%Structure du code
+%Style du code
+%Design flaws
+%Antipattern
+%Test
+%Dataflow 
+%Documentation
+%Profilage
 
 \subsubsection{Outils généraux}
 Il est important de signaler aussi, que l'outil Eclipse soulève certaines attention à l'aide de "`warnings"',  
@@ -259,11 +245,13 @@ main/java/.../factory & 2 & MapParser.java & 2 \\
 \end{tabular}
 
 Et grace à l'outil de calcul des métrique, on peut observer : 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Pq elles s''affichent pas ??????????  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 \begin{figure}[!h]
 	\centering
-	\includegraphics{Metrique.png}
+	\includegraphics[width=\textwidth]{Metrique.png}
 	\caption{\label{métrique0}Suite des détails de l'analyse des métriques du projet.}
 \end{figure}
+
 \begin{figure}[!h]
 	\centering
 	\includegraphics[height=\textheight]{Metrique_.png}
@@ -271,6 +259,7 @@ Et grace à l'outil de calcul des métrique, on peut observer :
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Etape 2 : Ajout de tests unitaires}\label{sec:etape2}
 \subsection{Enoncé}
 Votre première analyse a révélé la présence de certains problèmes de qualité du code de l'application.
@@ -284,6 +273,7 @@ Tests  Eclipse -> Coverage As -> JUnit Test : La figure \annexe{coverage} montre
  Il est donc important d'ajouter des tests sur les classes : FactoryException, Board, Sprite et PacmanKeyListener qui sont sous le seuil des $50 \%$ de couverture.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Etape 3 : Refactoring en vue d'améliorer la qualité}\label{sec:etape3}
 \subsection{Enoncé}
 Avec les tests unitaires ajoutés dans l'étape précédente, vous pouvez vérifier automatiquement (jusqu'à un certain point) la préservation du comportement du logiciel. Réalisez les modifications nécessaires à l'amélioration de la qualité et la structure du logiciel. 
@@ -295,6 +285,7 @@ Refactorisez progressivement votre code, en vous assurant systématiquement que 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Etape 4 : Analyse de la qualité du logiciel}\label{sec:etape4}
 \subsection{Enoncé}
 Réalisez une étude similaire à celle décrite en Section ... La qualité du logiciel s'est-elle améliorée ? Les problèmes les plus critiques ont-ils été résolus ? Au vu de cette seconde analyse, quels sont les points qui devraient à présent être améliorés ?
@@ -303,6 +294,7 @@ Réalisez une étude similaire à celle décrite en Section ... La qualité du l
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Etape 5 : Extensions}\label{sec:etape5}
 \subsection{Enoncé} 
 Il vous est demandé d'étendre le logiciel afin d'y ajouter certaines fonctionnalités ou d'en améliorer la qualité. Chaque équipe doit réaliser au moins deux extensions diférentes, décrites dans la section ... .
@@ -312,6 +304,7 @@ Utilisez un processus de développement dirigé par les tests (test-driven devel
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Etape 6 : Analyse de la qualité du logiciel}\label{sec:etape6}
 \subsection{Enoncé} 
 Pour chaque extension ajoutée, réalisez une analyse de qualité similaire à celle décrite en Section ... Au vu de cette analyse, quels sont les points qui devraient à présent être améliorés ?
@@ -320,6 +313,7 @@ Pour chaque extension ajoutée, réalisez une analyse de qualité similaire à c
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{Etape 7 : Analyse de l'évolution de la qualité logicielle}\label{sec:etape7}
 \subsection{Enoncé} 
 Analysez l'évolution de la qualité du logiciel entre les diférentes versions, en utilisant les résultats d'analyse de qualité des sections ..., ... et ... . Montrez cette évolution graphiquement et interprètez-la.
