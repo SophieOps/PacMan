@@ -13,6 +13,7 @@
 \usepackage{algorithmic}
 \usepackage{fancyhdr}
 \usepackage[fs]{umons-coverpage}
+\usepackage{hyperref}
 
 
 %%###### START CHANGE HERE ######
@@ -57,19 +58,14 @@
 
 \begin{document}
 
+
 \umonsCoverPage
 \pagebreak
-
 \pagestyle{fancy}
 
-\thispagestyle{empty}
-\newpage
-\tableofcontents
-\newpage
 
-%%###### LE RAPPORT COMMENCE ICI ######
+\newpage
 \thispagestyle{empty}
-%\smalltitle{......}
 \vspace*{\stretch{1}}
 \begin{abstract}
 \addcontentsline{toc}{section}{Résumé}
@@ -77,6 +73,28 @@ Ce \emph{rapport} est rendu dans le cadre du cursus de première année de \og M
 \end{abstract}
 \vspace*{\stretch{1}}
 
+%----------------------------------------------------------------------------------------
+%	Acknoledge
+%----------------------------------------------------------------------------------------
+%%%%%remerciements%%%%%% bon example dans le livre de référence musimoti
+%\pagenumbering{gobble}
+%\clearpage
+%\thispagestyle{empty}
+%Note aux lecteurs : 
+%Cette version n'a pas été relue et donc comporte probablement beaucoup de fautes d'orthographes. une version corrigée est postée sur moodle.
+%Merci de votre compréhension
+%Sophie
+%\clearpage
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+
+
+%%###### LE RAPPORT COMMENCE ICI ######
 \newpage
 \section{Introduction}\label{sec:intro}
 \subsection{Problème posé}
@@ -91,25 +109,27 @@ A partir d'un code existant, ce projet consiste à :
 \subsection{Etapes clés}
 Les étapes clés du projet sont les suivantes : (chronologiquement)
 \begin{enumerate}
-\item Analyse de la qualité de la premiére version du code (section \ref{etape1})
-\item Ajout de tests unitaires à la première version du code (section ...), et vérification de la couverture des tests
-\item Refactoring du code pour en améliorer la qualité et la structure (section ...)
-\item Analyse des améliorations de qualité et tests de régression (section ...)
-\item Extension du logiciel et ajout des tests unitaires pour cette extension (section ...)
-\item Analyse de la qualité de cette extension et tests de régression (section ...)
-\item Etude de l'historique de la qualité logicielle entre toutes les versions du code (section ...)
+\item Analyse de la qualité de la premiére version du code (section \ref{sec:etape1})
+\item Ajout de tests unitaires à la première version du code (section \ref{sec:etape2}), et vérification de la couverture des tests
+\item Refactoring du code pour en améliorer la qualité et la structure (section \ref{sec:etape3})
+\item Analyse des améliorations de qualité et tests de régression (section \ref{sec:etape4})
+\item Extension du logiciel et ajout des tests unitaires pour cette extension (section \ref{sec:etape5})
+\item Analyse de la qualité de cette extension et tests de régression (section \ref{sec:etape6})
+\item Etude de l'historique de la qualité logicielle entre toutes les versions du code (section \ref{sec:etape7})
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Etape 1 : Première analyse de la qualité du logiciel }\label{sec:etape1}
+\section{Etape 1 : Première analyse de la qualité du logiciel}\label{sec:etape1}
+Avant toute modification, il convient d'analyser l'état de la qualité du logiciel afin de se rendre compte des améliorations à effectuer, des corrections à appliquer si des mauvaises pratiques sont observées. Cette analyse se fera à l'aide d'outils d'analyse de code tel que les IDE\footnote{IDE : Integrated Development Environment (Environnement de développement).} Eclipse\footnote{Eclipse : \url{https://eclipse.org/} version : Eclipse Luna SR2 (4.4.2).} et IntelijIdea\footnote{InteligIdea : \url{https://www.jetbrains.com/idea} version : Community Edition 14.0.3 } et les programmes CodePro\footnote{CodePro : \url{https://marketplace.eclipse.org/content/codepro-analytix} version : CodePro Analytix 7.1.0.r37} et InCode\footnote{InCode : \url{https://marketplace.eclipse.org/content/incode-helium} version 2.0.1}.
+
 \subsection{Enoncé}
 Le but de la première étape clé est d'analyser la qualité du logiciel pour avoir une première idée de ce qu'il faudra corriger si l'on désire améliorer la qualité. Cette première analyse est également l'occasion de comprendre l'architecture et la dynamique du système.
-Pour cette étape clé il est demandons de :
+Pour cette étape clé il est demandé de :
 \begin{enumerate}
-\item Calculer la valeur de plusieurs métriques logicielles permettant d'estimer la qualité du logiciel, d'interpréter les résultats des métriques, et de mettre en évidence les modules (packages, classes ou méthodes) qui devraient être traités prioritairement afin d'améliorer leur qualité ainsi que la raison pour laquelle ils sont prioritaires.
+%\item Calculer la valeur de plusieurs métriques logicielles permettant d'estimer la qualité du logiciel, d'interpréter les résultats des métriques, et de mettre en évidence les modules (packages, classes ou méthodes) qui devraient être traités prioritairement afin d'améliorer leur qualité ainsi que la raison pour laquelle ils sont prioritaires.
 \item Déterminer les classes et les méthodes qui sont couvertes par des tests unitaires, et mettre en évidence les méthodes pour lesquelles de nouveaux tests unitaires devraient être créés prioritairement.
-\item Répertorier les portions de code qui ne sont pas utilisées et qui pourraient donc être supprimées sans altérer le comportement du système.
-\item Répertorier les portions de code qui sont redondantes (code dupliqué) et qui pourraient donc être éliminées par une restructuration du système sans altérer son comportement.
-\item Détecter la présence de bad smells. En trouvez-vous une plus forte concentration dans certains modules ?
+%\item Répertorier les portions de code qui ne sont pas utilisées et qui pourraient donc être supprimées sans altérer le comportement du système.
+%\item Répertorier les portions de code qui sont redondantes (code dupliqué) et qui pourraient donc être éliminées par une restructuration du système sans altérer son comportement.
+%\item Détecter la présence de bad smells. En trouvez-vous une plus forte concentration dans certains modules ?
 \item Analyser les performances du système en terme d'utilisation CPU et de consommation de mémoire. Repérez les parties du code créant un goulot d'étranglement et précisez les modules qui devraient être retravaillés afin de procéder à un déoulottage du système.
 \end{enumerate}
 Décrivez la qualité globale du système. Quel serait, selon vous, le coût nécessaire à sa maintenance et à son évolution ?
@@ -141,7 +161,7 @@ Une dépendance cyclique peut-être appelée dépendance cyclique directe ou ind
 Du point de vue de la compilation, plus une dépendance est haut niveau, plus elle est à traiter en priorité. En effet entre deux classes, ce n'est pas très grave et ça ne pose généralement pas de problème. Entre deux package c'est fortement déconseillé même s'il est généralement possible de compiler le projet. Par contre entre deux projets, l'issue est fatale puisque chaque projet doit-être compilé avant de pouvoir compiler l'autre.
 Du point de vue de la maintenance, une dépendance d'un élément A à un élément B et vice-versa impose que pour pouvoir modifier A, il faut commencer par modifier B et pour pouvoir modifier B, il faut commencer par retravailler B. L'évolution de ses éléments est donc compliquée.
 
-Pour pallier à ce genre de problème, plusieurs pistes sont possible : déplacer les éléments (les classes si le problème concerne deux packages ou la(les) méthodes si le soucis se situe entre deux classes), redécouper certaines éléments (pour mieux associer les blocs de code aux éléments qui en ont besoin), regrouper les éléments (pour n'en former plus qu'un seul),... %pistede solution à l'adresse  :http://blog.developpez.com/wichtounet/p8723/jtheque/osgi_et_dependances_cycliques
+Pour pallier à ce genre de problème, plusieurs pistes sont possible : déplacer les éléments (les classes si le problème concerne deux packages ou la(les) méthodes si le soucis se situe entre deux classes), redécouper certaines éléments (pour mieux associer les blocs de code aux éléments qui en ont besoin), regrouper les éléments (pour n'en former plus qu'un seul),... %piste de solution à l'adresse  :http://blog.developpez.com/wichtounet/p8723/jtheque/osgi_et_dependances_cycliques
 
 \begin{figure}[!h]
 	\centering
@@ -159,7 +179,7 @@ On peut observer sur la \labelfigure{dependenciesPackage} et la \labelfigure{dep
 L'\annexe{Dependencies} contient toutes les autres visualisations qui n'ont pass révélé de problème de dépendances.
 
 
-\subsubsection{Code inutile}
+\subsubsection{Code inutile}\label{deadCode}
 Du code inutile, aussi appelé "Dead Code", correspond à des lignes de code qui sont compilée mais qui ne sont jamais utilisée. 
 C'est fréquement du code qui a été utile à une fonctionnalité et lorsque cette fonctionnalité à été supprimée/ réécrite, déplacée,... ce code est resté.
 Le problème dans ce cas est que ça ralentit la compréhension du développeur lors de la lecture, ça gaspille des ressources au compilateur et lors de l'éxécution.
@@ -173,37 +193,232 @@ La solution est généralement de supprimer ses lignes de code.
 
 L'outil utilisé reste CodePro depuis Eclipse (Eclipse -> CodePro Tools -> Find dead code).
 Attention tout de même à ne pas tout supprimer sans réfléchir, en effet, on observer sur la \labelfigure{deadcode} que les packages contenant les test sont considéré comme inutile. Ils le sont en effet lors de l'éxécution du programme, mais ne le sont pas au bon développement du programme.
-Il en va de même pour les variables "`serialVersionUID"'. Ces variables, bien que inutile lors de l'exécution, doivent-être présente dans les classes qui étendent (directement ou indirectement) la classe "`Sérializable"'. Leur valeur est indispensable pour des applications qui transittent par le réseau mais leur existence ne peut causer aucun tort.
-Pour ce qui est des fichiers "`package-info.java"', il sont a nouveau inutule lors de l'exécution du code, mais permettent de contenir les commentaires contenant l'information relative au package en vue de la création de la javadoc. Ces fichiers sont donc à conservr (et à complêter dans certains cas).
-Les modifications à éffectuées ici sont donc mineures.
+Il en va de même pour les variables "serialVersionUID". Ces variables, bien que inutile lors de l'exécution, doivent-être présente dans les classes qui étendent (directement ou indirectement) la classe "Sérializable". Leur valeur est indispensable pour des applications qui transittent par le réseau mais leur existence ne peut causer aucun tort.
+Pour ce qui est des fichiers "package-info.java", il sont a nouveau inutule lors de l'exécution du code, mais permettent de contenir les commentaires contenant l'information relative au package en vue de la création de la javadoc. Ces fichiers sont donc à conserver (et à complêter dans certains cas).
+
+L'analyse a aussi été effectuée par l'outil Code Inspector de IntelijIdea et donne d'autres résultats complémentaires. Ceux font référence à des méthodes complètes qui ne sont jamais appelées.
+La solution la plus rapide, est simplement de supprimer ses méthodes. Seulement si lors d'une future amélioration, on se rend compte qu'elles auraient pu être nécessaire, on doit recommencer le travail. Une autre solution pourrait-être de mettres ces fonctions en commentaire afin de ne pas devoir réécrire ces fonctions.
+
+Les modifications à éffectuées, bien que nombreuses, sont donc mineures.
 
 
-\subsubsection{Javadoc}
-La javadoc est une documentation standard au format HTML pour les programmes developpé en JAVA. Elle est créée de façon automatique par la plupart des outils de développement en se basant sur les tags placés dans le code au dessus de la déclaration de chaque classe et de chaque méthode (pour la documentation des packages, elle se trouve dans les fichiers "`paquage-info.java"').
+\subsubsection{Javadoc}\label{javadoc}
+La javadoc est une documentation standard au format HTML pour les programmes developpé en JAVA. Elle est créée de façon automatique par la plupart des outils de développement en se basant sur les tags placés dans le code au dessus de la déclaration de chaque classe et de chaque méthode (pour la documentation des packages, elle se trouve dans les fichiers "paquage-info.java").
 L'utiliser est un plus mais ne consiste en rien en une obligation (mais alors il sera tout de même fortement conseillé d'utiliser les commentaires classique pour constituer un code suffisemment documenter à la compréhension).
 
-Grace à l'outil CodePro d'Eclipse, il a été observé (non illustré parce que toutes les classes sont a revoir) que en règle générale, les classes sont documentée. L'outil détecte bien quelques manquement, mais ce sont généralement l'un ou l'autre tag qu'il détecte manquant mais qui ne perturbe pas la compréhension ainsi que les classes DefaultGameFactory, Game, IBoardInspector, IPointInspector, Player et PointManager dont les méthodes ne sont pas commentée et les méthodes issues d'une interface (sous l'annotation "`@Overhide"').
+Grace à l'outil CodePro d'Eclipse, il a été observé (non illustré parce que toutes les classes sont a revoir) que en règle générale, les classes sont documentée. L'outil détecte bien quelques manquement, mais ce sont généralement l'un ou l'autre tag qu'il détecte manquant mais qui ne perturbe pas la compréhension ainsi que les classes DefaultGameFactory, Game, IBoardInspector, IPointInspector, Player et PointManager dont les méthodes ne sont pas commentée et les méthodes issues d'une interface (sous l'annotation "@Overhide").
+%Code inspector de Intelijidea a repérer le tag @param sprite manquant à la ligne 233 de la fonction spriteImage(Sprite) de la calsse BoardVieuw du package org.jpacman.framework.view
 
-\subsubsection{}
 
 
 \subsubsection{Test unitaire}
-Cet analyse sera détaillée dans la section suivante \ref{etape2}.
+Cet analyse sera détaillée dans la section suivante \ref{sec:etape2}.
+
+\subsubsection{Flux de conception}
+A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer la conception du programme sur la \labelfigure{designflaws} dont la légende se trouve à l'\annexe{designflawsLeg}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{InCodeDesignFlaws.png}
+	\caption{\label{designflaws}Analyse de la conception du programme (sa structure) par InCode.}
+\end{figure}
+
+La \labelfigure{designflaws} illistre donc que Il n'y a pas de gros problèmes dans l'application(point de vue structure) cependant 2 classes ont tout de même un comportement inadéquat : Game et PacmanKeyListener. Ils sont répertoriées comme des classes schizophréniques.
+
+Ces classes ont la particularité  d'être utilisée par des groupes disjoints de classes de clients utilisant des fragments disjoints de la classe.
+
+Plusieurs solution sont possible pour résoudre ce genre de problème :
+\begin{itemize}
+\item Regrouper les éléments qui sont utilisé par des groupe disjoints de clients et en faire 2 classes distincte.
+\item Revoir l'accessibilité des éléments qui la contiennent.
+\item Regardez 'aperçu de la vue "couplage" pour identifier toutes les dépendances basée sur les appels entre la classe et des classes externes.
+\end{itemize}
+
+\subsubsection{Complexité}
+A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer la complexité de l'application sur la \labelfigure{complexity} dont le détail de la légende se trouve à l'\annexe{complexityLeg}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{InCodeComplexity.png}
+	\caption{\label{complexity}Analyse de la complexité par InCode.}
+\end{figure}
+Cette figure met en avant la classe PacmanKeyListener qui encourt la plus forte complexité et met un attention sur les classes BoardView et MapParser (à cause de leur grand nombre d'attributs).
 
 
-%Respect des conventions de codage
+\subsubsection{Encapsulation}
+A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer la complexité de l'application sur la \labelfigure{encapsulation} dont le détail de la légende se trouve à l'\annexe{encapsulationLeg}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{InCodeEncapsulation.png}
+	\caption{\label{encapsulation}Analyse de la complexité par InCode.}
+\end{figure}
+
+Cette figuer contient beaucoup d'information, nous en retiendrons quelques unes : 
+\begin{itemize}
+\item La classe MainUI a beaucoup de client (c'est-à-dire beaucoup d'autres classes qui accèdent aux données publiques de cette classes) dont les principaux sont "PacmanKeyListener" et "IGameInteractor".
+\item La classe "Player" a beaucoup de client et aucun fournisseur\footnote{>provider} dont les principaux sont "Game" et "BoardView".
+\item La classe "Sprite" a beaucoup de client et aucun fournisseur dont les principaux sont "Game", "Board" et "Tile".
+\item Les classes tel que "Ghost", "Controller", "Wall", "ImageLoader", "Animator", "MapParser", "IGameFactory", "FactoryException", "IPacmanInteraction" et "Disposable" n'ont ni client ni fournisseur.
+\end{itemize}
+
+
+\subsubsection{Couplage}
+A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer la complexité de l'application sur la \labelfigure{coupling} dont le détail de la légende se trouve à l'\annexe{couplingLeg}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{InCodeCoupling.png}
+	\caption{\label{coupling}Analyse de la complexité par InCode.}
+\end{figure}
+Cette figuer contient aussi beaucoup d'information, nous en retiendrons quelques unes : 
+\begin {itemize}
+\item !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\end{itemize}
+
+
+\subsubsection{Pyramide des métriques}
+A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer les valeurs de l'application sur la \labelfigure{pyramid} dont le détail de la légende se trouve à l'\annexe{pyramidLeg}.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{InCodePyramid.png}
+	\caption{\label{pyramid}Pyramide des valeurs calculée par InCode.}
+\end{figure}
+
+Comme le précise l'interprétation de la \labelfigure{pyramid}, L'arbre que constitue les classe est grand et large.
+Les classes ont tendance à contenir un nombre moyen de méthodes et à être organisés avec quelques classes par paquet.
+Les méthodes tendent à être longue et avec une logique assez simple et à appeler de nombreuses méthodes (à forte intensité de couplage) de quelques autres classes (à faible dispersion de couplage).
+
+
+\clearpage
+\subsubsection{Métriques}
+Grace à l'outil de calcul des métriques d'Eclipse, on peut observer les résulats présent à la \labelfigure{métrique0}, la \labelfigure{métrique1} et la \labelfigure{métrique2}. 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[height=\textheight]{Metrique0.png}
+	\caption{\label{métrique0}Détails de l'analyse des métriques du projet (partie 1).}
+\end{figure}
+
+\smalltitle{Complexité cyclique moyenne}
+Il s'agit de la moyenne de la complexité cyclomatique de chacune des méthodes. La complexité cyclomatique d'une méthode unique est une mesure du nombre de chemins distincts de l'exécution dans le procédé. Elle est mesurée par l'ajout d'une voie pour la méthode avec chacun des chemins créés par des instructions conditionnelles (telles que "if" et "for") et les opérateurs (tels que "? :").
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{ACC_PacmanKeyListener.png}
+	\caption{\label{ACC1}Détails de l'analyse de la complexité cyclique de la classe "PacmanKeyListener".}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{ACC_BoardView.png}
+	\caption{\label{ACC2}Détails de l'analyse de la complexité cyclique de la classe "BoardView".}
+\end{figure}
+Pour chacun des cas illustrés dans la \labelfigure{ACC1} et la \labelfigure{ACC2}, il sera nécéssaire lors du refactoring (voir \ref{sec:etape3} ) d'analyser et de voir s'il sera possible de la diminuer.
+
+\clearpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[height=\textheight]{Metrique1.png}
+	\caption{\label{métrique1}Détails de l'analyse des métriques du projet (partie2).}
+\end{figure}
+
+\smalltitle{Nombre moyen de méthodes par type}
+C'est la moyenne du nombre de méthodes définies pour chaque type défini dans les éléments cibles.
+On remarque que certainnes classes ont trop de méthodes.
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics{Metrique2.png}
+	\caption{\label{métrique2}Détails de l'analyse des métriques du projet (partie3).}
+\end{figure}
+
+\clearpage
+\subsubsection{Audit}
+Cet intitulé reprend tous les problèmes et les erreurs de code tel que les erreurs non capturées, la sérialisation les imports inutiles, les droit d'accès,...
+
+Voici celles détectées par l'outil CodePro d'Eclipse : 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{Audit.png}
+	\caption{\label{Audit}Détail de l'analyse d'audit faite par Eclipse.}
+\end{figure}
+
+\smalltitle{Erreur non capturée}
+Il s'agit de morceaux de code à risque (qui peuvent provoquer l'arrêt du programme avec une erreur fatale) qui n'est pas protégé.
+Ici, les deux cas repéré sont encédré par un bloc "try...catch" mais ils ne capturent qu'un type d'exception. Pour résoudre ce problème il suffira d'ajouter un second bloc "catch" qui prenne en charge l'ensemble des autres exceptions.
+
+\smalltitle{Sérialisation}
+Un objet est sérialisable quand il implémente la classe "Serializable". Au sein d'un tel objet, tous les éléments doivent, par défaut, pouvoir l'être aussi. Dans le cas contraite, une variable globale peut-être qualifée avec le mot clé "`transient"` pour déclarer cette variable non sérialisable.
+Dans ce cas-ci, l'objet DefaultGameFactory n'implémente pas la classe "Serializable" donc il n'y a aucune raison de déclarer une variable "transient".
+
+\smalltitle{Import inutile}
+Les imports sont les premières lignes d'une classe. Ils permettent d'informer au compilateur d'où viennent les méthodes, les objets,... utilisées qui ne sont pas créé au sein de la classe courante.
+Egalement repris plus loin dans les warnings d'Eclipse, les classes comportent plusieurs imports qui ne sont jamais utilisé.
+La meilleur solution est simplement de les supprimer.
+
+ Voici celles détectées par l'outil Code Inspector d'IntelijIdea : 
+\begin{figure}[!h]
+	\centering
+	\includegraphics{AuditII.png}
+	\caption{\label{Audit}Détail de l'analyse d'audit faite par IntelijIdea.}
+\end{figure}
+
+\smalltitle{Droit d'accès}
+Chaque élément d'un code (classe, sous-classe, méthode, variable,...) est qualifié d'un mot-clé qui permet de définir l'accessibilité tel que (pour une variable globale ou une méthode\footnote{un descriptif similaire peut-être fait pour une classe}): 
+\begin{itemize}
+\item public : \\
+- Est accessible dans la class\\
+- Peut être accessible depuis une autre class du package ou elle se trouve.\\
+- Peut être accessible depuis n'importe quelle class extérieur au package.
+\item protected :\\
+- Est accessible dans la class\\
+- Peut-être accessible depuis une autre class du package ou elle se trouve (et des classes enfents).\\
+- N'est pas accessible depuis n'importe quelle class extérieur au package.
+\item private :\\
+- est accessible dans la class\\
+- Ne peut pas être accessible depuis une autre class du package ou elle se trouve.\\
+- N'est pas accessible depuis n'importe quelle class extérieur au package.
+\end{itemize}
+Une mauvaise pratique est de tout mettre en publique. Ca permet une vue d'ensemble sur son programme mais implique parfois certaines erreurs d'utilisation.
+Ce n'est donc pas un grave problème à l'heure actuelle puisque le jeux fonctionne correctement mais lors de l'ajout de fonctionnalité cela peut le devenir.
+
+\smalltitle{Optimisation}
+En java, une variable qui ne doit pas être modifié pendant le temps d'une exécution peut-être qualifiée avec le mot-clé "final". Ceci permet d'optimiser le code et de ne pas être confronté à une mauvaise utilisation de la variable par la suite.
+
+
+\smalltitle{Restructuration}
+Cet outil informe que la fonction "public int addPoints(int)" de la classe "org.jpacman.framework.model.Player" retourne une valeur qui n'est jamais utilisée et qui dont pourrait-être transformé en "public void addPoints(int)".
+Cette modification est à étudier avant d'agir pour vérifier s'il n'est pas nécéssaire pour une utilisation postérieur de garder cette valeur de retour.
+
+Il informe aussi que deux autres fonctions reçoivent toujours la même valeur dans leur paramètre et que donc cette valeur pourrait devenir une constante.
+Chacun des cas sera à étudier pour savoir si cette information est disponible à la méthode et que celle-ci doit alors être refactorée ou si elle a été miseen paramètre en vue d'une améliorationfuture.
+
+\smalltitle{Code inutile}
+Ce sujet a déjà été traité plus haut (Voir \ref{deadCode}).
+
+
+\smalltitle{Javadoc}
+Ce sujet a déjà été traité plus haut (Voir \ref{javadoc}).
+
+
+\smalltitle{Caractère inutile}
+Ce sont des élément du code qui sont sous-entendu par le reste de l'architucture du code.
+Dans ce projet, un seul cas a été resencé, il s'agit d'un ";" dans la classe "IBoardInspector" du package "org.jpacman.framework.model". Lors du refactoring, il suffira de le retirer.
+
+
+\smalltitle{Typographie}
+Les problèmes de typographies reprennent les erreurs de formatage des différents éléments. Ce ne sont des erreurs que de conventions parce que elle ne change en rien le comportement de l'application. Cependant, un bon respect des conventions permet une meilleur compréhension lors d'une relecture, d'une modification, de l'étude du code par un nouveau développeur sur le projet,...
+L'outil Code Inspector intégré à IntelijIdea a permit d'en recenser plusieurs. A l'étude de celle-ci, il a été observé qu'elles sont souvent dans les commentaires. Exemple, dans le fichier "GhostMover.java" du package "org.jpacman.framework.model", entre la ligne 28 et la ligne 30, le mot "randomizer" a été identifié avec une majuscule dans le commentaire et sans majuscule dans les lignes de code.
+
+
+
+
 %Performances
 %Structure du code
-%Style du code
+
 %Design flaws
 %Antipattern
 %Test
 %Dataflow 
-%Documentation
 %Profilage
 
-\subsubsection{Outils généraux}
-Il est important de signaler aussi, que l'outil Eclipse soulève certaines attention à l'aide de "`warnings"',  
+%\subsubsection{Outils généraux}
+Il est important de signaler aussi, que l'outil Eclipse soulève certaines attention à l'aide de "warnings",  
 
 Les types d'erreurs : 
 \begin{itemize}
@@ -244,19 +459,7 @@ main/java/.../factory & 2 & MapParser.java & 2 \\
 \hline
 \end{tabular}
 
-Et grace à l'outil de calcul des métrique, on peut observer : 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Pq elles s''affichent pas ??????????  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=\textwidth]{Metrique.png}
-	\caption{\label{métrique0}Suite des détails de l'analyse des métriques du projet.}
-\end{figure}
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[height=\textheight]{Metrique_.png}
-	\caption{\label{métrique0}Suite des détails de l'analyse des métriques du projet.}
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
@@ -529,58 +732,56 @@ N.B. : Les figures des dépendances entre les packages et des dépendances au se
 
 \clearpage
 \newpage
-\section{Annexe : ......}\label{InCode}
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=\textwidth]{images/InCodeDesignFlaws.png}
-	\caption{\label{incodeDF}Détail de l'analyse .........}
-\end{figure}
+\section{Annexe : Incode}\label{InCode}
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{images/InCodeDesignFlawsLegende.png}
-	\caption{\label{incodeDFLeg}Légende de l'analyse .........}
-\end{figure}
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=\textwidth]{images/InCodeComplexity.png}
-	\caption{\label{incodeCompl}Détail de l'analyse .........}
+	\caption{\label{designflawsLeg}Légende de l'outil InCode d'analyse de conception}
 \end{figure}
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{images/InCodeComplexityLegende.png}
-	\caption{\label{incodeComplLeg}Légende de l'analyse .........}
-\end{figure}
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=\textwidth]{images/InCodeEncapsulation.png}
-	\caption{\label{incodeEnc}Détail de l'analyse .........}
+	\caption{\label{complexityLeg}Légende de l'outil InCode d'analyse de complexité}
 \end{figure}
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{images/InCodeEncapsulationLegende.png}
-	\caption{\label{incodeEncLeg}Légende de l'analyse .........}
-\end{figure}
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=\textwidth]{images/InCodeCoupling.png}
-	\caption{\label{incodeCoupl}Détail de l'analyse .........}
+	\caption{\label{encapsulationLeg}Légende de l'outil InCode d'analyse d'encapsulation}
 \end{figure}
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{images/InCodeCouplingLegende.png}
-	\caption{\label{incodeCouplLeg}Légende de l'analyse .........}
+	\caption{\label{couplingLeg}Légende de l'outil InCode d'analyse de couplage}
 \end{figure}
 
+\begin{figure}[ht]\label{pyramidLeg}
+L'Aperçu Pyramide rassemble en un seul endroit les mesures les plus importantes sur un système orienté objet. Il se compose de trois parties, chacune quantifie un aspect important de la conception de systèmes orientés objet : la taille et la complexité, l'utilisation de l'héritage, et le couplage.
 
+Le côté gauche de la pyramide aperçu (zone jaune) fournit des informations caractérisant la taille et la complexité du système. Ils comptent les unités les plus importantes de la modularité d'un système orienté objet, du plus haut niveau, jusqu'aux plus basses unités de mesures : 
+• NOP (nombre total de packages définis dans le système);
+• CNP ou NOC (nombre total de classes définies dans le système, sans compter les classes de la bibliothèque);
+• NOM (nombre total de méthodes définies dans le système, y compris les méthodes et fonctions globales);
+• LOC (nombre total de lignes de code appartenant à l'exploitation);
+• CYCLO (somme des nombres cyclomatiques de toutes les opérations définies dans le système).
+Les chiffres indiqués à la gauche de ces paramètres sont calculés par un rapport entre les mesures directement placés en dessous et à droite. où par exemple le rapport NOM / CNP représente le nombre moyen de méthodes dans une classe.
 
+La partie supérieure de la pyramide (la zone verte) est dédié à l'utilisation de l'héritage : 
+• NDD (nombre moyen de descendants directs d'une classe, à l'exclusion des classes de la bibliothèque. Si une classe n'a pas de classes dérivées, alors la classe participe avec une valeur de 0);
+• HIT (moyenne de la métrique de HIT( = la longueur de trajet maximal d'une classe à sa plus profonde sous-classe) sur toutes les classes définies dans le système. Les classes autonomes sont considérés classes racines avec HIT = 0).
+
+Le côté droit de la pyramide (la zone bleue) est dédié à l'aspect de couplage :
+• CALL (nombre total d'opérations distinctes d'appelle dans le système);
+• FOUT (somme de la métrique de FANOUT pour toutes les opérations définies dans le système)
+
+Pour chaque rapport calculé, trois seuils sont calculés:
+• faible - bleu
+• Moyenne - vert
+• haute - rouge
+\end{figure}
 
 \clearpage
 \newpage
@@ -593,11 +794,7 @@ N.B. : Les figures des dépendances entre les packages et des dépendances au se
 \end{figure}
 
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=\textwidth]{images/Audit.png}
-	\caption{\label{Audit}Détail de l'analyse d'audit faite par Eclipse.}
-\end{figure}
+
 
 
 \newpage
