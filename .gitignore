@@ -25,31 +25,6 @@
 *.idx
 *.ilg
 *.ind
-#latexmk tool
-*.fdb_latexmk
-#List
-*.lof
-*.lot
-#endfloat
-*.fff
-#svn-multi
-*.svn
-*.dvt
-*.svx
-#standalone
-*.sta
-*.stp
-#Other
-*.run.xml
-*.ist
-*.acn
-*.acr
-*.alg
-*.dvi
-*.maf
-*.mtc
-*.mtc1
-*.synctex.gz
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*

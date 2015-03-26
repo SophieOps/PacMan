@@ -18,6 +18,7 @@
 \contentsline {subsubsection}{\numberline {2.2.10}Pyramide des m\IeC {\'e}triques}{14}{subsubsection.2.2.10}
 \contentsline {subsubsection}{\numberline {2.2.11}M\IeC {\'e}triques}{16}{subsubsection.2.2.11}
 \contentsline {subsubsection}{\numberline {2.2.12}Audit}{23}{subsubsection.2.2.12}
+\contentsline {subsubsection}{\numberline {2.2.13}Profilage}{27}{subsubsection.2.2.13}
 \contentsline {section}{\numberline {3}Etape 2 : Ajout de tests unitaires}{28}{section.3}
 \contentsline {subsection}{\numberline {3.1}Enonc\IeC {\'e}}{28}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}R\IeC {\'e}sultat}{28}{subsection.3.2}
@@ -36,8 +37,8 @@
 \contentsline {section}{\numberline {8}Etape 7 : Analyse de l'\IeC {\'e}volution de la qualit\IeC {\'e} logicielle}{33}{section.8}
 \contentsline {subsection}{\numberline {8.1}Enonc\IeC {\'e}}{33}{subsection.8.1}
 \contentsline {subsection}{\numberline {8.2}R\IeC {\'e}sultat}{33}{subsection.8.2}
-\contentsline {section}{\numberline {9}Annexes}{34}{section.9}
-\contentsline {section}{\numberline {A}Annexe : Code Dupliqu\IeC {\'e}}{34}{appendix.A}
-\contentsline {section}{\numberline {B}Annexe : D\IeC {\'e}pendances}{38}{appendix.B}
-\contentsline {section}{\numberline {C}Annexe : Incode}{42}{appendix.C}
-\contentsline {section}{\numberline {D}Annexe : Couverture par les test}{47}{appendix.D}
+\contentsline {section}{\numberline {9}Annexes}{35}{section.9}
+\contentsline {section}{\numberline {A}Annexe : Code Dupliqu\IeC {\'e}}{35}{appendix.A}
+\contentsline {section}{\numberline {B}Annexe : D\IeC {\'e}pendances}{39}{appendix.B}
+\contentsline {section}{\numberline {C}Annexe : Incode}{43}{appendix.C}
+\contentsline {section}{\numberline {D}Annexe : Couverture par les test}{48}{appendix.D}

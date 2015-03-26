@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.1)  25 MAR 2015 11:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.1)  26 MAR 2015 11:15
 entering extended mode
 **Rapport.tex
 (C:\Users\Sophie\Documents\PacMan\Rapport\Rapport.tex
@@ -1084,7 +1084,34 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[26]
+[26] <images/Profilage.png, id=475, 647.41875pt x 593.96906pt>
+File: images/Profilage.png Graphic file (type png)
+ <use images/Profilage.png>
+Package pdftex.def Info: images/Profilage.png used on input line 427.
+(pdftex.def)             Requested size: 647.41716pt x 593.9676pt.
+
+Overfull \hbox (257.41716pt too wide) in paragraph at lines 427--428
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 40.9676pt on input line 429.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `profilage' on page 27 undefined on input line 431.
+
+
+LaTeX Warning: Reference `profilage' on page 27 undefined on input line 431.
+
+
+LaTeX Warning: Reference `profilage' on page 27 undefined on input line 435.
+
+
+LaTeX Warning: Reference `profilage' on page 27 undefined on input line 435.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.61858pt.
@@ -1133,34 +1160,42 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[33] <images/SimilarCode_1.png, id=510, 838.63312pt x 511.15968pt>
+[33]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 29.11858pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34 <C:/Users/Sophie/Documents/PacMan/Rapport/images/Profilage.png>]
+<images/SimilarCode_1.png, id=518, 838.63312pt x 511.15968pt>
 File: images/SimilarCode_1.png Graphic file (type png)
  <use images/SimilarCode_1.png>
-Package pdftex.def Info: images/SimilarCode_1.png used on input line 496.
+Package pdftex.def Info: images/SimilarCode_1.png used on input line 510.
 (pdftex.def)             Requested size: 390.0pt x 237.71019pt.
 
-<images/SimilarCode_2.png, id=511, 836.3747pt x 508.90125pt>
+<images/SimilarCode_2.png, id=519, 836.3747pt x 508.90125pt>
 File: images/SimilarCode_2.png Graphic file (type png)
  <use images/SimilarCode_2.png>
-Package pdftex.def Info: images/SimilarCode_2.png used on input line 502.
+Package pdftex.def Info: images/SimilarCode_2.png used on input line 516.
 (pdftex.def)             Requested size: 390.0pt x 237.30444pt.
 
-<images/SimilarCode_3.png, id=512, 837.1275pt x 510.40688pt>
+<images/SimilarCode_3.png, id=520, 837.1275pt x 510.40688pt>
 File: images/SimilarCode_3.png Graphic file (type png)
  <use images/SimilarCode_3.png>
-Package pdftex.def Info: images/SimilarCode_3.png used on input line 508.
+Package pdftex.def Info: images/SimilarCode_3.png used on input line 522.
 (pdftex.def)             Requested size: 390.0pt x 237.78067pt.
 
-<images/SimilarCode_4.png, id=513, 837.88031pt x 509.65407pt>
+<images/SimilarCode_4.png, id=521, 837.88031pt x 509.65407pt>
 File: images/SimilarCode_4.png Graphic file (type png)
  <use images/SimilarCode_4.png>
-Package pdftex.def Info: images/SimilarCode_4.png used on input line 514.
+Package pdftex.def Info: images/SimilarCode_4.png used on input line 528.
 (pdftex.def)             Requested size: 390.0pt x 237.21999pt.
 
-<images/SimilarCode_5.png, id=514, 1248.16313pt x 949.29657pt>
+<images/SimilarCode_5.png, id=522, 1248.16313pt x 949.29657pt>
 File: images/SimilarCode_5.png Graphic file (type png)
  <use images/SimilarCode_5.png>
-Package pdftex.def Info: images/SimilarCode_5.png used on input line 520.
+Package pdftex.def Info: images/SimilarCode_5.png used on input line 534.
 (pdftex.def)             Requested size: 390.0pt x 296.611pt.
 
 
@@ -1169,7 +1204,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[34
+[35
 
  <C:/Users/Sophie/Documents/PacMan/Rapport/images/SimilarCode_1.png>]
 
@@ -1178,7 +1213,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[35 <C:/Users/Sophie/Documents/PacMan/Rapport/images/SimilarCode_2.png> <C:/Users/Sophie/Documents/PacMan/Rapport/images
+[36 <C:/Users/Sophie/Documents/PacMan/Rapport/images/SimilarCode_2.png> <C:/Users/Sophie/Documents/PacMan/Rapport/images
 /SimilarCode_3.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1186,66 +1221,66 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[36 <C:/Users/Sophie/Documents/PacMan/Rapport/images/SimilarCode_4.png>]
+[37 <C:/Users/Sophie/Documents/PacMan/Rapport/images/SimilarCode_4.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.61858pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[37 <C:/Users/Sophie/Documents/PacMan/Rapport/images/SimilarCode_5.png>]
-<images/DependenciesProject.png, id=538, 399.74344pt x 182.18062pt>
+[38 <C:/Users/Sophie/Documents/PacMan/Rapport/images/SimilarCode_5.png>]
+<images/DependenciesProject.png, id=546, 399.74344pt x 182.18062pt>
 File: images/DependenciesProject.png Graphic file (type png)
  <use images/DependenciesProject.png>
-Package pdftex.def Info: images/DependenciesProject.png used on input line 532.
+Package pdftex.def Info: images/DependenciesProject.png used on input line 546.
 (pdftex.def)             Requested size: 390.0pt x 177.74907pt.
 
-<images/DependenciesFactory.png, id=539, 335.00156pt x 126.4725pt>
+<images/DependenciesFactory.png, id=547, 335.00156pt x 126.4725pt>
 File: images/DependenciesFactory.png Graphic file (type png)
  <use images/DependenciesFactory.png>
-Package pdftex.def Info: images/DependenciesFactory.png used on input line 538.
+Package pdftex.def Info: images/DependenciesFactory.png used on input line 552.
 (pdftex.def)             Requested size: 390.0pt x 147.23503pt.
 
-<images/DependenciesUI.png, id=540, 343.2825pt x 262.73157pt>
+<images/DependenciesUI.png, id=548, 343.2825pt x 262.73157pt>
 File: images/DependenciesUI.png Graphic file (type png)
  <use images/DependenciesUI.png>
-Package pdftex.def Info: images/DependenciesUI.png used on input line 544.
+Package pdftex.def Info: images/DependenciesUI.png used on input line 558.
 (pdftex.def)             Requested size: 390.0pt x 298.48677pt.
 
-<images/DependenciesVieuw.png, id=541, 335.00156pt x 126.4725pt>
+<images/DependenciesVieuw.png, id=549, 335.00156pt x 126.4725pt>
 File: images/DependenciesVieuw.png Graphic file (type png)
  <use images/DependenciesVieuw.png>
-Package pdftex.def Info: images/DependenciesVieuw.png used on input line 550.
+Package pdftex.def Info: images/DependenciesVieuw.png used on input line 564.
 (pdftex.def)             Requested size: 390.0pt x 147.23503pt.
 
-<images/DependenciesFactoryTest.png, id=542, 335.00156pt x 73.77562pt>
+<images/DependenciesFactoryTest.png, id=550, 335.00156pt x 73.77562pt>
 File: images/DependenciesFactoryTest.png Graphic file (type png)
  <use images/DependenciesFactoryTest.png>
-Package pdftex.def Info: images/DependenciesFactoryTest.png used on input line 556.
+Package pdftex.def Info: images/DependenciesFactoryTest.png used on input line 570.
 (pdftex.def)             Requested size: 390.0pt x 85.88707pt.
 
-<images/DependenciesModelTest.png, id=543, 335.00156pt x 126.4725pt>
+<images/DependenciesModelTest.png, id=551, 335.00156pt x 126.4725pt>
 File: images/DependenciesModelTest.png Graphic file (type png)
  <use images/DependenciesModelTest.png>
-Package pdftex.def Info: images/DependenciesModelTest.png used on input line 562.
+Package pdftex.def Info: images/DependenciesModelTest.png used on input line 576.
 (pdftex.def)             Requested size: 390.0pt x 147.23503pt.
 
-<images/DependenciesUITest.png, id=544, 335.00156pt x 100.87688pt>
+<images/DependenciesUITest.png, id=552, 335.00156pt x 100.87688pt>
 File: images/DependenciesUITest.png Graphic file (type png)
  <use images/DependenciesUITest.png>
-Package pdftex.def Info: images/DependenciesUITest.png used on input line 568.
+Package pdftex.def Info: images/DependenciesUITest.png used on input line 582.
 (pdftex.def)             Requested size: 390.0pt x 117.43745pt.
 
-<images/DependenciesAcceptTest.png, id=545, 335.00156pt x 100.87688pt>
+<images/DependenciesAcceptTest.png, id=553, 335.00156pt x 100.87688pt>
 File: images/DependenciesAcceptTest.png Graphic file (type png)
  <use images/DependenciesAcceptTest.png>
-Package pdftex.def Info: images/DependenciesAcceptTest.png used on input line 574.
+Package pdftex.def Info: images/DependenciesAcceptTest.png used on input line 588.
 (pdftex.def)             Requested size: 390.0pt x 117.43745pt.
 
-<images/DependenciesModel_Factory.png, id=546, 627.84563pt x 420.06938pt>
+<images/DependenciesModel_Factory.png, id=554, 627.84563pt x 420.06938pt>
 File: images/DependenciesModel_Factory.png Graphic file (type png)
  <use images/DependenciesModel_Factory.png>
-Package pdftex.def Info: images/DependenciesModel_Factory.png used on input line 580.
+Package pdftex.def Info: images/DependenciesModel_Factory.png used on input line 594.
 (pdftex.def)             Requested size: 390.0pt x 260.93387pt.
 
 
@@ -1254,7 +1289,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[38
+[39
 
  <C:/Users/Sophie/Documents/PacMan/Rapport/images/DependenciesProject.png> <C:/Users/Sophie/Documents/PacMan/Rapport/ima
 ges/DependenciesFactory.png>]
@@ -1264,7 +1299,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[39 <C:/Users/Sophie/Documents/PacMan/Rapport/images/DependenciesUI.png> <C:/Users/Sophie/Documents/PacMan/Rapport/image
+[40 <C:/Users/Sophie/Documents/PacMan/Rapport/images/DependenciesUI.png> <C:/Users/Sophie/Documents/PacMan/Rapport/image
 s/DependenciesVieuw.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1272,7 +1307,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[40 <C:/Users/Sophie/Documents/PacMan/Rapport/images/DependenciesFactoryTest.png> <C:/Users/Sophie/Documents/PacMan/Rapp
+[41 <C:/Users/Sophie/Documents/PacMan/Rapport/images/DependenciesFactoryTest.png> <C:/Users/Sophie/Documents/PacMan/Rapp
 ort/images/DependenciesModelTest.png> <C:/Users/Sophie/Documents/PacMan/Rapport/images/DependenciesUITest.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1280,37 +1315,37 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[41 <C:/Users/Sophie/Documents/PacMan/Rapport/images/DependenciesAcceptTest.png> <C:/Users/Sophie/Documents/PacMan/Rappo
-rt/images/DependenciesModel_Factory.png>] <images/InCodeDesignFlawsLegende.png, id=572, 603.0028pt x 428.35031pt>
+[42 <C:/Users/Sophie/Documents/PacMan/Rapport/images/DependenciesAcceptTest.png> <C:/Users/Sophie/Documents/PacMan/Rappo
+rt/images/DependenciesModel_Factory.png>] <images/InCodeDesignFlawsLegende.png, id=580, 603.0028pt x 428.35031pt>
 File: images/InCodeDesignFlawsLegende.png Graphic file (type png)
 
 <use images/InCodeDesignFlawsLegende.png>
-Package pdftex.def Info: images/InCodeDesignFlawsLegende.png used on input line 591.
+Package pdftex.def Info: images/InCodeDesignFlawsLegende.png used on input line 605.
 (pdftex.def)             Requested size: 390.0pt x 277.03874pt.
- <images/InCodeComplexityLegende.png, id=573, 602.25pt x 428.35031pt>
+ <images/InCodeComplexityLegende.png, id=581, 602.25pt x 428.35031pt>
 File: images/InCodeComplexityLegende.png Graphic file (type png)
 
 <use images/InCodeComplexityLegende.png>
-Package pdftex.def Info: images/InCodeComplexityLegende.png used on input line 597.
+Package pdftex.def Info: images/InCodeComplexityLegende.png used on input line 611.
 (pdftex.def)             Requested size: 390.0pt x 277.39822pt.
- <images/InCodeEncapsulationLegende.png, id=574, 889.07156pt x 946.28531pt>
+ <images/InCodeEncapsulationLegende.png, id=582, 889.07156pt x 946.28531pt>
 File: images/InCodeEncapsulationLegende.png Graphic file (type png)
 
 <use images/InCodeEncapsulationLegende.png>
-Package pdftex.def Info: images/InCodeEncapsulationLegende.png used on input line 603.
+Package pdftex.def Info: images/InCodeEncapsulationLegende.png used on input line 617.
 (pdftex.def)             Requested size: 390.0pt x 415.09618pt.
- <images/InCodeCouplingLegende.png, id=575, 886.81313pt x 876.27374pt>
+ <images/InCodeCouplingLegende.png, id=583, 886.81313pt x 876.27374pt>
 File: images/InCodeCouplingLegende.png Graphic file (type png)
 
 <use images/InCodeCouplingLegende.png>
-Package pdftex.def Info: images/InCodeCouplingLegende.png used on input line 609.
+Package pdftex.def Info: images/InCodeCouplingLegende.png used on input line 623.
 (pdftex.def)             Requested size: 390.0pt x 385.37444pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 617.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 631.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 617.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 631.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1318,7 +1353,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[42
+[43
 
  <C:/Users/Sophie/Documents/PacMan/Rapport/images/InCodeDesignFlawsLegende.png>]
 
@@ -1327,31 +1362,31 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[43 <C:/Users/Sophie/Documents/PacMan/Rapport/images/InCodeComplexityLegende.png>]
+[44 <C:/Users/Sophie/Documents/PacMan/Rapport/images/InCodeComplexityLegende.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[44 <C:/Users/Sophie/Documents/PacMan/Rapport/images/InCodeEncapsulationLegende.png>]
+[45 <C:/Users/Sophie/Documents/PacMan/Rapport/images/InCodeEncapsulationLegende.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[45 <C:/Users/Sophie/Documents/PacMan/Rapport/images/InCodeCouplingLegende.png>]
+[46 <C:/Users/Sophie/Documents/PacMan/Rapport/images/InCodeCouplingLegende.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[46] <images/CoverageTest.png, id=602, 572.1375pt x 631.60968pt>
+[47] <images/CoverageTest.png, id=610, 572.1375pt x 631.60968pt>
 File: images/CoverageTest.png Graphic file (type png)
  <use images/CoverageTest.png>
-Package pdftex.def Info: images/CoverageTest.png used on input line 644.
+Package pdftex.def Info: images/CoverageTest.png used on input line 658.
 (pdftex.def)             Requested size: 390.0pt x 430.5394pt.
 
 
@@ -1360,7 +1395,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[47
+[48
 
  <C:/Users/Sophie/Documents/PacMan/Rapport/images/CoverageTest.png>]
 (C:\Users\Sophie\Documents\PacMan\Rapport\Rapport.bbl
@@ -1368,7 +1403,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 656.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 670.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1376,28 +1411,37 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[48]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 656.
+[49]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 670.
  (C:\Users\Sophie\Documents\PacMan\Rapport\Rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 656.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 656.
-Package rerunfilecheck Info: File `Rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 143410A96198B71C6E965D9FA2017A5B;2853.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 670.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 670.
 
+
+Package rerunfilecheck Warning: File `Rapport.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Rapport.out':
+(rerunfilecheck)             Before: 143410A96198B71C6E965D9FA2017A5B;2853
+(rerunfilecheck)             After:  4877DB0180646C66B2EFB58EDD4FEB4E;2924.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 656.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 670.
  ) 
 Here is how much of TeX's memory you used:
- 8130 strings out of 493921
- 116738 string characters out of 3144873
- 204186 words of memory out of 3000000
- 11072 multiletter control sequences out of 15000+200000
+ 8135 strings out of 493921
+ 116830 string characters out of 3144873
+ 204054 words of memory out of 3000000
+ 11073 multiletter control sequences out of 15000+200000
  42887 words of font info for 78 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  29i,11n,43p,1044b,483s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1414,9 +1458,9 @@ k>{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program
 ic/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files 
 (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/u
 hvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Rapport.pdf (49 pages, 2090202 bytes).
+Output written on Rapport.pdf (50 pages, 2143594 bytes).
 PDF statistics:
- 1095 PDF objects out of 1200 (max. 8388607)
- 145 named destinations out of 1000 (max. 500000)
- 537 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1106 PDF objects out of 1200 (max. 8388607)
+ 148 named destinations out of 1000 (max. 500000)
+ 542 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -193,10 +193,10 @@ Grace à l'outil CodePro d'Eclipse, il a été observé (non illustré parce que
 
 
 \subsubsection{Test unitaire}
-Cet analyse sera détaillée dans la section suivante \ref{sec:etape2}.
+Cet analyse sera détaillée dans la section suivante (n° \ref{sec:etape2}).
 
 
-\subsubsection{Flux de conception}
+\subsubsection{Flux de conception}\label{sec:designflaws}
 A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer la conception du programme sur la \labelfigure{designflaws} dont la légende se trouve à l'\annexe{designflawsLeg}
 \begin{figure}[!h]
 	\centering
@@ -259,7 +259,7 @@ A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer le
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\textwidth]{InCodePyramid.png}
-	\caption{\label{pyramid}Pyramide des valeurs calculée par InCode.}
+	\caption{\label{pyramid}Pyramide des valeurs calculées par InCode.}
 \end{figure}
 Comme le précise l'interprétation de la \labelfigure{pyramid}, L'arbre que constitue les classe est grand et large.\\
 Les classes ont tendance à contenir un nombre moyen de méthodes et à être organisés avec quelques classes par paquet.\\
@@ -274,7 +274,16 @@ Grace à l'outil de calcul des métriques d'Eclipse, on peut observer les résul
 	\includegraphics[height=\textheight]{Metrique0.png}
 	\caption{\label{métrique0}Détails de l'analyse des métriques du projet (partie 1).}
 \end{figure}
-
+\begin{figure}[!h]
+	\centering
+	\includegraphics[height=\textheight]{Metrique1.png}
+	\caption{\label{métrique1}Détails de l'analyse des métriques du projet (partie2).}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics{Metrique2.png}
+	\caption{\label{métrique2}Détails de l'analyse des métriques du projet (partie3).}
+\end{figure}
 \smalltitle{Complexité cyclique moyenne}
 Il s'agit de la moyenne de la complexité cyclomatique de chacune des méthodes. La complexité cyclomatique d'une méthode unique est une mesure du nombre de chemins distincts de l'exécution dans le procédé. Elle est mesurée par l'ajout d'une voie pour la méthode avec chacun des chemins créés par des instructions conditionnelles (telles que "if" et "for") et les opérateurs (tels que "? :").
 \begin{figure}[!h]
@@ -289,22 +298,11 @@ Il s'agit de la moyenne de la complexité cyclomatique de chacune des méthodes.
 \end{figure}
 Pour chacun des cas illustrés dans la \labelfigure{ACC1} et la \labelfigure{ACC2}, il sera nécéssaire lors du refactoring (voir \ref{sec:etape3} ) d'analyser et de voir s'il sera possible de la diminuer.
 
-\clearpage
-\begin{figure}[!h]
-	\centering
-	\includegraphics[height=\textheight]{Metrique1.png}
-	\caption{\label{métrique1}Détails de l'analyse des métriques du projet (partie2).}
-\end{figure}
 
 \smalltitle{Nombre moyen de méthodes par type}
-C'est la moyenne du nombre de méthodes définies pour chaque type défini dans les éléments cibles.
-On remarque que certainnes classes ont trop de méthodes.
-!!!!!!!!!!!!!!!!!!!!!!!!!!
-\begin{figure}[!h]
-	\centering
-	\includegraphics{Metrique2.png}
-	\caption{\label{métrique2}Détails de l'analyse des métriques du projet (partie3).}
-\end{figure}
+C'est la moyenne du nombre de méthodes définies pour chaque classe.
+On remarque que certainnes classes ont trop de méthodes, en particulier les classes "Game", "ButtonPanel", "MainUI", "PacmanKeyListener" et "BoardView". \\
+Lors d'une analyse précédente (voir section \ref{sec:designflaws} il avait été observé que les classes "Game" et "PacmanKeyListener" était schizophréniques. Le problème se résolvera donc probablement naturellement lors du traitement de ce problème. Pour ce qui est des autres classes, il sera nécéssaire lors du refactoring d'étudier l'utilité de chacune des méthodes et d'aviser au cas par cas le travail à effectuer sur chacune.
 
 
 \clearpage
@@ -420,6 +418,20 @@ main/java/.../factory & 2 & MapParser.java & 2 \\
 /test/java/.../ui & 1 & MainUIFocusTest.java & 1 \\
 \hline
 \end{tabular}
+
+\subsubsection{Profilage}
+\begin{figure}[!h]
+	\centering
+	\includegraphics{Profilage.png}
+	\caption{\label{profilage}Détail de l'analyse des ressources CPU et mémoire par VisualVM.}
+\end{figure}
+\smalltitle{Ressources CPU}
+Comme visible sur la \labelfigure{profilage}, c'est la chargement des images qui prend le plus de temps. Ceci étant une fonction externe au projet, il n'est pas possible d'y effectuer une modification. La méthode sur laquelle il serait peut-être possible d'effectuer des chagenements s'appelle "displayPoint" de la classe "org.jpacman.framework.ui.PointsPanel". Celle-ci calcule à chaque mise-à-jour de l'affichage le nombre de points déjà récoltés sur le nombre de points totaux. Cependant, la fonction est simple et ne prend en elle-même que très peu de temps. Ce qui pénalise est le nombre d'appel. Qui lui ne peut pas être modifié puisqu'il est est nécéssaire que ce score soit toujours à jour. \\
+Il n'est donc probablement pas possible d'accélérer l'application.
+
+\smalltitle{Consommation mémoire}
+Les ressources mémoires utilisées par l'application sont visible dans la seconde moitier de la \labelfigure{profilage}. Les observation ne sont pas nombreuses si ce n'est que l'utilisation de la mémoire concerne majoritairement l'affichage et les éléments graphiques de l'application. A moins donc de diminuer la qualité ou la vitesse de rafraichissement (ce qui est fortement déconseillé), il n'y a pas grand chose à faire.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
