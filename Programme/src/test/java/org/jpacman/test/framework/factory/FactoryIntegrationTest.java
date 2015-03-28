@@ -1,15 +1,15 @@
-package test.java.org.jpacman.test.framework.factory;
+package org.jpacman.test.framework.factory;
 
 import static org.junit.Assert.assertEquals;
 
-import main.java.org.jpacman.framework.factory.DefaultGameFactory;
-import main.java.org.jpacman.framework.factory.FactoryException;
-import main.java.org.jpacman.framework.factory.IGameFactory;
-import main.java.org.jpacman.framework.factory.MapParser;
-import main.java.org.jpacman.framework.model.Board;
-import main.java.org.jpacman.framework.model.Game;
-import main.java.org.jpacman.framework.model.Food;
-import main.java.org.jpacman.framework.model.IBoardInspector.SpriteType;
+import org.jpacman.framework.factory.DefaultGameFactory;
+import org.jpacman.framework.factory.FactoryException;
+import org.jpacman.framework.factory.IGameFactory;
+import org.jpacman.framework.factory.MapParser;
+import org.jpacman.framework.model.Board;
+import org.jpacman.framework.model.Game;
+import org.jpacman.framework.model.Food;
+import org.jpacman.framework.model.IBoardInspector.SpriteType;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -22,55 +22,54 @@ import org.junit.Test;
  */
 public class FactoryIntegrationTest {
 
-	private MapParser parser;
+    private MapParser parser;
 
-	private final String[] map = new String[] { 
-			"#####", 
-			"#...#", 
-			"#GPG#", 
-			"#   #",
-			"#####" 
-	};
+    private final String[] map = new String[] {
+            "#####",
+            "#...#",
+            "#GPG#",
+            "#   #",
+            "#####"
+    };
 
-	
-	/**
-	 * Create the standard factory and parser.
-	 */
-	@Before
-	public void setUp() {
-		IGameFactory factory = new DefaultGameFactory();
-		parser = new MapParser(factory);
-	}
 
-	/**
-	 * Test parsing of a larger map.
-	 * Individual unit tests address specific cases; here we focus
-	 * on the overall results.
-	 * 
-	 * @throws FactoryException If parsing fails. Should not happen.
-	 */
-	@Test
-    @Ignore
-	public void testFullMap() throws FactoryException {
-		Game g = parser.parseMap(map);
-		Board b = g.getBoard();
+    /**
+     * Create the standard factory and parser.
+     */
+    @Before
+    public void setUp() {
+        IGameFactory factory = new DefaultGameFactory();
+        parser = new MapParser(factory);
+    }
 
-		// did we recognize the right sprites?
-		assertEquals(SpriteType.EMPTY, b.spriteTypeAt(1, 3));
-		assertEquals(SpriteType.PLAYER, b.spriteTypeAt(2, 2));
-		assertEquals(SpriteType.GHOST, b.spriteTypeAt(1, 2));
-		assertEquals(SpriteType.WALL, b.spriteTypeAt(0, 0));
-		assertEquals(SpriteType.FOOD, b.spriteTypeAt(1, 1));
+    /**
+     * Test parsing of a larger map.
+     * Individual unit tests address specific cases; here we focus
+     * on the overall results.
+     *
+     * @throws FactoryException If parsing fails. Should not happen.
+     */
+    @Test
+    public void testFullMap() throws FactoryException {
+        Game g = parser.parseMap(map);
+        Board b = g.getBoard();
 
-		// did we properly set the player?
-		assertEquals(g.getPlayer(), b.spriteAt(2, 2));
+        // did we recognize the right sprites?
+        assertEquals(SpriteType.EMPTY, b.spriteTypeAt(1, 3));
+        assertEquals(SpriteType.PLAYER, b.spriteTypeAt(2, 2));
+        assertEquals(SpriteType.GHOST, b.spriteTypeAt(1, 2));
+        assertEquals(SpriteType.WALL, b.spriteTypeAt(0, 0));
+        assertEquals(SpriteType.FOOD, b.spriteTypeAt(1, 1));
 
-		// were all ghosts added?
-		assertEquals(2, g.getGhosts().size());
+        // did we properly set the player?
+        assertEquals(g.getPlayer(), b.spriteAt(2, 2));
 
-		// was the food actually added?
-		final int cellsWithFoodCount = 3;
-		assertEquals(cellsWithFoodCount * Food.DEFAULT_POINTS, 
-			     g.getPointManager().totalFoodInGame());
-	}
+        // were all ghosts added?
+        assertEquals(2, g.getGhosts().size());
+
+        // was the food actually added?
+        final int cellsWithFoodCount = 3;
+        assertEquals(cellsWithFoodCount * Food.DEFAULT_POINTS,
+                g.getPointManager().totalFoodInGame());
+    }
 }
