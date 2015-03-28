@@ -1,6 +1,4 @@
-package main.java.org.jpacman.framework.model;
-
-import main.java.org.jpacman.framework.model.IBoardInspector.SpriteType;
+package org.jpacman.framework.model;
 
 /**
  * A Wall element.
@@ -13,8 +11,8 @@ public class Wall extends Sprite {
 	 * @return That this sprite is a wall.
 	 */
 	@Override
-	public SpriteType getSpriteType() {
-		return SpriteType.WALL;
+	public IBoardInspector.SpriteType getSpriteType() {
+		return IBoardInspector.SpriteType.WALL;
 	}
 
 }

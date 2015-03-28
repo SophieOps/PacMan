@@ -4,4 +4,4 @@
   * 
   * @author Arie van Deursen, January 2012.
   */
-package main.java.org.jpacman.framework.ui;
+package org.jpacman.framework.ui;

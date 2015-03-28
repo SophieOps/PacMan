@@ -1,4 +1,4 @@
-package main.java.org.jpacman.framework.factory;
+package org.jpacman.framework.factory;
 
 /**
  * Representation of things that can go wrong when loading

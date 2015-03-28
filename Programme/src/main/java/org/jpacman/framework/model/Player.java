@@ -1,6 +1,4 @@
-package main.java.org.jpacman.framework.model;
-
-import main.java.org.jpacman.framework.model.IBoardInspector.SpriteType;
+package org.jpacman.framework.model;
 
 /**
  * A player, responsible for keeping track of the
@@ -38,8 +36,8 @@ public class Player extends Sprite {
 		return alive;
 	}
 	
-	public SpriteType getSpriteType() {
-		return SpriteType.PLAYER;
+	public IBoardInspector.SpriteType getSpriteType() {
+		return IBoardInspector.SpriteType.PLAYER;
 	}
 	
 	public Direction getDirection() {

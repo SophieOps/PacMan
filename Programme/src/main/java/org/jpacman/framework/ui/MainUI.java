@@ -1,4 +1,4 @@
-package main.java.org.jpacman.framework.ui;
+package org.jpacman.framework.ui;
 
 import java.awt.BorderLayout;
 import java.util.Observable;
@@ -8,14 +8,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import main.java.org.jpacman.framework.model.Controller;
-import main.java.org.jpacman.framework.model.GhostMover;
-import main.java.org.jpacman.framework.factory.FactoryException;
-import main.java.org.jpacman.framework.factory.IGameFactory;
-import main.java.org.jpacman.framework.model.IGameInteractor;
-import main.java.org.jpacman.framework.model.Level;
-import main.java.org.jpacman.framework.view.Animator;
-import main.java.org.jpacman.framework.view.BoardView;
+import org.jpacman.framework.factory.FactoryException;
+import org.jpacman.framework.factory.IGameFactory;
+import org.jpacman.framework.model.GhostMover;
+import org.jpacman.framework.model.IGameInteractor;
+import org.jpacman.framework.model.Level;
+import org.jpacman.framework.model.Controller;
+import org.jpacman.framework.view.Animator;
+import org.jpacman.framework.view.BoardView;
 
 /**
  * The main user interface for jpacman.
@@ -71,7 +71,7 @@ public class MainUI extends JFrame implements Observer, Disposable
 	/**
 	 * Create all the ui components and attach appropriate
 	 * listeners.
-	 * @throws FactoryException If resources for game can't be loaded.
+	 * @throws org.jpacman.framework.factory.FactoryException If resources for game can't be loaded.
 	 * @return The main UI object
 	 */
 	public MainUI createUI() throws FactoryException {

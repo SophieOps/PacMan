@@ -15,4 +15,4 @@
   * 
   * @author Arie van Deursen, January 2012.
   */
-package main.java.org.jpacman.framework;
+package org.jpacman.framework;

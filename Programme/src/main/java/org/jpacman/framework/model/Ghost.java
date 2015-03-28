@@ -1,6 +1,4 @@
-package main.java.org.jpacman.framework.model;
-
-import main.java.org.jpacman.framework.model.IBoardInspector.SpriteType;
+package org.jpacman.framework.model;
 
 /**
  * A ghost element on the board.
@@ -13,8 +11,8 @@ public class Ghost extends Sprite {
 	 * @return That this sprite is a ghost.
 	 */
 	@Override
-	public SpriteType getSpriteType() {
-		return SpriteType.GHOST;
+	public IBoardInspector.SpriteType getSpriteType() {
+		return IBoardInspector.SpriteType.GHOST;
 	}
 
 }

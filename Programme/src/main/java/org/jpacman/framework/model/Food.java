@@ -1,6 +1,4 @@
-package main.java.org.jpacman.framework.model;
-
-import main.java.org.jpacman.framework.model.IBoardInspector.SpriteType;
+package org.jpacman.framework.model;
 
 /**
  * A food element on the board.
@@ -27,8 +25,8 @@ public class Food extends Sprite {
 	 * @return That this sprite is a piece of Food.
 	 */
 	@Override
-	public SpriteType getSpriteType() {
-		return SpriteType.FOOD;
+	public IBoardInspector.SpriteType getSpriteType() {
+		return IBoardInspector.SpriteType.FOOD;
 	}
 
 }
