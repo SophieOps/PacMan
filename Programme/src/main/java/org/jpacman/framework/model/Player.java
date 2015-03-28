@@ -1,7 +1,5 @@
 package org.jpacman.framework.model;
 
-import org.jpacman.framework.model.IBoardInspector.SpriteType;
-
 /**
  * A player, responsible for keeping track of the
  * amount of food eaten, and whether or not he is still
@@ -38,8 +36,8 @@ public class Player extends Sprite {
 		return alive;
 	}
 	
-	public SpriteType getSpriteType() {
-		return SpriteType.PLAYER;
+	public IBoardInspector.SpriteType getSpriteType() {
+		return IBoardInspector.SpriteType.PLAYER;
 	}
 	
 	public Direction getDirection() {

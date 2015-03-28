@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-import org.jpacman.framework.model.IBoardInspector.SpriteType;
-
 
 public class Game extends Observable 
 	implements IGameInteractor {
@@ -68,7 +66,7 @@ public class Game extends Observable
 		Sprite currentOccupier = target.topSprite();
 		return 
 			currentOccupier == null 
-			|| currentOccupier.getSpriteType() != SpriteType.WALL;
+			|| currentOccupier.getSpriteType() != IBoardInspector.SpriteType.WALL;
 	}
 	
 	public void addPlayer(Player p) {

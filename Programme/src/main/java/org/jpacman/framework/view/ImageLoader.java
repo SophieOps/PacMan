@@ -59,7 +59,7 @@ public class ImageLoader {
     /**
      * Read images for player and monsters from file.
      * Different images exist for different phases of the animation.
-     * @throws FactoryException if the images can't be found.
+     * @throws org.jpacman.framework.factory.FactoryException if the images can't be found.
      */
     public void loadImages() throws FactoryException {
     	try {

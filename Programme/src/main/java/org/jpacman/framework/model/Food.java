@@ -1,7 +1,5 @@
 package org.jpacman.framework.model;
 
-import org.jpacman.framework.model.IBoardInspector.SpriteType;
-
 /**
  * A food element on the board.
  * @author Arie van Deursen, TU Delft, Feb 16, 2012
@@ -27,8 +25,8 @@ public class Food extends Sprite {
 	 * @return That this sprite is a piece of Food.
 	 */
 	@Override
-	public SpriteType getSpriteType() {
-		return SpriteType.FOOD;
+	public IBoardInspector.SpriteType getSpriteType() {
+		return IBoardInspector.SpriteType.FOOD;
 	}
 
 }
