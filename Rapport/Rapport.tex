@@ -66,7 +66,7 @@
 \vspace*{\stretch{1}}
 \begin{abstract}
 \addcontentsline{toc}{section}{Résumé}
-Ce \emph{rapport} est rendu dans le cadre du cursus de première année de \og Master en Sciences Informatiques\fg  pour le cours de \emph{Software Evolution} (dont le titulaire est Mr. \emph{T. Mens} et l'assistant est Mr. \emph{M. Claes} en année académique 2014-2015) . Le but de ce rapport est de présenter les résultats de la réalisation du projet Pac-Man.
+Ce \emph{rapport} est rendu dans le cadre du cursus de première année de \og Master en Sciences Informatiques\fg  pour le cours de \emph{Software Evolution} (dont le titulaire est Mr. \emph{T. Mens} et l'assistant est Mr. \emph{M. Claes} en année académique 2014-2015) . Le but de ce rapport est de présenter les résultats de l'amélioration du projet Pac-Man.
 \end{abstract}
 \vspace*{\stretch{1}}
 
@@ -115,25 +115,16 @@ Les étapes clés du projet sont les suivantes : (chronologiquement)
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Etape 1 : Première analyse de la qualité du logiciel}\label{sec:etape1}
-Avant toute modification, il convient d'analyser l'état de la qualité du logiciel afin de se rendre compte des améliorations à effectuer, des corrections à appliquer si des mauvaises pratiques sont observées. Cette analyse se fera à l'aide d'outils d'analyse de code tel que les IDE\footnote{IDE : Integrated Development Environment (Environnement de développement).} Eclipse\footnote{Eclipse : \url{https://eclipse.org/} version : Eclipse Luna SR2 (4.4.2).} et IntelijIdea\footnote{InteligIdea : \url{https://www.jetbrains.com/idea} version : Community Edition 14.0.3 } et les programmes CodePro\footnote{CodePro : \url{https://marketplace.eclipse.org/content/codepro-analytix} version : CodePro Analytix 7.1.0.r37}, InCode\footnote{InCode : \url{https://marketplace.eclipse.org/content/incode-helium} version 2.0.1} et VisualVM\footnote{VisualVM : \url{http://visualvm.java.net/} version 1.3.8}.
+Avant toute modification, il convient d'analyser l'état de la qualité du logiciel afin de se rendre compte des améliorations à effectuer, des corrections à appliquer si des mauvaises pratiques sont observées. Cette analyse se fera à l'aide d'outils d'analyse de code tel que les IDE\footnote{IDE : Integrated Development Environment (Environnement de développement).} Eclipse\footnote{Eclipse : \url{https://eclipse.org/} version : Eclipse Luna SR2 (4.4.2).} et IntelijIdea\footnote{InteligIdea : \url{https://www.jetbrains.com/idea} version : Community Edition 14.0.3 } et les programmes CodePro\footnote{CodePro : \url{https://marketplace.eclipse.org/content/codepro-analytix} version : CodePro Analytix 7.1.0.r37}, InCode\footnote{InCode : \url{https://marketplace.eclipse.org/content/incode-helium} version 2.0.1} et VisualVM\footnote{VisualVM : \url{http://visualvm.java.net/} version 1.3.8}.\\ \\
+Cette section regroupe donc les unes après les autres toutes les analyses qui ont pu-être réalisée à travers les différents outils sur le projet JPacman. Elles ontgénérlement été regroupée par type de remaque mais parfois aussi par outil.
 
-\subsection{Enoncé}
-Le but de la première étape clé est d'analyser la qualité du logiciel pour avoir une première idée de ce qu'il faudra corriger si l'on désire améliorer la qualité. Cette première analyse est également l'occasion de comprendre l'architecture et la dynamique du système.
-Pour cette étape clé il est demandé de :
-\begin{enumerate}
-%\item Calculer la valeur de plusieurs métriques logicielles permettant d'estimer la qualité du logiciel, d'interpréter les résultats des métriques, et de mettre en évidence les modules (packages, classes ou méthodes) qui devraient être traités prioritairement afin d'améliorer leur qualité ainsi que la raison pour laquelle ils sont prioritaires.
-\item Déterminer les classes et les méthodes qui sont couvertes par des tests unitaires, et mettre en évidence les méthodes pour lesquelles de nouveaux tests unitaires devraient être créés prioritairement.
-%\item Répertorier les portions de code qui ne sont pas utilisées et qui pourraient donc être supprimées sans altérer le comportement du système.
-%\item Répertorier les portions de code qui sont redondantes (code dupliqué) et qui pourraient donc être éliminées par une restructuration du système sans altérer son comportement.
-%\item Détecter la présence de bad smells. En trouvez-vous une plus forte concentration dans certains modules ?
-\item Analyser les performances du système en terme d'utilisation CPU et de consommation de mémoire. Repérez les parties du code créant un goulot d'étranglement et précisez les modules qui devraient être retravaillés afin de procéder à un déoulottage du système.
-\end{enumerate}
-%TODO :    %Performances			%Antipattern		%Test		%Profilage
-Décrivez la qualité globale du système. Quel serait, selon vous, le coût nécessaire à sa maintenance et à son évolution ?
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Résultat}
+%\subsection{Enoncé}Le but de la première étape clé est d'analyser la qualité du logiciel pour avoir une première idée de ce qu'il faudra corriger si l'on désire améliorer la qualité. Cette première analyse est également l'occasion de comprendre l'architecture et la dynamique du système. Pour cette étape clé il est demandé de : \begin{enumerate} \item Calculer la valeur de plusieurs métriques logicielles permettant d'estimer la qualité du logiciel, d'interpréter les résultats des métriques, et de mettre en évidence les modules (packages, classes ou méthodes) qui devraient être traités prioritairement afin d'améliorer leur qualité ainsi que la raison pour laquelle ils sont prioritaires. \item Déterminer les classes et les méthodes qui sont couvertes par des tests unitaires, et mettre en évidence les méthodes pour lesquelles de nouveaux tests unitaires devraient être créés prioritairement. \item Répertorier les portions de code qui ne sont pas utilisées et qui pourraient donc être supprimées sans altérer le comportement du système. \item Répertorier les portions de code qui sont redondantes (code dupliqué) et qui pourraient donc être éliminées par une restructuration du système sans altérer son comportement. \item Détecter la présence de bad smells. En trouvez-vous une plus forte concentration dans certains modules ? \item Analyser les performances du système en terme d'utilisation CPU et de consommation de mémoire. Repérez les parties du code créant un goulot d'étranglement et précisez les modules qui devraient être retravaillés afin de procéder à un déoulottage du système. \end{enumerate} Décrivez la qualité globale du système. Quel serait, selon vous, le coût nécessaire à sa maintenance et à son évolution ?
 
-\subsubsection{Code dupliqué}\label{codeduplique}
+%TODO :    %Antipattern		%Test 	%Coût de la maintenance et de son évolution
+%\subsection{Résultat}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Code dupliqué}\label{codeduplique}
 Du code dupliqué consiste à trouver au sein d'un projet des blocs de lignes de code identique en plusieurs exemplaires.
 C'est un facteur de mauvaise qualité parce que ça rend le code plus difficile à changer, à maintenir, à comprendre,...\\
 Les solutiuons qui sont offertent par les languages de programmation sont les méthodes, les fonctions, les librairies, l'encapsulation des objets. Eviter de dupliquer du code permet d'avoir un programme plus cohésif.
@@ -147,9 +138,8 @@ Nous pouvons observer sur la \labelfigure{SimilarCode0} que cet outils a détéc
 Les classes concernées sont : Tile.java, GameTest.java, ButtonPanel.java, MainUITest.java, MapParser.java, PacmanKeyListener.java, PacmanKeyListener.java, PacmanKeyListener.java,  GameTest.java, Board.java.\\
 Ce résultat n'est pas bon, mais on peut observer que les blocs se trouve chaque fois dans une même classe. Il sera donc probablement possible de créer des fonction pour chacun de ses cas.
 
-
-
-\subsubsection{Dépendences cycliques}\label{dépendances}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dépendences cycliques}\label{dépendances}
 Une dépendance cyclique peut-être appelée dépendance cyclique directe ou indirecte et elle a la même difinition qu'il s'agisse de dépendances entre des projets, entre des packages ou entre des classes. Quand on a une dépendance directe, on a un élément X qui dépend d’un élément Y qui dépend lui-même de X. Contrairement à la dépendance cyclique indirecte où la situation dans laquelle on se trouve est tel que X dépend de Y, Y dépend de Z et Z dépend de X.
 Du point de vue de la compilation, plus une dépendance est haut niveau, plus elle est à traiter en priorité. En effet entre deux classes, ce n'est pas très grave et ça ne pose généralement pas de problème. Entre deux package c'est fortement déconseillé même s'il est généralement possible de compiler le projet. Par contre entre deux projets, l'issue est fatale puisque chaque projet doit-être compilé avant de pouvoir compiler l'autre.\\
 Du point de vue de la maintenance, une dépendance d'un élément A à un élément B et vice-versa impose que pour pouvoir modifier A, il faut commencer par modifier B et pour pouvoir modifier B, il faut commencer par retravailler B. L'évolution de ses éléments est donc compliquée.\\
@@ -168,8 +158,8 @@ Cet métrique a aussi été visualisée à partir de l'outil CodePro depuis Ecli
 On peut observer sur la \labelfigure{dependenciesPackage} et la \labelfigure{dependenciesModel} qu'il existe des dépendences cycliques au sein du package Model (entre les classes Sprite et Tile) et entre le package Model et le package Factory.\\
 L'\annexe{Dependencies} contient toutes les autres visualisations qui n'ont pass révélé de problème de dépendances.
 
-
-\subsubsection{Code inutile}\label{deadCode}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Code inutile}\label{deadCode}
 Du code inutile, aussi appelé "Dead Code", correspond à des lignes de code qui sont compilée mais qui ne sont jamais utilisée. 
 C'est fréquement du code qui a été utile à une fonctionnalité et lorsque cette fonctionnalité à été supprimée/ réécrite, déplacée,... ce code est resté. Le problème dans ce cas est que ça ralentit la compréhension du développeur lors de la lecture, ça gaspille des ressources au compilateur et lors de l'éxécution.\\
 La solution est généralement de supprimer ses lignes de code.
@@ -184,19 +174,19 @@ L'analyse a aussi été effectuée par l'outil Code Inspector de IntelijIdea et 
 La solution la plus rapide, est simplement de supprimer ses méthodes. Seulement si lors d'une future amélioration, on se rend compte qu'elles auraient pu être nécessaire, on doit recommencer le travail. Une autre solution pourrait-être de mettres ces fonctions en commentaire afin de ne pas devoir réécrire ces fonctions.\\
 Les modifications à éffectuées, bien que nombreuses, sont donc mineures.
 
-
-\subsubsection{Javadoc}\label{javadoc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Javadoc}\label{javadoc}
 La javadoc est une documentation standard au format HTML pour les programmes developpé en JAVA. Elle est créée de façon automatique par la plupart des outils de développement en se basant sur les tags placés dans le code au dessus de la déclaration de chaque classe et de chaque méthode (pour la documentation des packages, elle se trouve dans les fichiers "paquage-info.java").
 L'utiliser est un plus mais ne consiste en rien en une obligation (mais alors il sera tout de même fortement conseillé d'utiliser les commentaires classique pour constituer un code suffisemment documenter à la compréhension).\\
 Grace à l'outil CodePro d'Eclipse, il a été observé (non illustré parce que toutes les classes sont a revoir) que en règle générale, les classes sont documentée. L'outil détecte bien quelques manquement, mais ce sont généralement l'un ou l'autre tag qu'il détecte manquant mais qui ne perturbe pas la compréhension ainsi que les classes DefaultGameFactory, Game, IBoardInspector, IPointInspector, Player et PointManager dont les méthodes ne sont pas commentée et les méthodes issues d'une interface (sous l'annotation "@Overhide").
 %Code inspector de Intelijidea a repérer le tag @param sprite manquant à la ligne 233 de la fonction spriteImage(Sprite) de la calsse BoardVieuw du package org.jpacman.framework.view
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Test unitaire}
+Cet analyse sera détaillée dans la section suivante (n$°$ \ref{sec:etape2}).
 
-\subsubsection{Test unitaire}
-Cet analyse sera détaillée dans la section suivante (n° \ref{sec:etape2}).
-
-
-\subsubsection{Flux de conception}\label{sec:designflaws}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Flux de conception}\label{sec:designflaws}
 A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer la conception du programme sur la \labelfigure{designflaws} dont la légende se trouve à l'\annexe{designflawsLeg}
 \begin{figure}[!h]
 	\centering
@@ -212,8 +202,8 @@ Plusieurs solution sont possible pour résoudre ce genre de problème :
 \item Regardez 'aperçu de la vue "couplage" pour identifier toutes les dépendances basée sur les appels entre la classe et des classes externes.
 \end{itemize}
 
-
-\subsubsection{Complexité}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Complexité}
 A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer la complexité de l'application sur la \labelfigure{complexity} dont le détail de la légende se trouve à l'\annexe{complexityLeg}
 \begin{figure}[!h]
 	\centering
@@ -222,8 +212,8 @@ A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer la
 \end{figure}
 Cette figure met en avant la classe PacmanKeyListener qui encourt la plus forte complexité et met un attention sur les classes BoardView et MapParser (à cause de leur grand nombre d'attributs).
 
-
-\subsubsection{Encapsulation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Encapsulation}
 A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer la complexité de l'application sur la \labelfigure{encapsulation} dont le détail de la légende se trouve à l'\annexe{encapsulationLeg}
 \begin{figure}[!h]
 	\centering
@@ -232,14 +222,14 @@ A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer la
 \end{figure}
 Cette figuer contient beaucoup d'information, nous en retiendrons quelques unes : 
 \begin{itemize}
-\item La classe "MainUI" a beaucoup de clients (c'est-à-dire beaucoup d'autres classes qui accèdent aux données publiques de cette classes) dont les principaux sont "PacmanKeyListener" et "IGameInteractor". On ne sait rien concernant le nombre de fournisseurs\footnote{>provider} (c'est-à-dire beaucoup de données publiques d'autres classes auxquelles celle-ci accède) sauf qu'il est inférieur au nombre de clients.
+\item La classe "MainUI" a beaucoup de clients (c'est-à-dire beaucoup d'autres classes qui accèdent aux données publiques de cette classes) dont les principaux sont "PacmanKeyListener" et "IGameInteractor". On ne sait rien concernant le nombre de fournisseurs (c'est-à-dire beaucoup de données publiques d'autres classes auxquelles celle-ci accède) sauf qu'il est inférieur au nombre de clients.
 \item La classe "Player" n'a aucun fournisseur et a beaucoup de clients dont les principaux sont "Game" et "BoardView".
 \item La classe "Sprite" n'a aucun fournisseur et a beaucoup de clients dont les principaux sont "Game", "Board" et "Tile".
 \item Les classes telles que "Ghost", "Controller", "Wall", "ImageLoader", "Animator", "MapParser", "IGameFactory", "FactoryException", "IPacmanInteraction" et "Disposable" n'ont ni clients ni fournisseurs.
 \end{itemize}
 
-
-\subsubsection{Couplage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Couplage}
 A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer la complexité de l'application sur la \labelfigure{coupling} dont le détail de la légende se trouve à l'\annexe{couplingLeg}
 \begin{figure}[!h]
 	\centering
@@ -253,8 +243,8 @@ Cette figuer contient aussi beaucoup d'information, nous en retiendrons quelques
 \item La classe "Board" a beaucoup de clients dont les principaux sont "Game", "MapParser" et "DefaultGameFactory". On ne sait rien concernant le nombre de fournisseurs sauf qu'il est inférieur au nombre de clients et que les principaux sont "Sprite" et "Tile".
 \end{itemize}
 
-
-\subsubsection{Pyramide des métriques}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Pyramide des métriques}
 A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer les valeurs de l'application sur la \labelfigure{pyramid} dont le détail de la légende se trouve à l'\annexe{pyramidLeg}.
 \begin{figure}[!h]
 	\centering
@@ -265,10 +255,10 @@ Comme le précise l'interprétation de la \labelfigure{pyramid}, L'arbre que con
 Les classes ont tendance à contenir un nombre moyen de méthodes et à être organisés avec quelques classes par paquet.\\
 Les méthodes tendent à être longue et avec une logique assez simple et à appeler de nombreuses méthodes (à forte intensité de couplage) de quelques autres classes (à faible dispersion de couplage).
 
-
 \clearpage
-\subsubsection{Métriques}
-Grace à l'outil de calcul des métriques d'Eclipse, on peut observer les résulats présent à la \labelfigure{métrique0}, la \labelfigure{métrique1} et la \labelfigure{métrique2}. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Métriques}
+Grace à l'outil de calcul des métriques d'Eclipse, on peut observer les résulats présent à la \labelfigure{métrique0}, la \labelfigure{métrique1} et la \labelfigure{métrique2}.\\
 \begin{figure}[!h]
 	\centering
 	\includegraphics[height=\textheight]{Metrique0.png}
@@ -304,9 +294,9 @@ C'est la moyenne du nombre de méthodes définies pour chaque classe.
 On remarque que certainnes classes ont trop de méthodes, en particulier les classes "Game", "ButtonPanel", "MainUI", "PacmanKeyListener" et "BoardView". \\
 Lors d'une analyse précédente (voir section \ref{sec:designflaws} il avait été observé que les classes "Game" et "PacmanKeyListener" était schizophréniques. Le problème se résolvera donc probablement naturellement lors du traitement de ce problème. Pour ce qui est des autres classes, il sera nécéssaire lors du refactoring d'étudier l'utilité de chacune des méthodes et d'aviser au cas par cas le travail à effectuer sur chacune.
 
-
 \clearpage
-\subsubsection{Audit}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Audit}
 Cet intitulé reprend tous les problèmes et les erreurs de code tel que les erreurs non capturées, la sérialisation les imports inutiles, les droit d'accès,...\\
 Voici celles détectées par l'outil CodePro d'Eclipse : 
 \begin{figure}[!h]
@@ -330,7 +320,7 @@ La meilleur solution est simplement de les supprimer.\\
 Voici celles détectées par l'outil Code Inspector d'IntelijIdea : 
 \begin{figure}[!h]
 	\centering
-	\includegraphics{AuditII.png}
+	\includegraphics[maxwidth=\textwidth]{AuditII.png}
 	\caption{\label{Audit}Détail de l'analyse d'audit faite par IntelijIdea.}
 \end{figure}
 
@@ -356,7 +346,6 @@ Ce n'est donc pas un grave problème à l'heure actuelle puisque le jeux fonctio
 \smalltitle{Optimisation}
 En java, une variable qui ne doit pas être modifié pendant le temps d'une exécution peut-être qualifiée avec le mot-clé "final". Ceci permet d'optimiser le code et de ne pas être confronté à une mauvaise utilisation de la variable par la suite.
 
-
 \smalltitle{Restructuration}
 Cet outil informe que la fonction "public int addPoints(int)" de la classe "org.jpacman.framework.model.Player" retourne une valeur qui n'est jamais utilisée et qui dont pourrait-être transformé en "public void addPoints(int)".\\
 Cette modification est à étudier avant d'agir pour vérifier s'il n'est pas nécéssaire pour une utilisation postérieur de garder cette valeur de retour.\\
@@ -366,20 +355,16 @@ Chacun des cas sera à étudier pour savoir si cette information est disponible 
 \smalltitle{Code inutile}
 Ce sujet a déjà été traité plus haut (Voir \ref{deadCode}).
 
-
 \smalltitle{Javadoc}
 Ce sujet a déjà été traité plus haut (Voir \ref{javadoc}).
-
 
 \smalltitle{Caractère inutile}
 Ce sont des élément du code qui sont sous-entendu par le reste de l'architucture du code.\\
 Dans ce projet, un seul cas a été resencé, il s'agit d'un ";" dans la classe "IBoardInspector" du package "org.jpacman.framework.model". Lors du refactoring, il suffira de le retirer.
 
-
 \smalltitle{Typographie}
 Les problèmes de typographies reprennent les erreurs de formatage des différents éléments. Ce ne sont des erreurs que de conventions parce que elle ne change en rien le comportement de l'application. Cependant, un bon respect des conventions permet une meilleur compréhension lors d'une relecture, d'une modification, de l'étude du code par un nouveau développeur sur le projet,...\\
-L'outil Code Inspector intégré à IntelijIdea a permit d'en recenser plusieurs. A l'étude de celle-ci, il a été observé qu'elles sont souvent dans les commentaires. Exemple, dans le fichier "GhostMover.java" du package "org.jpacman.framework.model", entre la ligne 28 et la ligne 30, le mot "randomizer" a été identifié avec une majuscule dans le commentaire et sans majuscule dans les lignes de code.\\
-\vspace{3cm}
+L'outil Code Inspector intégré à IntelijIdea a permit d'en recenser plusieurs. A l'étude de celle-ci, il a été observé qu'elles sont souvent dans les commentaires. Exemple, dans le fichier "GhostMover.java" du package "org.jpacman.framework.model", entre la ligne 28 et la ligne 30, le mot "randomizer" a été identifié avec une majuscule dans le commentaire et sans majuscule dans les lignes de code.\\ \\
 Il est important de signaler aussi, que l'outil Eclipse soulève certaines attention à l'aide de "warnings".\\
 Les types d'erreurs sont : 
 \begin{itemize}
@@ -419,10 +404,11 @@ main/java/.../factory & 2 & MapParser.java & 2 \\
 \hline
 \end{tabular}
 
-\subsubsection{Profilage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Profilage}
 \begin{figure}[!h]
 	\centering
-	\includegraphics{Profilage.png}
+	\includegraphics[width=\textwidth]{Profilage.png}
 	\caption{\label{profilage}Détail de l'analyse des ressources CPU et mémoire par VisualVM.}
 \end{figure}
 \smalltitle{Ressources CPU}
@@ -433,8 +419,13 @@ Il n'est donc probablement pas possible d'accélérer l'application.
 Les ressources mémoires utilisées par l'application sont visible dans la seconde moitier de la \labelfigure{profilage}. Les observation ne sont pas nombreuses si ce n'est que l'utilisation de la mémoire concerne majoritairement l'affichage et les éléments graphiques de l'application. A moins donc de diminuer la qualité ou la vitesse de rafraichissement (ce qui est fortement déconseillé), il n'y a pas grand chose à faire.
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Conclusion}
+Suite à cette analyse, il est evident de constater que ce code n'est pas parfait, cependant, dans l'ensemble il est correctement écrit, bien structuré, généralement commenté et facilement compréhensible. De ce point de vue il est donc normal d'estimer que certe certaines amélioration sont conseillée tel que les dépendances cycliques entre les packages et l'ajout de test unitaire mais dans l'ensemble, c'est un bon projet, qui devrait-être facil à maintenir et à poursuivre.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
+\clearpage
 \section{Etape 2 : Ajout de tests unitaires}\label{sec:etape2}
 \subsection{Enoncé}
 Votre première analyse a révélé la présence de certains problèmes de qualité du code de l'application.

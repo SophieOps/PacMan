@@ -4,41 +4,40 @@
 \contentsline {subsection}{\numberline {1.1}Probl\IeC {\`e}me pos\IeC {\'e}}{4}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Etapes cl\IeC {\'e}s}{4}{subsection.1.2}
 \contentsline {section}{\numberline {2}Etape 1 : Premi\IeC {\`e}re analyse de la qualit\IeC {\'e} du logiciel}{5}{section.2}
-\contentsline {subsection}{\numberline {2.1}Enonc\IeC {\'e}}{5}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}R\IeC {\'e}sultat}{5}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Code dupliqu\IeC {\'e}}{5}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}D\IeC {\'e}pendences cycliques}{6}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}Code inutile}{8}{subsubsection.2.2.3}
-\contentsline {subsubsection}{\numberline {2.2.4}Javadoc}{9}{subsubsection.2.2.4}
-\contentsline {subsubsection}{\numberline {2.2.5}Test unitaire}{10}{subsubsection.2.2.5}
-\contentsline {subsubsection}{\numberline {2.2.6}Flux de conception}{10}{subsubsection.2.2.6}
-\contentsline {subsubsection}{\numberline {2.2.7}Complexit\IeC {\'e}}{10}{subsubsection.2.2.7}
-\contentsline {subsubsection}{\numberline {2.2.8}Encapsulation}{11}{subsubsection.2.2.8}
-\contentsline {subsubsection}{\numberline {2.2.9}Couplage}{12}{subsubsection.2.2.9}
-\contentsline {subsubsection}{\numberline {2.2.10}Pyramide des m\IeC {\'e}triques}{14}{subsubsection.2.2.10}
-\contentsline {subsubsection}{\numberline {2.2.11}M\IeC {\'e}triques}{16}{subsubsection.2.2.11}
-\contentsline {subsubsection}{\numberline {2.2.12}Audit}{23}{subsubsection.2.2.12}
-\contentsline {subsubsection}{\numberline {2.2.13}Profilage}{27}{subsubsection.2.2.13}
-\contentsline {section}{\numberline {3}Etape 2 : Ajout de tests unitaires}{28}{section.3}
-\contentsline {subsection}{\numberline {3.1}Enonc\IeC {\'e}}{28}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}R\IeC {\'e}sultat}{28}{subsection.3.2}
-\contentsline {section}{\numberline {4}Etape 3 : Refactoring en vue d'am\IeC {\'e}liorer la qualit\IeC {\'e}}{29}{section.4}
-\contentsline {subsection}{\numberline {4.1}Enonc\IeC {\'e}}{29}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}R\IeC {\'e}sultat}{29}{subsection.4.2}
-\contentsline {section}{\numberline {5}Etape 4 : Analyse de la qualit\IeC {\'e} du logiciel}{30}{section.5}
-\contentsline {subsection}{\numberline {5.1}Enonc\IeC {\'e}}{30}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}R\IeC {\'e}sultat}{30}{subsection.5.2}
-\contentsline {section}{\numberline {6}Etape 5 : Extensions}{31}{section.6}
-\contentsline {subsection}{\numberline {6.1}Enonc\IeC {\'e}}{31}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}R\IeC {\'e}sultat}{31}{subsection.6.2}
-\contentsline {section}{\numberline {7}Etape 6 : Analyse de la qualit\IeC {\'e} du logiciel}{32}{section.7}
-\contentsline {subsection}{\numberline {7.1}Enonc\IeC {\'e}}{32}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}R\IeC {\'e}sultat}{32}{subsection.7.2}
-\contentsline {section}{\numberline {8}Etape 7 : Analyse de l'\IeC {\'e}volution de la qualit\IeC {\'e} logicielle}{33}{section.8}
-\contentsline {subsection}{\numberline {8.1}Enonc\IeC {\'e}}{33}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}R\IeC {\'e}sultat}{33}{subsection.8.2}
-\contentsline {section}{\numberline {9}Annexes}{35}{section.9}
-\contentsline {section}{\numberline {A}Annexe : Code Dupliqu\IeC {\'e}}{35}{appendix.A}
-\contentsline {section}{\numberline {B}Annexe : D\IeC {\'e}pendances}{39}{appendix.B}
-\contentsline {section}{\numberline {C}Annexe : Incode}{43}{appendix.C}
-\contentsline {section}{\numberline {D}Annexe : Couverture par les test}{48}{appendix.D}
+\contentsline {subsection}{\numberline {2.1}Code dupliqu\IeC {\'e}}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}D\IeC {\'e}pendences cycliques}{6}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Code inutile}{8}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Javadoc}{9}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Test unitaire}{10}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Flux de conception}{10}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Complexit\IeC {\'e}}{10}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.8}Encapsulation}{10}{subsection.2.8}
+\contentsline {subsection}{\numberline {2.9}Couplage}{12}{subsection.2.9}
+\contentsline {subsection}{\numberline {2.10}Pyramide des m\IeC {\'e}triques}{13}{subsection.2.10}
+\contentsline {subsection}{\numberline {2.11}M\IeC {\'e}triques}{15}{subsection.2.11}
+\contentsline {subsection}{\numberline {2.12}Audit}{21}{subsection.2.12}
+\contentsline {subsection}{\numberline {2.13}Profilage}{25}{subsection.2.13}
+\contentsline {subsection}{\numberline {2.14}Conclusion}{26}{subsection.2.14}
+\contentsline {section}{\numberline {3}Etape 2 : Ajout de tests unitaires}{27}{section.3}
+\contentsline {subsection}{\numberline {3.1}Enonc\IeC {\'e}}{27}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}R\IeC {\'e}sultat}{27}{subsection.3.2}
+\contentsline {section}{\numberline {4}Etape 3 : Refactoring en vue d'am\IeC {\'e}liorer la qualit\IeC {\'e}}{28}{section.4}
+\contentsline {subsection}{\numberline {4.1}Enonc\IeC {\'e}}{28}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}R\IeC {\'e}sultat}{28}{subsection.4.2}
+\contentsline {section}{\numberline {5}Etape 4 : Analyse de la qualit\IeC {\'e} du logiciel}{29}{section.5}
+\contentsline {subsection}{\numberline {5.1}Enonc\IeC {\'e}}{29}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}R\IeC {\'e}sultat}{29}{subsection.5.2}
+\contentsline {section}{\numberline {6}Etape 5 : Extensions}{30}{section.6}
+\contentsline {subsection}{\numberline {6.1}Enonc\IeC {\'e}}{30}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}R\IeC {\'e}sultat}{30}{subsection.6.2}
+\contentsline {section}{\numberline {7}Etape 6 : Analyse de la qualit\IeC {\'e} du logiciel}{31}{section.7}
+\contentsline {subsection}{\numberline {7.1}Enonc\IeC {\'e}}{31}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}R\IeC {\'e}sultat}{31}{subsection.7.2}
+\contentsline {section}{\numberline {8}Etape 7 : Analyse de l'\IeC {\'e}volution de la qualit\IeC {\'e} logicielle}{32}{section.8}
+\contentsline {subsection}{\numberline {8.1}Enonc\IeC {\'e}}{32}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}R\IeC {\'e}sultat}{32}{subsection.8.2}
+\contentsline {section}{\numberline {9}Annexes}{33}{section.9}
+\contentsline {section}{\numberline {A}Annexe : Code Dupliqu\IeC {\'e}}{33}{appendix.A}
+\contentsline {section}{\numberline {B}Annexe : D\IeC {\'e}pendances}{37}{appendix.B}
+\contentsline {section}{\numberline {C}Annexe : Incode}{41}{appendix.C}
+\contentsline {section}{\numberline {D}Annexe : Couverture par les test}{46}{appendix.D}
