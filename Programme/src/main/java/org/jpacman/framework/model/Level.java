@@ -1,8 +1,8 @@
 package org.jpacman.framework.model;
 
-import org.jpacman.framework.factory.DefaultGameFactory;
 import org.jpacman.framework.factory.FactoryException;
 import org.jpacman.framework.factory.IGameFactory;
+import org.jpacman.framework.factory.DefaultGameFactory;
 import org.jpacman.framework.factory.MapParser;
 
 /**
@@ -53,7 +53,7 @@ public class Level {
 	/**
 	 * Actually parse the given map file.
 	 * @return The resulting game.
-	 * @throws FactoryException If file can't be read.
+	 * @throws org.jpacman.framework.factory.FactoryException If file can't be read.
 	 */
 	public IGameInteractor parseMap() throws FactoryException {
 		assert mapFile != null;

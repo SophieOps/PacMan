@@ -16,88 +16,86 @@ import org.junit.Test;
 
 /**
  * Test class addressing how sprites occupy or deoccupy tiles.
- * 
+ *
  * @author Arie van Deursen, TU Delft, Dec 24, 2011
  */
 public class SpriteTest {
 
-	private final Sprite john = new Sprite() { };
-	private final Tile center = new Tile(0, 0);
+    private final Sprite john = new Sprite() { };
+    private final Tile center = new Tile(0, 0);
 
-	/**
-	 * Initial situation: Sprite John is in the middle.
-	 */
-	@Before
-	public void setUp() {
-		john.occupy(center);
-	}
+    /**
+     * Initial situation: Sprite John is in the middle.
+     */
+    @Before
+    public void setUp() {
+        john.occupy(center);
+    }
 
 
 
-	/**
-	 * Test what happens if we relocate a sprite.
-	 */
-	@Test
-	public void relocateSprite() {
-        /*
-           TODO: make it working
+    /**
+     * Test what happens if we relocate a sprite.
+     */
+    @Test
+    public void relocateSprite() {
 
-		john.deoccupy();
-		Tile north = new Tile(0, 1);
-		john.occupy(north);
+        //   TODO: make it working
 
-		// john now lives at north
-		assertThat(north.topSprite(), equalTo(john));
+        john.deoccupy();
+        Tile north = new Tile(0, 1);
+        john.occupy(north);
 
-		// but john doesn't live in the center anymore.
-		assertFalse(center.containsSprite(john));
+        // john now lives at north
+        assertThat(north.topSprite(), equalTo(john));
 
-		*/
-	}
+        // but john doesn't live in the center anymore.
+        assertFalse(center.containsSprite(john));
+    }
 
-	/**
-	 * Test what happens if there are multiple sprites on one tile.
-	 */
-	@Test
-	public void multipleSprites() {
+    /**
+     * Test what happens if there are multiple sprites on one tile.
+     */
+    @Test
+    public void multipleSprites() {
         Sprite david = new Sprite() {
         };
-		david.occupy(center);
+        david.occupy(center);
 
-		// now David is the top most sprite.
-		assertThat(center.topSprite(), equalTo(david));
+        // now David is the top most sprite.
+        assertThat(center.topSprite(), equalTo(david));
 
-		// but john is still there too.
-		assertTrue(center.containsSprite(john));
-		assertThat(john.getTile(), equalTo(center));
-	}
+        // but john is still there too.
+        assertTrue(center.containsSprite(john));
+        assertThat(john.getTile(), equalTo(center));
+    }
 
-	/**
-	 * Testing moves, now with custom made matcher.
-	 */
-	@Test
-	public void testMoveWithMatchers() {
-		Tile north = new Tile(0, 1);
-		john.deoccupy();
-		john.occupy(north);
-		assertThat(john, occupies(north));
-		// assertThat(john, not(occupies(center)));
-	}
+    /**
+     * Testing moves, now with custom made matcher.
+     */
+    @Test
+    public void testMoveWithMatchers() {
+        Tile north = new Tile(0, 1);
+        john.deoccupy();
+        john.occupy(north);
+        assertThat(john, occupies(north));
+        // assertThat(john, not(occupies(center)));
+    }
 
 
-	
-	/**
-	 * @param expected
-	 *            The tile the sprite should be on.
-	 * @return A hamcrest matcher telling whether a sprite is on
-	 *         a given tile.
-	 */
-	public static Matcher<Sprite> occupies(final Tile expected) {
-		return new FeatureMatcher<Sprite, Tile>(equalTo(expected), "occupying", "tile") {
-			@Override
-			protected Tile featureValueOf(Sprite actual) {
-				return actual.getTile();
-			}
-		};
-	}
+
+    /**
+     * @param expected
+     *            The tile the sprite should be on.
+     * @return A hamcrest matcher telling whether a sprite is on
+     *         a given tile.
+     */
+    public static Matcher<Sprite> occupies(final Tile expected) {
+        return new FeatureMatcher<Sprite, Tile>(equalTo(expected), "occupying", "tile") {
+            @Override
+            protected Tile featureValueOf(Sprite actual) {
+                return actual.getTile();
+            }
+        };
+    }
 }

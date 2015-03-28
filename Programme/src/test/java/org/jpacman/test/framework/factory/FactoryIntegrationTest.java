@@ -22,55 +22,54 @@ import org.junit.Test;
  */
 public class FactoryIntegrationTest {
 
-	private MapParser parser;
+    private MapParser parser;
 
-	private final String[] map = new String[] { 
-			"#####", 
-			"#...#", 
-			"#GPG#", 
-			"#   #",
-			"#####" 
-	};
+    private final String[] map = new String[] {
+            "#####",
+            "#...#",
+            "#GPG#",
+            "#   #",
+            "#####"
+    };
 
-	
-	/**
-	 * Create the standard factory and parser.
-	 */
-	@Before
-	public void setUp() {
-		IGameFactory factory = new DefaultGameFactory();
-		parser = new MapParser(factory);
-	}
 
-	/**
-	 * Test parsing of a larger map.
-	 * Individual unit tests address specific cases; here we focus
-	 * on the overall results.
-	 * 
-	 * @throws FactoryException If parsing fails. Should not happen.
-	 */
-	@Test
-    @Ignore
-	public void testFullMap() throws FactoryException {
-		Game g = parser.parseMap(map);
-		Board b = g.getBoard();
+    /**
+     * Create the standard factory and parser.
+     */
+    @Before
+    public void setUp() {
+        IGameFactory factory = new DefaultGameFactory();
+        parser = new MapParser(factory);
+    }
 
-		// did we recognize the right sprites?
-		assertEquals(SpriteType.EMPTY, b.spriteTypeAt(1, 3));
-		assertEquals(SpriteType.PLAYER, b.spriteTypeAt(2, 2));
-		assertEquals(SpriteType.GHOST, b.spriteTypeAt(1, 2));
-		assertEquals(SpriteType.WALL, b.spriteTypeAt(0, 0));
-		assertEquals(SpriteType.FOOD, b.spriteTypeAt(1, 1));
+    /**
+     * Test parsing of a larger map.
+     * Individual unit tests address specific cases; here we focus
+     * on the overall results.
+     *
+     * @throws FactoryException If parsing fails. Should not happen.
+     */
+    @Test
+    public void testFullMap() throws FactoryException {
+        Game g = parser.parseMap(map);
+        Board b = g.getBoard();
 
-		// did we properly set the player?
-		assertEquals(g.getPlayer(), b.spriteAt(2, 2));
+        // did we recognize the right sprites?
+        assertEquals(SpriteType.EMPTY, b.spriteTypeAt(1, 3));
+        assertEquals(SpriteType.PLAYER, b.spriteTypeAt(2, 2));
+        assertEquals(SpriteType.GHOST, b.spriteTypeAt(1, 2));
+        assertEquals(SpriteType.WALL, b.spriteTypeAt(0, 0));
+        assertEquals(SpriteType.FOOD, b.spriteTypeAt(1, 1));
 
-		// were all ghosts added?
-		assertEquals(2, g.getGhosts().size());
+        // did we properly set the player?
+        assertEquals(g.getPlayer(), b.spriteAt(2, 2));
 
-		// was the food actually added?
-		final int cellsWithFoodCount = 3;
-		assertEquals(cellsWithFoodCount * Food.DEFAULT_POINTS, 
-			     g.getPointManager().totalFoodInGame());
-	}
+        // were all ghosts added?
+        assertEquals(2, g.getGhosts().size());
+
+        // was the food actually added?
+        final int cellsWithFoodCount = 3;
+        assertEquals(cellsWithFoodCount * Food.DEFAULT_POINTS,
+                g.getPointManager().totalFoodInGame());
+    }
 }

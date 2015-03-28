@@ -1,7 +1,5 @@
 package org.jpacman.framework.model;
 
-import org.jpacman.framework.model.IBoardInspector.SpriteType;
-
 /**
  * Any entity that occurs in the game.
  * 
@@ -75,8 +73,8 @@ public class Sprite {
 		assert spriteInvariant();
 	}
 	
-	public SpriteType getSpriteType() {
-		return SpriteType.OTHER;
+	public IBoardInspector.SpriteType getSpriteType() {
+		return IBoardInspector.SpriteType.OTHER;
 	}
 	
 	public String toString() {

@@ -1,8 +1,8 @@
 package org.jpacman.framework.ui;
 
+import org.jpacman.framework.model.IGameInteractor;
 import org.jpacman.framework.model.Controller;
 import org.jpacman.framework.model.Direction;
-import org.jpacman.framework.model.IGameInteractor;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

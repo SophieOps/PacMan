@@ -18,41 +18,41 @@ import org.mockito.runners.MockitoJUnitRunner;
  */
 @RunWith(MockitoJUnitRunner.class)
 public class PointManagerTest {
-	
-	private PointManager pm;
-	private final int totalPoints = 10;
-	@Mock private Player player;
-	
-	/**
-	 * Create a point manager, and give it some initial points.
-	 */
-	@Before public void setUp() {
-		pm = new PointManager();
-		pm.addPointsToBoard(totalPoints);
-	}
 
-	/**
-	 * After food has been added, there's more to eat.
-	 */
-	@Test public void testAdd() {
-		assertFalse(pm.allEaten());
-	}
-	
-	/**
-	 * After half has been eaten, there's still more to eat.
-	 */
-	@Test public void testEatSomeFood() {
-		final int pointsToEat = totalPoints / 2;
-		pm.consumePointsOnBoard(player, pointsToEat);
-		assertFalse(pm.allEaten());
-		assertEquals(pointsToEat, pm.getFoodEaten());
-	}
-	
-	/**
-	 * Detect that all has been eaten.
-	 */
-	@Test public void testEatAll() {
-		pm.consumePointsOnBoard(player, totalPoints);
-		assertTrue(pm.allEaten());
-	}
+    private PointManager pm;
+    private final int totalPoints = 10;
+    @Mock private Player player;
+
+    /**
+     * Create a point manager, and give it some initial points.
+     */
+    @Before public void setUp() {
+        pm = new PointManager();
+        pm.addPointsToBoard(totalPoints);
+    }
+
+    /**
+     * After food has been added, there's more to eat.
+     */
+    @Test public void testAdd() {
+        assertFalse(pm.allEaten());
+    }
+
+    /**
+     * After half has been eaten, there's still more to eat.
+     */
+    @Test public void testEatSomeFood() {
+        final int pointsToEat = totalPoints / 2;
+        pm.consumePointsOnBoard(player, pointsToEat);
+        assertFalse(pm.allEaten());
+        assertEquals(pointsToEat, pm.getFoodEaten());
+    }
+
+    /**
+     * Detect that all has been eaten.
+     */
+    @Test public void testEatAll() {
+        pm.consumePointsOnBoard(player, totalPoints);
+        assertTrue(pm.allEaten());
+    }
 }

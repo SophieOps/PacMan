@@ -15,7 +15,6 @@ import javax.swing.JPanel;
 
 import org.jpacman.framework.factory.FactoryException;
 import org.jpacman.framework.model.IBoardInspector;
-import org.jpacman.framework.model.IBoardInspector.SpriteType;
 import org.jpacman.framework.model.Player;
 import org.jpacman.framework.model.Sprite;
 
@@ -89,7 +88,7 @@ public class BoardView extends JPanel {
      * Create a new view for the board, given
      * an inspector of the actual board content.
      * @param board Model of the board.
-     * @throws FactoryException 
+     * @throws org.jpacman.framework.factory.FactoryException
      */
     public BoardView(IBoardInspector board) throws FactoryException {
     	boardInspector = board;
@@ -171,7 +170,7 @@ public class BoardView extends JPanel {
         g2.setColor(fillColor);
         g2.fill(fullCell);
 
-        if (boardInspector.spriteTypeAt(x, y) == SpriteType.FOOD) {
+        if (boardInspector.spriteTypeAt(x, y) == IBoardInspector.SpriteType.FOOD) {
         	Rectangle centeredCell = centeredArea(startx, starty, 2);
         	g2.setColor(Color.black);
             g2.fill(fullCell);
@@ -202,7 +201,7 @@ public class BoardView extends JPanel {
 	
 	
 	private Color spriteColor(int x, int y) {
-		SpriteType st = boardInspector.spriteTypeAt(x, y);
+		IBoardInspector.SpriteType st = boardInspector.spriteTypeAt(x, y);
 		Color c = Color.yellow;
 		switch (st) {
 		case GHOST:
@@ -241,7 +240,7 @@ public class BoardView extends JPanel {
                 		((Player) sprite).getDirection(),
                         animationCount);
             }
-            if (sprite.getSpriteType() == SpriteType.GHOST) { 
+            if (sprite.getSpriteType() == IBoardInspector.SpriteType.GHOST) {
                  img = imageLoader.monster(animationCount);
             }
         }
