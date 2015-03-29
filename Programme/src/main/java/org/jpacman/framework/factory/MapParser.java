@@ -174,21 +174,7 @@ public class MapParser {
      */
     private String[] getMap(String fileName) throws FactoryException {
         BufferedReader br = new BufferedReader(new InputStreamReader(getResourceStream(fileName)));
-
-        List<String> mapList = new ArrayList<String>();
-        String[] mapString = null;
-
-        try {
-            while (br.ready()) {
-                mapList.add(br.readLine());
-            }
-            mapString = new String[mapList.size()];
-            mapList.toArray(mapString);
-            br.close();
-        } catch (IOException e) {
-            throw new FactoryException("Problem reading file ", e);
-        }
-        return mapString;
+        return getMap(br);        
     }
     
     /**

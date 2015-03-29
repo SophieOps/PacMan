@@ -26,8 +26,7 @@ public class Tile {
 		this.y = y;
 		sprites = new ArrayDeque<Sprite>();
 
-        for(Sprite s : this.sprites)
-            assert(this.equals(s.getTile()));
+		checkSprites();
 	}
 	
 	/**
@@ -64,14 +63,10 @@ public class Tile {
 	 * @param sprite The sprite to be removed.
 	 */
 	protected void dropSprite(Sprite sprite) {
-        for(Sprite s : this.sprites)
-            assert(this.equals(s.getTile()));
-
+		checkSprites();
 		assert sprite != null;
 		sprites.remove(sprite);
-
-        for(Sprite s : this.sprites)
-            assert(this.equals(s.getTile()));
+		checkSprites();
 	}
 	
 	/**
@@ -79,15 +74,20 @@ public class Tile {
 	 * @param sprite The sprite to be added.
 	 */
 	protected void addSprite(Sprite sprite) {
-        for(Sprite s : this.sprites)
-            assert(this.equals(s.getTile()));
+		checkSprites();
 
 		assert sprite != null;
 		assert !containsSprite(sprite) : "Pre: sprite not yet on tile.";
-		
 		sprites.addLast(sprite);
 		
 		assert containsSprite(sprite) : "Post: sprite on tile.";
+		checkSprites();
+	}
+	
+	/**
+	 * method to avoid duplication.
+	 */
+	protected void checkSprites() {
         for(Sprite s : this.sprites)
             assert(this.equals(s.getTile()));
 	}

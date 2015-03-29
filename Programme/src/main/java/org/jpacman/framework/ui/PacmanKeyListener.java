@@ -142,14 +142,7 @@ public class PacmanKeyListener extends Observable implements KeyListener, IPacma
 
     @Override
     public void start() {
-        assert (currentState == PacmanKeyListener.MatchState.WON
-                && gameInteractor.won()
-                ||
-                currentState == PacmanKeyListener.MatchState.LOST
-                        && gameInteractor.died()
-                ||
-                (currentState == PacmanKeyListener.MatchState.PLAYING || currentState == PacmanKeyListener.MatchState.PAUSING)
-                        && !(gameInteractor.died() || gameInteractor.won()));
+    	checkAssert("");
         if (currentState == PacmanKeyListener.MatchState.PAUSING) {
             startControllers();
             updateState(PacmanKeyListener.MatchState.PLAYING);
@@ -165,38 +158,17 @@ public class PacmanKeyListener extends Observable implements KeyListener, IPacma
 
     @Override
     public void stop() {
-        assert (currentState == PacmanKeyListener.MatchState.WON
-                && gameInteractor.won()
-                ||
-                currentState == PacmanKeyListener.MatchState.LOST
-                        && gameInteractor.died()
-                ||
-                (currentState == PacmanKeyListener.MatchState.PLAYING || currentState == PacmanKeyListener.MatchState.PAUSING)
-                        && !(gameInteractor.died() || gameInteractor.won())) : "Unexpected state in " + currentState;
+    	checkAssert("Unexpected state in " + currentState.toString());
         if (currentState == PacmanKeyListener.MatchState.PLAYING) {
             stopControllers();
             updateState(PacmanKeyListener.MatchState.PAUSING);
         }
-        assert (currentState == PacmanKeyListener.MatchState.WON
-                && gameInteractor.won()
-                ||
-                currentState == PacmanKeyListener.MatchState.LOST
-                        && gameInteractor.died()
-                ||
-                (currentState == PacmanKeyListener.MatchState.PLAYING || currentState == PacmanKeyListener.MatchState.PAUSING)
-                        && !(gameInteractor.died() || gameInteractor.won()));
+        checkAssert("");
     }
 
     @Override
     public void exit() {
-        assert (currentState == PacmanKeyListener.MatchState.WON
-                && gameInteractor.won()
-                ||
-                currentState == PacmanKeyListener.MatchState.LOST
-                        && gameInteractor.died()
-                ||
-                (currentState == PacmanKeyListener.MatchState.PLAYING || currentState == PacmanKeyListener.MatchState.PAUSING)
-                        && !(gameInteractor.died() || gameInteractor.won()));
+    	checkAssert("");
         stopControllers();
         disposableWindow.dispose();
     }
@@ -227,27 +199,13 @@ public class PacmanKeyListener extends Observable implements KeyListener, IPacma
      * @param dir New direction.
      */
     private void movePlayer(Direction dir) {
-        assert (currentState == PacmanKeyListener.MatchState.WON
-                && gameInteractor.won()
-                ||
-                currentState == PacmanKeyListener.MatchState.LOST
-                        && gameInteractor.died()
-                ||
-                (currentState == PacmanKeyListener.MatchState.PLAYING || currentState == PacmanKeyListener.MatchState.PAUSING)
-                        && !(gameInteractor.died() || gameInteractor.won())) : currentState;
+    	checkAssert(currentState.toString());
         if (currentState == PacmanKeyListener.MatchState.PLAYING) {
             gameInteractor.movePlayer(dir);
             updateState();
         }
         // else: ignore move event.
-        assert (currentState == PacmanKeyListener.MatchState.WON
-                && gameInteractor.won()
-                ||
-                currentState == PacmanKeyListener.MatchState.LOST
-                        && gameInteractor.died()
-                ||
-                (currentState == PacmanKeyListener.MatchState.PLAYING || currentState == PacmanKeyListener.MatchState.PAUSING)
-                        && !(gameInteractor.died() || gameInteractor.won()));
+        checkAssert("");
     }
 
     /**
@@ -330,19 +288,23 @@ public class PacmanKeyListener extends Observable implements KeyListener, IPacma
             updateState(PacmanKeyListener.MatchState.PAUSING);
             stopControllers();
         }
-        assert (currentState == PacmanKeyListener.MatchState.WON
-                && gameInteractor.won()
-                ||
-                currentState == PacmanKeyListener.MatchState.LOST
-                        && gameInteractor.died()
-                ||
-                (currentState == PacmanKeyListener.MatchState.PLAYING || currentState == PacmanKeyListener.MatchState.PAUSING)
-                        && !(gameInteractor.died() || gameInteractor.won()));
+        checkAssert("");
     }
 
     private void updateState(PacmanKeyListener.MatchState nextState) {
         currentState = nextState;
         setChanged();
         notifyObservers();
+    }
+    
+    private void checkAssert(String str){
+    	assert (currentState == PacmanKeyListener.MatchState.WON
+                && gameInteractor.won()
+                ||
+                currentState == PacmanKeyListener.MatchState.LOST
+                        && gameInteractor.died()
+                ||
+                (currentState == PacmanKeyListener.MatchState.PLAYING || currentState == PacmanKeyListener.MatchState.PAUSING)
+                        && !(gameInteractor.died() || gameInteractor.won())) : str;
     }
 }
