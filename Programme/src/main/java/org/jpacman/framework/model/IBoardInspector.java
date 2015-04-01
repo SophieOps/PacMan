@@ -7,7 +7,11 @@ public interface IBoardInspector {
 	
 	public enum SpriteType { 
 		PLAYER, 
-		GHOST, 
+		GHOST,
+        GHOSTRED,
+        GHOSTORANGE,
+        GHOSTCYAN,
+        GHOSTPINK,
 		FOOD, 
 		EMPTY, 
 		WALL, 
