@@ -229,16 +229,16 @@ public class BoardView extends JPanel {
                         animationCount);
             }
             switch(sprite.getSpriteType()){
-            case GHOSTRED :
+            case GHOSTBLINKY :
                     img = imageLoader.monsterRed(animationCount);
                     break;
-            case GHOSTORANGE :
+            case GHOSTCLYDE :
                     img = imageLoader.monsterOrange(animationCount);
                     break;
-            case GHOSTCYAN :
+            case GHOSTINKY :
                 img = imageLoader.monsterCyan(animationCount);
                 break;
-            case GHOSTPINK :
+            case GHOSTPINKY :
                 img = imageLoader.monsterPink(animationCount);
                 break;
 			case SUPERGUM:

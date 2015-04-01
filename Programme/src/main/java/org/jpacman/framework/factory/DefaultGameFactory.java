@@ -1,5 +1,6 @@
 package org.jpacman.framework.factory;
 
+import org.jpacman.framework.Strategy.Dispersion;
 import org.jpacman.framework.model.*;
 
 /**
@@ -29,39 +30,39 @@ public class DefaultGameFactory implements IGameFactory {
 	@Override
 	public Ghost makeGhost() {
 		assert getGame() != null;
-		Ghost g = new Ghost();
+		Ghost g = new Ghost(new Dispersion());
 		getGame().addGhost(g);
 		return g;
 	}
 
     @Override
-    public GhostRed makeGhostRed() {
+    public GhostBlinky makeGhostRed() {
         assert getGame() != null;
-        GhostRed g = new GhostRed();
+        GhostBlinky g = new GhostBlinky(new Dispersion());
         getGame().addGhost(g);
         return g;
     }
 
     @Override
-    public GhostOrange makeGhostOrange() {
+    public GhostClyde makeGhostOrange() {
         assert getGame() != null;
-        GhostOrange g = new GhostOrange();
+        GhostClyde g = new GhostClyde(new Dispersion());
         getGame().addGhost(g);
         return g;
     }
 
     @Override
-    public GhostCyan makeGhostCyan() {
+    public GhostInky makeGhostCyan() {
         assert getGame() != null;
-        GhostCyan g = new GhostCyan();
+        GhostInky g = new GhostInky(new Dispersion());
         getGame().addGhost(g);
         return g;
     }
 
     @Override
-    public GhostPink makeGhostPink() {
+    public GhostPinky makeGhostPink() {
         assert getGame() != null;
-        GhostPink g = new GhostPink();
+        GhostPinky g = new GhostPinky(new Dispersion());
         getGame().addGhost(g);
         return g;
     }

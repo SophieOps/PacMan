@@ -2,13 +2,15 @@ package org.jpacman.framework.model;
 
 import java.awt.*;
 
+import org.jpacman.framework.Strategy.IStrategy;
+
 /**
  * Created by camro on 31/03/2015.
  */
-public class GhostRed extends Ghost {
+public class GhostBlinky extends Ghost {
 
-    public GhostRed() {
-        super();
+    public GhostBlinky(IStrategy strat) {
+        super(strat);
         this.color = Color.RED;
     }
 
@@ -17,6 +19,6 @@ public class GhostRed extends Ghost {
      */
     @Override
     public IBoardInspector.SpriteType getSpriteType() {
-        return IBoardInspector.SpriteType.GHOSTRED;
+        return IBoardInspector.SpriteType.GHOSTBLINKY;
     }
 }

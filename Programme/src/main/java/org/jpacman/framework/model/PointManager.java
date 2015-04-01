@@ -72,6 +72,7 @@ public class PointManager implements IPointInspector {
 		if (currentSprite instanceof SuperGum) {
 			SuperGum supergum = (SuperGum) currentSprite;
             this.consumePointsOnBoard(player, supergum.getPoints());
+            supergum.setNumberSuperGumEat(supergum.getNumberSuperGumEat()+1);
             supergum.deoccupy();
 		}
 	}

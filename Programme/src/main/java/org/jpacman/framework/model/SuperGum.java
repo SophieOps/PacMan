@@ -19,6 +19,8 @@ public class SuperGum extends Sprite {
 	public static final int DEFAULT_POINTS = 50;
 	
 	private int points = DEFAULT_POINTS;
+    private static int numberSuperGumEAt = 0;
+	
 	
     /**
 	 * @return the points
@@ -32,6 +34,20 @@ public class SuperGum extends Sprite {
 	 */
 	public void setPoints(int pts) {
 		this.points = pts;
+	}
+
+	/**
+	 * @return the numberSuperGum
+	 */
+	public static int getNumberSuperGumEat() {
+		return numberSuperGumEAt;
+	}
+
+	/**
+	 * @param numberSuperGum the numberSuperGum to set
+	 */
+	public static void setNumberSuperGumEat(int numberSuperGumEat) {
+		numberSuperGumEAt = numberSuperGumEat;
 	}
 
 	/**

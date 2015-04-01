@@ -40,7 +40,7 @@ public abstract class AbstractGhostMover implements ActionListener, IController
     /**
      * Vector of ghosts that are to be moved.
      */
-    private List<Ghost> ghosts;
+    protected List<Ghost> ghosts;
 
     /**
      * Start a new mover with the given engine.

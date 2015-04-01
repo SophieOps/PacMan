@@ -4,10 +4,10 @@ import org.jpacman.framework.model.Board;
 import org.jpacman.framework.model.Food;
 import org.jpacman.framework.model.Game;
 import org.jpacman.framework.model.Ghost;
-import org.jpacman.framework.model.GhostRed;
-import org.jpacman.framework.model.GhostOrange;
-import org.jpacman.framework.model.GhostCyan;
-import org.jpacman.framework.model.GhostPink;
+import org.jpacman.framework.model.GhostBlinky;
+import org.jpacman.framework.model.GhostClyde;
+import org.jpacman.framework.model.GhostInky;
+import org.jpacman.framework.model.GhostPinky;
 import org.jpacman.framework.model.Player;
 import org.jpacman.framework.model.Sprite;
 import org.jpacman.framework.model.SuperGum;
@@ -48,22 +48,22 @@ public interface IGameFactory {
     /**
      * @return A newly created ghost.
      */
-    GhostRed makeGhostRed();
+    GhostBlinky makeGhostRed();
 
     /**
      * @return A newly created ghost.
      */
-    GhostOrange makeGhostOrange();
+    GhostClyde makeGhostOrange();
 
     /**
      * @return A newly created ghost.
      */
-    GhostCyan makeGhostCyan();
+    GhostInky makeGhostCyan();
 
     /**
      * @return A newly created ghost.
      */
-    GhostPink makeGhostPink();
+    GhostPinky makeGhostPink();
 
 	/**
 	 * @return A newly created food sprite.
