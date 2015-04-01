@@ -5,7 +5,7 @@ package org.jpacman.framework.ui;
  * 
  * @author Arie van Deursen, TU Delft,  Jan 12, 2012
  */
-public interface Disposable
+public interface IDisposable
 {
 
 	/**

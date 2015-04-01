@@ -1,51 +1,29 @@
 package org.jpacman.framework.ui;
 
-import org.jpacman.framework.model.IGameInteractor;
-import org.jpacman.framework.model.Controller;
-import org.jpacman.framework.model.Direction;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
+
 
 /**
  * Map keyboard events to jpacman events.
  * 
  * @author Arie van Deursen, TU Delft, Jan 29, 2012
  */
-public class PacmanKeyListener extends Observable implements KeyListener, IPacmanInteraction, Observer
-{
-    /**
-     * The state of the ongoing match.
-     * Initially, we're just waiting.
-     */
-    private PacmanKeyListener.MatchState currentState = PacmanKeyListener.MatchState.PAUSING;
-
-    /**
-     * Window to be deleted upon game exit.
-     */
-    private Disposable disposableWindow;
-
-    /**
-     * Model of the game which can execute basic commands.
-     */
-    private IGameInteractor gameInteractor;
-
-    /**
-     * Various controllers that may have to stopped or restarted.
-     */
-    private final List<Controller> controllers =
-            new ArrayList<Controller>();
+public class PacmanKeyListener implements KeyListener {
+	
+	/**
+	 * The interface to the underlying model.
+	 */
+	private final IPacmanInteraction modelEvents;
 
 	/**
 	 * Create a new keyboard listener, given a handler
 	 * for model events keyboard events should be mapped to.
-	 *
+	 * 
+	 * @param me Events the model can handle.
 	 */
-	PacmanKeyListener() {
+	PacmanKeyListener(IPacmanInteraction me) {
+		modelEvents = me;
 	}
 
 	@Override
@@ -54,257 +32,44 @@ public class PacmanKeyListener extends Observable implements KeyListener, IPacma
 	}
 
 	@Override
-	public void keyPressed(KeyEvent event)
-    {
+	public void keyPressed(KeyEvent event) {
 		int code;
 
 		code = event.getKeyCode();
 
-        if(code == KeyEvent.VK_UP || code == KeyEvent.VK_K)
-        {
-            this.up();
-        }
-        else
-        {
-            if(code == KeyEvent.VK_DOWN || code == KeyEvent.VK_J)
-            {
-                this.down();
-            }
-            else
-            {
-                if(code == KeyEvent.VK_LEFT || code == KeyEvent.VK_H)
-                {
-                    this.left();
-                }
-                else
-                {
-                    if(code == KeyEvent.VK_RIGHT || code == KeyEvent.VK_L)
-                    {
-                        this.right();
-                    }
-                    else
-                    {
-                        if(code == KeyEvent.VK_Q)
-                        {
-                            this.stop();
-                        }
-                        else
-                        {
-                            if(code == KeyEvent.VK_X)
-                            {
-                                this.exit();
-                            }
-                            else
-                            {
-                                if(code == KeyEvent.VK_S)
-                                {
-                                    this.start();
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+		switch (code) {
+		case KeyEvent.VK_UP:/* or */
+		case KeyEvent.VK_K:
+			modelEvents.up();
+			break;
+		case KeyEvent.VK_DOWN:/* or */
+		case KeyEvent.VK_J:
+			modelEvents.down();
+			break;
+		case KeyEvent.VK_LEFT:/* or */
+		case KeyEvent.VK_H:
+			modelEvents.left();
+			break;
+		case KeyEvent.VK_RIGHT:/* or */
+		case KeyEvent.VK_L:
+			modelEvents.right();
+			break;
+		case KeyEvent.VK_Q:
+			modelEvents.stop();  
+			break;
+		case KeyEvent.VK_X:
+			modelEvents.exit(); 
+			break;
+		case KeyEvent.VK_S:
+			modelEvents.start(); 
+			break;
+		default:
+			// all other events ignored.
+		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// nothing.
 	}
-
-    /**
-     * The states a match can be in.
-     */
-    public enum MatchState {
-        PLAYING("Playing"),
-        PAUSING("Halted"),
-        WON("You have won :-)"),
-        LOST("You have lost :-(");
-
-        private String theMessage;
-
-        /**
-         * Create one of the states.
-         * @param m The message for this state.
-         */
-        MatchState(String m) {
-            theMessage = m;
-        }
-
-        /**
-         * @return The message that belongs to the current state.
-         */
-        String message() {
-            return theMessage;
-        }
-    }
-
-    @Override
-    public void start() {
-    	checkAssert("");
-        if (currentState == PacmanKeyListener.MatchState.PAUSING) {
-            startControllers();
-            updateState(PacmanKeyListener.MatchState.PLAYING);
-        }
-
-        assert (currentState == PacmanKeyListener.MatchState.WON && gameInteractor.won()
-                ||
-                currentState == PacmanKeyListener.MatchState.LOST && gameInteractor.died()
-                ||
-                (currentState == PacmanKeyListener.MatchState.PLAYING || currentState == PacmanKeyListener.MatchState.PAUSING)
-                        && !(gameInteractor.died() || gameInteractor.won()));
-    }
-
-    @Override
-    public void stop() {
-    	checkAssert("Unexpected state in " + currentState.toString());
-        if (currentState == PacmanKeyListener.MatchState.PLAYING) {
-            stopControllers();
-            updateState(PacmanKeyListener.MatchState.PAUSING);
-        }
-        checkAssert("");
-    }
-
-    @Override
-    public void exit() {
-    	checkAssert("");
-        stopControllers();
-        disposableWindow.dispose();
-    }
-
-    @Override
-    public void up() {
-        movePlayer(Direction.UP);
-    }
-
-    @Override
-    public void down() {
-        movePlayer(Direction.DOWN);
-    }
-
-    @Override
-    public void left() {
-        movePlayer(Direction.LEFT);
-    }
-
-    @Override
-    public void right() {
-        movePlayer(Direction.RIGHT);
-    }
-
-    /**
-     * Move the player in the given direction,
-     * provided we are in the playing state.
-     * @param dir New direction.
-     */
-    private void movePlayer(Direction dir) {
-    	checkAssert(currentState.toString());
-        if (currentState == PacmanKeyListener.MatchState.PLAYING) {
-            gameInteractor.movePlayer(dir);
-            updateState();
-        }
-        // else: ignore move event.
-        checkAssert("");
-    }
-
-    /**
-     * Add an external controller, which should be stopped/started
-     * via the ui.
-     * @param controller The controller to be added.
-     * @return Itself, for fluency.
-     */
-    public PacmanKeyListener controlling(Controller controller) {
-        controllers.add(controller);
-        return this;
-    }
-
-    /**
-     * @return The current state of the game.
-     */
-    public PacmanKeyListener.MatchState getCurrentState() {
-        return currentState;
-    }
-
-    /**
-     * Provide the main window that has to be disposed off during exit.
-     * @param win Main window
-     * @return Itself, for fluency.
-     */
-    public PacmanKeyListener withDisposable(Disposable win) {
-        disposableWindow = win;
-        return this;
-    }
-
-    /**
-     * Provide the interactor towards the model of the game.
-     * @param igame Interactor
-     * @return itself for fluency.
-     */
-    public PacmanKeyListener withGameInteractor(IGameInteractor igame) {
-        gameInteractor = igame;
-        return this;
-    }
-
-    private void stopControllers() {
-        for (Controller c : controllers) {
-            c.stop();
-        }
-    }
-
-    private void startControllers() {
-        for (Controller c : controllers) {
-            c.start();
-        }
-    }
-
-    /**
-     * @return The handle to interact with the underlying game.
-     */
-    protected IGameInteractor getGame() {
-        return gameInteractor;
-    }
-
-    @Override
-    public void update(Observable o, Object arg) {
-        updateState();
-    }
-
-    /**
-     * The state of the external game may have changed.
-     * Verify whether the game was lost/won,
-     * and if so update the state accordingly.
-     */
-    public void updateState() {
-        // invariant may have been invalidated by outside world.
-        if (currentState == PacmanKeyListener.MatchState.PLAYING && gameInteractor.died()) {
-            updateState(PacmanKeyListener.MatchState.LOST);
-            stopControllers();
-        } else if (currentState == PacmanKeyListener.MatchState.PLAYING && gameInteractor.won()) {
-            updateState(PacmanKeyListener.MatchState.WON);
-            stopControllers();
-        } else if (currentState == PacmanKeyListener.MatchState.WON && !gameInteractor.won()
-                || currentState == PacmanKeyListener.MatchState.LOST && !gameInteractor.died()) {
-            updateState(PacmanKeyListener.MatchState.PAUSING);
-            stopControllers();
-        }
-        checkAssert("");
-    }
-
-    private void updateState(PacmanKeyListener.MatchState nextState) {
-        currentState = nextState;
-        setChanged();
-        notifyObservers();
-    }
-    
-    private void checkAssert(String str){
-    	assert (currentState == PacmanKeyListener.MatchState.WON
-                && gameInteractor.won()
-                ||
-                currentState == PacmanKeyListener.MatchState.LOST
-                        && gameInteractor.died()
-                ||
-                (currentState == PacmanKeyListener.MatchState.PLAYING || currentState == PacmanKeyListener.MatchState.PAUSING)
-                        && !(gameInteractor.died() || gameInteractor.won())) : str;
-    }
 }

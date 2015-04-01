@@ -1,11 +1,11 @@
 package org.jpacman.framework.factory;
 
 import org.jpacman.framework.model.Board;
-import org.jpacman.framework.model.Wall;
 import org.jpacman.framework.model.Food;
 import org.jpacman.framework.model.Game;
 import org.jpacman.framework.model.Ghost;
 import org.jpacman.framework.model.Player;
+import org.jpacman.framework.model.Wall;
 
 /**
  * A factory for the classes related to the 
@@ -15,7 +15,7 @@ import org.jpacman.framework.model.Player;
  */
 public class DefaultGameFactory implements IGameFactory {
 
-	private transient Game theGame;
+	private Game theGame;	//transient		//retiré lors du refactoring parce que jugé sans intérêt
 	
 	@Override
 	public Game makeGame() {
@@ -43,7 +43,7 @@ public class DefaultGameFactory implements IGameFactory {
 	public Food makeFood() {
 		assert getGame() != null;
 		Food f = new Food();
-		getGame().addFood(f);
+		getGame().getPointManager().addPointsToBoard(f.getPoints());
 		return f;
 	}
 

@@ -1,8 +1,8 @@
 package org.jpacman.framework.factory;
 
-import org.jpacman.framework.model.Game;
 import org.jpacman.framework.model.Board;
 import org.jpacman.framework.model.Food;
+import org.jpacman.framework.model.Game;
 import org.jpacman.framework.model.Ghost;
 import org.jpacman.framework.model.Player;
 import org.jpacman.framework.model.Wall;

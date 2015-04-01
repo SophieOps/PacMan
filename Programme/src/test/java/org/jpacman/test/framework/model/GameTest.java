@@ -86,7 +86,7 @@ public class GameTest {
         assertEquals(g.getPlayer(), g.getBoard().spriteAt(0, 0));
         assertThat(tileAt(g, 0, 0), equalTo(g.getPlayer().getTile()));
         assertEquals(SpriteType.PLAYER, g.getBoard().spriteTypeAt(0, 0));
-        assertEquals(0, g.getPlayer().points);
+        assertEquals(0, g.getPlayer().getPoints());
         assertTrue(g.getPlayer().isAlive());
         assertEquals(Direction.LEFT, g.getPlayer().getDirection());
     }
@@ -104,7 +104,7 @@ public class GameTest {
         g.movePlayer(Direction.RIGHT);
 
         assertEquals("Player moved", tileAt(g, 1, 0), g.getPlayer().getTile());
-        assertEquals("No food eaten.", 0, g.getPlayer().points);
+        assertEquals("No food eaten.", 0, g.getPlayer().getPoints());
         assertEquals(Direction.RIGHT, g.getPlayer().getDirection());
     }
 
@@ -186,7 +186,7 @@ public class GameTest {
         game.movePlayer(Direction.RIGHT);
 
         Tile newTile = tileAt(game, 1, 0);
-        assertEquals("Food added", food.points, player.points);
+        assertEquals("Food added", food.getPoints(), player.getPoints());
         assertEquals("Player moved", newTile.topSprite(), player);
         assertFalse("Food gone", newTile.containsSprite(food));
     }

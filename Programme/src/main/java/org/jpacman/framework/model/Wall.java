@@ -1,5 +1,7 @@
 package org.jpacman.framework.model;
 
+import java.awt.Color;
+
 /**
  * A Wall element.
  * 
@@ -7,6 +9,14 @@ package org.jpacman.framework.model;
  */
 public class Wall extends Sprite {
 
+	/**
+	 * Constructor
+	 */
+	public Wall() {
+		super();
+		this.color = Color.green;
+	}
+	
 	/**
 	 * @return That this sprite is a wall.
 	 */

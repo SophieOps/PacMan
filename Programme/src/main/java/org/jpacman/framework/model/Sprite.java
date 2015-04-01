@@ -1,5 +1,7 @@
 package org.jpacman.framework.model;
 
+import java.awt.Color;
+
 /**
  * Any entity that occurs in the game.
  * 
@@ -14,12 +16,18 @@ public class Sprite {
 	private Tile tile;
 	
 	/**
+	 * The color of the sprite in fonction of his type
+	 */
+	protected Color color;
+	
+	/**
 	 * Create a new sprite, not on any tile yet.
 	 * Real instantation done in concrete subclasses,
 	 * hence protected.
 	 */
 	protected Sprite() {
 		tile = null;
+		color = Color.black;
 		assert spriteInvariant();
 	}
 	
@@ -40,6 +48,13 @@ public class Sprite {
 	 */
 	public Tile getTile() {
 		return tile;
+	}
+	
+	/**
+	 * @return The tile this sprite is located on.
+	 */
+	public Color getColor() {
+		return color;
 	}
 	
 	/**
@@ -73,10 +88,15 @@ public class Sprite {
 		assert spriteInvariant();
 	}
 	
+	/**
+	 * @return the type of the sprite
+	 * return OTHER when the sprite his not a child of the Sprite object.
+	 */
 	public IBoardInspector.SpriteType getSpriteType() {
-		return IBoardInspector.SpriteType.OTHER;
+		return IBoardInspector.SpriteType.OTHER; 
 	}
 	
+	@Override
 	public String toString() {
 		return getSpriteType().toString() + " occupying " + tile;
 				

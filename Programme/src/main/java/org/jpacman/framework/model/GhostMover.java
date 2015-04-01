@@ -1,10 +1,11 @@
 package org.jpacman.framework.model;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.Random;
+
+import javax.swing.Timer;
 
 
 /**
@@ -12,7 +13,7 @@ import java.util.Random;
  *
  * @author Arie van Deursen; Aug 18, 2003
  */
-public class GhostMover implements ActionListener, Controller
+public abstract class GhostMover implements ActionListener, IController
 {
     /**
      * Underlying game engine.
@@ -61,17 +62,7 @@ public class GhostMover implements ActionListener, Controller
     /**
      * Actually conduct a random move in the underlying engine.
      */
-    public void doTick() {
-        synchronized (gameInteraction()) {
-            Ghost theGhost = getRandomGhost();
-            if (theGhost == null) {
-                return;
-            }
-            int dirIndex = getRandomizer().nextInt(Direction.values().length);
-            final Direction dir = Direction.values()[dirIndex];
-            gameInteraction().moveGhost(theGhost, dir);
-        }
-    }
+	public abstract void doTick();
 
     /**
      * Variable that should always be set.

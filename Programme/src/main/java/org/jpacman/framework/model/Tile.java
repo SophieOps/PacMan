@@ -25,8 +25,7 @@ public class Tile {
 		this.x = x;
 		this.y = y;
 		sprites = new ArrayDeque<Sprite>();
-
-		checkSprites();
+		checkSprite();
 	}
 	
 	/**
@@ -63,10 +62,10 @@ public class Tile {
 	 * @param sprite The sprite to be removed.
 	 */
 	protected void dropSprite(Sprite sprite) {
-		checkSprites();
+		checkSprite();
 		assert sprite != null;
 		sprites.remove(sprite);
-		checkSprites();
+		checkSprite();
 	}
 	
 	/**
@@ -74,20 +73,31 @@ public class Tile {
 	 * @param sprite The sprite to be added.
 	 */
 	protected void addSprite(Sprite sprite) {
-		checkSprites();
+		checkSprite();
 
 		assert sprite != null;
 		assert !containsSprite(sprite) : "Pre: sprite not yet on tile.";
 		sprites.addLast(sprite);
 		
 		assert containsSprite(sprite) : "Post: sprite on tile.";
-		checkSprites();
+		checkSprite();
+	}
+	
+	/**
+	 * @return false if the topSprite of the tile is null or if it is a wall
+	 */
+	public boolean tileCanBeOccupied() {
+		assert this != null : "PRE: Argument can't be null";
+		Sprite currentOccupier = this.topSprite();
+		return 
+			currentOccupier == null 
+			|| currentOccupier.getSpriteType() != IBoardInspector.SpriteType.WALL;
 	}
 	
 	/**
 	 * method to avoid duplication.
 	 */
-	protected void checkSprites() {
+	protected void checkSprite() {
         for(Sprite s : this.sprites)
             assert(this.equals(s.getTile()));
 	}

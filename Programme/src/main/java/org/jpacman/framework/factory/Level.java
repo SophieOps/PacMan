@@ -1,9 +1,7 @@
-package org.jpacman.framework.model;
+package org.jpacman.framework.factory;
 
-import org.jpacman.framework.factory.FactoryException;
-import org.jpacman.framework.factory.IGameFactory;
-import org.jpacman.framework.factory.DefaultGameFactory;
-import org.jpacman.framework.factory.MapParser;
+import org.jpacman.framework.model.Game;
+import org.jpacman.framework.model.IGameInteractor;
 
 /**
  * A level in JPacman, which is stored in a file.
@@ -25,7 +23,7 @@ public class Level {
     /**
      * Result of parsing the map file.
      */
-    public Game parseResult = null;
+    private Game parseResult = null;
     
     /**
      * The default map used if none is specified.

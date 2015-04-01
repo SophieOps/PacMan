@@ -6,8 +6,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 
-public class Game extends Observable 
-	implements IGameInteractor {
+public class Game extends Observable implements IGameInteractor {
 	
 
 	private Board theBoard;
@@ -15,17 +14,22 @@ public class Game extends Observable
 	private Player thePlayer;
 	private final List<Ghost> ghosts = new ArrayList<Ghost>();
 
+	/**
+	 * Set a new board
+	 * @param b
+	 */
 	public void setBoard(Board b) {
 		assert b != null : "New board should not be null.";
 		theBoard = b;
 	}
 
+	@Override
 	public void movePlayer(Direction dir) {
 		assert theBoard != null : "Board can't be null when moving";
 		Tile target = theBoard.tileAtDirection(thePlayer.getTile(), dir);
-		if (tileCanBeOccupied(target) && thePlayer.isAlive()) {
+		if (target.tileCanBeOccupied() && thePlayer.isAlive()) {
 			Sprite currentContent = target.topSprite();
-			eatFood(thePlayer, currentContent);
+			pointManager.eatFood(thePlayer, currentContent);
 			dieIfGhost(thePlayer, currentContent);
 			thePlayer.deoccupy();
 			thePlayer.occupy(target);
@@ -34,23 +38,22 @@ public class Game extends Observable
 		}
 	}
 
-	private void eatFood(Player player, Sprite currentSprite) {
-		if (currentSprite instanceof Food) {
-			Food food = (Food) currentSprite;
-            pointManager.consumePointsOnBoard(player, food.points);
-			food.deoccupy();
-		}
-	}
 
+	/**
+	 * if the current sprite is a ghost, the player die
+	 * @param p player
+	 * @param currentSprite sprite
+	 */
 	private void dieIfGhost(Player p, Sprite currentSprite) {
 		if (currentSprite instanceof Ghost) {
 			p.die();
 		}
 	}
 	
+	@Override
 	public void moveGhost(Ghost theGhost, Direction dir) {
 		Tile target = theBoard.tileAtDirection(theGhost.getTile(), dir);
-		if (tileCanBeOccupied(target)) {
+		if (target.tileCanBeOccupied()) {
 			Sprite currentContent = target.topSprite();
 			if (currentContent instanceof Player) {
 				((Player) currentContent).die();
@@ -61,26 +64,25 @@ public class Game extends Observable
 		} 
 	}
 
-	private boolean tileCanBeOccupied(Tile target) {
-		assert target != null : "PRE: Argument can't be null";
-		Sprite currentOccupier = target.topSprite();
-		return 
-			currentOccupier == null 
-			|| currentOccupier.getSpriteType() != IBoardInspector.SpriteType.WALL;
-	}
+
 	
+	/**
+	 * @param p the player
+	 */
 	public void addPlayer(Player p) {
 		thePlayer = p;
 	}
 	
+	/**
+	 * @param g the ghost
+	 */
 	public void addGhost(Ghost g) {
 		ghosts.add(g);
 	}
 	
-	public void addFood(Food f) {
-        pointManager.addPointsToBoard(f.points);
-	}
-	
+	/**
+	 * @return the board
+	 */
 	public Board getBoard() {
 		return theBoard;
 	}
@@ -102,24 +104,29 @@ public class Game extends Observable
         notifyObservers();
     }
 
+	@Override
 	public PointManager getPointManager() {
 		return pointManager;
 	}
 
+	@Override
 	public List<Ghost> getGhosts() {
         List<Ghost> result = new ArrayList<Ghost>();
         result.addAll(ghosts);
 		return result;
 	}
 
+	@Override
 	public IBoardInspector getBoardInspector() {
 		return getBoard();
 	}
 
+	@Override
 	public boolean died() {
 		return !getPlayer().isAlive();
 	}
 
+	@Override
 	public boolean won() {
 		return pointManager.allEaten();
 	}

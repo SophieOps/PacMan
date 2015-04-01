@@ -8,7 +8,7 @@ package org.jpacman.framework.model;
  * @author Arie van Deursen, 3 September, 2003
  */
 
-public interface Controller
+public interface IController
 {
 
     /**

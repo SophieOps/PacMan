@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
-import org.jpacman.framework.model.Controller;
+import org.jpacman.framework.model.IController;
 import org.jpacman.framework.factory.FactoryException;
 import org.jpacman.framework.model.Ghost;
 import org.jpacman.framework.model.Player;
@@ -39,7 +39,7 @@ public class AbstractAcceptanceTest {
 	 * To ensure control over ghost moves, we must replace
 	 * the random monster moves with a more controlled one.
 	 */
-	@Mock private Controller mockedGhostMover;
+	@Mock private IController mockedGhostMover;
 
 
 	/**
@@ -104,7 +104,7 @@ public class AbstractAcceptanceTest {
 	/**
 	 * @return The ghost mover for this game.
 	 */
-	protected Controller getMockedGhostMover() {
+	protected IController getMockedGhostMover() {
 		return mockedGhostMover;
 	}
 
@@ -141,7 +141,7 @@ public class AbstractAcceptanceTest {
 		Tile playerTile = tileAt(1, 1);
 		assertEquals(playerTile, getPlayer().getTile());
 		assertTrue(getPlayer().isAlive());
-        assertEquals(0, getPlayer().points);
+        assertEquals(0, getPlayer().getPoints());
 	}
 
 

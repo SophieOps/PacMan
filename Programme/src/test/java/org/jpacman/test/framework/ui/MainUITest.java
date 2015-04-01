@@ -8,8 +8,9 @@ import static org.junit.Assume.assumeTrue;
 
 import org.jpacman.framework.factory.DefaultGameFactory;
 import org.jpacman.framework.factory.IGameFactory;
-import org.jpacman.framework.model.Controller;
+import org.jpacman.framework.model.IController;
 import org.jpacman.framework.model.GhostMover;
+import org.jpacman.framework.model.RandomGhostMover;
 import org.jpacman.framework.factory.FactoryException;
 import org.jpacman.framework.ui.ButtonPanel;
 import org.jpacman.framework.ui.MainUI;
@@ -41,7 +42,7 @@ public class MainUITest {
     @Test
     public void testInitialize() throws FactoryException {
         assertNull(mainUI.getGame());
-        Controller ghostMover = mainUI.getGhostController();
+        IController ghostMover = mainUI.getGhostController();
 
         mainUI.initialize();
 
@@ -59,8 +60,8 @@ public class MainUITest {
         mainUI.initialize();
         assertNull(mainUI.getGhostController());
 
-        Controller ghostMover1 = new GhostMover(mainUI.getGame());
-        Controller ghostMover2 = new GhostMover(mainUI.getGame());
+        IController ghostMover1 = new RandomGhostMover(mainUI.getGame());
+        IController ghostMover2 = new RandomGhostMover(mainUI.getGame());
 
         //Below we apply forced pointer comparison to check the setter.
         mainUI.withGhostController(ghostMover1);
@@ -110,7 +111,7 @@ public class MainUITest {
     public void testChangeGhostControllerAfterUI() throws FactoryException {
         assumeTrue(MainUI.class.desiredAssertionStatus());
         mainUI.initialize();
-        mainUI.withGhostController(new GhostMover(mainUI.getGame()));
+        mainUI.withGhostController(new RandomGhostMover(mainUI.getGame()));
         mainUI.createUI();
 
         boolean gotException = false;
@@ -118,7 +119,7 @@ public class MainUITest {
         //After creating the UI, the GhostController should not be allowed to be changed.
         //This should cause an assertion error.
         try {
-            mainUI.withGhostController(new GhostMover(mainUI.getGame()));
+            mainUI.withGhostController(new RandomGhostMover(mainUI.getGame()));
         }
         catch (AssertionError ae) {
             gotException = true;
@@ -141,47 +142,53 @@ public class MainUITest {
         assertNotNull(mainUI.eventHandler());
     }
 
-    @Test
-    public void testWithFactory() throws FactoryException {
-
-        mainUI.initialize();
-        IGameFactory fact = null;
-
-        boolean gotException = false;
-
-        try {
-            mainUI.withFactory(fact);
-        }
-        catch (AssertionError ae) {
-            gotException = true;
-        }
-
-        assertTrue(gotException);
-
-        fact = new DefaultGameFactory();
-
-        try {
-            mainUI.withFactory(fact);
-        }
-        catch (AssertionError ae) {
-            gotException = false;
-        }
-
-        assertTrue(gotException);
-    }
-
-    @Test
-    public void testWithButtonPanel() throws FactoryException {
-        mainUI.initialize();
-        ButtonPanel bp = new ButtonPanel();
-
-        boolean gotException = false;
-
-        try {
-            mainUI.withButtonPanel(bp);
-        } catch (AssertionError ae) {
-            gotException = true;
-        }
-        assertFalse(gotException);
-    }
+//    /**
+//     * @throws FactoryException
+//     */
+//    @Test
+//    public void testWithFactory() throws FactoryException {
+//
+//        mainUI.initialize();
+//        IGameFactory fact = null;
+//
+//        boolean gotException = false;
+//
+//        try {
+//            mainUI.withFactory(fact);
+//        }
+//        catch (AssertionError ae) {
+//            gotException = true;
+//        }
+//
+//        assertTrue(gotException);
+//
+//        fact = new DefaultGameFactory();
+//
+//        try {
+//            mainUI.withFactory(fact);
+//        }
+//        catch (AssertionError ae) {
+//            gotException = false;
+//        }
+//
+//        assertTrue(gotException);
+//    }
+//
+//    /**
+//     * @throws FactoryException
+//     */
+//    @Test
+//    public void testWithButtonPanel() throws FactoryException {
+//        mainUI.initialize();
+//        ButtonPanel bp = new ButtonPanel();
+//
+//        boolean gotException = false;
+//
+//        try {
+//            mainUI.withButtonPanel(bp);
+//        } catch (AssertionError ae) {
+//            gotException = true;
+//        }
+//        assertFalse(gotException);
+//    }
 }

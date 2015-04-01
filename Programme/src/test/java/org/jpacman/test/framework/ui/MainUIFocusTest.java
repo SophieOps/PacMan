@@ -2,13 +2,16 @@ package org.jpacman.test.framework.ui;
 
 import static org.mockito.Mockito.verify;
 import static org.junit.Assert.assertTrue;
+
 import java.awt.event.KeyEvent;
+
 import org.fest.swing.core.BasicRobot;
 import org.fest.swing.core.Robot;
 import org.jpacman.framework.factory.FactoryException;
 import org.jpacman.framework.ui.ButtonPanel;
 import org.jpacman.framework.ui.IPacmanInteraction;
 import org.jpacman.framework.ui.MainUI;
+import org.jpacman.framework.ui.PacmanInteraction;
 import org.jpacman.framework.ui.PacmanKeyListener;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,7 +28,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 public class MainUIFocusTest {
 
     @Spy
-    private PacmanKeyListener pi;
+    private PacmanInteraction pi;
 
     /**
      * Perform a tab key press to check if the MainUI is handling focus

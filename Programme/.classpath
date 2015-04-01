@@ -6,9 +6,10 @@
 	<classpathentry kind="src" path="src/test/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/Users/Sophie/Documents/PacMan/mockito-all-1.9.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Sophie/Documents/PacMan/fest-reflect-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Sophie/Documents/PacMan/fest-swing-1.2.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Sophie/Documents/PacMan/fest-util-1.1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sophie/Documents/PacMan/separate-jars/mockito-all-1.9.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sophie/Documents/PacMan/separate-jars/fest-reflect-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sophie/Documents/PacMan/separate-jars/fest-swing-1.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sophie/Documents/PacMan/separate-jars/fest-util-1.1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Sophie/Documents/PacMan/separate-jars/mockito-all-1.9.5-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
