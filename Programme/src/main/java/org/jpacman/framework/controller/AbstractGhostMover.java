@@ -1,4 +1,4 @@
-package org.jpacman.framework.model;
+package org.jpacman.framework.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,13 +7,16 @@ import java.util.Random;
 
 import javax.swing.Timer;
 
+import org.jpacman.framework.model.Ghost;
+import org.jpacman.framework.model.IGameInteractor;
+
 
 /**
  * Example, simple ghost mover that just moves ghosts randomly.
  *
  * @author Arie van Deursen; Aug 18, 2003
  */
-public abstract class GhostMover implements ActionListener, IController
+public abstract class AbstractGhostMover implements ActionListener, IController
 {
     /**
      * Underlying game engine.
@@ -44,7 +47,7 @@ public abstract class GhostMover implements ActionListener, IController
      *
      * @param theEngine Engine used.
      */
-    public GhostMover(final IGameInteractor theEngine)
+    public AbstractGhostMover(final IGameInteractor theEngine)
     {
         theGame = theEngine;
         timer = new Timer(DELAY, this);
@@ -113,7 +116,7 @@ public abstract class GhostMover implements ActionListener, IController
     protected Ghost getRandomGhost() {
         Ghost theGhost = null;
         if (!ghosts.isEmpty()) {
-            final int ghostIndex = GhostMover.randomizer.nextInt(ghosts.size());
+            final int ghostIndex = AbstractGhostMover.randomizer.nextInt(ghosts.size());
             theGhost = ghosts.get(ghostIndex);
         }
         return theGhost;

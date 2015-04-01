@@ -5,7 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
-import org.jpacman.framework.model.IController;
+import org.jpacman.framework.controller.IController;
 import org.jpacman.framework.factory.FactoryException;
 import org.jpacman.framework.model.Ghost;
 import org.jpacman.framework.model.Player;

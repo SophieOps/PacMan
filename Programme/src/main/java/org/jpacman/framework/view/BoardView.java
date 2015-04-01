@@ -230,8 +230,15 @@ public class BoardView extends JPanel {
                 		((Player) sprite).getDirection(),
                         animationCount);
             }
-            if (sprite.getSpriteType() == IBoardInspector.SpriteType.GHOST) {
+            switch(sprite.getSpriteType()){
+            case GHOST :
                  img = imageLoader.monster(animationCount);
+                 break;
+			case SUPERGUM:
+				img = imageLoader.superGum();
+				break;
+			default:
+				break;
             }
         }
         return img;

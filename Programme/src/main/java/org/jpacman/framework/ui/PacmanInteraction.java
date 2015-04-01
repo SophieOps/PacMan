@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
+import org.jpacman.framework.controller.IController;
 import org.jpacman.framework.model.Direction;
 //import org.jpacman.framework.controller.IController;
-import org.jpacman.framework.model.IController;
 import org.jpacman.framework.model.IGameInteractor;
 
 /**

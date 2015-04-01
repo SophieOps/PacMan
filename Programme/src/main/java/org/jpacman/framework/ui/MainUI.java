@@ -8,11 +8,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import org.jpacman.framework.controller.IController;
+import org.jpacman.framework.controller.RandomGhostMover;
 import org.jpacman.framework.factory.FactoryException;
 import org.jpacman.framework.factory.Level;
-import org.jpacman.framework.model.IController;
 import org.jpacman.framework.model.IGameInteractor;
-import org.jpacman.framework.model.RandomGhostMover;
 import org.jpacman.framework.view.Animator;
 import org.jpacman.framework.view.BoardView;
 

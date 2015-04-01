@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.Timer;
 
-import org.jpacman.framework.model.IController;
+import org.jpacman.framework.controller.IController;
 
 /**
  * The primary responsibility of this class is

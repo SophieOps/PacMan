@@ -11,14 +11,14 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1422
-NormalPos.bottom=770
+NormalPos.right=903
+NormalPos.bottom=604
 Class=LaTeXView
 Document=Rapport.tex
 
 [Frame0_View0,0]
-TopLine=709
-Cursor=47747
+TopLine=990
+Cursor=52572
 
 [Frame1]
 Flags=0
@@ -29,8 +29,8 @@ MaxPos.x=-1
 MaxPos.y=-1
 NormalPos.left=4
 NormalPos.top=26
-NormalPos.right=1422
-NormalPos.bottom=770
+NormalPos.right=903
+NormalPos.bottom=604
 Class=BibTeXView
 Document=reference.bib
 

@@ -6,11 +6,11 @@ package org.jpacman.test.framework.ui;
 import static org.junit.Assert.*;
 import static org.junit.Assume.assumeTrue;
 
+import org.jpacman.framework.controller.AbstractGhostMover;
+import org.jpacman.framework.controller.IController;
+import org.jpacman.framework.controller.RandomGhostMover;
 import org.jpacman.framework.factory.DefaultGameFactory;
 import org.jpacman.framework.factory.IGameFactory;
-import org.jpacman.framework.model.IController;
-import org.jpacman.framework.model.GhostMover;
-import org.jpacman.framework.model.RandomGhostMover;
 import org.jpacman.framework.factory.FactoryException;
 import org.jpacman.framework.ui.ButtonPanel;
 import org.jpacman.framework.ui.MainUI;
@@ -137,7 +137,7 @@ public class MainUITest {
         mainUI.initializeNormalGame();
 
         assertNotNull(mainUI.getGame());
-        assertTrue(mainUI.getGhostController() instanceof GhostMover);
+        assertTrue(mainUI.getGhostController() instanceof AbstractGhostMover);
         //Check for the existence of the UI.
         assertNotNull(mainUI.eventHandler());
     }
