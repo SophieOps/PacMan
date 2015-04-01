@@ -1,13 +1,17 @@
 /**
  * 
  */
-package org.jpacman.framework.model;
+package org.jpacman.framework.controller;
+
+import org.jpacman.framework.model.Direction;
+import org.jpacman.framework.model.Ghost;
+import org.jpacman.framework.model.IGameInteractor;
 
 /**
  * @author Sophie
  *
  */
-public class RandomGhostMover extends GhostMover {
+public class RandomGhostMover extends AbstractGhostMover {
 
 	/**
 	 * @param theEngine

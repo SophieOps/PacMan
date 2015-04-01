@@ -1,6 +1,6 @@
 package org.jpacman.test.framework.ui;
 
-import org.jpacman.framework.model.GhostMover;
+import org.jpacman.framework.controller.AbstractGhostMover;
 import org.jpacman.framework.factory.FactoryException;
 import org.jpacman.framework.ui.IPacmanInteraction;
 import org.jpacman.framework.ui.MainUI;
@@ -36,7 +36,7 @@ public class MainUISmokeTest {
 
         // give the ghosts some time to move.
         final int nrOfGhostMovesToWait = 10;
-        Thread.sleep(nrOfGhostMovesToWait * GhostMover.DELAY);
+        Thread.sleep(nrOfGhostMovesToWait * AbstractGhostMover.DELAY);
 
         // and attempt some moves again.
         eventHandler.down();

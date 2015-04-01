@@ -9,6 +9,8 @@ import org.jpacman.framework.model.GhostOrange;
 import org.jpacman.framework.model.GhostCyan;
 import org.jpacman.framework.model.GhostPink;
 import org.jpacman.framework.model.Player;
+import org.jpacman.framework.model.Sprite;
+import org.jpacman.framework.model.SuperGum;
 import org.jpacman.framework.model.Wall;
 
 /**
@@ -72,4 +74,9 @@ public interface IGameFactory {
 	 * @return A newly created wall sprite.
 	 */	
 	Wall makeWall();
+
+	/**
+	 * @return A newly created super gum sprite.
+	 */
+	SuperGum makeSuperGum();
 }

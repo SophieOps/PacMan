@@ -1,6 +1,12 @@
 package org.jpacman.framework.factory;
 
-import org.jpacman.framework.model.*;
+import org.jpacman.framework.model.Board;
+import org.jpacman.framework.model.Food;
+import org.jpacman.framework.model.Game;
+import org.jpacman.framework.model.Ghost;
+import org.jpacman.framework.model.Player;
+import org.jpacman.framework.model.SuperGum;
+import org.jpacman.framework.model.Wall;
 
 /**
  * A factory for the classes related to the 
@@ -79,6 +85,14 @@ public class DefaultGameFactory implements IGameFactory {
 		return new Wall();
 	}
 
+	@Override
+	public SuperGum makeSuperGum() {
+		assert getGame() != null;
+		SuperGum sg = new SuperGum();
+		getGame().getPointManager().addPointsToBoard(sg.getPoints());
+		return sg;
+	}
+	
 	@Override
 	public Board makeBoard(int w, int h) {
 		assert getGame() != null;

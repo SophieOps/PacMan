@@ -27,6 +27,10 @@ public class ImageLoader {
     private Image[] monsterImageCyan;
     private Image[] monsterImagePink;
     private Image[] monsterImageScared;
+    /**
+     * Images for superGum.
+     */
+    private Image[] superGumImage;
 
     /**
      * Animation sequence of images for the player.
@@ -82,6 +86,7 @@ public class ImageLoader {
             monsterImageScared = new Image[]{
                     getImage("GhostScared1.gif"),
                     getImage("GhostScared2.gif")};
+    		superGumImage = new Image[]{getImage("cherry.gif")};
 
     		String[] sequence = new String[]{"2", "3", "4", "3", "2"};
     		playerImage = new Image[Direction.values().length][sequence.length + 1];
@@ -162,6 +167,15 @@ public class ImageLoader {
      */
     public Image monsterScared(int animationIndex) {
         return monsterImageScared[animationIndex % monsterAnimationCount()];
+    }
+    
+    /**
+     * Obtain a picture of a monster.
+     * @param animationIndex counter indicating which animation to use.
+     * @return The monster image at the given animation index.
+     */
+    public Image superGum() {
+        return superGumImage[0];
     }
 
     /**

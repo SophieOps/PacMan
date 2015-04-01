@@ -67,8 +67,6 @@ public class BoardView extends JPanel {
      * Indicator for animation.
      */
     private int animationCount;
-
-    private IGameInteractor theGame;
     
     /**
      * @return The board width measured in cells, >= 0.
@@ -230,17 +228,24 @@ public class BoardView extends JPanel {
                 		((Player) sprite).getDirection(),
                         animationCount);
             }
-            if (sprite.getSpriteType() == IBoardInspector.SpriteType.GHOSTRED) {
-                img = imageLoader.monsterRed(animationCount);
-            }
-            if (sprite.getSpriteType() == IBoardInspector.SpriteType.GHOSTORANGE) {
-                img = imageLoader.monsterOrange(animationCount);
-            }
-            if (sprite.getSpriteType() == IBoardInspector.SpriteType.GHOSTCYAN) {
+            switch(sprite.getSpriteType()){
+            case GHOSTRED :
+                    img = imageLoader.monsterRed(animationCount);
+                    break;
+            case GHOSTORANGE :
+                    img = imageLoader.monsterOrange(animationCount);
+                    break;
+            case GHOSTCYAN :
                 img = imageLoader.monsterCyan(animationCount);
-            }
-            if (sprite.getSpriteType() == IBoardInspector.SpriteType.GHOSTPINK) {
+                break;
+            case GHOSTPINK :
                 img = imageLoader.monsterPink(animationCount);
+                break;
+			case SUPERGUM:
+				img = imageLoader.superGum();
+				break;
+			default:
+				break;
             }
         }
         return img;

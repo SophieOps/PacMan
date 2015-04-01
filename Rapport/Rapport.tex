@@ -114,6 +114,24 @@ Les étapes clés du projet sont les suivantes : (chronologiquement)
 \item Analyse de la qualité de cette extension et tests de régression (\refsection{sec:etape6})
 \item Etude de l'historique de la qualité logicielle entre toutes les versions du code (\refsection{sec:etape7})
 \end{enumerate}
+
+\subsection{Le jeu Pacman}
+Pac-Man est un jeu vidéo créé en 1980\footnote{\url{http://fr.wikipedia.org/wiki/Pac-Man}}. Le joueur dirige
+un personnage jaune en forme de camembert appelé Pac-Man. Ce jeu vidéo a connu un grand succès en
+salle d'arcade, et de nombreux clones et variantes du jeu ont été réalisés sur diverses plateformes, y compris
+sur PC. Le but du jeu est de terminer une série de niveaux. Chaque niveau est constitué d'un labyrinthe
+dans lequel Pac-Man se promène. Le labyrinthe est également peuplé de fantômes qui, la plupart du temps,
+tentent de toucher (et ainsi de tuer) Pac-Man. Celui-ci doit éviter les fantômes et manger toutes les gommes
+se trouvant sur son chemin. Un niveau est terminé dès que toutes les gommes du labyrinthe ont été mangées.\\
+Dans chaque labyrinthe se trouvent quatre fantôomes, chacun ayant une couleur et un nom uniques. Il
+s'agit de :
+\begin{itemize}
+\item Blinky, le fantôme rouge ;
+\item Pinky, le fantôme rose ;
+\item Inky, le fantôme bleu ;
+\item Clyde, le fantôme orange.
+\end{itemize}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Etape 1 : Première analyse de la qualité du logiciel}\label{sec:etape1}
@@ -312,7 +330,7 @@ Grace à l'outil de calcul des métriques d'Eclipse, on peut observer les résul
 	\includegraphics{Metrique2.png}
 	\caption{\label{métrique2}Détails de l'analyse des métriques du projet (partie 3).}
 \end{figure}
-\smalltitle{Complexité cyclique moyenne}
+\subsubsection{Complexité cyclique moyenne}
 Il s'agit de la moyenne de la complexité cyclomatique de chacune des méthodes. La complexité cyclomatique d'une méthode unique est une mesure du nombre de chemins distincts de l'exécution dans le procédé. Elle est mesurée par l'ajout d'une voie pour la méthode avec chacun des chemins créés par des instructions conditionnelles (telles que "if" et "for") et les opérateurs (tels que "? :").
 \begin{figure}[!h]
 	\centering
@@ -327,7 +345,7 @@ Il s'agit de la moyenne de la complexité cyclomatique de chacune des méthodes.
 Pour chacun des cas illustrés dans la \labelfigure{ACC1} et la \labelfigure{ACC2}, il sera nécessaire lors du refactoring (voir \refsection{sec:etape3} ) d'analyser et de voir s'il sera possible de la diminuer.
 
 
-\smalltitle{Nombre moyen de méthodes par type}
+\subsubsection{Nombre moyen de méthodes par type}
 C'est la moyenne du nombre de méthodes définies pour chaque classe.
 On remarque que certaines classes ont trop de méthodes, en particulier les classes "Game", "ButtonPanel", "MainUI", "PacmanKeyListener" et "BoardView". \\
 Lors d'une analyse précédente (voir section \ref{designflaws} il avait été observé que les classes "Game" et "PacmanKeyListener" était schizophréniques. Le problème se résolvera donc probablement naturellement lors du traitement de ce problème. Pour ce qui est des autres classes, il sera nécéssaire lors du refactoring d'étudier l'utilité de chacune des méthodes et d'aviser au cas par cas le travail à effectuer sur chacune.
@@ -343,15 +361,15 @@ Voici celles détectées par l'outil CodePro d'Eclipse :
 	\caption{\label{Audit}Détail de l'analyse d'audit faite par Eclipse.}
 \end{figure}
 
-\smalltitle{Erreur non capturée}
+\subsubsection{Erreur non capturée}
 Il s'agit de morceaux de code à risque (qui peuvent provoquer l'arrêt du programme avec une erreur fatale) qui n'est pas protégé.
 Ici, les deux cas repérés sont encadrés par un bloc "try...catch" mais ils ne capturent qu'un seul type d'exception. Pour résoudre ce problème il suffira d'ajouter un second bloc "catch" qui prend en charge l'ensemble des autres exceptions.
 
-\smalltitle{Sérialisation}
+\subsubsection{Sérialisation}
 Un objet est sérialisable quand il implémente la classe "Serializable". Au sein d'un tel objet, tous les éléments doivent, par défaut, pouvoir l'être aussi. Dans le cas contraire, une variable globale peut-être qualifée avec le mot clé "`transient"` pour déclarer cette variable non sérialisable.
 Dans ce cas-ci, l'objet DefaultGameFactory n'implémente pas la classe "Serializable" donc il n'y a aucune raison de déclarer une variable "transient".
 
-\smalltitle{Import inutile}
+\subsubsection{Import inutile}
 Les imports sont les premières lignes d'une classe. Ils permettent d'informer au compilateur d'où viennent les méthodes, les objets,... utilisés qui ne sont pas créés au sein de la classe courante.
 Egalement repris plus loin dans les warnings d'Eclipse, les classes comportent plusieurs imports qui ne sont jamais utilisés.
 La meilleur solution est simplement de les supprimer.\\
@@ -362,7 +380,7 @@ Ceux détectés par l'outil Code Inspector d'IntelijIdea  se trouve à la \label
 	\caption{\label{Audit}Détail de l'analyse d'audit faite par IntelijIdea.}
 \end{figure}
 
-\smalltitle{Droit d'accès}
+\subsubsection{Droit d'accès}
 Chaque élément d'un code (classe, sous-classe, méthode, variable,...) est qualifié d'un mot-clé qui permet de définir l'accessibilité tel que (pour une variable globale ou une méthode\footnote{un descriptif similaire peut-être fait pour une classe}): 
 \begin{itemize}
 \item public : \\
@@ -381,26 +399,26 @@ Chaque élément d'un code (classe, sous-classe, méthode, variable,...) est qua
 Une mauvaise pratique est de tout mettre en publique. Ca permet une vue d'ensemble sur son programme mais implique parfois certaines erreurs d'utilisation.\\
 Ce n'est donc pas un problème grave à l'heure actuelle puisque le jeu fonctionne correctement mais lors de l'ajout de fonctionnalités cela peut le devenir.
 
-\smalltitle{Optimisation}
+\subsubsection{Optimisation}
 En java, une variable qui ne doit pas être modifiée pendant le temps d'une exécution peut-être qualifiée avec le mot-clé "final". Ceci permet d'optimiser le code et de ne pas être confronté à une mauvaise utilisation de la variable par la suite.
 
-\smalltitle{Restructuration}
+\subsubsection{Restructuration}
 Cet outil informe que la fonction "public int addPoints(int)" de la classe "org.jpacman.framework.model.Player" retourne une valeur qui n'est jamais utilisée et qui dont pourrait être transformée en "public void addPoints(int)".\\
 Cette modification est à étudier avant d'agir pour vérifier s'il n'est pas nécéssaire pour une utilisation postérieur de garder cette valeur de retour.\\
 Il informe aussi que deux autres fonctions reçoivent toujours la même valeur dans leur paramètre et que donc cette valeur pourrait devenir une constante.\\
 Chacun des cas sera à étudier pour savoir si cette information est disponible à la méthode et que celle-ci doit alors être refactorée ou si elle a été mise en paramètre en vue d'une amélioration future.
 
-\smalltitle{Code inutile}
+\subsubsection{Code inutile}
 Ce sujet a déjà été traité plus haut (Voir \ref{deadCode}).
 
-\smalltitle{Javadoc}
+\subsubsection{Javadoc}
 Ce sujet a déjà été traité plus haut (Voir \ref{javadoc}).
 
-\smalltitle{Caractère inutile}
+\subsubsection{Caractère inutile}
 Ce sont des éléments du code qui sont sous-entendu par le reste de l'architucture du code.\\
 Dans ce projet, un seul cas a été resencé, il s'agit d'un ";" dans la classe "IBoardInspector" du package "org.jpacman.framework.model". Lors du refactoring, il suffira de le retirer.
 
-\smalltitle{Typographie}
+\subsubsection{Typographie}
 Les problèmes de typographies reprennent les erreurs de formatage des différents éléments. Ce ne sont que des erreurs de conventions parce que elles ne changent en rien le comportement de l'application. Cependant, un bon respect des conventions permet une meilleur compréhension lors d'une relecture, d'une modification, de l'étude du code par un nouveau développeur sur le projet,...\\
 L'outil Code Inspector intégré à IntelijIdea a permis d'en recenser plusieurs. A l'étude de celle-ci, il a été observé qu'elles sont souvent dans les commentaires. Exemple, dans le fichier "GhostMover.java" du package "org.jpacman.framework.model", entre la ligne 28 et la ligne 30, le mot "randomizer" a été identifié avec une majuscule dans le commentaire et sans majuscule dans les lignes de code.\\ \\
 Il est important de signaler aussi, que l'outil Eclipse soulève certaines attentions à l'aide de "warnings".\\
@@ -414,6 +432,7 @@ Les types d'erreurs sont :
 \item The parameter ... is hiding a field from type ... x 7
 \end {itemize}
 Leurs emplacements : \\
+\begin{table}[!h]
 \begin{tabular}{|l|l|l|l|}
 \hline
 Package & \# warning & Classe & \# warnings \\
@@ -441,6 +460,9 @@ main/java/.../factory & 2 & MapParser.java & 2 \\
 /test/java/.../ui & 1 & MainUIFocusTest.java & 1 \\
 \hline
 \end{tabular}
+\caption{Emplacement des "warnings" signalé par Eclipse}
+\label{warnings}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Profilage}
@@ -449,11 +471,11 @@ main/java/.../factory & 2 & MapParser.java & 2 \\
 	\includegraphics[width=\textwidth]{Profilage.png}
 	\caption{\label{profilage}Détail de l'analyse des ressources CPU et mémoire par VisualVM.}
 \end{figure}
-\smalltitle{Ressources CPU}
+\subsubsection{Ressources CPU}
 Comme visible sur la \labelfigure{profilage}, c'est la chargement des images qui prend le plus de temps. Ceci étant une fonction externe au projet, il n'est pas possible d'y effectuer une modification. La méthode, sur laquelle il serait peut-être possible d'effectuer des changements, s'appelle "displayPoint" de la classe "org.jpacman.framework.ui.PointsPanel". Celle-ci calcule à chaque mise-à-jour de l'affichage le nombre de points déjà récoltés sur le nombre de points totaux. Cependant, la fonction est simple et ne prend en elle-même que très peu de temps. Ce qui pénalise est le nombre d'appel, qui lui ne peut pas être modifié puisqu'il est est necéssaire que ce score soit toujours à jour. \\
 Il n'est donc probablement pas possible d'accélérer l'application.
 
-\smalltitle{Consommation mémoire}
+\subsubsection{Consommation mémoire}
 Les ressources mémoires utilisées par l'application sont visible dans la seconde moitié de la \labelfigure{profilage}. Les observations ne sont pas nombreuses si ce n'est que l'utilisation de la mémoire concerne majoritairement l'affichage et les éléments graphiques de l'application. A moins donc de diminuer la qualité ou la vitesse de rafraichissement (ce qui est fortement déconseillé), il n'y a pas grand chose à faire.
 
 
@@ -630,7 +652,7 @@ Voici celles détectées par l'outil CodePro d'Eclipse :
 	\caption{\label{Audit_refact}Détail de l'analyse d'audit faite par Eclipse.}
 \end{figure}
 
-\smalltitle{Import inutile}
+\subsubsection{Import inutile}
 Un seul import reste dans l'analyse. La justification est que lors de sa suppression, une erreur est signalée au niveau de la fonction illustrée dans le bas de l'image.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -641,35 +663,74 @@ Après ces quelques heures de travail, il est évident que il y a un mieux, cepe
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Etape 5 : Extensions}\label{sec:etape5}
-\subsection{Enoncé} 
-Il vous est demandé d'étendre le logiciel afin d'y ajouter certaines fonctionnalités ou d'en améliorer la qualité. Chaque équipe doit réaliser au moins deux extensions différentes, décrites dans la section ... .
-Utilisez un processus de développement dirigé par les tests (test-driven development) : lors du développement des extensions, ajoutez de nouveaux tests unitaires pour tester le comportement prévu de l'extension. Effectuez également des tests de régression avec les tests unitaires déjà présents, afin de vous assurer que le comportement initial n'a pas été modifié.
-\subsection{Résultat}
+
+Maintenant que le logiciel a été étudié, réparer, réétudié, on peut commencer à l'améliorer et à ajouter de nouvelles fonctionnalités.
+%Utilisez un processus de développement dirigé par les tests (test-driven development) : lors du développement des extensions, ajoutez de nouveaux tests unitaires pour tester le comportement prévu de l'extension. Effectuez également des tests de régression avec les tests unitaires déjà présents, afin de vous assurer que le comportement initial n'a pas été modifié.
+\subsection{IA fantômes} 
+\subsubsection{Règle}
+Actuellement, le comportement des fantômes est assez erratique, car la direction empruntée par chacun d'eux est déterminée aléatoirement. Commencez par attribuer une couleur à chacun des quatre fantômes du jeu, afin que le joueur puisse les difféerencier. Créez des IA pour les fantômes afin qu'ils prennent des décisions
+plus intéressantes pour le joueur. Une décision de direction n'est prise que lorsqu'un fantôme arrive à un embranchement. La décision est basée sur le calcul de la plus courte distance entre la position de case de l'embranchement et la position que le fantôme souhaite atteindre. Si plusieurs directions sont pareillement préférables, un fantôme préférera toujours aller en haut, puis à gauche, puis en bas. Un fantôme ne peut donc aller à droite que si cette direction est la seule représentant la plus petite distance jusqu'à la destination.\\
+Le comportement des fantômes alterne entre un mode de \textbf{poursuite} et un mode de \textbf{dispersion}.\\
+En mode poursuite, chaque fantôme a un comportement et une vitesse spécifiques et déeterministes\footnote{http://gameinternals.com/post/2072558330/understanding-pac-man-ghost-behavior} :
+\begin{itemize}
+\item \textbf{Blinky} a une philosophie très simple : "Droit au but ! ". En toute circonstance, il tente de se rendre
+sur la case où se trouve Pac-Man par le chemin le plus court. Il a une vitesse de déplacement de $100\%$.
+\item \textbf{Pinky} aime tendre des embuscades. Il devine où sera Pac-Man $4$ mouvements plus tard et se rend à
+cette position. Il a une vitesse de déplacement de $80\%$.
+\item \textbf{Inky} est dificilement prévisible pour un humain, car son comportement dépend des positions et des
+directions de Pac-Man et de Blinky. Imaginez un vecteur joignant la position de Blinky à celle où
+se trouvera Pac-Man dans $2$ mouvements. Doublez la longueur de ce vecteur. La position que Inky
+cherche à atteindre est à l'extrémité de ce vecteur. Il a une vitesse de déplacement de $100\%$.
+\item \textbf{Clyde} ne semble pas se préoccuper des autres. Il a en fait deux modes de fonctionnement, et il passe de l'un à l'autre en fonction de la distance existant entre Pac-Man et lui. S'il se trouve à plus de $8$
+cases de Pac-Man, Clyde a le même comportement que Blinky. Dans le cas contraire, il se rend sur la
+case située dans le coin inférieur gauche du labyrinthe. Il a une vitesse de déplacement de $100\%$.
+\end{itemize}
+En mode dispersion, chaque fantôome se dirige vers sa position "maison". Ces positions sont situées aux quatre coins du labyrinthe :
+\begin{itemize}
+\item Blinky se rend dans le coin supérieur droit.
+\item Pinky se rend dans le coin supérieur gauche.
+\item Inky se rend dans le coin inférieur droit.
+\item Clyde se rend dans le coin inférieur gauche.
+\end{itemize}
+Une fois sa position "maison" atteinte, le fantôme va se déplacer dans un circuit qui consiste à toujours emprunter le chemin de gauche pour Pinky et Clyde, et celui de droite pour Blinky et Inky (cf. \labelfigure{ghostdispersion})
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{pacman_ghostmove_dispersion.png}
+	\caption{\label{ghostdispersion}Circuits empruntés par les fantômes en mode dispersion.}
+\end{figure}
+L'alternance entre ces modes est définie comme suit :
+\begin{itemize}
+\item Dispersion pendant 7 secondes, puis poursuite pendant 20 secondes.
+\item Dispersion pendant 7 secondes, puis poursuite pendant 20 secondes.
+\item Dispersion pendant 5 secondes, puis poursuite pendant 20 secondes.
+\item Dispersion pendant 5 secondes, puis poursuite indéfiniment.
+\end{itemize}
+%Utilisez un Strategy Design Pattern pour implémenter les comportements des fantômes. L'alternance entre la dispersion et la poursuite sera ainsi réalisée grâce à un changement de stratégie. De même, les aspects communs des comportements des fantômes seront implémentés sous la forme de stratégies partagées par les antagonistes concernés.
+%Le système doit être tel que l'ajout de nouvelles stratégies soit possible et facile : les stratégies doivent avoir toutes les informations nécessaires pour agir en état de cause. En aucune manière, les stratégies ne doivent pouvoir tricher en manipulant les données du jeu ou en donnant des instructions contraires aux règles du jeu.
+
+\subsubsection{Implémentation}
 
 
 
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Super gommes}
+\subsubsection{Règle}
+Modifiez le jeu afin qu'il prenne en compte la présence de supergommes. Lorsque Pac-Man mange une supergomme, elle lui rapporte $50$ points.\\
+Pendant un court moment, les règles du jeu changent (le jeu se met en mode fuite) et la proie devient chasseur. Lorsque Pac-Man mange une supergomme, les fantômes sont effrayés. Le chronomètre du mode dans lequel ils se trouvent s'arrête et les fantômes entrent en mode fuite : ils deviennent bleus et leur vitesse de déplacement est réduite à $50\%$ (y compris pour Pinky). En mode fuite, chaque fantôme décide aléatoirement
+de la direction à prendre à chaque embranchement. Si Pac-Man touche un fantôme en mode fuite, celui-ci disparaît du jeu et réapparaît au milieu du labyrinthe après $5$ secondes.\\
+Si Pac-Man touche un fantôme en mode fuite, il le mange, ce qui lui rapporte :
+\begin{itemize}
+\item $200$ points pour le premier fantôme mangé;
+\item $400$ points pour le second fantôme mangé;
+\item $800$ points pour le troisième fantôme mangé;
+\item $1600$ points pour le quatrième fantôme mangé.
+\end{itemize}
+Il y a quatre supergommes par niveau. Les deux premiéres à être avalées effraient les fantômes pendant $7$ secondes, tandis que les deux dernières les effraient pendant $5$ secondes. Après ce délai, les fantômes retournent dans le mode dans lequel ils étaient avant de fuir. Le chronomètre associè à ce mode est repris là où il s'était arrêté.\\
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\subsubsection{Implémentation}
 
 
 
@@ -702,7 +763,7 @@ Analysez l'évolution de la qualité du logiciel entre les différentes versions
 \section{Annexe : Code Dupliqué}\label{SimilarCode}
 Dans cette section se trouve les différentes annexes qui permettent d'identifier les blocs de code dupliqués détectés par CodePro. Chaque image illustre un bloc de code mis à part la dernière qui illustre les 6 derniers blocs de code et est issue du rapport généré par CodePro (parce que Eclipse les masque).
 N.B. : La figure reprenant tous les blocs identifiés se trouve à la sous-section \ref{codeduplique}
-\smalltitle{Avant refactoring}
+\subsubsection{Avant refactoring}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{images/SimilarCode_1.png}
@@ -733,7 +794,7 @@ N.B. : La figure reprenant tous les blocs identifiés se trouve à la sous-secti
 	\caption{\label{SimilarCode5}Détail de l'analyse de code redondant par CodePro (élément dont la visualisation n'est pas possible dans Eclipse)}
 \end{figure}
 
-\smalltitle{Après refactoring}
+\subsubsection{Après refactoring}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{images/SimilarCode_7.png}

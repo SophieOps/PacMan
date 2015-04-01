@@ -28,6 +28,7 @@ public class MapParser {
     private static final char PLAYER = 'P';
     private static final char WALL = '#';
     private static final char FOOD = '.';
+    private static final char SUPERGUM = 'S';
 
 	/**
 	 * The factory used to actually instantiate objects.
@@ -130,6 +131,9 @@ public class MapParser {
 			break;
 		case FOOD:
 			theSprite = factory.makeFood();
+			break;
+		case SUPERGUM:
+			theSprite = factory.makeSuperGum();
 			break;
 		case EMPTY:
 			break;

@@ -33,7 +33,8 @@ public interface IBoardInspector {
 		FOOD, 
 		EMPTY, 
 		WALL, 
-		OTHER
+		OTHER, 
+		SUPERGUM
 	}
 		
 	/**
