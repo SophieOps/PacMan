@@ -139,7 +139,7 @@ public class ImageLoader {
      * @return The monster image at the given animation index.
      */
     public Image monsterRed(int animationIndex) {
-        // assert animationIndex >= 0;
+        assert animationIndex >= 0;
         return monsterImageRed[animationIndex % monsterAnimationCount()];
     }
 
