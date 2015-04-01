@@ -263,5 +263,5 @@ public class BoardView extends JPanel {
             repaint();
         }
     }
-    
+
 }
