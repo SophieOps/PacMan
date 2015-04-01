@@ -15,7 +15,7 @@ public class DefaultGameFactory implements IGameFactory {
 	
 	@Override
 	public Game makeGame() {
-		theGame = new Game();
+		theGame = Game.getInstanceOfGame();
 		return theGame;
 	}
 	

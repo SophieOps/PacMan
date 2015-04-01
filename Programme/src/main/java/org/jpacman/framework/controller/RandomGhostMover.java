@@ -24,13 +24,13 @@ public class RandomGhostMover extends AbstractGhostMover {
 	@Override
 	public void doTick() {
         synchronized (gameInteraction()) {
-            Ghost theGhost = getRandomGhost();
-            if (theGhost == null) {
-                return;
-            }
-            int dirIndex = getRandomizer().nextInt(Direction.values().length);
-            final Direction dir = Direction.values()[dirIndex];
-            gameInteraction().moveGhost(theGhost, dir);
+//            Ghost theGhost = getRandomGhost();
+//            if (theGhost == null) {
+//                return;
+//            }
+//            int dirIndex = getRandomizer().nextInt(Direction.values().length);
+//            final Direction dir = Direction.values()[dirIndex];
+//            gameInteraction().moveGhost(theGhost, dir);
         }
 		
 	}

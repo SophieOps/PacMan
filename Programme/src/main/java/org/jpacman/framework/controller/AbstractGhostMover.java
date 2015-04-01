@@ -27,11 +27,10 @@ public abstract class AbstractGhostMover implements ActionListener, IController
      * The default delay between ghost moves.
      */
     public static final int DELAY = 40;
-
-    /**
-     * Randomizer used to pick, e.g., a ghost at random.
-     */
-    private static Random randomizer = new Random();
+//    /**
+//     * Randomizer used to pick, e.g., a ghost at random.
+//     */
+//    private static Random randomizer = new Random();
     /**
      * Timer to be used to trigger ghost moves.
      */
@@ -54,13 +53,13 @@ public abstract class AbstractGhostMover implements ActionListener, IController
         assert controllerInvariant();
     }
 
-    /**
-     * Obtain the randomizer used for ghost moves.
-     * @return the randomizer.
-     */
-    protected static Random getRandomizer() {
-        return randomizer;
-    }
+//    /**
+//     * Obtain the randomizer used for ghost moves.
+//     * @return the randomizer.
+//     */
+//    protected static Random getRandomizer() {
+//        return randomizer;
+//    }
 
     /**
      * Actually conduct a random move in the underlying engine.
@@ -108,19 +107,19 @@ public abstract class AbstractGhostMover implements ActionListener, IController
         assert controllerInvariant();
     }
 
-    /**
-     * Return a randomly chosen ghost, or null if there
-     * are no ghosts in this game.
-     * @return Random ghost or null;
-     */
-    protected Ghost getRandomGhost() {
-        Ghost theGhost = null;
-        if (!ghosts.isEmpty()) {
-            final int ghostIndex = AbstractGhostMover.randomizer.nextInt(ghosts.size());
-            theGhost = ghosts.get(ghostIndex);
-        }
-        return theGhost;
-    }
+//    /**
+//     * Return a randomly chosen ghost, or null if there
+//     * are no ghosts in this game.
+//     * @return Random ghost or null;
+//     */
+//    protected Ghost getRandomGhost() {
+//        Ghost theGhost = null;
+//        if (!ghosts.isEmpty()) {
+//            final int ghostIndex = AbstractGhostMover.randomizer.nextInt(ghosts.size());
+//            theGhost = ghosts.get(ghostIndex);
+//        }
+//        return theGhost;
+//    }
 
     /**
      * @return The object to manipulate the game model.

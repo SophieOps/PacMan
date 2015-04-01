@@ -5,9 +5,11 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-
-public class Game extends Observable implements IGameInteractor {
+//cette classe est un singloton
+public final class Game extends Observable implements IGameInteractor {
 	
+	//pour le singloton
+	private static volatile Game instance = null;
 
 	private Board theBoard;
 	private final PointManager pointManager = new PointManager();
@@ -22,6 +24,36 @@ public class Game extends Observable implements IGameInteractor {
 		assert b != null : "New board should not be null.";
 		theBoard = b;
 	}
+	
+	/**
+     * Constructor
+     */
+    private Game() {
+        // La présence d'un constructeur privé supprime le constructeur public par défaut.
+        // De plus, seul le singleton peut s'instancier lui-même.
+        super();
+    }
+    
+    /**
+     * Méthode permettant de renvoyer une instance de la classe Singleton
+     * @return Retourne l'instance du singleton.
+     */
+    public final static Game getInstanceOfGame() {
+        //Le "Double-Checked Singleton"/"Singleton doublement vérifié" permet 
+        //d'éviter un appel coûteux à synchronized, 
+        //une fois que l'instanciation est faite.
+        if (Game.instance == null) {
+           // Le mot-clé synchronized sur ce bloc empêche toute instanciation
+           // multiple même par différents "threads".
+           // Il est TRES important.
+           synchronized(Game.class) {
+             if (Game.instance == null) {
+            	 Game.instance = new Game();
+             }
+           }
+        }
+        return Game.instance;
+    }
 
 	@Override
 	public void movePlayer(Direction dir) {

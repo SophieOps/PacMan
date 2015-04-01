@@ -1,5 +1,8 @@
 package org.jpacman.framework.Strategy;
 
+import org.jpacman.framework.model.Direction;
+import org.jpacman.framework.model.Ghost;
+
 /**
  * Created by camro.
  */
@@ -7,21 +10,23 @@ public interface IStrategy {
 
     /**
      * Move with the comportement of Blinky
+     * @return 
      */
-    public void moveBlinky();
+    public Direction moveBlinky(Ghost g);
 
     /**
      * Move with the comportement of Pinky
      */
-    public void movePinky();
+    public Direction movePinky();
 
     /**
      * Move with the comportement of Inky
      */
-    public void moveInky();
+    public Direction moveInky();
     
     /**
      * Move with the comportement of Clyde
      */
-    public void moveClyde();
+    public Direction moveClyde();
+    
 }
