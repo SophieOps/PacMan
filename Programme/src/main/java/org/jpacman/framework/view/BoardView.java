@@ -41,12 +41,12 @@ public class BoardView extends JPanel {
     /**
      * The horizontal gap between cells, in pixels.
      */
-    public static final int CELL_HGAP = 1;
+    private static final int CELL_HGAP = 1;
 
     /**
      * The vertical gap between cells, in pixels.
      */
-    public static final int CELL_VGAP = 1;
+    private static final int CELL_VGAP = 1;
 
     /**
      * Representation of the actual board.
@@ -158,8 +158,14 @@ public class BoardView extends JPanel {
         }
     }
 
+    /**
+     * Draw all cells on the board.
+     * @param g2 The graphics to draw the cells on.
+     * @param x the horizontal coordinate
+     * @param y the vertical coordinate
+     */
 	private void drawCell(Graphics2D g2, int x, int y) {
-        Color fillColor = spriteColor(x, y);
+        Color fillColor = boardInspector.spriteColor(x, y);
 
         int startx = 2 * CELL_HGAP + (CELL_WIDTH + CELL_HGAP) * x;
         int starty = 2 * CELL_VGAP + (CELL_HEIGHT + CELL_VGAP) * y;
@@ -184,12 +190,25 @@ public class BoardView extends JPanel {
         }
  	}
 	
+	/**
+	 * Create a rectangle and reserve memory
+	 * @param startx x-coordinate where the rectangle must start
+	 * @param starty y-coordinate where the rectangle must start
+	 * @return the rectangle
+	 */
 	private Rectangle fullArea(int startx, int starty) {
 		Point loc = new Point(startx, starty);
 		Dimension dim = new Dimension(CELL_WIDTH, CELL_HEIGHT);
 		return new Rectangle(loc, dim);
 	}
 	
+	/**
+	 * 
+	 * @param startx x-coordinate where the rectangle must start
+	 * @param starty y-coordinate where the rectangle must start
+	 * @param radius
+	 * @return the rectangle
+	 */
 	private Rectangle centeredArea(int startx, int starty, int radius) {
 		assert radius <= CELL_WIDTH / 2;
 		Point loc = new Point(
@@ -199,37 +218,8 @@ public class BoardView extends JPanel {
 		return new Rectangle(loc, dim);
 	}
 	
-	
-	private Color spriteColor(int x, int y) {
-		IBoardInspector.SpriteType st = boardInspector.spriteTypeAt(x, y);
-		Color c = Color.yellow;
-		switch (st) {
-		case GHOST:
-			c = Color.blue;
-			break;
-		case FOOD:
-			c = Color.orange;
-			break;
-		case WALL:
-			c = Color.green;
-			break;
-		case PLAYER:
-			c = Color.yellow;
-			break;
-		case OTHER:
-			c = Color.black;
-			break;
-		case EMPTY:
-			c = Color.gray;
-			break;
-		default:
-			assert false : "No other Sprite Types " + st;
-		}
-		return c;
-	}
-	
 	/**
-	 * @param sprite
+	 * @param sprite the sprite
 	 * @return An image for this sprite.
 	 */
     private Image spriteImage(Sprite sprite) {

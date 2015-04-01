@@ -11,15 +11,19 @@ public class PointManager implements IPointInspector {
 	private int pointsEarned = 0;
 	
 
+	/**
+	 * Add 'delta' points at the variable pointtsPutOnBoard
+	 * @param delta
+	 */
 	public void addPointsToBoard(int delta) {
 		assert delta >= 0;
 		pointsPutOnBoard += delta;
-		assert (pointsEarned >= 0 && pointsEarned <= pointsPutOnBoard);
+		assert invariant();
 	}
 	
 	private void consumePointsOnBoard(int delta) {
 		pointsEarned += delta;
-        assert (pointsEarned >= 0 && pointsEarned <= pointsPutOnBoard);
+        assert invariant();
 	}
 	
 	/**
@@ -30,7 +34,7 @@ public class PointManager implements IPointInspector {
 	public void consumePointsOnBoard(Player p, int delta) {
 		p.addPoints(delta);
 		consumePointsOnBoard(delta);
-        assert (pointsEarned >= 0 && pointsEarned <= pointsPutOnBoard);
+        assert invariant();
 	}
 		
 	
@@ -40,16 +44,35 @@ public class PointManager implements IPointInspector {
 	 */
 	@Override
 	public boolean allEaten() {
-        assert (pointsEarned >= 0 && pointsEarned <= pointsPutOnBoard);
+        assert invariant();
 		return pointsEarned == pointsPutOnBoard;
 	}
 
+	@Override
 	public int getFoodEaten() {
 		return pointsEarned;
 	}
 	
+	@Override
 	public int totalFoodInGame() {
 		return pointsPutOnBoard;
+	}
+	
+	/**
+	 * Add point at the player when he eat a food 
+	 * @param player
+	 * @param currentSprite
+	 */
+	public void eatFood(Player player, Sprite currentSprite) {
+		if (currentSprite instanceof Food) {
+			Food food = (Food) currentSprite;
+            this.consumePointsOnBoard(player, food.getPoints());
+			food.deoccupy();
+		}
+	}
+	
+	private boolean invariant(){
+		return pointsEarned >= 0 && pointsEarned <= pointsPutOnBoard;
 	}
 
 }

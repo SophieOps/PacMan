@@ -1,5 +1,7 @@
 package org.jpacman.framework.model;
 
+import java.awt.Color;
+
 /**
  * The rectangular board containing the sprites.
  * 
@@ -7,9 +9,32 @@ package org.jpacman.framework.model;
  */
 public class Board implements IBoardInspector {
 
-	public final int a;
-	public final int b;
-	public final Tile[][] tiles;
+	/**
+	 * the height of the board
+	 */
+	private final int height;
+	/**
+	 * the width of the board
+	 */
+	private final int width;
+	/**
+	 * Table with all the tile which compose the board
+	 */
+	private final Tile[][] tiles;
+	
+	@Override
+	public int getHeight() {
+		return height;
+	}
+
+	@Override
+	public int getWidth() {
+		return width;
+	}
+	
+	public Tile[][] getTiles() {
+		return tiles;
+	}
 	
 	/**
 	 * Create a new board.
@@ -19,9 +44,9 @@ public class Board implements IBoardInspector {
 	public Board(int w, int h) {
 		assert w >= 0 : "PRE1: width should be >= 0 but is " + w;
 		assert h >= 0 : "PRE2: height should be >= 0 but is " + h;
-		b = w;
-		a = h;
-		tiles = new Tile[b][a];
+		width = w;
+		height = h;
+		tiles = new Tile[width][height];
 		
 		for (int x = 0; x < w; x++) {
 			for (int y = 0; y < h; y++) {
@@ -43,24 +68,14 @@ public class Board implements IBoardInspector {
 	 */
 	protected final boolean tileInvariant() {
 		boolean result = true;
-		for (int x = 0; x < b; x++) {
-			for (int y = 0; y < a; y++) {
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
 				result = result 
 				&& (tileAt(x, y).getX() == x) 
 				&& (tileAt(x, y).getY() == y);
 			}
 		}
 		return result;
-	}
-	
-	@Override
-	public int getHeight() {
-		return a;
-	}
-
-	@Override
-	public int getWidth() {
-		return b;
 	}
 
 	/**
@@ -85,8 +100,8 @@ public class Board implements IBoardInspector {
 	 */
 	public boolean withinBorders(int x, int y) {
 		return
-			x >= 0 && x < b
-			&& y >= 0 && y < a;
+			x >= 0 && x < width
+			&& y >= 0 && y < height;
 	}
 
 	@Override
@@ -107,12 +122,21 @@ public class Board implements IBoardInspector {
 		}
 		return result;
 	}
-
-	/**
-	 * @param x x-coordinate
-	 * @param y y-coordinate
-	 * @return The tile at the given (x,y) place
-	 */
+	
+	@Override
+	public Color spriteColor(int x, int y) {
+		assert withinBorders(x, y) : "PRE: " + onBoardMessage(x, y);	
+		Sprite s = spriteAt(x, y);
+		Color result;
+		if (s == null) {
+			result = Color.gray;
+		} else {
+			result = s.getColor();
+		}
+		return result;
+	}
+	
+	@Override
 	public Tile tileAt(int x, int y) {
 		assert withinBorders(x, y) : "PRE: " + onBoardMessage(x, y);
 		return tiles[x][y];
@@ -169,14 +193,14 @@ public class Board implements IBoardInspector {
 	 * @return Tile in direction from the given starting position.
 	 */
 	public Tile tileAtDirection(Tile t, Direction dir) {
-        return tileAtOffset(t, dir.dx, dir.dy);
+        return tileAtOffset(t, dir.getDx(), dir.getDy());
 	}
 	
 	/**
 	 * Convenience method to yield a useful error message in case
 	 * of an assertion failure due to a cell that is not on the board.
-	 * @param x xcoordinate
-	 * @param y ycoordinate
+	 * @param x x-coordinate
+	 * @param y y-coordinate
 	 * @return Message including actual values of x, y, and board dimensions.
 	 */
 	private String onBoardMessage(int x, int y) {
@@ -185,4 +209,6 @@ public class Board implements IBoardInspector {
 			+ "not on board of size "
 			+ getWidth() + " * " + getHeight();
 	}
+
+
 }

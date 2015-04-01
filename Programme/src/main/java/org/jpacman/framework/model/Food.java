@@ -1,5 +1,7 @@
 package org.jpacman.framework.model;
 
+import java.awt.Color;
+
 /**
  * A food element on the board.
  * @author Arie van Deursen, TU Delft, Feb 16, 2012
@@ -12,13 +14,28 @@ public class Food extends Sprite {
 	 */
 	public static final int DEFAULT_POINTS = 10;
 	
-	public int points = DEFAULT_POINTS;
-
+	private int points = DEFAULT_POINTS;
+	
     /**
+	 * @return the points
+	 */
+	public int getPoints() {
+		return points;
+	}
+
+	/**
+	 * @param pts the points to set
+	 */
+	public void setPoints(int pts) {
+		this.points = pts;
+	}
+
+	/**
 	 * Constructor meets invariant of sub and superclass.
 	 */
 	public Food() {
-        assert points >= 0 && spriteInvariant();
+        assert getPoints() >= 0 && spriteInvariant();
+		this.color = Color.orange;
 	}
 
     /**
@@ -28,5 +45,8 @@ public class Food extends Sprite {
 	public IBoardInspector.SpriteType getSpriteType() {
 		return IBoardInspector.SpriteType.FOOD;
 	}
+	
+	
+	
 
 }

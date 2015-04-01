@@ -8,7 +8,16 @@ package org.jpacman.framework.model;
  */
 public interface IPointInspector {
 
+	/**
+	 * @return the number of food which have been eaten
+	 */
 	int getFoodEaten();
+	/**
+	 * @return the total number of food in the current game
+	 */
 	int totalFoodInGame();
+	/**
+	 * @return true if all the food in the game have been eaten
+	 */
 	boolean allEaten();
 }

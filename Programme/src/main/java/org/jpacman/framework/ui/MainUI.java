@@ -9,11 +9,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import org.jpacman.framework.factory.FactoryException;
-import org.jpacman.framework.factory.IGameFactory;
-import org.jpacman.framework.model.GhostMover;
+import org.jpacman.framework.factory.Level;
+import org.jpacman.framework.model.IController;
 import org.jpacman.framework.model.IGameInteractor;
-import org.jpacman.framework.model.Level;
-import org.jpacman.framework.model.Controller;
+import org.jpacman.framework.model.RandomGhostMover;
 import org.jpacman.framework.view.Animator;
 import org.jpacman.framework.view.BoardView;
 
@@ -22,7 +21,7 @@ import org.jpacman.framework.view.BoardView;
  * 
  * @author Arie van Deursen, TU Delft, Jan 14, 2012
  */
-public class MainUI extends JFrame implements Observer, Disposable
+public class MainUI extends JFrame implements Observer, IDisposable
 {
 	
     /**
@@ -43,7 +42,7 @@ public class MainUI extends JFrame implements Observer, Disposable
 	/**
 	 * Mapping of UI events to model actions.
 	 */
-	private transient PacmanKeyListener pi;
+	private transient PacmanInteraction pi;
 
 	/**
 	 * The main window components.
@@ -57,7 +56,7 @@ public class MainUI extends JFrame implements Observer, Disposable
 	/**
 	 * Controllers that will trigger certain events.
 	 */
-	private transient Controller ghostController;
+	private transient IController ghostController;
 	private transient Animator animator;
 		
 	/**
@@ -71,7 +70,7 @@ public class MainUI extends JFrame implements Observer, Disposable
 	/**
 	 * Create all the ui components and attach appropriate
 	 * listeners.
-	 * @throws org.jpacman.framework.factory.FactoryException If resources for game can't be loaded.
+	 * @throws FactoryException If resources for game can't be loaded.
 	 * @return The main UI object
 	 */
 	public MainUI createUI() throws FactoryException {
@@ -81,7 +80,7 @@ public class MainUI extends JFrame implements Observer, Disposable
       	boardView = createBoardView();
       	animator = new Animator(boardView);
     	
-      	if (pi == null) { pi = new PacmanKeyListener(); }
+      	if (pi == null) { pi = new PacmanInteraction(); }
       	
       	pi.withDisposable(this)
     		.withGameInteractor(getGame())
@@ -93,7 +92,7 @@ public class MainUI extends JFrame implements Observer, Disposable
      	// lose focus because of a traversal key press.
      	setFocusTraversalKeysEnabled(false);
       	
-        addKeyListener(pi);
+     	addKeyListener(new PacmanKeyListener(pi));
         getGame().attach(pi);
 
     	createButtonPanel(pi).initialize();
@@ -114,7 +113,7 @@ public class MainUI extends JFrame implements Observer, Disposable
      * @param pi Interactor capable of performing requested actions.
      * @return The new panel with buttons.
      */
-    protected ButtonPanel createButtonPanel(PacmanKeyListener pi) {
+    protected ButtonPanel createButtonPanel(PacmanInteraction pi) {
     	assert pi != null;
     	if (buttonPanel == null) {
     		buttonPanel = new ButtonPanel();
@@ -209,7 +208,7 @@ public class MainUI extends JFrame implements Observer, Disposable
 	 */
 	public MainUI initializeNormalGame() throws FactoryException {
 		initialize();
-        withGhostController(new GhostMover(getGame()));
+        withGhostController(new RandomGhostMover(getGame()));//GhostMover(getGame()));
       	createUI();
       	return this;
     }
@@ -253,7 +252,7 @@ public class MainUI extends JFrame implements Observer, Disposable
 	/**
 	 * @return The ghostController
 	 */
-	public Controller getGhostController() {
+	public IController getGhostController() {
 		return ghostController;
 	}
 
@@ -263,7 +262,7 @@ public class MainUI extends JFrame implements Observer, Disposable
 	 * @param gc The new ghost controller.
 	 * @return Itself for fluency.
 	 */
-	public MainUI withGhostController(Controller gc) {
+	public MainUI withGhostController(IController gc) {
 		assert gc != null;
 		//The animator is not null if the createUI has already been called.
 		//If this is the case, the GhostController should not be allowed to change,
@@ -284,35 +283,35 @@ public class MainUI extends JFrame implements Observer, Disposable
 		return this;
 	}
 	
-	/**
-	 * Provide a factory to create model elements.
-	 * @param fact The actual factory
-	 * @return Itself for fluency.
-	 */
-	public MainUI withFactory(IGameFactory fact) {
-		assert fact != null;
-		assert level != null;
-		level.setFactory(fact);
-		return this;
-	}
-	
-	/**
-	 * Provide the row of buttons.
-	 * @param bp The new row of buttons
-	 * @return Itself for fluency
-	 */
-	public MainUI withButtonPanel(ButtonPanel bp) {
-		assert bp != null;
-		buttonPanel = bp;
-		return this;
-	}
+//	/**
+//	 * Provide a factory to create model elements.
+//	 * @param fact The actual factory
+//	 * @return Itself for fluency.
+//	 */
+//	public MainUI withFactory(IGameFactory fact) {
+//		assert fact != null;
+//		assert level != null;
+//		level.setFactory(fact);
+//		return this;
+//	}
+//	
+//	/**
+//	 * Provide the row of buttons.
+//	 * @param bp The new row of buttons
+//	 * @return Itself for fluency
+//	 */
+//	public MainUI withButtonPanel(ButtonPanel bp) {
+//		assert bp != null;
+//		buttonPanel = bp;
+//		return this;
+//	}
 	
 	/**
 	 * Provide the interface to interact with the model.
 	 * @param pi New model interactor.
 	 * @return Itself for fluency.
 	 */
-	public MainUI withModelInteractor(PacmanKeyListener pi) {
+	public MainUI withModelInteractor(PacmanInteraction pi) {
 		assert pi != null;
 		this.pi = pi;
 		return this;

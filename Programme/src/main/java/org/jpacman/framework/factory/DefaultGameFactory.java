@@ -1,11 +1,6 @@
 package org.jpacman.framework.factory;
 
-import org.jpacman.framework.model.Board;
-import org.jpacman.framework.model.Wall;
-import org.jpacman.framework.model.Food;
-import org.jpacman.framework.model.Game;
-import org.jpacman.framework.model.Ghost;
-import org.jpacman.framework.model.Player;
+import org.jpacman.framework.model.*;
 
 /**
  * A factory for the classes related to the 
@@ -15,7 +10,7 @@ import org.jpacman.framework.model.Player;
  */
 public class DefaultGameFactory implements IGameFactory {
 
-	private transient Game theGame;
+	private Game theGame;	//transient		//retiré lors du refactoring parce que jugé sans intérêt
 	
 	@Override
 	public Game makeGame() {
@@ -39,11 +34,43 @@ public class DefaultGameFactory implements IGameFactory {
 		return g;
 	}
 
+    @Override
+    public GhostRed makeGhostRed() {
+        assert getGame() != null;
+        GhostRed g = new GhostRed();
+        getGame().addGhost(g);
+        return g;
+    }
+
+    @Override
+    public GhostOrange makeGhostOrange() {
+        assert getGame() != null;
+        GhostOrange g = new GhostOrange();
+        getGame().addGhost(g);
+        return g;
+    }
+
+    @Override
+    public GhostCyan makeGhostCyan() {
+        assert getGame() != null;
+        GhostCyan g = new GhostCyan();
+        getGame().addGhost(g);
+        return g;
+    }
+
+    @Override
+    public GhostPink makeGhostPink() {
+        assert getGame() != null;
+        GhostPink g = new GhostPink();
+        getGame().addGhost(g);
+        return g;
+    }
+
 	@Override
 	public Food makeFood() {
 		assert getGame() != null;
 		Food f = new Food();
-		getGame().addFood(f);
+		getGame().getPointManager().addPointsToBoard(f.getPoints());
 		return f;
 	}
 

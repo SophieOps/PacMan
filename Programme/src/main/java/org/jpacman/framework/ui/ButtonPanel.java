@@ -9,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import org.jpacman.framework.ui.PacmanInteraction.MatchState;
+
 /**
  * A panel containing the buttons for controlling
  * JPacman.
@@ -23,7 +25,7 @@ public class ButtonPanel extends JPanel implements Observer {
 	private static final int BUTTON_HEIGHT = 45;
 	private int buttonCount = 0;
 	
-	private PacmanKeyListener pacmanInteractor;
+	private PacmanInteraction pacmanInteractor;
 	
 	private JFrame parent;
 	
@@ -41,7 +43,7 @@ public class ButtonPanel extends JPanel implements Observer {
 	 * @param pi The new pacman interactor
 	 * @return Itself for fluency.
 	 */
-	public ButtonPanel withInteractor(PacmanKeyListener pi) {
+	public ButtonPanel withInteractor(PacmanInteraction pi) {
 		pacmanInteractor = pi;
 		pi.addObserver(this);
 		return this;
@@ -190,7 +192,7 @@ public class ButtonPanel extends JPanel implements Observer {
 	}
 	
 	private void enableStartStop() {
-		if (pacmanInteractor.getCurrentState() == PacmanKeyListener.MatchState.PLAYING) {
+		if (pacmanInteractor.getCurrentState() == MatchState.PLAYING) {
 			stopButton.setEnabled(true);
 			startButton.setEnabled(false);
 		} else {

@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.Timer;
 
-import org.jpacman.framework.model.Controller;
+import org.jpacman.framework.model.IController;
 
 /**
  * The primary responsibility of this class is
@@ -16,7 +16,7 @@ import org.jpacman.framework.model.Controller;
  * @version $Id: Animator.java 4222 2011-01-24 11:28:49Z arievandeursen $
  *
  */
-public class Animator implements Controller
+public class Animator implements IController
 {
 
     /**

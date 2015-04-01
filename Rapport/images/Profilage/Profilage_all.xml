@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExportedView Name="Live Results" type="table">
+ <TableData NumRows="53" NumColumns="4">
+  <TableHeader>   <TableColumn><![CDATA[Hot Spots - Method]]></TableColumn>
+   <TableColumn><![CDATA[Self Time [%]]]></TableColumn>
+   <TableColumn><![CDATA[Self Time]]></TableColumn>
+   <TableColumn><![CDATA[Total Time]]></TableColumn>
+   <TableColumn><![CDATA[Invocations]]></TableColumn>
+  </TableHeader>
+  <TableBody>
+   <TableRow>
+    <TableColumn><![CDATA[sun.awt.image.ImageFetcher.run()]]></TableColumn>
+    <TableColumn><![CDATA[49,98 %]]></TableColumn>
+    <TableColumn><![CDATA[15431.585 ms]]></TableColumn>
+    <TableColumn><![CDATA[15431.585 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.swing.RepaintManager$ProcessingRunnable.run()]]></TableColumn>
+    <TableColumn><![CDATA[46,90 %]]></TableColumn>
+    <TableColumn><![CDATA[14480.091 ms]]></TableColumn>
+    <TableColumn><![CDATA[14844.357 ms]]></TableColumn>
+    <TableColumn><![CDATA[2131]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.PointsPanel.displayPoints()]]></TableColumn>
+    <TableColumn><![CDATA[0,98 %]]></TableColumn>
+    <TableColumn><![CDATA[302.623 ms]]></TableColumn>
+    <TableColumn><![CDATA[302.621 ms]]></TableColumn>
+    <TableColumn><![CDATA[941]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Tile.topSprite()]]></TableColumn>
+    <TableColumn><![CDATA[0,71 %]]></TableColumn>
+    <TableColumn><![CDATA[219.094 ms]]></TableColumn>
+    <TableColumn><![CDATA[219.089 ms]]></TableColumn>
+    <TableColumn><![CDATA[1686080]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.MainUI.update(java.util.Observable, Object)]]></TableColumn>
+    <TableColumn><![CDATA[0,47 %]]></TableColumn>
+    <TableColumn><![CDATA[145.432 ms]]></TableColumn>
+    <TableColumn><![CDATA[145.427 ms]]></TableColumn>
+    <TableColumn><![CDATA[943]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Board.tileAt(int, int)]]></TableColumn>
+    <TableColumn><![CDATA[0,31 %]]></TableColumn>
+    <TableColumn><![CDATA[96.299 ms]]></TableColumn>
+    <TableColumn><![CDATA[96.298 ms]]></TableColumn>
+    <TableColumn><![CDATA[1685153]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[javax.swing.Timer$DoPostEvent.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,17 %]]></TableColumn>
+    <TableColumn><![CDATA[53.434 ms]]></TableColumn>
+    <TableColumn><![CDATA[408.255 ms]]></TableColumn>
+    <TableColumn><![CDATA[1427]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[sun.awt.GlobalCursorManager$NativeUpdater.run()]]></TableColumn>
+    <TableColumn><![CDATA[0,15 %]]></TableColumn>
+    <TableColumn><![CDATA[47.699 ms]]></TableColumn>
+    <TableColumn><![CDATA[47.699 ms]]></TableColumn>
+    <TableColumn><![CDATA[152]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Wall.getSpriteType()]]></TableColumn>
+    <TableColumn><![CDATA[0,12 %]]></TableColumn>
+    <TableColumn><![CDATA[37.555 ms]]></TableColumn>
+    <TableColumn><![CDATA[37.553 ms]]></TableColumn>
+    <TableColumn><![CDATA[830156]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Game.notifyViewers()]]></TableColumn>
+    <TableColumn><![CDATA[0,04 %]]></TableColumn>
+    <TableColumn><![CDATA[12.369 ms]]></TableColumn>
+    <TableColumn><![CDATA[444.616 ms]]></TableColumn>
+    <TableColumn><![CDATA[927]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Food.getSpriteType()]]></TableColumn>
+    <TableColumn><![CDATA[0,04 %]]></TableColumn>
+    <TableColumn><![CDATA[11.57 ms]]></TableColumn>
+    <TableColumn><![CDATA[11.567 ms]]></TableColumn>
+    <TableColumn><![CDATA[265734]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Tile.dropSprite(org.jpacman.framework.model.Sprite)]]></TableColumn>
+    <TableColumn><![CDATA[0,03 %]]></TableColumn>
+    <TableColumn><![CDATA[8.554 ms]]></TableColumn>
+    <TableColumn><![CDATA[8.549 ms]]></TableColumn>
+    <TableColumn><![CDATA[1091]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Board.tileAtOffset(org.jpacman.framework.model.Tile, int, int)]]></TableColumn>
+    <TableColumn><![CDATA[0,01 %]]></TableColumn>
+    <TableColumn><![CDATA[3.35 ms]]></TableColumn>
+    <TableColumn><![CDATA[4.857 ms]]></TableColumn>
+    <TableColumn><![CDATA[1415]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Tile.addSprite(org.jpacman.framework.model.Sprite)]]></TableColumn>
+    <TableColumn><![CDATA[0,01 %]]></TableColumn>
+    <TableColumn><![CDATA[3.084 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.082 ms]]></TableColumn>
+    <TableColumn><![CDATA[927]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.ButtonPanel.enableStartStop()]]></TableColumn>
+    <TableColumn><![CDATA[0,01 %]]></TableColumn>
+    <TableColumn><![CDATA[2.496 ms]]></TableColumn>
+    <TableColumn><![CDATA[2.495 ms]]></TableColumn>
+    <TableColumn><![CDATA[3]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Game.movePlayer(org.jpacman.framework.model.Direction)]]></TableColumn>
+    <TableColumn><![CDATA[0,01 %]]></TableColumn>
+    <TableColumn><![CDATA[2.377 ms]]></TableColumn>
+    <TableColumn><![CDATA[134.167 ms]]></TableColumn>
+    <TableColumn><![CDATA[281]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Game.tileCanBeOccupied(org.jpacman.framework.model.Tile)]]></TableColumn>
+    <TableColumn><![CDATA[0,01 %]]></TableColumn>
+    <TableColumn><![CDATA[2.331 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.752 ms]]></TableColumn>
+    <TableColumn><![CDATA[1415]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.PacmanKeyListener.updateState()]]></TableColumn>
+    <TableColumn><![CDATA[0,01 %]]></TableColumn>
+    <TableColumn><![CDATA[2.067 ms]]></TableColumn>
+    <TableColumn><![CDATA[9.201 ms]]></TableColumn>
+    <TableColumn><![CDATA[1222]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.PacmanKeyListener.movePlayer(org.jpacman.framework.model.Direction)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[1.264 ms]]></TableColumn>
+    <TableColumn><![CDATA[136.028 ms]]></TableColumn>
+    <TableColumn><![CDATA[282]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Sprite.occupy(org.jpacman.framework.model.Tile)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[1.157 ms]]></TableColumn>
+    <TableColumn><![CDATA[4.239 ms]]></TableColumn>
+    <TableColumn><![CDATA[927]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Sprite.deoccupy()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[1.064 ms]]></TableColumn>
+    <TableColumn><![CDATA[9.615 ms]]></TableColumn>
+    <TableColumn><![CDATA[1091]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Board.tunnelledCoordinate(int, int, int)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[1.058 ms]]></TableColumn>
+    <TableColumn><![CDATA[1.056 ms]]></TableColumn>
+    <TableColumn><![CDATA[2830]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Ghost.getSpriteType()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[1.042 ms]]></TableColumn>
+    <TableColumn><![CDATA[1.041 ms]]></TableColumn>
+    <TableColumn><![CDATA[13606]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.PointsPanel.update(java.util.Observable, Object)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.99 ms]]></TableColumn>
+    <TableColumn><![CDATA[303.61 ms]]></TableColumn>
+    <TableColumn><![CDATA[941]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.PacmanKeyListener.keyPressed(java.awt.event.KeyEvent)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.964 ms]]></TableColumn>
+    <TableColumn><![CDATA[137.435 ms]]></TableColumn>
+    <TableColumn><![CDATA[282]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.PacmanKeyListener.update(java.util.Observable, Object)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.917 ms]]></TableColumn>
+    <TableColumn><![CDATA[9.525 ms]]></TableColumn>
+    <TableColumn><![CDATA[941]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Board.tileAtDirection(org.jpacman.framework.model.Tile, org.jpacman.framework.model.Direction)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.884 ms]]></TableColumn>
+    <TableColumn><![CDATA[5.741 ms]]></TableColumn>
+    <TableColumn><![CDATA[1415]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Game.died()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.812 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.805 ms]]></TableColumn>
+    <TableColumn><![CDATA[1222]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Game.won()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.797 ms]]></TableColumn>
+    <TableColumn><![CDATA[1.161 ms]]></TableColumn>
+    <TableColumn><![CDATA[1221]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Player.getSpriteType()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.624 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.625 ms]]></TableColumn>
+    <TableColumn><![CDATA[3484]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Game.eatFood(org.jpacman.framework.model.Player, org.jpacman.framework.model.Sprite)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.533 ms]]></TableColumn>
+    <TableColumn><![CDATA[3.111 ms]]></TableColumn>
+    <TableColumn><![CDATA[240]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.PointManager.allEaten()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.367 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.362 ms]]></TableColumn>
+    <TableColumn><![CDATA[1221]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.PointManager.consumePointsOnBoard(org.jpacman.framework.model.Player, int)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.353 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.695 ms]]></TableColumn>
+    <TableColumn><![CDATA[164]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Player.addPoints(int)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.214 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.213 ms]]></TableColumn>
+    <TableColumn><![CDATA[164]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.ButtonPanel.start()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.173 ms]]></TableColumn>
+    <TableColumn><![CDATA[7.427 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.GhostMover.start()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.155 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.253 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.PacmanKeyListener.left()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.147 ms]]></TableColumn>
+    <TableColumn><![CDATA[45.548 ms]]></TableColumn>
+    <TableColumn><![CDATA[85]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.PointManager.consumePointsOnBoard(int)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.128 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.127 ms]]></TableColumn>
+    <TableColumn><![CDATA[164]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.GhostMover.stop()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.115 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.115 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.PacmanKeyListener.right()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.111 ms]]></TableColumn>
+    <TableColumn><![CDATA[37.032 ms]]></TableColumn>
+    <TableColumn><![CDATA[81]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.PacmanKeyListener.updateState(org.jpacman.framework.ui.PacmanKeyListener.MatchState)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.109 ms]]></TableColumn>
+    <TableColumn><![CDATA[11.697 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Game.dieIfGhost(org.jpacman.framework.model.Player, org.jpacman.framework.model.Sprite)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.106 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.106 ms]]></TableColumn>
+    <TableColumn><![CDATA[240]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.PacmanKeyListener.up()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.101 ms]]></TableColumn>
+    <TableColumn><![CDATA[31.069 ms]]></TableColumn>
+    <TableColumn><![CDATA[63]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.PacmanKeyListener.stopControllers()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.098 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.244 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Game.getGhosts()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.098 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.098 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.PacmanKeyListener.startControllers()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.087 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.39 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.PacmanKeyListener.down()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.081 ms]]></TableColumn>
+    <TableColumn><![CDATA[22.821 ms]]></TableColumn>
+    <TableColumn><![CDATA[53]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.PacmanKeyListener.start()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.07 ms]]></TableColumn>
+    <TableColumn><![CDATA[7.243 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.view.Animator.start()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.048 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.048 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.ButtonPanel$1.actionPerformed(java.awt.event.ActionEvent)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.046 ms]]></TableColumn>
+    <TableColumn><![CDATA[7.473 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.view.Animator.stop()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.029 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.029 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.ui.ButtonPanel.update(java.util.Observable, Object)]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.014 ms]]></TableColumn>
+    <TableColumn><![CDATA[2.5 ms]]></TableColumn>
+    <TableColumn><![CDATA[2]]></TableColumn>
+  </TableRow>
+   <TableRow>
+    <TableColumn><![CDATA[org.jpacman.framework.model.Player.die()]]></TableColumn>
+    <TableColumn><![CDATA[0,00 %]]></TableColumn>
+    <TableColumn><![CDATA[0.01 ms]]></TableColumn>
+    <TableColumn><![CDATA[0.01 ms]]></TableColumn>
+    <TableColumn><![CDATA[1]]></TableColumn>
+  </TableRow>
+  </TableBody> </TableData>
+</ExportedView>

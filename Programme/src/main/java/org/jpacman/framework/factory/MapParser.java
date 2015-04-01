@@ -20,6 +20,14 @@ import org.jpacman.framework.model.Sprite;
 public class MapParser {
 
     private static final char EMPTY = ' ';
+    private static final char GHOST = 'G';
+    private static final char GHOSTRED = 'R';
+    private static final char GHOSTORANGE = 'O';
+    private static final char GHOSTCYAN = 'C';
+    private static final char GHOSTPINK = 'M';
+    private static final char PLAYER = 'P';
+    private static final char WALL = '#';
+    private static final char FOOD = '.';
 
 	/**
 	 * The factory used to actually instantiate objects.
@@ -98,44 +106,36 @@ public class MapParser {
 	 */
 	protected Sprite getSprite(char spriteCode) throws FactoryException {
 		Sprite theSprite = null;
-
-
-		if(spriteCode == 'P')
-        {
-		    theSprite = factory.makePlayer();
-        }
-        else
-        {
-            if(spriteCode == 'G')
-            {
-                theSprite = factory.makeGhost();
-            }
-            else
-            {
-                if(spriteCode == '#')
-                {
-                    theSprite = factory.makeWall();
-                }
-                else
-                {
-                    if(spriteCode == '.')
-                    {
-                        theSprite = factory.makeFood();
-                    }
-                    else
-                    {
-                        if(spriteCode == EMPTY)
-                        {
-                            // nothing
-                        }
-                        else
-                        {
-                            throw new FactoryException("Illegal sprite code " + spriteCode);
-                        }
-                    }
-                }
-            }
-        }
+		switch(spriteCode){
+		case PLAYER:
+			theSprite = factory.makePlayer();
+			break;
+		case GHOST:
+			theSprite = factory.makeGhost();
+			break;
+        case GHOSTRED:
+            theSprite = factory.makeGhostRed();
+            break;
+        case GHOSTORANGE:
+            theSprite = factory.makeGhostOrange();
+            break;
+        case GHOSTCYAN:
+            theSprite = factory.makeGhostCyan();
+            break;
+        case GHOSTPINK:
+            theSprite = factory.makeGhostPink();
+            break;
+		case WALL:
+			theSprite = factory.makeWall();
+			break;
+		case FOOD:
+			theSprite = factory.makeFood();
+			break;
+		case EMPTY:
+			break;
+		default:
+			throw new FactoryException("Illegal sprite code " + spriteCode);
+		}
 
 		return theSprite;
 	}
@@ -174,21 +174,7 @@ public class MapParser {
      */
     private String[] getMap(String fileName) throws FactoryException {
         BufferedReader br = new BufferedReader(new InputStreamReader(getResourceStream(fileName)));
-
-        List<String> mapList = new ArrayList<String>();
-        String[] mapString = null;
-
-        try {
-            while (br.ready()) {
-                mapList.add(br.readLine());
-            }
-            mapString = new String[mapList.size()];
-            mapList.toArray(mapString);
-            br.close();
-        } catch (IOException e) {
-            throw new FactoryException("Problem reading file ", e);
-        }
-        return mapString;
+        return getMap(br);        
     }
     
     /**
@@ -200,7 +186,7 @@ public class MapParser {
     public String[] getMap(BufferedReader br) throws FactoryException {
         assert br != null;
         List<String> mapList = new ArrayList<String>();
-        String[] mapString = null;
+        String[] mapString; // = null; 		//commenté lors du refactoring
 
         try {
              while (br.ready()) {

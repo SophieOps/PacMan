@@ -67,9 +67,9 @@ public class ImageLoader {
      */
     public void loadImages() throws FactoryException {
     	try {
-    		monsterImageRed = new Image[]{
-    				getImage("GhostBlinky1.gif"),
-    				getImage("GhostBlinky2.gif")};
+            monsterImageRed = new Image[]{
+                    getImage("GhostBlinky1.gif"),
+                    getImage("GhostBlinky2.gif")};
             monsterImageOrange= new Image[]{
                     getImage("GhostClyde1.gif"),
                     getImage("GhostClyde2.gif")};
@@ -102,7 +102,7 @@ public class ImageLoader {
      * @return Number of different monster animation steps
      */
     public int monsterAnimationCount() {
-        // assert monsterImage != null : "Monster image should not be null.";
+        assert monsterImageRed != null : "Monster image should not be null.";
         int result = monsterImageRed.length;
         assert result >= 0;
         return result;
@@ -127,10 +127,8 @@ public class ImageLoader {
      * @return Player image in appropriate direction.
      */
     public Image player(Direction dir, int anim) {
-        // assert anim >= 0;
-        Image img = null;
-        int dirIndex = dir.ordinal();
-        img = playerImage[dirIndex][anim % playerAnimationCount()];
+        assert anim >= 0;
+        Image img = playerImage[dir.ordinal()][anim % playerAnimationCount()];
         assert img != null;
         return img;
     }
@@ -174,7 +172,7 @@ public class ImageLoader {
      * @throws IOException If file can't be found.
      */
     private Image getImage(String name) throws IOException {
-        // assert name != null;
+        assert name != null;
         
         ClassLoader cl = Thread.currentThread().getContextClassLoader();
         URL picfile = cl.getResource(name);
@@ -194,7 +192,7 @@ public class ImageLoader {
      * @return The resized image.
      */
     Image resize(Image im) {
-        // assert im != null;
+        assert im != null;
         Image result = im;
         if (width > 0 && height > 0) {
             int w = im.getWidth(null);        
@@ -203,7 +201,7 @@ public class ImageLoader {
                 result = im.getScaledInstance(width, height, java.awt.Image.SCALE_DEFAULT);
             }
         }
-        // assert result != null;
+        assert result != null;
         return result;
     }
 }
