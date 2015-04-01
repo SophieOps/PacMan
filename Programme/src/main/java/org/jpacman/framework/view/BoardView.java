@@ -14,9 +14,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 
 import org.jpacman.framework.factory.FactoryException;
-import org.jpacman.framework.model.IBoardInspector;
-import org.jpacman.framework.model.Player;
-import org.jpacman.framework.model.Sprite;
+import org.jpacman.framework.model.*;
 
 /**
  * Draw a full board.
@@ -231,9 +229,18 @@ public class BoardView extends JPanel {
                         animationCount);
             }
             switch(sprite.getSpriteType()){
-            case GHOST :
-                 img = imageLoader.monster(animationCount);
-                 break;
+            case GHOSTRED :
+                    img = imageLoader.monsterRed(animationCount);
+                    break;
+            case GHOSTORANGE :
+                    img = imageLoader.monsterOrange(animationCount);
+                    break;
+            case GHOSTCYAN :
+                img = imageLoader.monsterCyan(animationCount);
+                break;
+            case GHOSTPINK :
+                img = imageLoader.monsterPink(animationCount);
+                break;
 			case SUPERGUM:
 				img = imageLoader.superGum();
 				break;
@@ -256,5 +263,5 @@ public class BoardView extends JPanel {
             repaint();
         }
     }
-    
+
 }

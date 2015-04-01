@@ -22,8 +22,11 @@ public class ImageLoader {
     /**
      * Animation sequence of images for monsters.
      */
-    private Image[] monsterImage;
-    
+    private Image[] monsterImageRed;
+    private Image[] monsterImageOrange;
+    private Image[] monsterImageCyan;
+    private Image[] monsterImagePink;
+    private Image[] monsterImageScared;
     /**
      * Images for superGum.
      */
@@ -68,9 +71,21 @@ public class ImageLoader {
      */
     public void loadImages() throws FactoryException {
     	try {
-    		monsterImage = new Image[]{
-    				getImage("Ghost1.gif"),
-    				getImage("Ghost2.gif") };
+            monsterImageRed = new Image[]{
+                    getImage("GhostBlinky1.gif"),
+                    getImage("GhostBlinky2.gif")};
+            monsterImageOrange= new Image[]{
+                    getImage("GhostClyde1.gif"),
+                    getImage("GhostClyde2.gif")};
+            monsterImageCyan= new Image[]{
+                    getImage("GhostInky1.gif"),
+                    getImage("GhostInky2.gif")};
+            monsterImagePink= new Image[]{
+                    getImage("GhostPinky1.gif"),
+                    getImage("GhostPinky2.gif")};
+            monsterImageScared = new Image[]{
+                    getImage("GhostScared1.gif"),
+                    getImage("GhostScared2.gif")};
     		superGumImage = new Image[]{getImage("cherry.gif")};
 
     		String[] sequence = new String[]{"2", "3", "4", "3", "2"};
@@ -92,8 +107,8 @@ public class ImageLoader {
      * @return Number of different monster animation steps
      */
     public int monsterAnimationCount() {
-        assert monsterImage != null : "Monster image should not be null.";
-        int result = monsterImage.length;
+        assert monsterImageRed != null : "Monster image should not be null.";
+        int result = monsterImageRed.length;
         assert result >= 0;
         return result;
     }
@@ -128,9 +143,30 @@ public class ImageLoader {
      * @param animationIndex counter indicating which animation to use.
      * @return The monster image at the given animation index.
      */
-    public Image monster(int animationIndex) {
+    public Image monsterRed(int animationIndex) {
         assert animationIndex >= 0;
-        return monsterImage[animationIndex % monsterAnimationCount()];
+        return monsterImageRed[animationIndex % monsterAnimationCount()];
+    }
+
+    public Image monsterOrange(int animationIndex) {
+        return monsterImageOrange[animationIndex % monsterAnimationCount()];
+    }
+
+    public Image monsterCyan(int animationIndex) {
+        return monsterImageCyan[animationIndex % monsterAnimationCount()];
+    }
+
+    public Image monsterPink(int animationIndex) {
+        return monsterImagePink[animationIndex % monsterAnimationCount()];
+    }
+
+    /**
+     * Obtain a picture of a monster scared.
+     * @param animationIndex counter indicating which animation to use.
+     * @return The monster image scared at the given animation index.
+     */
+    public Image monsterScared(int animationIndex) {
+        return monsterImageScared[animationIndex % monsterAnimationCount()];
     }
     
     /**

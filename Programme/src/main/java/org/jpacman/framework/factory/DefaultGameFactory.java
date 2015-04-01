@@ -1,12 +1,6 @@
 package org.jpacman.framework.factory;
 
-import org.jpacman.framework.model.Board;
-import org.jpacman.framework.model.Food;
-import org.jpacman.framework.model.Game;
-import org.jpacman.framework.model.Ghost;
-import org.jpacman.framework.model.Player;
-import org.jpacman.framework.model.SuperGum;
-import org.jpacman.framework.model.Wall;
+import org.jpacman.framework.model.*;
 
 /**
  * A factory for the classes related to the 
@@ -40,6 +34,38 @@ public class DefaultGameFactory implements IGameFactory {
 		return g;
 	}
 
+    @Override
+    public GhostRed makeGhostRed() {
+        assert getGame() != null;
+        GhostRed g = new GhostRed();
+        getGame().addGhost(g);
+        return g;
+    }
+
+    @Override
+    public GhostOrange makeGhostOrange() {
+        assert getGame() != null;
+        GhostOrange g = new GhostOrange();
+        getGame().addGhost(g);
+        return g;
+    }
+
+    @Override
+    public GhostCyan makeGhostCyan() {
+        assert getGame() != null;
+        GhostCyan g = new GhostCyan();
+        getGame().addGhost(g);
+        return g;
+    }
+
+    @Override
+    public GhostPink makeGhostPink() {
+        assert getGame() != null;
+        GhostPink g = new GhostPink();
+        getGame().addGhost(g);
+        return g;
+    }
+
 	@Override
 	public Food makeFood() {
 		assert getGame() != null;
@@ -52,7 +78,7 @@ public class DefaultGameFactory implements IGameFactory {
 	public Wall makeWall() {
 		return new Wall();
 	}
-	
+
 	@Override
 	public SuperGum makeSuperGum() {
 		assert getGame() != null;
@@ -76,6 +102,4 @@ public class DefaultGameFactory implements IGameFactory {
 		assert theGame != null;
 		return theGame;
 	}
-
-
 }

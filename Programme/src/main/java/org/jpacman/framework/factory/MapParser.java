@@ -21,6 +21,10 @@ public class MapParser {
 
     private static final char EMPTY = ' ';
     private static final char GHOST = 'G';
+    private static final char GHOSTRED = 'R';
+    private static final char GHOSTORANGE = 'O';
+    private static final char GHOSTCYAN = 'C';
+    private static final char GHOSTPINK = 'M';
     private static final char PLAYER = 'P';
     private static final char WALL = '#';
     private static final char FOOD = '.';
@@ -110,6 +114,18 @@ public class MapParser {
 		case GHOST:
 			theSprite = factory.makeGhost();
 			break;
+        case GHOSTRED:
+            theSprite = factory.makeGhostRed();
+            break;
+        case GHOSTORANGE:
+            theSprite = factory.makeGhostOrange();
+            break;
+        case GHOSTCYAN:
+            theSprite = factory.makeGhostCyan();
+            break;
+        case GHOSTPINK:
+            theSprite = factory.makeGhostPink();
+            break;
 		case WALL:
 			theSprite = factory.makeWall();
 			break;
