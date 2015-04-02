@@ -81,8 +81,8 @@ public class GameTest {
      * @throws FactoryException Never.
      */
     @Test
-    public void test1() throws FactoryException {
-        Game g = makePlay("P");
+    public void testSanity() throws FactoryException {
+        Game g = makePlay("PSSSS");
         assertEquals(g.getPlayer(), g.getBoard().spriteAt(0, 0));
         assertThat(tileAt(g, 0, 0), equalTo(g.getPlayer().getTile()));
         assertEquals(SpriteType.PLAYER, g.getBoard().spriteTypeAt(0, 0));
@@ -99,8 +99,8 @@ public class GameTest {
      * @throws FactoryException Can't happen.
      */
     @Test
-    public void test2() throws FactoryException {
-        Game g = makePlay("P #");
+    public void testPlayerMoveToEmptyCell() throws FactoryException {
+        Game g = makePlay("P #SSSS");
         g.movePlayer(Direction.RIGHT);
 
         assertEquals("Player moved", tileAt(g, 1, 0), g.getPlayer().getTile());
@@ -115,8 +115,8 @@ public class GameTest {
      * @throws FactoryException Can't happen.
      */
     @Test
-    public void test3() throws FactoryException {
-        Game g = makePlay("G #");
+    public void testGhostMoveToEmptyCell() throws FactoryException {
+        Game g = makePlay("G #SSSS");
         Ghost theGhost = (Ghost) g.getBoard().spriteAt(0, 0);
 
         g.moveGhost(theGhost, Direction.RIGHT);
@@ -132,8 +132,8 @@ public class GameTest {
      * @throws FactoryException Can't happen.
      */
     @Test
-    public void test4() throws FactoryException {
-        Game g = makePlay("#P.");
+    public void testPlayerMoveIntoWall() throws FactoryException {
+        Game g = makePlay("#P.SSSS");
         g.movePlayer(Direction.LEFT);
         assertThat("Still at the start",
                 tileAt(g, 1, 0), equalTo(g.getPlayer().getTile()));
@@ -146,8 +146,8 @@ public class GameTest {
      * @throws FactoryException Can't happen.
      */
     @Test
-    public void test5() throws FactoryException {
-        Game g = makePlay(" G#");
+    public void testGhostMoveToIntoWall() throws FactoryException {
+        Game g = makePlay(" G#SSSS");
         Ghost theGhost = (Ghost) g.getBoard().spriteAt(1, 0);
 
         g.moveGhost(theGhost, Direction.RIGHT);
@@ -162,8 +162,8 @@ public class GameTest {
      * @throws FactoryException Never.
      */
     @Test
-    public void test6() throws FactoryException {
-        Game g = makePlay("PG#");
+    public void testPlayerDies() throws FactoryException {
+        Game g = makePlay("PG#SSSS");
         Player p = g.getPlayer();
 
         g.movePlayer(Direction.RIGHT);
@@ -178,8 +178,8 @@ public class GameTest {
      * @throws FactoryException Never.
      */
     @Test
-    public void test7() throws FactoryException {
-        Game game = makePlay("P.#");
+    public void testPlayerConsumesFood() throws FactoryException {
+        Game game = makePlay("P.#SSSS");
         Food food = (Food) game.getBoard().spriteAt(1, 0);
         Player player = game.getPlayer();
 
@@ -197,8 +197,8 @@ public class GameTest {
      * @throws FactoryException Never.
      */
     @Test
-    public void test8() throws FactoryException {
-        Game game = makePlay("PG#");
+    public void testGhostMovesIntoPlayer() throws FactoryException {
+        Game game = makePlay("PG#SSSS");
         Ghost theGhost = (Ghost) game.getBoard().spriteAt(1, 0);
 
         game.moveGhost(theGhost, Direction.LEFT);
@@ -209,14 +209,14 @@ public class GameTest {
     }
 
     /**
-     * Test situation that player moves to
+     * Test situation that ghost moves to
      * a food cell.
      *
      * @throws FactoryException Can't happen.
      */
     @Test
-    public void test9() throws FactoryException {
-        Game game = makePlay("G.#");
+    public void testGhostMoveIntoFoodCell() throws FactoryException {
+        Game game = makePlay("G.#SSSS");
         Ghost theGhost = (Ghost) game.getBoard().spriteAt(0, 0);
 
         game.moveGhost(theGhost, Direction.RIGHT);
@@ -233,9 +233,9 @@ public class GameTest {
      * @throws FactoryException Never.
      */
     @Test
-    public void test10() throws FactoryException {
+    public void testObserversPlayer() throws FactoryException {
         Observer anObserver = mock(Observer.class);
-        Game g = makePlay("P #");
+        Game g = makePlay("P #SSSS");
         g.addObserver(anObserver);
 
         g.movePlayer(Direction.RIGHT);
@@ -248,10 +248,10 @@ public class GameTest {
      * @throws FactoryException Never.
      */
     @Test
-    public void test11() throws FactoryException {
+    public void testObserversGhost() throws FactoryException {
         // given
         Observer anObserver = mock(Observer.class);
-        Game game = makePlay("G #");
+        Game game = makePlay("G #SSSS");
         game.addObserver(anObserver);
         Ghost ghost = (Ghost) game.getBoard().spriteAt(0, 0);
         // when
@@ -267,12 +267,12 @@ public class GameTest {
      * @throws FactoryException Never.
      */
     @Test
-    public void test12() throws FactoryException {
-        Game g = makePlay("P# ");
+    public void testPlayerTunnels() throws FactoryException {
+        Game g = makePlay("P#SSSS ");
         g.movePlayer(Direction.LEFT);
 
         Tile newTile = g.getPlayer().getTile();
-        assertThat("Player moved", tileAt(g, 2, 0), equalTo(newTile));
+        assertThat("Player moved", tileAt(g, 6, 0), equalTo(newTile));
     }
 
     /**
@@ -280,13 +280,13 @@ public class GameTest {
      * @throws FactoryException
      */
     @Test
-    public void test13() throws FactoryException {
-        Game g = makePlay("G# ");
+    public void testGhostTunnels() throws FactoryException {
+        Game g = makePlay("G#SSSS ");
         Ghost ghost = (Ghost) g.getBoard().spriteAt(0,0);
         g.moveGhost(ghost,Direction.LEFT);
 
         Tile newTile = ghost.getTile();
-        assertThat("Ghost moved", tileAt(g, 2, 0), equalTo(newTile));
+        assertThat("Ghost moved", tileAt(g, 6, 0), equalTo(newTile));
     }
 
 

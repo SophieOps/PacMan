@@ -40,6 +40,16 @@ public class MapParser {
 	 */
 	private Board theBoard;
 
+    /**
+     * The number of super gum allows in the game
+     */
+    private static final int NUMBER_SUPERGUM = 4;
+
+    /**
+     * The number of super gum create
+     */
+    private int nbSuperGum = 0;
+
 	/**
 	 * A fresh parser.
 	 * @param f the factory used to instantiate objects.
@@ -80,6 +90,10 @@ public class MapParser {
             for (int x = 0; x < width; x++) {
              	addSprite(map[y].charAt(x), x, y);
             }
+        }
+
+        if (nbSuperGum != NUMBER_SUPERGUM) {
+            throw new FactoryException("It must have only 4 super gum in the game.");
         }
 
         return theGame;
@@ -134,6 +148,7 @@ public class MapParser {
 			break;
 		case SUPERGUM:
 			theSprite = factory.makeSuperGum();
+            nbSuperGum++;
 			break;
 		case EMPTY:
 			break;

@@ -29,7 +29,8 @@ public class MoveGhostStoryTest extends AbstractAcceptanceTest {
 	
 	// Food tile on the board next to the ghost.
 	private Tile foodTile;
-	
+
+    private Tile superGumTile;
 	/**
 	 * Setup the game, given a simpler map to
 	 * improve controllability.
@@ -42,7 +43,9 @@ public class MoveGhostStoryTest extends AbstractAcceptanceTest {
 	public void setUp() throws FactoryException, InterruptedException {
 		super.setUp();
 		emptyTile = tileAt(2, 2);
-		foodTile = tileAt(2, 0);
+		foodTile = tileAt(3, 1);
+
+        superGumTile = tileAt(2,0);
 	}
 	
 	/**
@@ -50,13 +53,32 @@ public class MoveGhostStoryTest extends AbstractAcceptanceTest {
 	 */
 	@Test
 	public void test_S3_1_GhostEmpty() {
-		// given
-		getEngine().start();
-		// when
-		moveGhost(Direction.DOWN);		
+        // given
+        getEngine().start();
+        // when
+        moveGhost(Direction.DOWN);
+
 		// then
 		assertEquals(emptyTile, theGhost().getTile());
+        getEngine().stop();
+        getEngine().exit();
 	}
+
+    /**
+     * Test that a ghost can move over superGum.
+     */
+    @Test
+    public void testGhostSuperGum() {
+        // given
+        getEngine().start();
+        // when
+        moveGhost(Direction.UP);
+        // then
+        assertEquals(superGumTile, theGhost().getTile());
+        assertEquals(IBoardInspector.SpriteType.GHOST, superGumTile.topSprite().getSpriteType());
+        getEngine().stop();
+        getEngine().exit();
+    }
 	
 	/**
 	 * Test that a ghost can move over food.
@@ -66,10 +88,12 @@ public class MoveGhostStoryTest extends AbstractAcceptanceTest {
 		// given
 		getEngine().start();
 		// when
-		moveGhost(Direction.UP);		
+		moveGhost(Direction.RIGHT);
 		// then
 		assertEquals(foodTile, theGhost().getTile());
 		assertEquals(IBoardInspector.SpriteType.GHOST, foodTile.topSprite().getSpriteType());
+        getEngine().stop();
+        getEngine().exit();
 	}
 	
 	/**
@@ -78,11 +102,14 @@ public class MoveGhostStoryTest extends AbstractAcceptanceTest {
 	@Test
 	public void test_S3_3_GhostLeavesFood() {
 		// given
-		test_S3_2_GhostFood();
+		getEngine().start();
 		// when
-		moveGhost(Direction.DOWN);		
+        moveGhost(Direction.RIGHT);
+		moveGhost(Direction.LEFT);
 		// then
 		assertEquals(IBoardInspector.SpriteType.FOOD, foodTile.topSprite().getSpriteType());
+        getEngine().stop();
+        getEngine().exit();
 	}
 
 	/**
@@ -96,7 +123,11 @@ public class MoveGhostStoryTest extends AbstractAcceptanceTest {
 		moveGhost(Direction.LEFT);		
 		// then
 		assertFalse(getPlayer().isAlive());
+        getEngine().stop();
+        getEngine().exit();
 	}
+
+
 	
 	/**
 	 * @param dir The direction to move the ghost to.

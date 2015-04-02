@@ -10,8 +10,8 @@ import org.jpacman.framework.model.Board;
 import org.jpacman.framework.model.Game;
 import org.jpacman.framework.model.Food;
 import org.jpacman.framework.model.IBoardInspector.SpriteType;
+import org.jpacman.framework.model.SuperGum;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -25,11 +25,13 @@ public class FactoryIntegrationTest {
     private MapParser parser;
 
     private final String[] map = new String[] {
-            "#####",
-            "#...#",
-            "#GPG#",
-            "#   #",
-            "#####"
+            "######",
+            "#S.. #",
+            "#GP  #",
+            "#SSS #",
+            "#  . #",
+            "#ROCM#",
+            "######"
     };
 
 
@@ -55,21 +57,27 @@ public class FactoryIntegrationTest {
         Board b = g.getBoard();
 
         // did we recognize the right sprites?
-        assertEquals(SpriteType.EMPTY, b.spriteTypeAt(1, 3));
+        assertEquals(SpriteType.EMPTY, b.spriteTypeAt(1, 4));
         assertEquals(SpriteType.PLAYER, b.spriteTypeAt(2, 2));
         assertEquals(SpriteType.GHOST, b.spriteTypeAt(1, 2));
         assertEquals(SpriteType.WALL, b.spriteTypeAt(0, 0));
-        assertEquals(SpriteType.FOOD, b.spriteTypeAt(1, 1));
+        assertEquals(SpriteType.FOOD, b.spriteTypeAt(2, 1));
+        assertEquals(SpriteType.SUPERGUM, b.spriteTypeAt(1,1));
+        assertEquals(SpriteType.GHOSTBLINKY, b.spriteTypeAt(1,5));
+        assertEquals(SpriteType.GHOSTCLYDE, b.spriteTypeAt(2,5));
+        assertEquals(SpriteType.GHOSTINKY, b.spriteTypeAt(3,5));
+        assertEquals(SpriteType.GHOSTPINKY, b.spriteTypeAt(4,5));
 
         // did we properly set the player?
         assertEquals(g.getPlayer(), b.spriteAt(2, 2));
 
         // were all ghosts added?
-        assertEquals(2, g.getGhosts().size());
+        assertEquals(5, g.getGhosts().size());
 
         // was the food actually added?
         final int cellsWithFoodCount = 3;
-        assertEquals(cellsWithFoodCount * Food.DEFAULT_POINTS,
+        final int cellsWithSuperGumCount = 4;
+        assertEquals(cellsWithFoodCount * Food.DEFAULT_POINTS + cellsWithSuperGumCount* SuperGum.DEFAULT_POINTS,
                 g.getPointManager().totalFoodInGame());
     }
 }

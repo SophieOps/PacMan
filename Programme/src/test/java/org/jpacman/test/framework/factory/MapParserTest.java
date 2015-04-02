@@ -20,8 +20,14 @@ public class MapParserTest {
 
     private MapParser parser;
     private final String[] testMap = new String[] {
-            "# .#",
-            ".PG#",
+            "#SSS#",
+            "SPG.#",
+            "#...#"
+    };
+
+    private final String[] testMapWithTreeSuperGum = new String[] {
+            "#SS#",
+            "SPG#",
             "## #"
     };
 
@@ -58,7 +64,7 @@ public class MapParserTest {
      */
     @Test (expected = FactoryException.class)
     public void testIncorrectRowMap() throws FactoryException {
-        parser.parseMap(new String[] {"####","#  #","###"});
+        parser.parseMap(new String[] {"######","#SSSS#","###"});
     }
 
     /**
@@ -77,6 +83,11 @@ public class MapParserTest {
     @Test (expected = FactoryException.class)
     public void testIncorrectMapFile() throws FactoryException {
         parser.parseFromFile("IncorrectFile.txt");
+    }
+
+    @Test(expected = FactoryException.class)
+    public void testIncorrectMapSuperGum() throws FactoryException {
+        parser.parseMap(testMapWithTreeSuperGum);
     }
 
     /**
