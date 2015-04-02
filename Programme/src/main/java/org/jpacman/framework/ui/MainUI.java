@@ -56,7 +56,7 @@ public class MainUI extends JFrame implements Observer, IDisposable
 	/**
 	 * Controllers that will trigger certain events.
 	 */
-	private transient IController ghostController;
+	public transient IController ghostController;
 	private transient Animator animator;
 		
 	/**

@@ -14,6 +14,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 
 import org.jpacman.framework.Strategy.Escape;
+import org.jpacman.framework.Strategy.IStrategy;
 import org.jpacman.framework.factory.FactoryException;
 import org.jpacman.framework.model.*;
 
@@ -223,13 +224,13 @@ public class BoardView extends JPanel {
 	 */
 	private Image spriteImage(Sprite sprite) {
 		Image img = null;
+		IStrategy strat = Ghost.getStrategy();
 		if (imageLoader != null && sprite != null) {
 			if (sprite instanceof Player) {
 				img = imageLoader.player(
 						((Player) sprite).getDirection(),
 						animationCount);
-			}
-			if((sprite instanceof Ghost) && (((Ghost)sprite).getStrategy() instanceof Escape)){
+			}else if((sprite instanceof Ghost) && (Ghost.getStrategy() instanceof Escape)){
 				img = imageLoader.monsterScared(animationCount);
 			}else{
 				switch(sprite.getSpriteType()){

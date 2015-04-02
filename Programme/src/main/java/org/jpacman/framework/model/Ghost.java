@@ -13,7 +13,7 @@ import org.jpacman.framework.Strategy.*;
  * 
  * @author Arie van Deursen, TU Delft, Feb 10, 2012
  */
-public class Ghost extends Sprite implements ActionListener {
+public class Ghost extends Sprite {
 	
 
     /**
@@ -28,11 +28,7 @@ public class Ghost extends Sprite implements ActionListener {
 	protected int idGhost;
     protected static int nbGhost = 0;
     protected static IStrategy strategy;
-    protected static final int DELAY = 1;
-    protected final Timer timer;
-    protected int delay = 0;
-    protected int delayEscape = 0;
-    protected char previusStrategy;
+    protected static char previusStrategy;
     protected Direction previusDirection;
     protected int numberGhostEat = 0;
 	
@@ -41,15 +37,29 @@ public class Ghost extends Sprite implements ActionListener {
 	/**
 	 * @return the strategy
 	 */
-	public IStrategy getStrategy() {
+	public static IStrategy getStrategy() {
 		return strategy;
 	}
 
 	/**
 	 * @param strategy the strategy to set
 	 */
-	public void setStrategy(IStrategy strategy) {
-		this.strategy = strategy;
+	public static void setStrategy(IStrategy strategy) {
+		strategy = strategy;
+	}
+
+	/**
+	 * @return the previusStrategy
+	 */
+	public static char getPreviusStrategy() {
+		return previusStrategy;
+	}
+
+	/**
+	 * @param previusStrategy the previusStrategy to set
+	 */
+	public static void setPreviusStrategy(char previusStrategy) {
+		Ghost.previusStrategy = previusStrategy;
 	}
 
 	/**
@@ -136,81 +146,14 @@ public class Ghost extends Sprite implements ActionListener {
 	public Ghost(IStrategy strat) {
 		super();
 		this.color = Color.blue;
-		this.strategy = strat;
+		Ghost.strategy = strat;
+		Ghost.previusStrategy = 'd';
         idGhost = nbGhost;
         nbGhost++;
-        this.timer = new Timer(DELAY, this);
-        assert timer != null;
 	}
 
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		 assert timer != null;
-		 if ((this.strategy instanceof Escape)){
-			 this.delayEscape ++;
-			 switch(SuperGum.getNumberSuperGumEat()){
-			 case 1 :
-				 if (this.delayEscape == 7){
-					 exitEscape();
-				 }
-				 break;
-			 case 2 :
-				 if (this.delayEscape == 14){
-					 exitEscape();
-				 }
-				 break;
-			 case 3 :
-				 if (this.delayEscape == 19){
-					 exitEscape();
-				 }
-				 break;
-			 case 4 :
-				 if (this.delayEscape == 24){
-					 exitEscape();
-				 }
-				 break;
-			 }			 
-		 }else{
-			 this.delay ++;
-			 switch(delay){
-			 case 7 :
-				 this.strategy = new Tracking();
-				 break;
-			 case 27 :
-				 this.strategy = new Dispersion();
-				 break;
-			 case 34 :
-				 this.strategy = new Tracking();
-				 break;
-			 case 54 :
-				 this.strategy = new Dispersion();
-				 break;
-			 case 59 :
-				 this.strategy = new Tracking();
-				 break;
-			 case 79 :
-				 this.strategy = new Dispersion();
-				 break;
-			 case 84 :
-				 this.strategy = new Tracking();
-				 break;
-			 }
-		 }
-
-		
-	}
 	
-	private void exitEscape(){
-		switch(this.previusStrategy){
-		case 't' :
-			this.strategy = new Tracking();
-			break;
-		case 'd' :
-			this.strategy = new Dispersion();
-			break;
-		}
-	}
+
 	
 
 }

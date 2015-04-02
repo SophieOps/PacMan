@@ -1,6 +1,7 @@
 package org.jpacman.framework.model;
 
 import org.jpacman.framework.Strategy.Escape;
+import org.jpacman.framework.controller.AbstractGhostMover;
 
 /**
  * Keep track of points (still) in the game.
@@ -82,7 +83,7 @@ public class PointManager implements IPointInspector {
             this.consumePointsOnBoard(player, supergum.getPoints());
             supergum.setNumberSuperGumEat(supergum.getNumberSuperGumEat()+1);
             supergum.deoccupy();
-            Ghost.strategy = new Escape();
+            Ghost.strategy = new Escape();//le déclenchement du timer se fait dans la classe NormalGhostMover lors d'un des arrêt du timer "timer"
 		}
 		
 	}
