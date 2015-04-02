@@ -8,7 +8,7 @@ import static org.junit.Assume.assumeTrue;
 
 import org.jpacman.framework.controller.AbstractGhostMover;
 import org.jpacman.framework.controller.IController;
-import org.jpacman.framework.controller.RandomGhostMover;
+import org.jpacman.framework.controller.NormalGhostMover;
 import org.jpacman.framework.factory.DefaultGameFactory;
 import org.jpacman.framework.factory.IGameFactory;
 import org.jpacman.framework.factory.FactoryException;
@@ -60,8 +60,8 @@ public class MainUITest {
         mainUI.initialize();
         assertNull(mainUI.getGhostController());
 
-        IController ghostMover1 = new RandomGhostMover(mainUI.getGame());
-        IController ghostMover2 = new RandomGhostMover(mainUI.getGame());
+        IController ghostMover1 = new NormalGhostMover(mainUI.getGame());
+        IController ghostMover2 = new NormalGhostMover(mainUI.getGame());
 
         //Below we apply forced pointer comparison to check the setter.
         mainUI.withGhostController(ghostMover1);
@@ -111,7 +111,7 @@ public class MainUITest {
     public void testChangeGhostControllerAfterUI() throws FactoryException {
         assumeTrue(MainUI.class.desiredAssertionStatus());
         mainUI.initialize();
-        mainUI.withGhostController(new RandomGhostMover(mainUI.getGame()));
+        mainUI.withGhostController(new NormalGhostMover(mainUI.getGame()));
         mainUI.createUI();
 
         boolean gotException = false;
@@ -119,7 +119,7 @@ public class MainUITest {
         //After creating the UI, the GhostController should not be allowed to be changed.
         //This should cause an assertion error.
         try {
-            mainUI.withGhostController(new RandomGhostMover(mainUI.getGame()));
+            mainUI.withGhostController(new NormalGhostMover(mainUI.getGame()));
         }
         catch (AssertionError ae) {
             gotException = true;
