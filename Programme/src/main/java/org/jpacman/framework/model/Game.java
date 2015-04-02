@@ -90,14 +90,18 @@ public final class Game extends Observable implements IGameInteractor {
 	
 	@Override
 	public void moveGhost(Ghost theGhost, Direction dir) {
+		assert theBoard != null : "Board can't be null when moving";
 		Tile target = theBoard.tileAtDirection(theGhost.getTile(), dir);
+		assert target != null : "target can't be null when moving";
 		if (target.tileCanBeOccupied() && theGhost.isAlive()) {
 			Sprite currentContent = target.topSprite();
 			if (currentContent instanceof Player) { 
 				playerMeetAGhost((Player)currentContent, theGhost);
 			}
 			theGhost.deoccupy();
-			theGhost.occupy(target);
+			if(theGhost.isAlive()){
+				theGhost.occupy(target);
+			}
 			notifyViewers();
 		} 
 	}

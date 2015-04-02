@@ -202,9 +202,9 @@ Tout d'abord, lorsque les tests sont lancés (avec Intellij IDEA), tous les test
 Ensuite, grâce à l'outil de couverture de test dans Intellij IDEA, il est possible de voir les méthodes testées et celles qui ne le sont pas. Les tableaux qui suivent montrent le résultat de la couverture de test.\\
 Comme le montre le tableau \ref{Résumé de l'analyse de couverture}, l'analyse de couverture des tests montre que 96\% du code est couvert. Ce qui correspond à 90\% des méthodes et 88\% de lignes.\\
 Des tests devrons être ajoutés pour couvrir et tester les méthodes dans la classe "MapParser". Ceux-ci permettent de voir si les exceptions sont bien lancées lorsqu'une map est mal encodée.\\
-Après, l'analyse montre que les méthodes withFactory et withButtonPanel dans la classe MainUI ne sont pas testées.\\
+Après,l'analyse montre que les méthodes withFactory et withButtonPanel dans la classe MainUI ne sont pas testées.\\
 
-De plus, les évènements du clavier, se trouvant dans la classe "PacmanKeyListener", ne sont pas testés et devront l'être. Tout comme pour les boutons "play", "stop" et "exit" se trouvant dans la classe ButtonPanel.\\ 
+De plus, les évènements du clavier, se trouvant dans la classe "PacmanKeyListener", ne sont pas testés et devront l'être. Tout comme pour les boutons "play", "stop" et "exit" se trouvant dans le ButtonPanel.\\ 
 
 \begin{table}[!h]
 \begin{tabular}{|l|l|l|l|}
@@ -308,13 +308,13 @@ A l'aide de l'outil InCode intégré à Eclipse, on peut entre-autre observer le
 	\caption{\label{pyramid}Pyramide des valeurs calculées par InCode.}
 \end{figure}
 Comme le précise l'interprétation de la \labelfigure{pyramid}, l'arbre que constitue les classes est grand et étroit.\\
-Les classes ont tendance à contenir un nombre moyen de méthodes et à être organisées avec quelques classes par paquet.\\
+Les classes ont tendance à contenir un nombre moyen de méthodes et à être organisé avec quelques classes par paquet.\\
 Les méthodes tendent à être longue et avec une logique assez simple et à appeler de nombreuses méthodes (à forte intensité de couplage) de quelques autres classes (à faible dispersion de couplage).
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Métriques}
-Grâce à l'outil de calcul des métriques d'Eclipse, on peut observer les résulats présent à la \labelfigure{métrique0}, la \labelfigure{métrique1} et la \labelfigure{métrique2}.\\
+Grace à l'outil de calcul des métriques d'Eclipse, on peut observer les résulats présent à la \labelfigure{métrique0}, la \labelfigure{métrique1} et la \labelfigure{métrique2}.\\
 \begin{figure}[!h]
 	\centering
 	\includegraphics[height=\textheight]{Metrique0.png}
@@ -342,7 +342,7 @@ Il s'agit de la moyenne de la complexité cyclomatique de chacune des méthodes.
 	\includegraphics[width=\textwidth]{ACC_BoardView.png}
 	\caption{\label{ACC2}Détails de l'analyse de la complexité cyclique de la classe "BoardView".}
 \end{figure}
-Pour chacun des cas illustrés dans la \labelfigure{ACC1} et la \labelfigure{ACC2}, il sera nécessaire lors du refactoring (voir \refsection{sec:etape3} ) d'analyser et de voir s'il est possible de la diminuer.
+Pour chacun des cas illustrés dans la \labelfigure{ACC1} et la \labelfigure{ACC2}, il sera nécessaire lors du refactoring (voir \refsection{sec:etape3} ) d'analyser et de voir s'il sera possible de la diminuer.
 
 
 \subsubsection{Nombre moyen de méthodes par type}
@@ -513,7 +513,7 @@ Toutes les classes & 100\% (29/29) & 96,4\% (212/220) & 96,5\% (769/797) \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Etape 3 : Refactoring en vue d'améliorer la qualité\\Etape 4 : Analyse de la qualité du logiciel} \label{sec:etape3} \label{sec:etape4}
-Maintenant que l'ensemble du code est couvert par les test, il est réaliste de vouloir modifier le code pour l'améliorer. Grâce aux différents tests, on peut garantir une certaine stabilité du logiciel et que celui-ci continuera à fonctionner. Après chaque modification, un lancement de l'ensemble des tests sera réalisé pour pouvoir éventuellement faire marche arrière si la modification rétrograde le logiciel.\\
+Maintenant que l'ensemble du code est couvert par les test, il est réaliste de vouloir modifier le code pour l'améliorer. Grace aux différents tests, on peut garantir une certaine stabilité du logiciel et que celui-ci continuera à fonctionner. Après chaque modification, un lancement de l'ensemble des tests sera réalisé pour pouvoir éventuellement faire marche arrière si la modification rétrograde le logiciel.\\
 Cette section va reparcourir chacune des sous-sections de la section \refsection{sec:etape1} et détaillera les chagements réalisés et les changements non réalisés. Pour une meilleur clarté, l'analyse de la qualité du logiciel sera détaillée simultanément\footnote{L'analyse a été réalisée une fois tout le refactoring réalisé}.\\
 N.B. : Les analyses et le refactoring ne concernent pas les tests.
 
@@ -569,9 +569,7 @@ Comme précisé dans l'énoncé, le temps disponible est assez court donc ce cri
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Test unitaire}\label{unitTest_refact}
- Tout d'abord, les méthodes se trouvant dans la classe GameTest ont été renommées pour plus de clareté .En effet, les méthodes étaient simplement numérotées.
- De plus, la javadoc a été mis à jour dans le but de mieux correspondre à ce qui est testé dans les méthodes. 
- Enfin, suite à d'autres modification, deux tests ont été commentés suite à la suppression de deux méthodes (withFactory() et withButtonPanel() ) dans la classe "MainUI".\\
+Rien n'a été refactoré dans le package "src.test.java.org.jpacman.test.framework.*". mais suite à d'autres modification, 2 test ont été commenté suite à la suppression de 2 méthodes (withFactory() et withButtonPanel() ) dans la classe "MainUI".
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Flux de conception}\label{designflaws_refact}
@@ -666,7 +664,7 @@ Après ces quelques heures de travail, il est évident que il y a un mieux, cepe
 \newpage
 \section{Etape 5 : Extensions}\label{sec:etape5}
 
-Maintenant que le logiciel a été étudié, réparer et réétudié, on peut commencer à l'améliorer et à ajouter de nouvelles fonctionnalités.
+Maintenant que le logiciel a été étudié, réparer, réétudié, on peut commencer à l'améliorer et à ajouter de nouvelles fonctionnalités.
 %Utilisez un processus de développement dirigé par les tests (test-driven development) : lors du développement des extensions, ajoutez de nouveaux tests unitaires pour tester le comportement prévu de l'extension. Effectuez également des tests de régression avec les tests unitaires déjà présents, afin de vous assurer que le comportement initial n'a pas été modifié.
 \subsection{IA fantômes} 
 \subsubsection{Règle}
@@ -712,34 +710,6 @@ L'alternance entre ces modes est définie comme suit :
 
 \subsubsection{Implémentation}
 
-Les premiers changements appliqués pour cette extension sont la création de quatre classes dans le package Model. Ces classes sont respectivement GhostBlinky, GhostClyde, GhostInky, et GhostPinky. Toutes les quatres hérite de la classe Ghost.\\
-
-De plus, des nouveaux SpriteType sont ajoutés intitulé GHOSTBLINKY, GHOSTCLYDE, GHOSTINKY et GHOSTPINKY. Chacun est représenté par une image correspondant à la couleur qui lui est propre pour pouvoir les distinguer. C'est pourquoi les classes BoardView et ImageLoader ont été modifié.
-Si les images ne sont pas disponible lors de l'exécution, chacun utilise une case de sa couleur défine (respectivement rouge, orange, cyan et rose). Sur une map (dans le fichier ".txt" qui est lu par la classe "factory.MapParser", Blinky est représenté par le symbole "R", Clyde par le symbole "O", Inky par le symbole "C" et Pinky par le symoble "M".\\
-
-Ensuite, étant donnée que les fantômes ont des comportements différents, le design pattern Strategy a été implementé. Pour cela un package, intitulé strategy, a été crée. Celui-ci contient l'interface IStrategy. Celle-ci contient quatre méthodes qui sont les quatre comportements des fantomes qui sont implémentés par les classes suivantes : \\
-
-\begin{enumerate}
-	\item \underline{Escape : }\\
-	Cette classe, qui implemente IStrategy, redéfinit les méthodes et permet aux fantômes d'avoir le comportement adéquat. C'est-à-dire, qu'ils choisent leur chemin aléatoirement à chaque embranchement. \\
-	
-	\item \underline{Dispersion : }\\
-	Cette classe, qui implemente IStrategy, redéfinit les méthodes et permet aux fantômes d'aller dans leur "maison" respective.
-	C'est-à-dire,que Blinky va dans le coin supérieur droit, si c'est déjà le cas, il se déplace en tournant toujours à droite.
-	Pour Pinky, il se rend dans le coin supérieur gauche et emprunte toujours le chemin de gauche.
-	Pour Pour Inky, il se rend dans le coin inférieur droit et se déplace dans un circuit quiconsite à toujours emprunter le chemin de droite.
-	Et pour il se rend dans le coin inférieur gauche et tourne toujours vers la gauche.\\
-	
-	\item \underline{Tracking : }\\
-	Cette classe, qui implemente IStrategy, redéfinit les méthodes et permet aux fantômes de choisir leur direction pour attraper Pacman.\\
-
-\end{enumerate}
-
-La stratégie a utilisé est appelé depuis la classe "NormalGhostMover", qui se trouve dans le package "controller". Cette classe hérite de la classe abstraite "AbstractGhostMover".
-La classe "NormalGhostMover" redéfinit la méthode doTick() qui permet aux fantômes d'appeler la stratégie adéquate par rapport aux évènements comme les timers ou pacman qui mange une super gomme.\\
-
-Pour finir, la classe MyTimer a été crée pour gérer les différents timers des fantômes. Cette classe se trouve dans le package controller.\\
-
 
 
 
@@ -762,47 +732,28 @@ Il y a quatre supergommes par niveau. Les deux premiéres à être avalées effr
 
 \subsubsection{Implémentation}
 
-Pour l'ajout de cette fonctionnalité, une classe SuperGum, qui hérite de la classe Sprite, a été ajouté. Une SpriteType est également ajouté sous le nom de SUPERGUM. Une image est aussi associé a la supergum. De plus, les fantômes deviennent bleu ce qui a demandé un ajustement des classes BoardView et ImageLoader. La couleur défini pour la supergum est magenta.\\
 
-Etant donnée, que la supergum peut être mangée et rapporte des points, la classe PointManager a été modifié.\\
 
-Lorsque pacman mange une super gomme, les fantômes changent d'état et passent en mode fuite. A ce moment précis, un timer est lancé dans la classe "NormalGhostMover".\\
 
-Lorsque pacman mange un fantome, le jeux s'arrête parce que nous avons rencontré une erreur que nous n'avons pas su et pas eu le temps de débugger.\\
 
-  
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Etape 6 : Analyse de la qualité du logiciel}\label{sec:etape6}
-Voici à nouveau l'analyse du code maintenant les améliorations réalisées.
-\subsubsection{Dépendance}
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=\textwidth]{images/DependenciesPackages_end.png}
-	\caption{\label{dep1}Dépendances entre les packages}
-\end{figure}
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=\textwidth]{images/DependenciesModelStrategy_end.png}
-	\caption{\label{dep2}Dépendances entre les packages Model et Strategy}
-\end{figure}
+\subsection{Enoncé} 
+Pour chaque extension ajoutée, réalisez une analyse de qualité similaire à celle décrite en Section ... Au vu de cette analyse, quels sont les points qui devraient à présent être améliorés ?
+\subsection{Résultat}
 
 
-\subsubsection{Test unitaire}
-Tout d'abord les anciens tests unitaires ont été modifié pour qu'ils réussisent toujours. Car comme le code évolue, les tests le doive aussi. Par exemple, pour la super gomme, tous les tests ou une map était nécessaire devait être modifé car s'il n'y a pas exactement quatre supergums sur la map alors les tests ne passent pas.\\
 
-Ensuite des tests ont été ajoutés au fur et à mesure pour tester le logiciel et essayer de couvrir un maximum le code.
-L'image ref{testCouverture} montre la couverture du code actuellement.\\
-
-L'anlyse montre que toutes les classes sont toujours couvertes mais toutes les méthodes n'ont pas su être testées.\\
- 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=\textwidth]{images/TestCouverture3.png}
-	\caption{\label{testCouverture}Résumé de couverture}
-\end{figure}
-
-\textbf{Remarque: Lorsque les tests sont lancés, sur Intellij IDEA, il y a 15 tests failed sur un total de 68 tests. Mais lorsque que les tests sont lancés un par un, tous les tests fonctionnent. Ce problème n'a pas su résolu et a pris énormément de temps pour ensuite être abondonné.\\ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Etape 7 : Analyse de l'évolution de la qualité logicielle}\label{sec:etape7}
+\subsection{Enoncé} 
+Analysez l'évolution de la qualité du logiciel entre les différentes versions, en utilisant les résultats d'analyse de qualité des sections ..., ... et ... . Montrez cette évolution graphiquement et interprètez-la.
+\subsection{Résultat}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage

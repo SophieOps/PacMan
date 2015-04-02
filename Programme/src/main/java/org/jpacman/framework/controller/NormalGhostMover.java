@@ -37,8 +37,6 @@ public class NormalGhostMover  extends AbstractGhostMover {
 			Ghost theGhost = null;
 			IStrategy strat = Ghost.getStrategy();
 			if (!ghosts.isEmpty()) {
-				//for(int i = 0; i < ghosts.size(); i++){
-				//theGhost = ghosts.get(i);
 				theGhost = getRandomGhost();
 				if (theGhost == null) {
 					return;
@@ -218,49 +216,49 @@ public class NormalGhostMover  extends AbstractGhostMover {
 	{
 		assert controllerInvariant();
 		synchronized (theGame) {
-			for (Ghost gt : ghosts)
-			{
-				switch(gt.getSpriteType()){
-				case GHOSTBLINKY:
-					if(!gt.isAlive()){
-						delay_Blinky++;
-						if(delay_Blinky >=5){
-							gt.resurrect();
-							delay_Blinky = 0;
-						}
-					}
-					break;
-				case GHOSTCLYDE:
-					if(!gt.isAlive()){
-						delay_Clyde++;
-						if(delay_Clyde >=5){
-							gt.resurrect();
-							delay_Clyde = 0;
-						}
-					}
-					break;
-				case GHOSTINKY:
-					if(!gt.isAlive()){
-						delay_Inky++;
-						if(delay_Inky >=5){
-							gt.resurrect();
-							delay_Inky = 0;
-						}
-					}
-					break;
-				case GHOSTPINKY:
-					if(!gt.isAlive()){
-						delay_Pinky++;
-						if(delay_Pinky >=5){
-							gt.resurrect();
-							delay_Pinky = 0;
-						}
-					}
-					break;
-				default:
-					break;
-				}
-			}
+//			for (Ghost gt : ghosts)
+//			{
+//				switch(gt.getSpriteType()){
+//				case GHOSTBLINKY:
+//					if(!gt.isAlive()){
+//						delay_Blinky++;
+//						if(delay_Blinky >=5){
+//							gt.resurrect();
+//							delay_Blinky = 0;
+//						}
+//					}
+//					break;
+//				case GHOSTCLYDE:
+//					if(!gt.isAlive()){
+//						delay_Clyde++;
+//						if(delay_Clyde >=5){
+//							gt.resurrect();
+//							delay_Clyde = 0;
+//						}
+//					}
+//					break;
+//				case GHOSTINKY:
+//					if(!gt.isAlive()){
+//						delay_Inky++;
+//						if(delay_Inky >=5){
+//							gt.resurrect();
+//							delay_Inky = 0;
+//						}
+//					}
+//					break;
+//				case GHOSTPINKY:
+//					if(!gt.isAlive()){
+//						delay_Pinky++;
+//						if(delay_Pinky >=5){
+//							gt.resurrect();
+//							delay_Pinky = 0;
+//						}
+//					}
+//					break;
+//				default:
+//					break;
+//				}
+//			}
 			String str = e.getActionCommand().toString();
 			if (str.compareToIgnoreCase(e1) == 0){
 				if (Ghost.getStrategy() instanceof Escape){

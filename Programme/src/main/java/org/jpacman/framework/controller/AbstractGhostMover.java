@@ -44,10 +44,10 @@ public abstract class AbstractGhostMover implements IController, ActionListener
      */
     protected MyTimer timer;
     protected MyTimer timer_scared;
-    protected int delay_Blinky = 0;
-    protected int delay_Inky = 0;
-    protected int delay_Pinky = 0;
-    protected int delay_Clyde = 0;
+//    protected int delay_Blinky = 0;
+//    protected int delay_Inky = 0;
+//    protected int delay_Pinky = 0;
+//    protected int delay_Clyde = 0;
     protected String e1 = "timer";
     protected String e2 = "timer_scared";
     protected String e3 = "timer_Blinky";

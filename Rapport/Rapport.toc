@@ -1,71 +1,68 @@
 \select@language {french}
 \contentsline {section}{R\IeC {\'e}sum\IeC {\'e}}{1}{Doc-Start}
-\contentsline {section}{\numberline {1}Introduction}{5}{section.1}
-\contentsline {subsection}{\numberline {1.1}Probl\IeC {\`e}me pos\IeC {\'e}}{5}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Etapes cl\IeC {\'e}s}{5}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Le jeu Pacman}{6}{subsection.1.3}
-\contentsline {section}{\numberline {2}Etape 1 : Premi\IeC {\`e}re analyse de la qualit\IeC {\'e} du logiciel}{7}{section.2}
-\contentsline {subsection}{\numberline {2.1}Code dupliqu\IeC {\'e}}{7}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}D\IeC {\'e}pendances cycliques}{8}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Code inutile}{10}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Javadoc}{11}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}Test unitaire}{12}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}Flux de conception}{13}{subsection.2.6}
-\contentsline {subsection}{\numberline {2.7}Complexit\IeC {\'e}}{13}{subsection.2.7}
-\contentsline {subsection}{\numberline {2.8}Encapsulation}{13}{subsection.2.8}
-\contentsline {subsection}{\numberline {2.9}Couplage}{15}{subsection.2.9}
-\contentsline {subsection}{\numberline {2.10}Pyramide des m\IeC {\'e}triques}{16}{subsection.2.10}
-\contentsline {subsection}{\numberline {2.11}M\IeC {\'e}triques}{18}{subsection.2.11}
-\contentsline {subsubsection}{\numberline {2.11.1}Complexit\IeC {\'e} cyclique moyenne}{18}{subsubsection.2.11.1}
-\contentsline {subsubsection}{\numberline {2.11.2}Nombre moyen de m\IeC {\'e}thodes par type}{18}{subsubsection.2.11.2}
-\contentsline {subsection}{\numberline {2.12}Audit}{24}{subsection.2.12}
-\contentsline {subsubsection}{\numberline {2.12.1}Erreur non captur\IeC {\'e}e}{24}{subsubsection.2.12.1}
-\contentsline {subsubsection}{\numberline {2.12.2}S\IeC {\'e}rialisation}{24}{subsubsection.2.12.2}
-\contentsline {subsubsection}{\numberline {2.12.3}Import inutile}{25}{subsubsection.2.12.3}
-\contentsline {subsubsection}{\numberline {2.12.4}Droit d'acc\IeC {\`e}s}{25}{subsubsection.2.12.4}
-\contentsline {subsubsection}{\numberline {2.12.5}Optimisation}{26}{subsubsection.2.12.5}
-\contentsline {subsubsection}{\numberline {2.12.6}Restructuration}{26}{subsubsection.2.12.6}
-\contentsline {subsubsection}{\numberline {2.12.7}Code inutile}{27}{subsubsection.2.12.7}
-\contentsline {subsubsection}{\numberline {2.12.8}Javadoc}{27}{subsubsection.2.12.8}
-\contentsline {subsubsection}{\numberline {2.12.9}Caract\IeC {\`e}re inutile}{27}{subsubsection.2.12.9}
-\contentsline {subsubsection}{\numberline {2.12.10}Typographie}{27}{subsubsection.2.12.10}
-\contentsline {subsection}{\numberline {2.13}Profilage}{28}{subsection.2.13}
-\contentsline {subsubsection}{\numberline {2.13.1}Ressources CPU}{28}{subsubsection.2.13.1}
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}
+\contentsline {subsection}{\numberline {1.1}Probl\IeC {\`e}me pos\IeC {\'e}}{4}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Etapes cl\IeC {\'e}s}{4}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Le jeu Pacman}{5}{subsection.1.3}
+\contentsline {section}{\numberline {2}Etape 1 : Premi\IeC {\`e}re analyse de la qualit\IeC {\'e} du logiciel}{6}{section.2}
+\contentsline {subsection}{\numberline {2.1}Code dupliqu\IeC {\'e}}{6}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}D\IeC {\'e}pendances cycliques}{7}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Code inutile}{9}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Javadoc}{10}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Test unitaire}{11}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Flux de conception}{12}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Complexit\IeC {\'e}}{12}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.8}Encapsulation}{12}{subsection.2.8}
+\contentsline {subsection}{\numberline {2.9}Couplage}{14}{subsection.2.9}
+\contentsline {subsection}{\numberline {2.10}Pyramide des m\IeC {\'e}triques}{15}{subsection.2.10}
+\contentsline {subsection}{\numberline {2.11}M\IeC {\'e}triques}{17}{subsection.2.11}
+\contentsline {subsubsection}{\numberline {2.11.1}Complexit\IeC {\'e} cyclique moyenne}{17}{subsubsection.2.11.1}
+\contentsline {subsubsection}{\numberline {2.11.2}Nombre moyen de m\IeC {\'e}thodes par type}{17}{subsubsection.2.11.2}
+\contentsline {subsection}{\numberline {2.12}Audit}{23}{subsection.2.12}
+\contentsline {subsubsection}{\numberline {2.12.1}Erreur non captur\IeC {\'e}e}{23}{subsubsection.2.12.1}
+\contentsline {subsubsection}{\numberline {2.12.2}S\IeC {\'e}rialisation}{23}{subsubsection.2.12.2}
+\contentsline {subsubsection}{\numberline {2.12.3}Import inutile}{24}{subsubsection.2.12.3}
+\contentsline {subsubsection}{\numberline {2.12.4}Droit d'acc\IeC {\`e}s}{24}{subsubsection.2.12.4}
+\contentsline {subsubsection}{\numberline {2.12.5}Optimisation}{25}{subsubsection.2.12.5}
+\contentsline {subsubsection}{\numberline {2.12.6}Restructuration}{25}{subsubsection.2.12.6}
+\contentsline {subsubsection}{\numberline {2.12.7}Code inutile}{26}{subsubsection.2.12.7}
+\contentsline {subsubsection}{\numberline {2.12.8}Javadoc}{26}{subsubsection.2.12.8}
+\contentsline {subsubsection}{\numberline {2.12.9}Caract\IeC {\`e}re inutile}{26}{subsubsection.2.12.9}
+\contentsline {subsubsection}{\numberline {2.12.10}Typographie}{26}{subsubsection.2.12.10}
+\contentsline {subsection}{\numberline {2.13}Profilage}{27}{subsection.2.13}
+\contentsline {subsubsection}{\numberline {2.13.1}Ressources CPU}{27}{subsubsection.2.13.1}
 \contentsline {subsubsection}{\numberline {2.13.2}Consommation m\IeC {\'e}moire}{28}{subsubsection.2.13.2}
 \contentsline {subsection}{\numberline {2.14}Conclusion}{29}{subsection.2.14}
-\contentsline {section}{\numberline {3}Etape 2 : Ajout de tests unitaires}{31}{section.3}
-\contentsline {section}{\numberline {4}Etape 3 : Refactoring en vue d'am\IeC {\'e}liorer la qualit\IeC {\'e}\\Etape 4 : Analyse de la qualit\IeC {\'e} du logiciel}{32}{section.4}
-\contentsline {subsection}{\numberline {4.1}Code dupliqu\IeC {\'e}}{32}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}D\IeC {\'e}pendances cycliques}{33}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Code inutile}{34}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Javadoc}{34}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}Test unitaire}{34}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}Flux de conception}{34}{subsection.4.6}
-\contentsline {subsection}{\numberline {4.7}Complexit\IeC {\'e}}{35}{subsection.4.7}
-\contentsline {subsection}{\numberline {4.8}Encapsulation}{36}{subsection.4.8}
-\contentsline {subsection}{\numberline {4.9}Couplage}{36}{subsection.4.9}
-\contentsline {subsection}{\numberline {4.10}Pyramide des m\IeC {\'e}triques}{36}{subsection.4.10}
-\contentsline {subsection}{\numberline {4.11}M\IeC {\'e}triques}{40}{subsection.4.11}
-\contentsline {subsection}{\numberline {4.12}Audit}{44}{subsection.4.12}
-\contentsline {subsubsection}{\numberline {4.12.1}Import inutile}{44}{subsubsection.4.12.1}
-\contentsline {subsection}{\numberline {4.13}Conclusion}{44}{subsection.4.13}
-\contentsline {section}{\numberline {5}Etape 5 : Extensions}{45}{section.5}
-\contentsline {subsection}{\numberline {5.1}IA fant\IeC {\^o}mes}{45}{subsection.5.1}
-\contentsline {subsubsection}{\numberline {5.1.1}R\IeC {\`e}gle}{45}{subsubsection.5.1.1}
-\contentsline {subsubsection}{\numberline {5.1.2}Impl\IeC {\'e}mentation}{46}{subsubsection.5.1.2}
-\contentsline {subsection}{\numberline {5.2}Super gommes}{46}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}R\IeC {\`e}gle}{46}{subsubsection.5.2.1}
+\contentsline {section}{\numberline {3}Etape 2 : Ajout de tests unitaires}{30}{section.3}
+\contentsline {section}{\numberline {4}Etape 3 : Refactoring en vue d'am\IeC {\'e}liorer la qualit\IeC {\'e}\\Etape 4 : Analyse de la qualit\IeC {\'e} du logiciel}{31}{section.4}
+\contentsline {subsection}{\numberline {4.1}Code dupliqu\IeC {\'e}}{31}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}D\IeC {\'e}pendances cycliques}{32}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Code inutile}{33}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Javadoc}{33}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Test unitaire}{33}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Flux de conception}{33}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Complexit\IeC {\'e}}{34}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Encapsulation}{35}{subsection.4.8}
+\contentsline {subsection}{\numberline {4.9}Couplage}{35}{subsection.4.9}
+\contentsline {subsection}{\numberline {4.10}Pyramide des m\IeC {\'e}triques}{35}{subsection.4.10}
+\contentsline {subsection}{\numberline {4.11}M\IeC {\'e}triques}{39}{subsection.4.11}
+\contentsline {subsection}{\numberline {4.12}Audit}{43}{subsection.4.12}
+\contentsline {subsubsection}{\numberline {4.12.1}Import inutile}{43}{subsubsection.4.12.1}
+\contentsline {subsection}{\numberline {4.13}Conclusion}{43}{subsection.4.13}
+\contentsline {section}{\numberline {5}Etape 5 : Extensions}{44}{section.5}
+\contentsline {subsection}{\numberline {5.1}IA fant\IeC {\^o}mes}{44}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}R\IeC {\`e}gle}{44}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Impl\IeC {\'e}mentation}{45}{subsubsection.5.1.2}
+\contentsline {subsection}{\numberline {5.2}Super gommes}{47}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}R\IeC {\`e}gle}{47}{subsubsection.5.2.1}
 \contentsline {subsubsection}{\numberline {5.2.2}Impl\IeC {\'e}mentation}{48}{subsubsection.5.2.2}
 \contentsline {section}{\numberline {6}Etape 6 : Analyse de la qualit\IeC {\'e} du logiciel}{49}{section.6}
-\contentsline {subsection}{\numberline {6.1}Enonc\IeC {\'e}}{49}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}R\IeC {\'e}sultat}{49}{subsection.6.2}
-\contentsline {section}{\numberline {7}Etape 7 : Analyse de l'\IeC {\'e}volution de la qualit\IeC {\'e} logicielle}{50}{section.7}
-\contentsline {subsection}{\numberline {7.1}Enonc\IeC {\'e}}{50}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}R\IeC {\'e}sultat}{50}{subsection.7.2}
-\contentsline {section}{\numberline {8}Annexes}{51}{section.8}
-\contentsline {section}{\numberline {A}Annexe : Code Dupliqu\IeC {\'e}}{51}{appendix.A}
-\contentsline {subsubsection}{\numberline {A.0.1}Avant refactoring}{51}{subsubsection.A.0.1}
-\contentsline {subsubsection}{\numberline {A.0.2}Apr\IeC {\`e}s refactoring}{51}{subsubsection.A.0.2}
-\contentsline {section}{\numberline {B}Annexe : D\IeC {\'e}pendances}{56}{appendix.B}
-\contentsline {section}{\numberline {C}Annexe : Incode}{60}{appendix.C}
-\contentsline {section}{\numberline {D}Annexe : Couverture par les test}{65}{appendix.D}
+\contentsline {subsubsection}{\numberline {6.0.3}D\IeC {\'e}pendance}{49}{subsubsection.6.0.3}
+\contentsline {subsubsection}{\numberline {6.0.4}Test unitaire}{49}{subsubsection.6.0.4}
+\contentsline {section}{\numberline {7}Annexes}{52}{section.7}
+\contentsline {section}{\numberline {A}Annexe : Code Dupliqu\IeC {\'e}}{52}{appendix.A}
+\contentsline {subsubsection}{\numberline {A.0.5}Avant refactoring}{52}{subsubsection.A.0.5}
+\contentsline {subsubsection}{\numberline {A.0.6}Apr\IeC {\`e}s refactoring}{52}{subsubsection.A.0.6}
+\contentsline {section}{\numberline {B}Annexe : D\IeC {\'e}pendances}{57}{appendix.B}
+\contentsline {section}{\numberline {C}Annexe : Incode}{61}{appendix.C}
+\contentsline {section}{\numberline {D}Annexe : Couverture par les test}{66}{appendix.D}
