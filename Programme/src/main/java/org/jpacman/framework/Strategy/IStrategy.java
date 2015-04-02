@@ -17,16 +17,16 @@ public interface IStrategy {
     /**
      * Move with the comportement of Pinky
      */
-    public Direction movePinky();
+    public Direction movePinky(Ghost g);
 
     /**
      * Move with the comportement of Inky
      */
-    public Direction moveInky();
+    public Direction moveInky(Ghost g, Ghost blinky);
     
     /**
      * Move with the comportement of Clyde
      */
-    public Direction moveClyde();
+    public Direction moveClyde(Ghost g);
     
 }

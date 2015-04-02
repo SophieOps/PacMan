@@ -18,11 +18,12 @@ public class Ghost extends Sprite implements ActionListener {
 	protected int idGhost;
     protected static int nbGhost = 0;
     protected IStrategy strategy;
-    private static final int DELAY = 1;
-    private final Timer timer;
-    private int delay = 0;
-    private int delayEscape = 0;
-    private char previusStrategy;
+    protected static final int DELAY = 1;
+    protected final Timer timer;
+    protected int delay = 0;
+    protected int delayEscape = 0;
+    protected char previusStrategy;
+    protected Direction previusDirection;
 
 	/**
 	 * @return the strategy
@@ -70,6 +71,20 @@ public class Ghost extends Sprite implements ActionListener {
 	}
 
 	
+	/**
+	 * @return the previusDirection
+	 */
+	public Direction getPreviusDirection() {
+		return previusDirection;
+	}
+
+	/**
+	 * @param previusDirection the previusDirection to set
+	 */
+	public void setPreviusDirection(Direction previusDirection) {
+		this.previusDirection = previusDirection;
+	}
+
 	/**
 	 * Constructor
 	 */

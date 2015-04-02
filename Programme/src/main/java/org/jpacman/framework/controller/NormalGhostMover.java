@@ -31,25 +31,37 @@ public class NormalGhostMover  extends AbstractGhostMover {
 						switch(theGhost.getSpriteType()){
 						case GHOSTBLINKY:
 							dir = theGhost.getStrategy().moveBlinky(theGhost);
+							theGhost.setPreviusDirection(dir);
 							gameInteraction().moveGhost(theGhost, dir);
 						case GHOSTCLYDE:
-							dir = theGhost.getStrategy().moveClyde();
+							dir = theGhost.getStrategy().moveClyde(theGhost);
+							theGhost.setPreviusDirection(dir);
 							gameInteraction().moveGhost(theGhost, dir);
 							break;
 						case GHOSTINKY:
+							Ghost blinky = null;
 							if (!(((GhostPinky)theGhost).getMove() == 0)){
-								dir = theGhost.getStrategy().moveInky();
+								for(int j = 0; j < ghosts.size(); j++){
+									if(theGhost.getSpriteType() == SpriteType.GHOSTBLINKY){
+										blinky = ghosts.get(j);
+									}
+								}
+								dir = theGhost.getStrategy().moveInky(theGhost, blinky);
+								theGhost.setPreviusDirection(dir);
 								gameInteraction().moveGhost(theGhost, dir);
 							}
 							((GhostPinky)theGhost).setMove(((GhostPinky)theGhost).getMove()+1);
 							break;
 						case GHOSTPINKY:
-							dir = theGhost.getStrategy().movePinky();
+							dir = theGhost.getStrategy().movePinky(theGhost);
+							theGhost.setPreviusDirection(dir);
 							gameInteraction().moveGhost(theGhost, dir);
 							break;
 						default:
 							break;
 						}
+					}else{
+						gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
 					}
 				}	
 

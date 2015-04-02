@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import org.jpacman.framework.controller.IController;
+import org.jpacman.framework.controller.NormalGhostMover;
 import org.jpacman.framework.controller.RandomGhostMover;
 import org.jpacman.framework.factory.FactoryException;
 import org.jpacman.framework.factory.Level;
@@ -208,7 +209,7 @@ public class MainUI extends JFrame implements Observer, IDisposable
 	 */
 	public MainUI initializeNormalGame() throws FactoryException {
 		initialize();
-        withGhostController(new RandomGhostMover(getGame()));//GhostMover(getGame()));
+        withGhostController(new NormalGhostMover(getGame()));//RandomGhostMover(getGame()));//GhostMover(getGame()));
       	createUI();
       	return this;
     }

@@ -11,13 +11,13 @@ public enum Direction {
 	 */
 	UP(0, -1), 
 	/**
-	 * vertical upward move
-	 */
-	DOWN(0, 1),
-	/**
 	 * horizontal move to the left
 	 */
 	LEFT(-1, 0),
+	/**
+	 * vertical upward move
+	 */
+	DOWN(0, 1),
 	/**
 	 * horizontal move to the right
 	 */

@@ -21,7 +21,7 @@ public class Dispersion implements IStrategy {
 	}
 
 	@Override
-	public Direction movePinky() {
+	public Direction movePinky(Ghost g) {
 		/* Pinky se rend dans le coin superieur gauche.
 		 * Une fois sa position "maison" atteinte, le fant^ome 
 		 * va se deplacer dans un circuit qui consiste a 
@@ -32,7 +32,7 @@ public class Dispersion implements IStrategy {
 	}
 
 	@Override
-	public Direction moveInky() {
+	public Direction moveInky(Ghost g, Ghost blinky) {
 		/* Inky se rend dans le coin inferieur droit.
 		 * Une fois sa position "maison" atteinte, le fant^ome 
 		 * va se deplacer dans un circuit qui consiste a 
@@ -43,7 +43,7 @@ public class Dispersion implements IStrategy {
 	}
 
 	@Override
-	public Direction moveClyde() {
+	public Direction moveClyde(Ghost g) {
 		/* Clyde se rend dans le coin inferieur gauche.
 		 * Une fois sa position "maison" atteinte, le fant^ome 
 		 * va se deplacer dans un circuit qui consiste a 

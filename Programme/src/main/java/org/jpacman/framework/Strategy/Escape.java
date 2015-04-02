@@ -28,17 +28,17 @@ public class Escape implements IStrategy {
 	}
 
 	@Override
-	public Direction movePinky() {
+	public Direction movePinky(Ghost g) {
 		return move();
 	}
 
 	@Override
-	public Direction moveInky() {
+	public Direction moveInky(Ghost g, Ghost blinky) {
 		return move();
 	}
 
 	@Override
-	public Direction moveClyde() {
+	public Direction moveClyde(Ghost g) {
 		return move();
 	}
 	
