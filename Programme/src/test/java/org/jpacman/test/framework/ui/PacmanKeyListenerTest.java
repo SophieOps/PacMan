@@ -3,6 +3,7 @@ package org.jpacman.test.framework.ui;
 import org.fest.swing.core.BasicRobot;
 import org.fest.swing.core.Robot;
 import org.jpacman.framework.factory.FactoryException;
+import org.jpacman.framework.model.Player;
 import org.jpacman.framework.model.Tile;
 import org.jpacman.framework.ui.ButtonPanel;
 import org.jpacman.framework.ui.MainUI;
@@ -29,6 +30,7 @@ public class PacmanKeyListenerTest {
 
         Tile pos = ui.getGame().getPlayer().getTile();
         Tile posTwo = ui.getGame().getBoardInspector().tileAt(pos.getX(),pos.getY()-1);
+
 
         robot.click(robot.finder().findByName(ButtonPanel.START_BUTTON_NAME));
         robot.pressAndReleaseKey(KeyEvent.VK_UP);
