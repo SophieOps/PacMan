@@ -5,11 +5,13 @@ import org.jpacman.framework.model.Game;
 import org.jpacman.framework.model.Ghost;
 import org.jpacman.framework.model.Tile;
 
+import java.lang.Math;
+
 
 public class Dispersion implements IStrategy {
 
 	private int xg, xp, yg, yp;
-	private float distMin = 999;
+	private double distMin = 999;
 	private Direction dir;
 	private int hauteur;
 	private int largeur;
@@ -87,7 +89,7 @@ public class Dispersion implements IStrategy {
 			if (target.tileCanBeOccupied()){
 				xg = target.getX();
 				yg = target.getY();
-				int dist = (((xg-xp)^2) + ((yg-yp)^2));
+				double dist = (Math.pow(Math.abs(xg-xp), 2) + Math.pow(Math.abs(yg-yp), 2));
 				if(dist < distMin){
 					distMin = dist;
 					dir = direction;
