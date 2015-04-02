@@ -87,9 +87,9 @@ public final class Game extends Observable implements IGameInteractor {
 		Tile target = theBoard.tileAtDirection(theGhost.getTile(), dir);
 		if (target.tileCanBeOccupied()) {
 			Sprite currentContent = target.topSprite();
-			if (currentContent instanceof Player) {
+			if (currentContent instanceof Player) { /**TODO : et que pas en mode fuite*/
 				((Player) currentContent).die();
-			}
+			}/**TODO : si ne mode fuite, fantome qui meurt*/
 			theGhost.deoccupy();
 			theGhost.occupy(target);
 			notifyViewers();

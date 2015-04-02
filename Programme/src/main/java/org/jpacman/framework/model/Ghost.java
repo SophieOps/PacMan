@@ -14,17 +14,30 @@ import org.jpacman.framework.Strategy.*;
  * @author Arie van Deursen, TU Delft, Feb 10, 2012
  */
 public class Ghost extends Sprite implements ActionListener {
+	
 
+    /**
+	 * The default number of points if food
+	 * gets eaten.
+	 */
+	public static final int DEFAULT_POINTS_1 = 200;
+	public static final int DEFAULT_POINTS_2 = 400;
+	public static final int DEFAULT_POINTS_3 = 800;
+	public static final int DEFAULT_POINTS_4 = 1600;
+	
 	protected int idGhost;
     protected static int nbGhost = 0;
-    protected IStrategy strategy;
+    protected static IStrategy strategy;
     protected static final int DELAY = 1;
     protected final Timer timer;
     protected int delay = 0;
     protected int delayEscape = 0;
     protected char previusStrategy;
     protected Direction previusDirection;
-
+    protected int numberGhostEat = 0;
+	
+	private int points = DEFAULT_POINTS_1;
+	
 	/**
 	 * @return the strategy
 	 */
@@ -83,6 +96,38 @@ public class Ghost extends Sprite implements ActionListener {
 	 */
 	public void setPreviusDirection(Direction previusDirection) {
 		this.previusDirection = previusDirection;
+	}
+	
+	/**
+	 * @return the points
+	 */
+	public int getPoints() {
+		return points;
+	}
+
+	/**
+	 * @return the numberGhostEat
+	 */
+	public int getNumberGhostEat() {
+		return numberGhostEat;
+	}
+
+	/**
+	 * @param numberGhostEat the numberGhostEat to set
+	 */
+	public void setNumberGhostEat(int numberGhostEat) {
+		this.numberGhostEat = numberGhostEat;
+		switch(numberGhostEat){
+		case 1 :
+			this.points = DEFAULT_POINTS_2;
+			break;
+		case 2 :
+			this.points = DEFAULT_POINTS_3;
+			break;
+		case 3 :
+			this.points = DEFAULT_POINTS_4;
+			break;
+		}
 	}
 
 	/**

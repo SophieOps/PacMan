@@ -33,27 +33,28 @@ public class NormalGhostMover  extends AbstractGhostMover {
 							dir = theGhost.getStrategy().moveBlinky(theGhost);
 							theGhost.setPreviusDirection(dir);
 							gameInteraction().moveGhost(theGhost, dir);
+							break;
 						case GHOSTCLYDE:
 							dir = theGhost.getStrategy().moveClyde(theGhost);
 							theGhost.setPreviusDirection(dir);
 							gameInteraction().moveGhost(theGhost, dir);
 							break;
-						case GHOSTINKY:
-							Ghost blinky = null;
+						case GHOSTPINKY:
 							if (!(((GhostPinky)theGhost).getMove() == 0)){
-								for(int j = 0; j < ghosts.size(); j++){
-									if(theGhost.getSpriteType() == SpriteType.GHOSTBLINKY){
-										blinky = ghosts.get(j);
-									}
-								}
-								dir = theGhost.getStrategy().moveInky(theGhost, blinky);
+								dir = theGhost.getStrategy().movePinky(theGhost);
 								theGhost.setPreviusDirection(dir);
 								gameInteraction().moveGhost(theGhost, dir);
 							}
 							((GhostPinky)theGhost).setMove(((GhostPinky)theGhost).getMove()+1);
 							break;
-						case GHOSTPINKY:
-							dir = theGhost.getStrategy().movePinky(theGhost);
+						case GHOSTINKY:
+							Ghost blinky = null;
+							for(int j = 0; j < ghosts.size(); j++){
+								if(theGhost.getSpriteType() == SpriteType.GHOSTBLINKY){
+									blinky = ghosts.get(j);
+								}
+							}
+							dir = theGhost.getStrategy().moveInky(theGhost, blinky);
 							theGhost.setPreviusDirection(dir);
 							gameInteraction().moveGhost(theGhost, dir);
 							break;
@@ -146,6 +147,7 @@ public class NormalGhostMover  extends AbstractGhostMover {
 	}
 	
 	private boolean atNode(Ghost g){
+		this.possibleDirection = 0;
 		Tile tile = g.getTile();
 		for(Direction dir : Direction.values()){
 			Tile target = Game.getInstanceOfGame().getBoard().tileAtDirection(tile, dir);
@@ -153,7 +155,7 @@ public class NormalGhostMover  extends AbstractGhostMover {
 				this.possibleDirection ++;
 			}
 		}
-		if(this.possibleDirection > 2){
+		if(this.possibleDirection != 2){
 			return true;
 		}		
 		return false;

@@ -13,6 +13,7 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
+import org.jpacman.framework.Strategy.Escape;
 import org.jpacman.framework.factory.FactoryException;
 import org.jpacman.framework.model.*;
 
@@ -220,36 +221,40 @@ public class BoardView extends JPanel {
 	 * @param sprite the sprite
 	 * @return An image for this sprite.
 	 */
-    private Image spriteImage(Sprite sprite) {
-        Image img = null;
-        if (imageLoader != null && sprite != null) {
-            if (sprite instanceof Player) {
-                img = imageLoader.player(
-                		((Player) sprite).getDirection(),
-                        animationCount);
-            }
-            switch(sprite.getSpriteType()){
-            case GHOSTBLINKY :
-                    img = imageLoader.monsterRed(animationCount);
-                    break;
-            case GHOSTCLYDE :
-                    img = imageLoader.monsterOrange(animationCount);
-                    break;
-            case GHOSTINKY :
-                img = imageLoader.monsterCyan(animationCount);
-                break;
-            case GHOSTPINKY :
-                img = imageLoader.monsterPink(animationCount);
-                break;
-			case SUPERGUM:
-				img = imageLoader.superGum();
-				break;
-			default:
-				break;
-            }
-        }
-        return img;
-    }
+	private Image spriteImage(Sprite sprite) {
+		Image img = null;
+		if (imageLoader != null && sprite != null) {
+			if (sprite instanceof Player) {
+				img = imageLoader.player(
+						((Player) sprite).getDirection(),
+						animationCount);
+			}
+			if((sprite instanceof Ghost) && (((Ghost)sprite).getStrategy() instanceof Escape)){
+				img = imageLoader.monsterScared(animationCount);
+			}else{
+				switch(sprite.getSpriteType()){
+				case GHOSTBLINKY :
+					img = imageLoader.monsterRed(animationCount);
+					break;
+				case GHOSTCLYDE :
+					img = imageLoader.monsterOrange(animationCount);
+					break;
+				case GHOSTINKY :
+					img = imageLoader.monsterCyan(animationCount);
+					break;
+				case GHOSTPINKY :
+					img = imageLoader.monsterPink(animationCount);
+					break;
+				case SUPERGUM:
+					img = imageLoader.superGum();
+					break;
+				default:
+					break;
+				}
+			}
+		}
+		return img;
+	}
 	
     /**
      * Increment the animation counter, and redisplay,
