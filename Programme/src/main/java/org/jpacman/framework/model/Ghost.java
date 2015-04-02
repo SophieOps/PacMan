@@ -44,8 +44,9 @@ public class Ghost extends Sprite {
 	/**
 	 * @param strategy the strategy to set
 	 */
-	public static void setStrategy(IStrategy strategy) {
-		strategy = strategy;
+	public static void setStrategy(IStrategy strat) {
+		strategy = null;
+		strategy = strat;
 	}
 
 	/**

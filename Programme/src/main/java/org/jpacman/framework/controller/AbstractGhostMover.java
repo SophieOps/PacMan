@@ -86,6 +86,7 @@ public abstract class AbstractGhostMover implements IController, ActionListener
 	public void setTimer_scared() {
 		assert controllerInvariant();
         synchronized (theGame) {
+        	timer.stop();
             timer_scared.start();
         }
         assert controllerInvariant();

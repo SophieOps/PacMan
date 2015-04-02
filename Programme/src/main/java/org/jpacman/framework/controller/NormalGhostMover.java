@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 
 import org.jpacman.framework.Strategy.Dispersion;
 import org.jpacman.framework.Strategy.Escape;
+import org.jpacman.framework.Strategy.IStrategy;
 import org.jpacman.framework.Strategy.Tracking;
 import org.jpacman.framework.model.Direction;
 import org.jpacman.framework.model.Game;
@@ -60,6 +61,7 @@ public class NormalGhostMover  extends AbstractGhostMover {
 	public void doTick() {
 		synchronized (getTheGame()) {
 			Ghost theGhost = null;
+			IStrategy strat = Ghost.getStrategy();
 			if (!ghosts.isEmpty()) {
 				for(int i = 0; i < ghosts.size(); i++){
 					theGhost = ghosts.get(i);
@@ -67,18 +69,18 @@ public class NormalGhostMover  extends AbstractGhostMover {
 						Direction dir;
 						switch(theGhost.getSpriteType()){
 						case GHOSTBLINKY:
-							dir = theGhost.getStrategy().moveBlinky(theGhost);
+							dir = Ghost.getStrategy().moveBlinky(theGhost);
 							theGhost.setPreviusDirection(dir);
 							getTheGame().moveGhost(theGhost, dir);
 							break;
 						case GHOSTCLYDE:
-							dir = theGhost.getStrategy().moveClyde(theGhost);
+							dir = Ghost.getStrategy().moveClyde(theGhost);
 							theGhost.setPreviusDirection(dir);
 							getTheGame().moveGhost(theGhost, dir);
 							break;
 						case GHOSTPINKY:
 							if (!(((GhostPinky)theGhost).getMove() == 0)){
-								dir = theGhost.getStrategy().movePinky(theGhost);
+								dir = Ghost.getStrategy().movePinky(theGhost);
 								theGhost.setPreviusDirection(dir);
 								getTheGame().moveGhost(theGhost, dir);
 							}
@@ -87,11 +89,11 @@ public class NormalGhostMover  extends AbstractGhostMover {
 						case GHOSTINKY:
 							Ghost blinky = null;
 							for(int j = 0; j < ghosts.size(); j++){
-								if(theGhost.getSpriteType() == SpriteType.GHOSTBLINKY){
+								if(ghosts.get(j).getSpriteType() == SpriteType.GHOSTBLINKY){
 									blinky = ghosts.get(j);
 								}
 							}
-							dir = theGhost.getStrategy().moveInky(theGhost, blinky);
+							dir = Ghost.getStrategy().moveInky(theGhost, blinky);
 							theGhost.setPreviusDirection(dir);
 							getTheGame().moveGhost(theGhost, dir);
 							break;
@@ -101,74 +103,87 @@ public class NormalGhostMover  extends AbstractGhostMover {
 					}else{
 						Tile target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), theGhost.getPreviusDirection());
 						if (target.tileCanBeOccupied()) {
+							theGhost.setPreviusDirection(theGhost.getPreviusDirection());
 							getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
 						}else{
 							switch(theGhost.getPreviusDirection()){
 							case DOWN:
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.LEFT);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									theGhost.setPreviusDirection(Direction.LEFT);
+									getTheGame().moveGhost(theGhost, Direction.LEFT);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.RIGHT);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									theGhost.setPreviusDirection(Direction.RIGHT);
+									getTheGame().moveGhost(theGhost, Direction.RIGHT);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.UP);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									theGhost.setPreviusDirection(Direction.UP);
+									getTheGame().moveGhost(theGhost, Direction.UP);
 									break;
 								}
 								break;
 							case LEFT:
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.UP);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									theGhost.setPreviusDirection(Direction.UP);
+									getTheGame().moveGhost(theGhost, Direction.UP);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.DOWN);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									theGhost.setPreviusDirection(Direction.DOWN);
+									getTheGame().moveGhost(theGhost, Direction.DOWN);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.RIGHT);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									theGhost.setPreviusDirection(Direction.RIGHT);
+									getTheGame().moveGhost(theGhost, Direction.RIGHT);
 									break;
 								}
 								break;
 							case RIGHT:
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.UP);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									theGhost.setPreviusDirection(Direction.UP);
+									getTheGame().moveGhost(theGhost, Direction.UP);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.DOWN);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									theGhost.setPreviusDirection(Direction.DOWN);
+									getTheGame().moveGhost(theGhost, Direction.DOWN);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.LEFT);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									theGhost.setPreviusDirection(Direction.LEFT);
+									getTheGame().moveGhost(theGhost, Direction.LEFT);
 									break;
 								}
 								break;
 							case UP:
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.LEFT);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									theGhost.setPreviusDirection(Direction.LEFT);
+									getTheGame().moveGhost(theGhost, Direction.LEFT);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.RIGHT);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									theGhost.setPreviusDirection(Direction.RIGHT);
+									getTheGame().moveGhost(theGhost, Direction.RIGHT);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.DOWN);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									theGhost.setPreviusDirection(Direction.DOWN);
+									getTheGame().moveGhost(theGhost, Direction.DOWN);
 									break;
 								}
 								break;
@@ -256,31 +271,31 @@ public class NormalGhostMover  extends AbstractGhostMover {
 				}else{
 					delay ++;
 					switch(delay){
-					case 7 :
+					case 175 :
 						Ghost.setStrategy(new Tracking());
 						Ghost.setPreviusStrategy('t');
 						break;
-					case 27 :
+					case 675 :
 						Ghost.setStrategy(new Dispersion());
 						Ghost.setPreviusStrategy('d');
 						break;
-					case 34 :
+					case 850 :
 						Ghost.setStrategy(new Tracking());
 						Ghost.setPreviusStrategy('t');
 						break;
-					case 54 :
+					case 1350 :
 						Ghost.setStrategy(new Dispersion());
 						Ghost.setPreviusStrategy('d');
 						break;
-					case 59 :
+					case 1475 :
 						Ghost.setStrategy(new Tracking());
 						Ghost.setPreviusStrategy('t');
 						break;
-					case 79 :
+					case 1975 :
 						Ghost.setStrategy(new Dispersion());
 						Ghost.setPreviusStrategy('d');
 						break;
-					case 84 :
+					case 2100 :
 						Ghost.setStrategy(new Tracking());
 						Ghost.setPreviusStrategy('t');
 						break;
@@ -295,24 +310,36 @@ public class NormalGhostMover  extends AbstractGhostMover {
 						if (delayEscape == 7){
 							exitEscape();
 							timer_scared.stop();
+							timer_scared = new MyTimer(DELAY_SCARED, this);
+							timer_scared.setActionCommand("timer_scared"); 
+				        	timer.start();
 						}
 						break;
 					case 2 :
 						if (delayEscape == 14){
 							exitEscape();
 							timer_scared.stop();
+							timer_scared = new MyTimer(DELAY_SCARED, this);
+							timer_scared.setActionCommand("timer_scared"); 
+				        	timer.start();
 						}
 						break;
 					case 3 :
 						if (delayEscape == 19){
 							exitEscape();
 							timer_scared.stop();
+							timer_scared = new MyTimer(DELAY_SCARED, this);
+							timer_scared.setActionCommand("timer_scared"); 
+				        	timer.start();
 						}
 						break;
 					case 4 :
 						if (delayEscape < 24){
 							exitEscape();
 							timer_scared.stop();
+							timer_scared = new MyTimer(DELAY_SCARED, this);
+							timer_scared.setActionCommand("timer_scared"); 
+				        	timer.start();
 						}
 						break;
 					}
