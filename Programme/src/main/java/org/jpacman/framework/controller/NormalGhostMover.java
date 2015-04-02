@@ -107,68 +107,68 @@ public class NormalGhostMover  extends AbstractGhostMover {
 							case DOWN:
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.LEFT);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, Direction.LEFT);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.RIGHT);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, Direction.RIGHT);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.UP);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, Direction.UP);
 									break;
 								}
 								break;
 							case LEFT:
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.UP);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, Direction.UP);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.DOWN);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, Direction.DOWN);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.RIGHT);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, Direction.RIGHT);
 									break;
 								}
 								break;
 							case RIGHT:
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.UP);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, Direction.UP);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.DOWN);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, Direction.DOWN);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.LEFT);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, Direction.LEFT);
 									break;
 								}
 								break;
 							case UP:
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.LEFT);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, Direction.LEFT);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.RIGHT);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, Direction.RIGHT);
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.DOWN);
 								if (target.tileCanBeOccupied()) {
-									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, Direction.DOWN);
 									break;
 								}
 								break;
@@ -295,24 +295,36 @@ public class NormalGhostMover  extends AbstractGhostMover {
 						if (delayEscape == 7){
 							exitEscape();
 							timer_scared.stop();
+							timer_scared = new MyTimer(DELAY_SCARED, this);
+							timer_scared.setActionCommand("timer_scared"); 
+				        	timer.start();
 						}
 						break;
 					case 2 :
 						if (delayEscape == 14){
 							exitEscape();
 							timer_scared.stop();
+							timer_scared = new MyTimer(DELAY_SCARED, this);
+							timer_scared.setActionCommand("timer_scared"); 
+				        	timer.start();
 						}
 						break;
 					case 3 :
 						if (delayEscape == 19){
 							exitEscape();
 							timer_scared.stop();
+							timer_scared = new MyTimer(DELAY_SCARED, this);
+							timer_scared.setActionCommand("timer_scared"); 
+				        	timer.start();
 						}
 						break;
 					case 4 :
 						if (delayEscape < 24){
 							exitEscape();
 							timer_scared.stop();
+							timer_scared = new MyTimer(DELAY_SCARED, this);
+							timer_scared.setActionCommand("timer_scared"); 
+				        	timer.start();
 						}
 						break;
 					}
