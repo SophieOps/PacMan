@@ -24,13 +24,6 @@ public class Food extends Sprite {
 	}
 
 	/**
-	 * @param pts the points to set
-	 */
-	public void setPoints(int pts) {
-		this.points = pts;
-	}
-
-	/**
 	 * Constructor meets invariant of sub and superclass.
 	 */
 	public Food() {

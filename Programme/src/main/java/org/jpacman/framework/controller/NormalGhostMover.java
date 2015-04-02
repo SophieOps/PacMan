@@ -1,27 +1,64 @@
 package org.jpacman.framework.controller;
 
+import java.awt.event.ActionEvent;
+
+import org.jpacman.framework.Strategy.Dispersion;
+import org.jpacman.framework.Strategy.Escape;
+import org.jpacman.framework.Strategy.Tracking;
 import org.jpacman.framework.model.Direction;
 import org.jpacman.framework.model.Game;
 import org.jpacman.framework.model.Ghost;
 import org.jpacman.framework.model.GhostPinky;
 import org.jpacman.framework.model.IBoardInspector.SpriteType;
 import org.jpacman.framework.model.IGameInteractor;
+import org.jpacman.framework.model.SuperGum;
 import org.jpacman.framework.model.Tile;
 
 public class NormalGhostMover  extends AbstractGhostMover {
 
 	private int possibleDirection = 0;
+	
 	/**
 	 * @param theEngine
 	 */
 	public NormalGhostMover(IGameInteractor theEngine) {
 		super(theEngine);
-		// TODO Auto-generated constructor stub
+		this.timer = new MyTimer(DELAY, this);
+		this.timer.setActionCommand("timer");
+		this.timer_scared = new MyTimer(DELAY_SCARED, this);
+		this.timer_scared.setActionCommand("timer_scared");
+		for (Ghost gt : ghosts)
+		{
+			switch(gt.getSpriteType()){
+			case GHOSTBLINKY:
+				this.timer_Blinky = new GhostTimer(DELAY_RESURECT, this, gt);
+				this.timer_Blinky.setActionCommand("timer_Blinky");
+				break;
+			case GHOSTCLYDE:
+				this.timer_Clyde = new GhostTimer(DELAY_RESURECT, this, gt);
+				this.timer_Clyde.setActionCommand("timer_Clyde");
+				break;
+			case GHOSTINKY:
+				this.timer_Inky = new GhostTimer(DELAY_RESURECT, this, gt);
+				this.timer_Inky.setActionCommand("timer_Inky");
+				break;
+			case GHOSTPINKY:
+				this.timer_Pinky = new GhostTimer(DELAY_RESURECT, this, gt);
+				this.timer_Pinky.setActionCommand("timer_Pinky");
+				break;
+			default:
+				break;
+
+			}
+		}
+
+
+		assert controllerInvariant();
 	}
 
 	@Override
 	public void doTick() {
-		synchronized (gameInteraction()) {
+		synchronized (getTheGame()) {
 			Ghost theGhost = null;
 			if (!ghosts.isEmpty()) {
 				for(int i = 0; i < ghosts.size(); i++){
@@ -32,30 +69,31 @@ public class NormalGhostMover  extends AbstractGhostMover {
 						case GHOSTBLINKY:
 							dir = theGhost.getStrategy().moveBlinky(theGhost);
 							theGhost.setPreviusDirection(dir);
-							gameInteraction().moveGhost(theGhost, dir);
+							getTheGame().moveGhost(theGhost, dir);
+							break;
 						case GHOSTCLYDE:
 							dir = theGhost.getStrategy().moveClyde(theGhost);
 							theGhost.setPreviusDirection(dir);
-							gameInteraction().moveGhost(theGhost, dir);
+							getTheGame().moveGhost(theGhost, dir);
 							break;
-						case GHOSTINKY:
-							Ghost blinky = null;
+						case GHOSTPINKY:
 							if (!(((GhostPinky)theGhost).getMove() == 0)){
-								for(int j = 0; j < ghosts.size(); j++){
-									if(theGhost.getSpriteType() == SpriteType.GHOSTBLINKY){
-										blinky = ghosts.get(j);
-									}
-								}
-								dir = theGhost.getStrategy().moveInky(theGhost, blinky);
+								dir = theGhost.getStrategy().movePinky(theGhost);
 								theGhost.setPreviusDirection(dir);
-								gameInteraction().moveGhost(theGhost, dir);
+								getTheGame().moveGhost(theGhost, dir);
 							}
 							((GhostPinky)theGhost).setMove(((GhostPinky)theGhost).getMove()+1);
 							break;
-						case GHOSTPINKY:
-							dir = theGhost.getStrategy().movePinky(theGhost);
+						case GHOSTINKY:
+							Ghost blinky = null;
+							for(int j = 0; j < ghosts.size(); j++){
+								if(theGhost.getSpriteType() == SpriteType.GHOSTBLINKY){
+									blinky = ghosts.get(j);
+								}
+							}
+							dir = theGhost.getStrategy().moveInky(theGhost, blinky);
 							theGhost.setPreviusDirection(dir);
-							gameInteraction().moveGhost(theGhost, dir);
+							getTheGame().moveGhost(theGhost, dir);
 							break;
 						default:
 							break;
@@ -63,74 +101,74 @@ public class NormalGhostMover  extends AbstractGhostMover {
 					}else{
 						Tile target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), theGhost.getPreviusDirection());
 						if (target.tileCanBeOccupied()) {
-							gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+							getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
 						}else{
 							switch(theGhost.getPreviusDirection()){
 							case DOWN:
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.LEFT);
 								if (target.tileCanBeOccupied()) {
-									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.RIGHT);
 								if (target.tileCanBeOccupied()) {
-									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.UP);
 								if (target.tileCanBeOccupied()) {
-									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
 									break;
 								}
 								break;
 							case LEFT:
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.UP);
 								if (target.tileCanBeOccupied()) {
-									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.DOWN);
 								if (target.tileCanBeOccupied()) {
-									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.RIGHT);
 								if (target.tileCanBeOccupied()) {
-									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
 									break;
 								}
 								break;
 							case RIGHT:
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.UP);
 								if (target.tileCanBeOccupied()) {
-									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.DOWN);
 								if (target.tileCanBeOccupied()) {
-									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.LEFT);
 								if (target.tileCanBeOccupied()) {
-									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
 									break;
 								}
 								break;
 							case UP:
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.LEFT);
 								if (target.tileCanBeOccupied()) {
-									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.RIGHT);
 								if (target.tileCanBeOccupied()) {
-									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
 									break;
 								}
 								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.DOWN);
 								if (target.tileCanBeOccupied()) {
-									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									getTheGame().moveGhost(theGhost, theGhost.getPreviusDirection());
 									break;
 								}
 								break;
@@ -146,6 +184,7 @@ public class NormalGhostMover  extends AbstractGhostMover {
 	}
 	
 	private boolean atNode(Ghost g){
+		this.possibleDirection = 0;
 		Tile tile = g.getTile();
 		for(Direction dir : Direction.values()){
 			Tile target = Game.getInstanceOfGame().getBoard().tileAtDirection(tile, dir);
@@ -153,9 +192,166 @@ public class NormalGhostMover  extends AbstractGhostMover {
 				this.possibleDirection ++;
 			}
 		}
-		if(this.possibleDirection > 2){
+		if(this.possibleDirection != 2){
 			return true;
 		}		
 		return false;
 	}
+	
+	@Override
+    public void start() {
+        assert controllerInvariant();
+        // the game may have been restarted -- refresh the ghost list
+        // contained.
+        
+        //super();
+        synchronized (theGame) {
+            timer.start();
+            
+            
+//            this.ghostAI.start();
+//            ghosts = theGame.getGhosts();
+//            timer.schedule(tasknew,0, DELAY);
+//            assert ghosts != null;
+        }
+        assert controllerInvariant();
+    }
+	
+	@Override
+    public void stop()
+    {
+        assert controllerInvariant();
+        
+        if(timer.isRunning()){
+        	timer.stop();
+        }
+        if(timer_scared.isRunning()){
+        	timer_scared.stop();
+        }
+        if(timer_Blinky.isRunning()){
+        	timer_Blinky.stop();
+        }
+        if(timer_Clyde.isRunning()){
+        	timer_Clyde.stop();
+        }
+        if(timer_Inky.isRunning()){
+        	timer_Inky.stop();
+        }
+        if(timer_Pinky.isRunning()){
+        	timer_Pinky.stop();
+        }
+        //this.ghostAI.stop();
+        assert controllerInvariant();
+    }
+
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		assert controllerInvariant();
+		synchronized (theGame) {
+			String str = e.getActionCommand().toString();
+			if (str.compareToIgnoreCase(e1) == 0){
+				if (Ghost.getStrategy() instanceof Escape){
+					setTimer_scared();
+				}else{
+					delay ++;
+					switch(delay){
+					case 7 :
+						Ghost.setStrategy(new Tracking());
+						Ghost.setPreviusStrategy('t');
+						break;
+					case 27 :
+						Ghost.setStrategy(new Dispersion());
+						Ghost.setPreviusStrategy('d');
+						break;
+					case 34 :
+						Ghost.setStrategy(new Tracking());
+						Ghost.setPreviusStrategy('t');
+						break;
+					case 54 :
+						Ghost.setStrategy(new Dispersion());
+						Ghost.setPreviusStrategy('d');
+						break;
+					case 59 :
+						Ghost.setStrategy(new Tracking());
+						Ghost.setPreviusStrategy('t');
+						break;
+					case 79 :
+						Ghost.setStrategy(new Dispersion());
+						Ghost.setPreviusStrategy('d');
+						break;
+					case 84 :
+						Ghost.setStrategy(new Tracking());
+						Ghost.setPreviusStrategy('t');
+						break;
+					}
+				}
+				doTick();
+			}else if (str.compareToIgnoreCase(e2) == 0){
+				if ((Ghost.getStrategy() instanceof Escape)){
+					delayEscape ++;
+					switch(SuperGum.getNumberSuperGumEat()){
+					case 1 :
+						if (delayEscape == 7){
+							exitEscape();
+							timer_scared.stop();
+						}
+						break;
+					case 2 :
+						if (delayEscape == 14){
+							exitEscape();
+							timer_scared.stop();
+						}
+						break;
+					case 3 :
+						if (delayEscape == 19){
+							exitEscape();
+							timer_scared.stop();
+						}
+						break;
+					case 4 :
+						if (delayEscape < 24){
+							exitEscape();
+							timer_scared.stop();
+						}
+						break;
+					}
+				}
+			}else if (str.compareToIgnoreCase(e3) == 0){
+				resurect(SpriteType.GHOSTBLINKY);
+			}else if (str.compareToIgnoreCase(e4) == 0){
+				resurect(SpriteType.GHOSTINKY);
+			}else if (str.compareToIgnoreCase(e5) == 0){
+				resurect(SpriteType.GHOSTPINKY);
+			}else if (str.compareToIgnoreCase(e6) == 0){
+				resurect(SpriteType.GHOSTCLYDE);
+			}
+
+		}
+		assert controllerInvariant();
+	}
+    
+	static void exitEscape(){
+		switch(Ghost.getPreviusStrategy()){
+		case 't' :
+			Ghost.setStrategy(new Tracking());
+			break;
+		case 'd' :
+			Ghost.setStrategy(new Dispersion());
+			break;
+		}
+	}
+    
+    public void resurect(SpriteType sprType){
+    	for (Ghost gt : ghosts)
+		{
+			if(sprType == gt.getSpriteType()){
+				//gt. //is alive
+			}
+		}
+    }
+    
+
+
+
 }
