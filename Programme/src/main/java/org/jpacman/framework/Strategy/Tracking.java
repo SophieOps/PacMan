@@ -44,7 +44,7 @@ public class Tracking implements IStrategy {
 		Tile tileEnd;
 		Tile tilePacman = Game.getInstanceOfGame().getPlayer().getTile();
 		tileEnd = dirpossible(dirpossible(dirpossible(dirpossible(tilePacman))));
-		calculateDir(tileEnd.getX(), tileEnd.getY(), g);;
+		calculateDir(tileEnd.getX(), tileEnd.getY(), g);
 		return dir;
 		
 

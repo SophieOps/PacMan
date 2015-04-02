@@ -55,7 +55,7 @@ public class SuperGum extends Sprite {
 	 */
 	public SuperGum() {
         assert getPoints() >= 0 && spriteInvariant();
-		this.color = Color.cyan;
+		this.color = Color.MAGENTA;
 	}
 
     /**

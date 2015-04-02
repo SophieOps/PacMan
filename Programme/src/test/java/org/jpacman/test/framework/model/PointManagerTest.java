@@ -4,8 +4,11 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
-import org.jpacman.framework.model.Player;
-import org.jpacman.framework.model.PointManager;
+import org.jpacman.framework.factory.DefaultGameFactory;
+import org.jpacman.framework.factory.FactoryException;
+import org.jpacman.framework.factory.MapParser;
+import org.jpacman.framework.model.*;
+import org.jpacman.framework.ui.PacmanInteraction;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -55,4 +58,30 @@ public class PointManagerTest {
         pm.consumePointsOnBoard(player, totalPoints);
         assertTrue(pm.allEaten());
     }
+
+    @Test
+    public void testSuperGumEat()throws FactoryException {
+        String[] map = {
+                "#####",
+                "#PSS#",
+                "#.SS#",
+                "#####"};
+
+        MapParser p = new MapParser(new DefaultGameFactory());
+        Game theGame = p.parseMap(map);
+
+        theGame.movePlayer(Direction.RIGHT);
+        assertEquals(SuperGum.DEFAULT_POINTS, theGame.getPointManager().getFoodEaten());
+        assertEquals(1,SuperGum.getNumberSuperGumEat());
+
+        theGame.movePlayer(Direction.RIGHT);
+        assertEquals(2,SuperGum.getNumberSuperGumEat());
+        theGame.movePlayer(Direction.DOWN);
+        assertEquals(3,SuperGum.getNumberSuperGumEat());
+        theGame.movePlayer(Direction.LEFT);
+        assertEquals(4,SuperGum.getNumberSuperGumEat());
+        assertEquals(SuperGum.DEFAULT_POINTS*4, theGame.getPointManager().getFoodEaten());
+    }
+
+
 }
