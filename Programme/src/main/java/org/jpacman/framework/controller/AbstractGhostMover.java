@@ -31,7 +31,7 @@ public abstract class AbstractGhostMover implements IController, ActionListener
      * The default delay between ghost moves.
      */
     public static final int DELAY = 40;
-    public static final int DELAY_SCARED = 1000;
+    public static final int DELAY_SCARED = 40;
     public static final int DELAY_RESURECT = 5000;
 //    /**
 //     * Randomizer used to pick, e.g., a ghost at random.
@@ -89,68 +89,7 @@ public abstract class AbstractGhostMover implements IController, ActionListener
         	timer.stop();
             timer_scared.start();
         }
-        assert controllerInvariant();
-        
-//		Timer timer_scared
-//      TimerTask task = new TimerTask() {
-//			@Override
-//			public void run() {
-//				 if ((Ghost.getStrategy() instanceof Escape)){
-//					 delayEscape ++;
-//					 switch(SuperGum.getNumberSuperGumEat()){
-//					 case 1 :
-//						 if (delayEscape == 7){
-//							 exitEscape();
-//						 }
-//						 break;
-//					 case 2 :
-//						 if (delayEscape == 14){
-//							 exitEscape();
-//						 }
-//						 break;
-//					 case 3 :
-//						 if (delayEscape == 19){
-//							 exitEscape();
-//						 }
-//						 break;
-//					 case 4 :
-//						 if (delayEscape < 24){
-//							 exitEscape();
-//						 }
-//						 break;
-//					 }			 
-//				 }else{
-//					 delay ++;
-//					 switch(delay){
-//					 case 7 :
-//						 Ghost.setStrategy(new Tracking());
-//						 break;
-//					 case 27 :
-//						 Ghost.setStrategy(new Dispersion());
-//						 break;
-//					 case 34 :
-//						 Ghost.setStrategy(new Tracking());
-//						 break;
-//					 case 54 :
-//						 Ghost.setStrategy(new Dispersion());
-//						 break;
-//					 case 59 :
-//						 Ghost.setStrategy(new Tracking());
-//						 break;
-//					 case 79 :
-//						 Ghost.setStrategy(new Dispersion());
-//						 break;
-//					 case 84 :
-//						 Ghost.setStrategy(new Tracking());
-//						 break;
-//					 }
-//				 }
-//
-//			}
-//		};
-//		timer_scared = new Timer();
-//		timer_scared.schedule(task, 0, DELAY_SCARED);
-        
+        assert controllerInvariant();        
 	}
 	
     /**

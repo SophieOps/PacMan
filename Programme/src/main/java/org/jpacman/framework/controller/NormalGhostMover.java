@@ -307,7 +307,7 @@ public class NormalGhostMover  extends AbstractGhostMover {
 					delayEscape ++;
 					switch(SuperGum.getNumberSuperGumEat()){
 					case 1 :
-						if (delayEscape == 7){
+						if (delayEscape == 175){
 							exitEscape();
 							timer_scared.stop();
 							timer_scared = new MyTimer(DELAY_SCARED, this);
@@ -316,7 +316,7 @@ public class NormalGhostMover  extends AbstractGhostMover {
 						}
 						break;
 					case 2 :
-						if (delayEscape == 14){
+						if (delayEscape == 350){
 							exitEscape();
 							timer_scared.stop();
 							timer_scared = new MyTimer(DELAY_SCARED, this);
@@ -325,7 +325,7 @@ public class NormalGhostMover  extends AbstractGhostMover {
 						}
 						break;
 					case 3 :
-						if (delayEscape == 19){
+						if (delayEscape == 475){
 							exitEscape();
 							timer_scared.stop();
 							timer_scared = new MyTimer(DELAY_SCARED, this);
@@ -334,7 +334,7 @@ public class NormalGhostMover  extends AbstractGhostMover {
 						}
 						break;
 					case 4 :
-						if (delayEscape < 24){
+						if (delayEscape < 600){
 							exitEscape();
 							timer_scared.stop();
 							timer_scared = new MyTimer(DELAY_SCARED, this);
@@ -344,6 +344,7 @@ public class NormalGhostMover  extends AbstractGhostMover {
 						break;
 					}
 				}
+				doTick();
 			}else if (str.compareToIgnoreCase(e3) == 0){
 				resurect(SpriteType.GHOSTBLINKY);
 			}else if (str.compareToIgnoreCase(e4) == 0){
