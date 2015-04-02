@@ -61,18 +61,88 @@ public class NormalGhostMover  extends AbstractGhostMover {
 							break;
 						}
 					}else{
-						gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+						Tile target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), theGhost.getPreviusDirection());
+						if (target.tileCanBeOccupied()) {
+							gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+						}else{
+							switch(theGhost.getPreviusDirection()){
+							case DOWN:
+								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.LEFT);
+								if (target.tileCanBeOccupied()) {
+									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									break;
+								}
+								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.RIGHT);
+								if (target.tileCanBeOccupied()) {
+									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									break;
+								}
+								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.UP);
+								if (target.tileCanBeOccupied()) {
+									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									break;
+								}
+								break;
+							case LEFT:
+								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.UP);
+								if (target.tileCanBeOccupied()) {
+									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									break;
+								}
+								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.DOWN);
+								if (target.tileCanBeOccupied()) {
+									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									break;
+								}
+								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.RIGHT);
+								if (target.tileCanBeOccupied()) {
+									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									break;
+								}
+								break;
+							case RIGHT:
+								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.UP);
+								if (target.tileCanBeOccupied()) {
+									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									break;
+								}
+								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.DOWN);
+								if (target.tileCanBeOccupied()) {
+									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									break;
+								}
+								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.LEFT);
+								if (target.tileCanBeOccupied()) {
+									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									break;
+								}
+								break;
+							case UP:
+								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.LEFT);
+								if (target.tileCanBeOccupied()) {
+									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									break;
+								}
+								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.RIGHT);
+								if (target.tileCanBeOccupied()) {
+									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									break;
+								}
+								target = Game.getInstanceOfGame().getBoard().tileAtDirection(theGhost.getTile(), Direction.DOWN);
+								if (target.tileCanBeOccupied()) {
+									gameInteraction().moveGhost(theGhost, theGhost.getPreviusDirection());
+									break;
+								}
+								break;
+							default:
+								break;
+							}
+						}
 					}
 				}	
-
 			}else
 				return;
-
-			//int dirIndex = getRandomizer().nextInt(Direction.values().length);
-			//final Direction dir = Direction.values()[dirIndex];
-			//gameInteraction().moveGhost(theGhost, dir);
 		}
-
 	}
 	
 	private boolean atNode(Ghost g){

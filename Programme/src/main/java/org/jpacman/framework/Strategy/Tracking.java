@@ -18,7 +18,7 @@ public class Tracking implements IStrategy {
 	
 	private int xg, xp, yg, yp;
 	private float distMin = 999;
-	Direction dir;
+	private Direction dir;
 	
 	@Override
 	public Direction moveBlinky(Ghost g) {
@@ -119,7 +119,8 @@ public class Tracking implements IStrategy {
 		if(dist > 8){
 			calculateDir(tilePacman.getX(), tilePacman.getY(), g);
 		}else{
-			calculateDir(0, 0, g); //en supposant que le coin inférieur gauche a les coordonnées (0, 0)
+			int hauteur = Game.getInstanceOfGame().getBoardInspector().getHeight();
+			calculateDir(0, hauteur-1, g); //en supposant que le coin inférieur gauche a les coordonnées (0, hauteur-1)
 		}
 		return dir;
 
