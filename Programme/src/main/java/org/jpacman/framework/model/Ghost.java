@@ -30,6 +30,7 @@ public class Ghost extends Sprite {
     protected static IStrategy strategy;
     protected static char previusStrategy;
     protected Direction previusDirection;
+	private boolean alive = true; ////////////////////////////////////////////////
     protected int numberGhostEat = 0;
 	
 	private int points = DEFAULT_POINTS_1;
@@ -151,6 +152,27 @@ public class Ghost extends Sprite {
 		Ghost.previusStrategy = 'd';
         idGhost = nbGhost;
         nbGhost++;
+	}
+	
+	/**
+	 * This ghost dies.
+	 */
+	public void die() {
+		alive = false;
+	}
+	
+	/**
+	 * Get the ghost alive
+	 */
+	public boolean isAlive() {
+		return alive;
+	}
+	
+	/**
+	 * Set the ghost alive
+	 */
+	public void resurrect() {
+		alive = true;
 	}
 
 	

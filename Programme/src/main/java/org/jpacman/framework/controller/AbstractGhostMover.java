@@ -3,6 +3,7 @@ package org.jpacman.framework.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import java.util.Random;
 
 import org.jpacman.framework.Strategy.Dispersion;
 import org.jpacman.framework.Strategy.Escape;
@@ -33,19 +34,20 @@ public abstract class AbstractGhostMover implements IController, ActionListener
     public static final int DELAY = 40;
     public static final int DELAY_SCARED = 40;
     public static final int DELAY_RESURECT = 5000;
-//    /**
-//     * Randomizer used to pick, e.g., a ghost at random.
-//     */
-//    private static Random randomizer = new Random();
+    /**
+     * Randomizer used to pick, e.g., a ghost at random.
+     */
+    private static Random randomizer = new Random();
+
     /**
      * Timer to be used to trigger ghost moves.
      */
     protected MyTimer timer;
     protected MyTimer timer_scared;
-    protected GhostTimer timer_Blinky;
-    protected GhostTimer timer_Inky;
-    protected GhostTimer timer_Pinky;
-    protected GhostTimer timer_Clyde;
+    protected int delay_Blinky = 0;
+    protected int delay_Inky = 0;
+    protected int delay_Pinky = 0;
+    protected int delay_Clyde = 0;
     protected String e1 = "timer";
     protected String e2 = "timer_scared";
     protected String e3 = "timer_Blinky";
@@ -66,20 +68,6 @@ public abstract class AbstractGhostMover implements IController, ActionListener
         return theGame.getGhosts();
     }
     
-    
-//    private TimerTask tasknew = new TimerTask() {
-//		@Override
-//		public void run() {
-//	        assert controllerInvariant();
-//	        synchronized (theGame) {
-//	            doTick();
-//	        }
-//	        assert controllerInvariant();
-//		}
-//	};
-    
-    
-
     /**
 	 * @param timer_scared the timer_scared to set
 	 */
@@ -92,6 +80,28 @@ public abstract class AbstractGhostMover implements IController, ActionListener
         assert controllerInvariant();        
 	}
 	
+	/**
+     * Obtain the randomizer used for ghost moves.
+     * @return the randomizer.
+     */
+    protected static Random getRandomizer() {
+        return randomizer;
+    }
+    
+    /**
+     * Return a randomly chosen ghost, or null if there
+     * are no ghosts in this game.
+     * @return Random ghost or null;
+     */
+    protected Ghost getRandomGhost() {
+        Ghost theGhost = null;
+        if (!ghosts.isEmpty()) {
+            final int ghostIndex = randomizer.nextInt(ghosts.size());
+            theGhost = ghosts.get(ghostIndex);
+        }
+        return theGhost;
+    }
+    
     /**
      * Start a new mover with the given engine.
      * @param theEngine Engine used.
@@ -113,9 +123,6 @@ public abstract class AbstractGhostMover implements IController, ActionListener
      */
     protected final boolean controllerInvariant() {
         return (timer != null && theGame != null 
-        		&& timer_scared != null && timer_Blinky != null 
-        		&& timer_Clyde != null && timer_Inky != null 
-        		&& timer_Pinky != null);
+        		&& timer_scared != null);
     }
-
 }

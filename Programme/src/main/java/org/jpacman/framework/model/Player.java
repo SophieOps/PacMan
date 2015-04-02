@@ -47,6 +47,13 @@ public class Player extends Sprite {
 	}
 	
 	/**
+	 * Set the player alive
+	 */
+	public void resurrect() {
+		alive = true;
+	}
+
+	/**
 	 * @return true if the player is alive
 	 */
 	public boolean isAlive() {
@@ -85,11 +92,5 @@ public class Player extends Sprite {
 	public void setPoints(int pts) {
 		this.points = pts;
 	}
-
-	/**
-	 * Set the player alive
-	 */
-	public void resurrect() {
-		alive = true;
-	}
 }
+

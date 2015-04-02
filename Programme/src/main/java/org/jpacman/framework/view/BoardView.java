@@ -231,20 +231,30 @@ public class BoardView extends JPanel {
 						((Player) sprite).getDirection(),
 						animationCount);
 			}else if((sprite instanceof Ghost) && (Ghost.getStrategy() instanceof Escape)){
-				img = imageLoader.monsterScared(animationCount);
+				if(((Ghost) sprite).isAlive()){
+					img = imageLoader.monsterScared(animationCount);
+				}
 			}else{
 				switch(sprite.getSpriteType()){
 				case GHOSTBLINKY :
-					img = imageLoader.monsterRed(animationCount);
+					if(((Ghost) sprite).isAlive()){
+						img = imageLoader.monsterRed(animationCount);
+					}
 					break;
 				case GHOSTCLYDE :
-					img = imageLoader.monsterOrange(animationCount);
+					if(((Ghost) sprite).isAlive()){
+						img = imageLoader.monsterOrange(animationCount);
+					}
 					break;
 				case GHOSTINKY :
-					img = imageLoader.monsterCyan(animationCount);
+					if(((Ghost) sprite).isAlive()){
+						img = imageLoader.monsterCyan(animationCount);
+					}
 					break;
 				case GHOSTPINKY :
-					img = imageLoader.monsterPink(animationCount);
+					if(((Ghost) sprite).isAlive()){
+						img = imageLoader.monsterPink(animationCount);
+					}
 					break;
 				case SUPERGUM:
 					img = imageLoader.superGum();

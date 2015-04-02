@@ -152,9 +152,9 @@ public class Board implements IBoardInspector {
 	 */
 	public Tile tileAtOffset(Tile start, int dx, int dy) {
 		assert start != null : "PRE1: start tile should not be null.";
+		//assert (start.getX() != null && start.getY() != null) : "PRE1_: start tile should not be null at variable X and Y."; 
 		assert withinBorders(start.getX(), start.getY())
 				: "PRE2" +  onBoardMessage(start.getX(), start.getY());	
-		
         int newx = tunnelledCoordinate(start.getX(), getWidth(), dx);
         int newy = tunnelledCoordinate(start.getY(), getHeight(), dy);
         assert withinBorders(newx, newy);

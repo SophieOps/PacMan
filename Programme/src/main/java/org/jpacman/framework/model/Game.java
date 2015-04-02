@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
+import org.jpacman.framework.Strategy.Escape;
+
 //cette classe est un singloton
 public final class Game extends Observable implements IGameInteractor {
 	
@@ -62,7 +64,9 @@ public final class Game extends Observable implements IGameInteractor {
 		if (target.tileCanBeOccupied() && thePlayer.isAlive()) {
 			Sprite currentContent = target.topSprite();
 			pointManager.eatFood(thePlayer, currentContent);
-			dieIfGhost(thePlayer, currentContent);
+			if (currentContent instanceof Ghost) {
+				playerMeetAGhost(thePlayer, (Ghost)currentContent);
+			}
 			thePlayer.deoccupy();
 			thePlayer.occupy(target);
 			thePlayer.setDirection(dir);
@@ -72,12 +76,14 @@ public final class Game extends Observable implements IGameInteractor {
 
 
 	/**
-	 * if the current sprite is a ghost, the player die
+	 * if the current sprite is a ghost (not scared), the player die
 	 * @param p player
-	 * @param currentSprite sprite
+	 * @param g sprite
 	 */
-	private void dieIfGhost(Player p, Sprite currentSprite) {
-		if (currentSprite instanceof Ghost) {
+	private void playerMeetAGhost(Player p, Ghost g) {
+		if(Ghost.getStrategy() instanceof Escape){
+			g.die();
+		}else{
 			p.die();
 		}
 	}
@@ -85,17 +91,16 @@ public final class Game extends Observable implements IGameInteractor {
 	@Override
 	public void moveGhost(Ghost theGhost, Direction dir) {
 		Tile target = theBoard.tileAtDirection(theGhost.getTile(), dir);
-		if (target.tileCanBeOccupied()) {
+		if (target.tileCanBeOccupied() && theGhost.isAlive()) {
 			Sprite currentContent = target.topSprite();
-			if (currentContent instanceof Player) { /**TODO : et que pas en mode fuite*/
-				((Player) currentContent).die();
-			}/**TODO : si ne mode fuite, fantome qui meurt*/
+			if (currentContent instanceof Player) { 
+				playerMeetAGhost((Player)currentContent, theGhost);
+			}
 			theGhost.deoccupy();
 			theGhost.occupy(target);
 			notifyViewers();
 		} 
 	}
-
 
 	
 	/**
